@@ -45,4 +45,4 @@ experiment packages and the final combined report still need completion.
 
 [Final supplied Project 5 demo](https://drive.google.com/file/d/1cCgPG9Q1963mofc-caVfxCnzxhqogs_V/view?usp=sharing).
 
-The report covers all seven organizer sections and preserves measured timing/resource and test evidence. The accepted hardware edit lacks the full introductory/RTL presentation segment and ends with watchdog STOP still latched; these limitations are recorded accurately. Raw original core CSV/PASS files were not uploaded. See the checklist for project-specific and whole-entry gaps.
+The report covers all seven organizer sections and preserves measured timing/resource and test evidence. The accepted hardware edit lacks the full introductory/RTL presentation segment and ends with watchdog STOP still latched; these limitations are recorded accurately. Original core CSV/PASS exports are now included and verified. See the checklist for project-specific and whole-entry gaps.

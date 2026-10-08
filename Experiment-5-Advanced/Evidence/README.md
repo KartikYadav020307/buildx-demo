@@ -6,4 +6,4 @@
 - Final Drive demo: accepted edited recording of the physical board and Vivado console.
 - Documentation/DEMO_EVIDENCE.md: interpretation of the final recording and earlier copied operator snapshots.
 
-The complete original hardware_test_results.csv, HARDWARE_CORE_PASS.txt and HARDWARE_LIVE_PASS.txt were not supplied as files. Their absence is not replaced with fabricated raw evidence. Results/BUILD_SUCCESS.txt is an original pre-hardware build artifact, so its hardware-pending note describes that earlier build stage.
+The original hardware_test_results.csv, HARDWARE_CORE_PASS.txt and HARDWARE_LIVE_PASS.txt are now supplied in Results/run_20261008_121952_125/. The CSV has 64 rows (32/profile), all matching the frozen reference hidden bits, signed scores, class, margin, model identity and 5/21-cycle latencies. Results/BUILD_SUCCESS.txt is an original pre-hardware build artifact, so its hardware-pending note describes that earlier build stage.

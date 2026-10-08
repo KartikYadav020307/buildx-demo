@@ -1,6 +1,6 @@
 # Project 5 - Reconfigurable FPGA BNN Safety Response
 
-PYNQ-Z2 | Advanced experiment | Evidence reviewed 8 October 2026
+PYNQ-Z2 | Advanced experiment | Evidence updated 9 October 2026
 
 ## 1. Objective
 
@@ -38,7 +38,7 @@ Whole routed board/debug design uses 5,772 LUTs and 6,501 FFs, with 0 BRAM and 0
 
 Physical core verification shows HARDWARE CORE PASS: 64/64 (32 cases/profile). The supplied complete live Tcl log ends HARDWARE LIVE PASS. Operator telemetry and video demonstrate model 1 CAUTION to model 2 BRAKE for raw 0222, emergency latching, fresh input retaining STOP, explicit emergency clear and watchdog history 8.
 
-The final accepted video does not successfully finish watchdog recovery: final state remains action 3/tripped 1/history 8 after rollback, then disarms. Earlier operator snapshots did show eligible watchdog clear to action 0/tripped 0. Missing raw core CSV/PASS files are identified in Evidence/README.md. Original generated .xpr was not supplied; Tcl/IP scripts regenerate it.
+The final accepted video does not successfully finish watchdog recovery: final state remains action 3/tripped 1/history 8 after rollback, then disarms. Earlier operator snapshots did show eligible watchdog clear to action 0/tripped 0. The original hardware CSV and both hardware PASS files are now included in the Results run. All 64 CSV rows were checked against the frozen reference cases: hidden bits, all four signed scores, class, margin, model ID and 5/21-cycle latencies match. Original generated .xpr was not supplied; Tcl/IP scripts regenerate it.
 
 ## 6. Applications
 
@@ -50,7 +50,7 @@ A deployment would need representative measured sensor data, interface and actua
 
 The supplied design has passed exhaustive arithmetic/core simulation, directed system/fault tests, routed timing checks and available physical FPGA verification. Main learning outcomes are pipeline/folded tradeoffs, signed integer correctness, guarded parameter updates, tagged-result freshness and latched fault recovery.
 
-Future work: complete the full narrated presentation and a clean final watchdog-recovery take if stronger video evidence is desired; export the original core CSV/PASS files; expand real sensor validation and compare power/area on additional architectures. The required Project 5 file categories are present. Whole-entry completion still needs team details, Experiments 1-4, the combined report and the prescribed repository naming.
+Future work: complete the full narrated presentation and a clean final watchdog-recovery take if stronger video evidence is desired; expand real sensor validation and compare power/area on additional architectures. The required Project 5 file categories are present. Whole-entry completion still needs team details, Experiments 1-4, the combined report and the prescribed repository naming.
 
 ## Evidence references
 

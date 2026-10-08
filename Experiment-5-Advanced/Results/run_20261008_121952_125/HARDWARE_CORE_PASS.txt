@@ -1,0 +1,3 @@
+HARDWARE CORE PASS: 64/64 independent golden matches; hidden/scores/class/margin; 5/21 measured cycles.
+CRC rejection, protected active write, model switch and rollback exercised.
+Programming pair from C:/Users/yamle/OneDrive/Desktop/Project5_BNN_Safety_Complete_Pack_v1/Project5_BNN_Safety/Results/run_20261008_121952_125. Physical/live safety demonstration still requires the guide's checks.

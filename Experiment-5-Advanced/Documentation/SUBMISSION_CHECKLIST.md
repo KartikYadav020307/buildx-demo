@@ -13,7 +13,7 @@ Source: [Organizer_Requirements.pdf](Organizer_Requirements.pdf), pages 3-6. Thi
 | Demo link | Video_Link.txt; accepted supplied Drive link |
 | FPGA project files | Sources, Tcl project/IP recreation scripts and actual .bit.gz/.ltx present; programming script automatically unpacks the original .bit; original generated .xpr not uploaded |
 | Raw implementation evidence | Results/run_20261008_121952_125/; original logs/reports preserved |
-| Physical tests | Core PASS screenshot/video, complete available live Tcl log and operator notes present; original hardware core CSV/PASS files not uploaded |
+| Physical tests | Core PASS screenshot/video, complete available live Tcl log and operator notes present; original hardware core CSV and both PASS exports present; all 64 rows checked against frozen reference cases |
 | Full video presentation scope | Partial: architecture/RTL walkthrough and team intro/conclusion segment missing; recorded final watchdog recovery remained STOP |
 | Root team name, members, registration numbers | Not provided |
 | Required repository name FPGA-Build-Challenge-TeamLeaderName | Current authorized repository is buildx-demo; no rename made |
