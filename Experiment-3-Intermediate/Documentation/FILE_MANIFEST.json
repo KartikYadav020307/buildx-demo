@@ -1,0 +1,496 @@
+{
+  "experiment": 3,
+  "audit_date": "2026-10-08",
+  "files": [
+    {
+      "path": "Documentation/DEMO_RECORDING_GUIDE.md",
+      "bytes": 1421,
+      "sha256": "39d7eeee3ece29e35195be71e48a05113d116e9d7ba46afe8d394ccf0a2a88a6"
+    },
+    {
+      "path": "Documentation/Project3_ECG_Report.pdf",
+      "bytes": 640193,
+      "sha256": "016b92d17de65272012cc53fc41f3354b8de4e970d8f7052fe2cf7b1669aec13"
+    },
+    {
+      "path": "Documentation/SOURCE_PROVENANCE.md",
+      "bytes": 1754,
+      "sha256": "226703ab56642d7248e6fe9d29fb191ff54a554028c88040cc10194111eb2d58"
+    },
+    {
+      "path": "Documentation/SUBMISSION_READINESS.md",
+      "bytes": 5126,
+      "sha256": "907cad43af58772d0ff2d50566312933370debe7a706e932ca77b8cd7bd1a37b"
+    },
+    {
+      "path": "Images/01_sine_verification.png",
+      "bytes": 261220,
+      "sha256": "6c08cdfb96c8611aed6a6f91cf0aac0feaeb9a906ebf3f149e2e89eb4a085e00"
+    },
+    {
+      "path": "Images/02_ecg_peaks.png",
+      "bytes": 221228,
+      "sha256": "c22ce238aa4c1737ccd0323abc16d413f2982b97a6a1cbdcf3113cf50cafccdc"
+    },
+    {
+      "path": "Images/IMAGE_EVIDENCE_STATUS.md",
+      "bytes": 600,
+      "sha256": "f3cacbb1be94dd6db6d2d5b98c29a092dd771a4fb4b14b777b69b294eaf7d972"
+    },
+    {
+      "path": "Images/block_diagram.png",
+      "bytes": 54206,
+      "sha256": "9ee48e1c20a068abfd594439806c761fe581ac1a9c641d10b0850e5c483cc3f7"
+    },
+    {
+      "path": "Images/block_diagram_reconstructed_from_bd.png",
+      "bytes": 54206,
+      "sha256": "9ee48e1c20a068abfd594439806c761fe581ac1a9c641d10b0850e5c483cc3f7"
+    },
+    {
+      "path": "PYNQ_Hardware/DATA_SOURCE.md",
+      "bytes": 1268,
+      "sha256": "9d138f788046a205736051f83077d699dcb47746103535884224ec848737a6a2"
+    },
+    {
+      "path": "PYNQ_Hardware/Project3_ECG_Demo.ipynb",
+      "bytes": 260910,
+      "sha256": "f9d7811a7b4404745a60ef33621d73cb7cb3620d894d1c7df14fe56a26bf29c3"
+    },
+    {
+      "path": "PYNQ_Hardware/README.md",
+      "bytes": 698,
+      "sha256": "0a68ed2671bf7974955d28c7decc583ec0176f1c53bbee21a0d3ffbb20e25662"
+    },
+    {
+      "path": "PYNQ_Hardware/Supporting_Data_and_Results/detected_peaks.csv",
+      "bytes": 667,
+      "sha256": "4804f81ddb98b0be3de5c37fbd25b499b4129b74cd8837ff6aca931c59923cf5"
+    },
+    {
+      "path": "PYNQ_Hardware/Supporting_Data_and_Results/hardware_ecg_results.csv",
+      "bytes": 617608,
+      "sha256": "66f285836b3f59abbe2bfae1d4a64dc78dddf04d8120ec35e21c9931e295617b"
+    },
+    {
+      "path": "PYNQ_Hardware/Supporting_Data_and_Results/hardware_results.json",
+      "bytes": 605,
+      "sha256": "bf733c70390ae514ed4ce63cdee6a05d6ccdf290c87e4df0b34a01629a3a8bfc"
+    },
+    {
+      "path": "PYNQ_Hardware/ecg_filter.bit",
+      "bytes": 4045692,
+      "sha256": "8a9abb2d973393e5051e13a8ed74d0a56d143f699b4b1481e35447135391aa72"
+    },
+    {
+      "path": "PYNQ_Hardware/ecg_filter.hwh",
+      "bytes": 288799,
+      "sha256": "19c49af07280323b6de59db72e0bee4fc235532abaf82399fbc97d2409964788"
+    },
+    {
+      "path": "PYNQ_Hardware/ecg_filter.xsa",
+      "bytes": 582889,
+      "sha256": "6227f53fadea997aac7978074cbce63f850908149be9d0ed5cceb3b6917f8981"
+    },
+    {
+      "path": "PYNQ_Hardware/ecg_filter_test.ipynb",
+      "bytes": 106298,
+      "sha256": "c110b778ae15f5a194a22931f1b30eb6592618c4161e1acfd512f5dc79fc9625"
+    },
+    {
+      "path": "PYNQ_Hardware/ecg_record100_360hz.csv",
+      "bytes": 122549,
+      "sha256": "b095372885e269e64d4c0962cce2831e1c3a7c44e37fb8c294366282d5e492c6"
+    },
+    {
+      "path": "PYNQ_Hardware/fir_reference.json",
+      "bytes": 3444,
+      "sha256": "cbd9f1e0b31eaf7b1f0fe27ec45d6c2c351eb8f29eb29aafe8c392dfecec2012"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5097,
+      "sha256": "b5ee05943cbe22439554180d0ee8ccbe665a50f25c4ef447e11eac46181f9e6c"
+    },
+    {
+      "path": "RTL/Constraints/README.md",
+      "bytes": 315,
+      "sha256": "8044f019f4acfee42c196d79d429f3f96c93af79a0c0b79399be5dcdad790e32"
+    },
+    {
+      "path": "RTL/Constraints/ecg_bandpass_filter_ooc_generated.xdc",
+      "bytes": 395,
+      "sha256": "bc275c403c2beeec95b0c3664ecc37842f82207b326bf93c35acb6c465ed2485"
+    },
+    {
+      "path": "RTL/Constraints/system_ooc_generated.xdc",
+      "bytes": 653,
+      "sha256": "5a4ed32edddef4770102c61ed8f84c59d933770599e77d24bb6687e561ea4215"
+    },
+    {
+      "path": "RTL/Generated_Verilog/README.md",
+      "bytes": 531,
+      "sha256": "d6f1ac87e7b34d91fae3dbb3c71d7b9fb48f28b563023ff8df9a62bb50efa0a1"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter.v",
+      "bytes": 174578,
+      "sha256": "0a2ddcc55ce96689c40431aa01f78f94d6a2e5060298d6194b2057207871d99f"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1.v",
+      "bytes": 553081,
+      "sha256": "2bcd28d32a5fb0d15d8e2d0f1e270042b561e2e06675994c941cc5d3692e3adf"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_hls_deadlock_idx0_monitor.v",
+      "bytes": 1405,
+      "sha256": "6b2f641adc89a00094dcdf609ae8defb4188495d70e401e5dcdc213164173db6"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_hls_deadlock_idx1_monitor.v",
+      "bytes": 1140,
+      "sha256": "046304415fc0d130b3a12aa63173f75367f595ec71659b7c549d9db86a7588ef"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_hls_deadlock_kernel_monitor_top.vh",
+      "bytes": 1253,
+      "sha256": "7f8d1976de4c49e15745a07a57b8109fd6878af61b85d7ba6184a12564c129d5"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_mac_muladd_16s_10ns_28s_28_4_1.v",
+      "bytes": 1934,
+      "sha256": "248efc1742a2d984dd678820cfd61ea4630626348bcec0e134296398177055b3"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_mac_muladd_16s_5ns_28s_28_4_1.v",
+      "bytes": 1929,
+      "sha256": "9532e0ca7e4e1bc1288e56c6054eb9ec7c1982e824ed36fb6822ef3d2f230bd3"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_mac_muladd_16s_5s_28s_28_4_1.v",
+      "bytes": 1923,
+      "sha256": "0ba7e9d162f3f5fc113a80398449967761879ff794d743df528749495cdbf872"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_mac_muladd_16s_6ns_28s_28_4_1.v",
+      "bytes": 1929,
+      "sha256": "9886f23f3a3f50d29f9578add3525274c5f3025ea566798eb98e45c8e16e9403"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_mac_muladd_16s_6s_28s_28_4_1.v",
+      "bytes": 1923,
+      "sha256": "143797ceb581b7433cca02fe82b4d2338132fd69d08ba142ca752dc72c172ddc"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_mac_muladd_16s_7ns_28s_28_4_1.v",
+      "bytes": 1929,
+      "sha256": "bac03317b2a3c05d761fa923cf610e2fbd7def981fd03174ca73c47da6ea8ecb"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1.v",
+      "bytes": 1923,
+      "sha256": "583d0c3483f805bc76022d67671004b0983191d1d33fb0bb3611043e084f2f53"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_mac_muladd_16s_8ns_28s_28_4_1.v",
+      "bytes": 1929,
+      "sha256": "c954137260d956ca7838852c80c119fb84b5809f24ab2a5708eb58f74e56dc50"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_mac_muladd_16s_8s_28s_28_4_1.v",
+      "bytes": 1923,
+      "sha256": "3e89b353c3bcd9020b264a9e14aba112d880cddd04ad21fea232346b81ea0bb3"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_mac_muladd_16s_9ns_28s_28_4_1.v",
+      "bytes": 1929,
+      "sha256": "096808574c77791e37db8ba6c752ee3d4e55f8866ab2727f99245769cea3fa7c"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1.v",
+      "bytes": 1923,
+      "sha256": "e9cd86c10726853d7bece96b5eb9eaf1c6f7fc3e8dd5c123f358dc56d0bedc5c"
+    },
+    {
+      "path": "RTL/Generated_Verilog/ecg_bandpass_filter_regslice_both.v",
+      "bytes": 3330,
+      "sha256": "7aefa63d2986113d42ecd8f67400a7259261217dc7fca5b34c8a381b87304651"
+    },
+    {
+      "path": "RTL/Generated_Verilog/system_wrapper.v",
+      "bytes": 2614,
+      "sha256": "7ef1f7454e2773620bcaa87eec141b6843048943bda71cb0ea41c364ae3e4f11"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/component.xml",
+      "bytes": 46339,
+      "sha256": "c479c681d94e85f9efa41964cd8474802f8a5c7312d8798829a95beb127664ab"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/constraints/ecg_bandpass_filter_ooc.xdc",
+      "bytes": 395,
+      "sha256": "bc275c403c2beeec95b0c3664ecc37842f82207b326bf93c35acb6c465ed2485"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/doc/ReleaseNotes.txt",
+      "bytes": 109,
+      "sha256": "0c173796e1e883452634cf06aa576c2c48f20e2a322847017bde1e9be6dbc517"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter.v",
+      "bytes": 174578,
+      "sha256": "0a2ddcc55ce96689c40431aa01f78f94d6a2e5060298d6194b2057207871d99f"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1.v",
+      "bytes": 553081,
+      "sha256": "2bcd28d32a5fb0d15d8e2d0f1e270042b561e2e06675994c941cc5d3692e3adf"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_hls_deadlock_idx0_monitor.v",
+      "bytes": 1405,
+      "sha256": "6b2f641adc89a00094dcdf609ae8defb4188495d70e401e5dcdc213164173db6"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_hls_deadlock_idx1_monitor.v",
+      "bytes": 1140,
+      "sha256": "046304415fc0d130b3a12aa63173f75367f595ec71659b7c549d9db86a7588ef"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_hls_deadlock_kernel_monitor_top.vh",
+      "bytes": 1253,
+      "sha256": "7f8d1976de4c49e15745a07a57b8109fd6878af61b85d7ba6184a12564c129d5"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_mac_muladd_16s_10ns_28s_28_4_1.v",
+      "bytes": 1934,
+      "sha256": "248efc1742a2d984dd678820cfd61ea4630626348bcec0e134296398177055b3"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_mac_muladd_16s_5ns_28s_28_4_1.v",
+      "bytes": 1929,
+      "sha256": "9532e0ca7e4e1bc1288e56c6054eb9ec7c1982e824ed36fb6822ef3d2f230bd3"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_mac_muladd_16s_5s_28s_28_4_1.v",
+      "bytes": 1923,
+      "sha256": "0ba7e9d162f3f5fc113a80398449967761879ff794d743df528749495cdbf872"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_mac_muladd_16s_6ns_28s_28_4_1.v",
+      "bytes": 1929,
+      "sha256": "9886f23f3a3f50d29f9578add3525274c5f3025ea566798eb98e45c8e16e9403"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_mac_muladd_16s_6s_28s_28_4_1.v",
+      "bytes": 1923,
+      "sha256": "143797ceb581b7433cca02fe82b4d2338132fd69d08ba142ca752dc72c172ddc"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_mac_muladd_16s_7ns_28s_28_4_1.v",
+      "bytes": 1929,
+      "sha256": "bac03317b2a3c05d761fa923cf610e2fbd7def981fd03174ca73c47da6ea8ecb"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1.v",
+      "bytes": 1923,
+      "sha256": "583d0c3483f805bc76022d67671004b0983191d1d33fb0bb3611043e084f2f53"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_mac_muladd_16s_8ns_28s_28_4_1.v",
+      "bytes": 1929,
+      "sha256": "c954137260d956ca7838852c80c119fb84b5809f24ab2a5708eb58f74e56dc50"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_mac_muladd_16s_8s_28s_28_4_1.v",
+      "bytes": 1923,
+      "sha256": "3e89b353c3bcd9020b264a9e14aba112d880cddd04ad21fea232346b81ea0bb3"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_mac_muladd_16s_9ns_28s_28_4_1.v",
+      "bytes": 1929,
+      "sha256": "096808574c77791e37db8ba6c752ee3d4e55f8866ab2727f99245769cea3fa7c"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1.v",
+      "bytes": 1923,
+      "sha256": "e9cd86c10726853d7bece96b5eb9eaf1c6f7fc3e8dd5c123f358dc56d0bedc5c"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/verilog/ecg_bandpass_filter_regslice_both.v",
+      "bytes": 3330,
+      "sha256": "7aefa63d2986113d42ecd8f67400a7259261217dc7fca5b34c8a381b87304651"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/vhdl/ecg_bandpass_filter.vhd",
+      "bytes": 237763,
+      "sha256": "9f9c435172a5b62ec11afdb714624d8f8a3e14c9544c76d408dde6c796d4909f"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/vhdl/ecg_bandpass_filter_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1.vhd",
+      "bytes": 722792,
+      "sha256": "f4b154fa5cf4b3113b84541756801875f2f2624a942c9105698de4833aacb3e4"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/vhdl/ecg_bandpass_filter_mac_muladd_16s_10ns_28s_28_4_1.vhd",
+      "bytes": 3184,
+      "sha256": "56bfc9a2f9ebc66725b1469a40534c9950dec8774610acb9dda556445a226a98"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/vhdl/ecg_bandpass_filter_mac_muladd_16s_5ns_28s_28_4_1.vhd",
+      "bytes": 3176,
+      "sha256": "de80af306693eb08ca04ae31ffe6fb37effc128819a9e4419c715e6439aece24"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/vhdl/ecg_bandpass_filter_mac_muladd_16s_5s_28s_28_4_1.vhd",
+      "bytes": 3167,
+      "sha256": "47fd1e690946aff6872c2e34e57f49372132b740af9b8c872e9f38ac154df603"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/vhdl/ecg_bandpass_filter_mac_muladd_16s_6ns_28s_28_4_1.vhd",
+      "bytes": 3176,
+      "sha256": "da19a12fef67d35050b6af8483213328c089f8c15a1a3bbf6afbafac5b670aac"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/vhdl/ecg_bandpass_filter_mac_muladd_16s_6s_28s_28_4_1.vhd",
+      "bytes": 3167,
+      "sha256": "a9ca5f99614c000bdb0cb097bbcd99da40ca637ea456d81460edc9d0ef62cc97"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/vhdl/ecg_bandpass_filter_mac_muladd_16s_7ns_28s_28_4_1.vhd",
+      "bytes": 3176,
+      "sha256": "081fdc619d046a77c3700a676f56d26d1307f86bb2f39cf60e463dfcc8ae98ee"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/vhdl/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1.vhd",
+      "bytes": 3167,
+      "sha256": "cb99bb56608481f0ffeab97d0a5662ddaaede613d0228e299c8170927ee5617f"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/vhdl/ecg_bandpass_filter_mac_muladd_16s_8ns_28s_28_4_1.vhd",
+      "bytes": 3176,
+      "sha256": "f593323c8b62a0f4f4ad62cc10ef9a7e6db82cd5333d66327dcea5a24a9efa30"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/vhdl/ecg_bandpass_filter_mac_muladd_16s_8s_28s_28_4_1.vhd",
+      "bytes": 3167,
+      "sha256": "cc44ea046f4f0a7aa01093f2c57e9e2f4a9593febf3599e2b580c216654d75fb"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/vhdl/ecg_bandpass_filter_mac_muladd_16s_9ns_28s_28_4_1.vhd",
+      "bytes": 3176,
+      "sha256": "6daf8345d3a6578c154654e3ee0f9f4ef03fb0e0fc33e9d39a01d82bde9e26f8"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/vhdl/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1.vhd",
+      "bytes": 3167,
+      "sha256": "3b6958be49059ef57541635f77dc1318c53069fedc2f3ecfd6d907f9ea3b9d29"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/hdl/vhdl/ecg_bandpass_filter_regslice_both.vhd",
+      "bytes": 4623,
+      "sha256": "c758b96345af40aa00372ad7254d99eec822424dec14f9fbf20139ffb88b7582"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/misc/logo.png",
+      "bytes": 2297,
+      "sha256": "4d978370b877dccf3f3bfaf7a8fdb3554e936ee2d2d3356bdaa64c0c4e30c9af"
+    },
+    {
+      "path": "RTL/HLS_Source/Packaged_IP/xgui/ecg_bandpass_filter_v1_0.tcl",
+      "bytes": 205,
+      "sha256": "e0725b60cdc4cd625ee059e557ee3f5569fcd085edf601849e69e4d438080d96"
+    },
+    {
+      "path": "RTL/HLS_Source/component.xml",
+      "bytes": 46339,
+      "sha256": "c479c681d94e85f9efa41964cd8474802f8a5c7312d8798829a95beb127664ab"
+    },
+    {
+      "path": "RTL/HLS_Source/ecg_bandpass_filter.cpp",
+      "bytes": 7868,
+      "sha256": "2ffb275dfc8b1807c99b3fb743bd1445ad14d555d8b205f5e6e502f208a6404b"
+    },
+    {
+      "path": "RTL/HLS_Source/ecg_bandpass_filter.h",
+      "bytes": 2386,
+      "sha256": "897da042a26db53105628292ab743750a149586dca2a4a11220af9e3553e47d1"
+    },
+    {
+      "path": "RTL/HLS_Source/ecg_bandpass_filter_packaged_IP.zip",
+      "bytes": 173458,
+      "sha256": "3b43aff8c171f4207c237af375f0099daaea0567aacb13a9ed2f72782b80f267"
+    },
+    {
+      "path": "RTL/HLS_Source/hls_config.cfg",
+      "bytes": 242,
+      "sha256": "1ff9389388ec4991cb4e0df4cb3f85d508cb19a2fc4c6eaa4fc3ce84a0583420"
+    },
+    {
+      "path": "RTL/HLS_Source/vitis-comp.json",
+      "bytes": 258,
+      "sha256": "054db036d9fecfe965cb90d4ff302790c0bafc34720f3987f76a0c6561559177"
+    },
+    {
+      "path": "RTL/Vivado_Block_Design/project_1.xpr",
+      "bytes": 42227,
+      "sha256": "d4a31262a4feb58c1e5087655813fcf29185974526ed7dd53312e05e8f88abe5"
+    },
+    {
+      "path": "RTL/Vivado_Block_Design/system.bd",
+      "bytes": 44012,
+      "sha256": "b23617b72ac7404fc9a8b1f9a332fe829b147dd69666622141d52c662b308cc5"
+    },
+    {
+      "path": "Simulation/HLS_C_Simulation/_csim.log",
+      "bytes": 1566,
+      "sha256": "f87bb736d8543f4ce3d18560ed1a78ffe205d88a3260e7c2d4c78d4ea8fea255"
+    },
+    {
+      "path": "Simulation/HLS_C_Simulation/hls_run_csim.log",
+      "bytes": 6480,
+      "sha256": "558de8029bb8e33069030bbeb8dc830b8c936de1924fd1a399ec921588dfd9b9"
+    },
+    {
+      "path": "Simulation/SIMULATION_STATUS.md",
+      "bytes": 685,
+      "sha256": "7d8a39a6a087695f5fabd40a80c847d4123c398eb00240b4d4a9a4ea2534b711"
+    },
+    {
+      "path": "Simulation/Synthesis_and_Implementation_Reports/ecg_bandpass_filter_csynth.rpt",
+      "bytes": 42190,
+      "sha256": "11e0a0a465f58aeccfa4cb4a16fa8ae34b556cf753ac80bfc25bbc5460c8b9d5"
+    },
+    {
+      "path": "Simulation/Synthesis_and_Implementation_Reports/system_wrapper_drc_routed.rpt",
+      "bytes": 43582,
+      "sha256": "9307b461799a0da7358a0092a60d3dc87234c1b4fff66d7361b996e1d11fe514"
+    },
+    {
+      "path": "Simulation/Synthesis_and_Implementation_Reports/system_wrapper_timing_summary_routed.rpt",
+      "bytes": 300281,
+      "sha256": "72461bfa69ac7176f4d73223b7788a434f5ed02d7cdbe6b0fa668b8ec5727300"
+    },
+    {
+      "path": "Simulation/Synthesis_and_Implementation_Reports/system_wrapper_utilization_placed.rpt",
+      "bytes": 12027,
+      "sha256": "15e57354a75515e104acbf4cc486d035b7311b4a6176f91d2017e3b439cd7321"
+    },
+    {
+      "path": "Testbench/README.md",
+      "bytes": 340,
+      "sha256": "b3b769cb79cc0e1045f8cf78942b0867da761349b56fdf3187f18b0a0c5f974c"
+    },
+    {
+      "path": "Testbench/ecg_bandpass_filter_tb.cpp",
+      "bytes": 9823,
+      "sha256": "35ec3dc7c4e484a0a3bceb60c5c05a5e0eb34b6f0aed4e39f15920867641042c"
+    },
+    {
+      "path": "Video_Link.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

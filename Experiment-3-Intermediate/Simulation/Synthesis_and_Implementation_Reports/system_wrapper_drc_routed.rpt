@@ -1,0 +1,325 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1.1 (win64) Build 6233196 Thu Sep 11 21:27:30 MDT 2025
+| Date         : Sat Sep 19 14:25:42 2026
+| Host         : TT237SENSE024 running 64-bit major release  (build 9200)
+| Command      : report_drc -file system_wrapper_drc_routed.rpt -pb system_wrapper_drc_routed.pb -rpx system_wrapper_drc_routed.rpx
+| Design       : system_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 54
++-----------+----------+----------------------------+--------+
+| Rule      | Severity | Description                | Checks |
++-----------+----------+----------------------------+--------+
+| DPIP-1    | Warning  | Input pipelining           | 40     |
+| PDCN-1569 | Warning  | LUT equation term check    | 3      |
+| REQP-1839 | Warning  | RAMB36 async control check | 8      |
+| RTSTAT-10 | Warning  | No routable loads          | 1      |
+| REQP-181  | Advisory | writefirst                 | 2      |
++-----------+----------+----------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+DPIP-1#1 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_10ns_28s_28_4_1_U19/ecg_bandpass_filter_mac_muladd_16s_10ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_10ns_28s_28_4_1_U19/ecg_bandpass_filter_mac_muladd_16s_10ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_10ns_28s_28_4_1_U20/ecg_bandpass_filter_mac_muladd_16s_10ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_10ns_28s_28_4_1_U20/ecg_bandpass_filter_mac_muladd_16s_10ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_10ns_28s_28_4_1_U21/ecg_bandpass_filter_mac_muladd_16s_10ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_10ns_28s_28_4_1_U21/ecg_bandpass_filter_mac_muladd_16s_10ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#4 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_10ns_28s_28_4_1_U22/ecg_bandpass_filter_mac_muladd_16s_10ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_10ns_28s_28_4_1_U22/ecg_bandpass_filter_mac_muladd_16s_10ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#5 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_5ns_28s_28_4_1_U34/ecg_bandpass_filter_mac_muladd_16s_5ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_5ns_28s_28_4_1_U34/ecg_bandpass_filter_mac_muladd_16s_5ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#6 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_5ns_28s_28_4_1_U37/ecg_bandpass_filter_mac_muladd_16s_5ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_5ns_28s_28_4_1_U37/ecg_bandpass_filter_mac_muladd_16s_5ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#7 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_5ns_28s_28_4_1_U4/ecg_bandpass_filter_mac_muladd_16s_5ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_5ns_28s_28_4_1_U4/ecg_bandpass_filter_mac_muladd_16s_5ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#8 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_5ns_28s_28_4_1_U7/ecg_bandpass_filter_mac_muladd_16s_5ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_5ns_28s_28_4_1_U7/ecg_bandpass_filter_mac_muladd_16s_5ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#9 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_5s_28s_28_4_1_U1/ecg_bandpass_filter_mac_muladd_16s_5s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_5s_28s_28_4_1_U1/ecg_bandpass_filter_mac_muladd_16s_5s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#10 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_5s_28s_28_4_1_U40/ecg_bandpass_filter_mac_muladd_16s_5s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_5s_28s_28_4_1_U40/ecg_bandpass_filter_mac_muladd_16s_5s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#11 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_6ns_28s_28_4_1_U10/ecg_bandpass_filter_mac_muladd_16s_6ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_6ns_28s_28_4_1_U10/ecg_bandpass_filter_mac_muladd_16s_6ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#12 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_6ns_28s_28_4_1_U31/ecg_bandpass_filter_mac_muladd_16s_6ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_6ns_28s_28_4_1_U31/ecg_bandpass_filter_mac_muladd_16s_6ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#13 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_6s_28s_28_4_1_U2/ecg_bandpass_filter_mac_muladd_16s_6s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_6s_28s_28_4_1_U2/ecg_bandpass_filter_mac_muladd_16s_6s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#14 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_6s_28s_28_4_1_U3/ecg_bandpass_filter_mac_muladd_16s_6s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_6s_28s_28_4_1_U3/ecg_bandpass_filter_mac_muladd_16s_6s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#15 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_6s_28s_28_4_1_U38/ecg_bandpass_filter_mac_muladd_16s_6s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_6s_28s_28_4_1_U38/ecg_bandpass_filter_mac_muladd_16s_6s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#16 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_6s_28s_28_4_1_U39/ecg_bandpass_filter_mac_muladd_16s_6s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_6s_28s_28_4_1_U39/ecg_bandpass_filter_mac_muladd_16s_6s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#17 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7ns_28s_28_4_1_U11/ecg_bandpass_filter_mac_muladd_16s_7ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7ns_28s_28_4_1_U11/ecg_bandpass_filter_mac_muladd_16s_7ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#18 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7ns_28s_28_4_1_U12/ecg_bandpass_filter_mac_muladd_16s_7ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7ns_28s_28_4_1_U12/ecg_bandpass_filter_mac_muladd_16s_7ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#19 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7ns_28s_28_4_1_U29/ecg_bandpass_filter_mac_muladd_16s_7ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7ns_28s_28_4_1_U29/ecg_bandpass_filter_mac_muladd_16s_7ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#20 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7ns_28s_28_4_1_U30/ecg_bandpass_filter_mac_muladd_16s_7ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7ns_28s_28_4_1_U30/ecg_bandpass_filter_mac_muladd_16s_7ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#21 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U13/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U13/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#22 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U28/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U28/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#23 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U32/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U32/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#24 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U35/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U35/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#25 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U36/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U36/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#26 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U5/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U5/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#27 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U6/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U6/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#28 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U9/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_7s_28s_28_4_1_U9/ecg_bandpass_filter_mac_muladd_16s_7s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#29 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_8ns_28s_28_4_1_U17/ecg_bandpass_filter_mac_muladd_16s_8ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_8ns_28s_28_4_1_U17/ecg_bandpass_filter_mac_muladd_16s_8ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#30 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_8ns_28s_28_4_1_U24/ecg_bandpass_filter_mac_muladd_16s_8ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_8ns_28s_28_4_1_U24/ecg_bandpass_filter_mac_muladd_16s_8ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#31 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_8s_28s_28_4_1_U33/ecg_bandpass_filter_mac_muladd_16s_8s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_8s_28s_28_4_1_U33/ecg_bandpass_filter_mac_muladd_16s_8s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#32 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_8s_28s_28_4_1_U8/ecg_bandpass_filter_mac_muladd_16s_8s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_8s_28s_28_4_1_U8/ecg_bandpass_filter_mac_muladd_16s_8s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#33 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9ns_28s_28_4_1_U18/ecg_bandpass_filter_mac_muladd_16s_9ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9ns_28s_28_4_1_U18/ecg_bandpass_filter_mac_muladd_16s_9ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#34 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9ns_28s_28_4_1_U23/ecg_bandpass_filter_mac_muladd_16s_9ns_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9ns_28s_28_4_1_U23/ecg_bandpass_filter_mac_muladd_16s_9ns_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#35 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9s_28s_28_4_1_U14/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9s_28s_28_4_1_U14/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#36 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9s_28s_28_4_1_U15/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9s_28s_28_4_1_U15/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#37 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9s_28s_28_4_1_U16/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9s_28s_28_4_1_U16/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#38 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9s_28s_28_4_1_U25/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9s_28s_28_4_1_U25/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#39 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9s_28s_28_4_1_U26/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9s_28s_28_4_1_U26/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#40 Warning
+Input pipelining  
+DSP system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9s_28s_28_4_1_U27/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1_DSP48_0_U/p_reg_reg input system_i/ecg_bandpass_filter_0/inst/grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824/mac_muladd_16s_9s_28s_28_4_1_U27/ecg_bandpass_filter_mac_muladd_16s_9s_28s_28_4_1_DSP48_0_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+PDCN-1569#1 Warning
+LUT equation term check  
+Used physical LUT pin 'A1' of cell system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A2)+((~A2)*(~A6)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#2 Warning
+LUT equation term check  
+Used physical LUT pin 'A4' of cell system_i/axi_mem_intercon/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin system_i/axi_mem_intercon/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A1)+((~A1)*(~A6)*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#3 Warning
+LUT equation term check  
+Used physical LUT pin 'A4' of cell system_i/axi_mem_intercon/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin system_i/axi_mem_intercon/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A6)+((~A6)*(~A5)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+REQP-1839#1 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEBWE[0] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#2 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEBWE[1] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#3 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEBWE[2] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#4 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEBWE[3] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#5 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEBWE[4] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#6 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEBWE[5] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#7 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEBWE[6] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#8 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEBWE[7] (net: system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+33 net(s) have no routable loads. The problem bus(es) and/or net(s) are system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i,
+system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb,
+system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i,
+system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0],
+system_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0],
+system_i/axi_mem_intercon/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i,
+system_i/axi_mem_intercon/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb,
+system_i/axi_mem_intercon/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i,
+system_i/axi_mem_intercon/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0],
+system_i/axi_mem_intercon/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0],
+system_i/axi_mem_intercon/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i,
+system_i/axi_mem_intercon/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb,
+system_i/axi_mem_intercon/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i,
+system_i/axi_mem_intercon/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0],
+system_i/axi_mem_intercon/s01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0]
+ (the first 15 of 21 listed nets/buses).
+Related violations: <none>
+
+REQP-181#1 Advisory
+writefirst  
+Synchronous clocking is detected for BRAM (system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-181#2 Advisory
+writefirst  
+Synchronous clocking is detected for BRAM (system_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+

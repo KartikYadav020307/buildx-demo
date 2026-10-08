@@ -1,0 +1,17 @@
+{
+  "record": "MIT-BIH 100 / MLII / samples 0..12287",
+  "sampling_rate_hz": 360,
+  "batch_samples": 2048,
+  "ecg_samples": 12288,
+  "sine_max_error_lsb": 0,
+  "ecg_max_error_lsb": 0,
+  "gain_5hz": 0.9939942854198366,
+  "attenuation_50hz_db": 53.7384466913559,
+  "detected_peaks": 42,
+  "estimated_heart_rate_bpm": 73.86771206939694,
+  "python_dma_wall_time_seconds": 0.0075524889999769584,
+  "reference_test_pass": true,
+  "frequency_test_pass": true,
+  "peak_method": "Python height threshold + 300 ms minimum separation",
+  "input_mode": "Recorded ECG replay; no live sensor acquisition demonstrated"
+}

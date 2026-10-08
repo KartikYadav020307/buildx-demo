@@ -1,0 +1,41 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../ecg_bandpass_filter_tb.cpp in debug mode
+   Compiling ../../../../ecg_bandpass_filter.cpp in debug mode
+   Generating csim.exe
+
+========================================================
+ ECG Bandpass Filter - C Simulation Verification
+========================================================
+Signal: 5 Hz (x1.0) + 50 Hz (x0.5) + 200 Hz (x0.3)
+Sampling rate: 360 Hz
+200 Hz aliases to 160 Hz at this sampling rate.
+Scale factor: 4.0
+Samples: 3368 total, 128 startup, 3240 evaluated
+
+FREQUENCY  OUTPUT AMP   STATUS
+---------  -----------  --------
+   5 Hz     2.93141    PASS
+  50 Hz     0.00170    PASS   ratio=0.000580
+ 200 Hz     0.00027    PASS   ratio=0.000090
+
+First 5 startup output samples:
+  out[  0] = +0.000000
+  out[  1] = +0.000000
+  out[  2] = -0.000488
+  out[  3] = -0.001953
+  out[  4] = -0.003906
+
+Steady-state samples [128 .. 132]:
+  out[ 128] = -2.420410  (5 Hz reference: -3.939231)
+  out[ 129] = -2.135254  (5 Hz reference: -3.863703)
+  out[ 130] = -1.831787  (5 Hz reference: -3.758770)
+  out[ 131] = -1.519043  (5 Hz reference: -3.625231)
+  out[ 132] = -1.196777  (5 Hz reference: -3.464102)
+
+*** C SIMULATION PASSED ***
+========================================================
+
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 3368
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

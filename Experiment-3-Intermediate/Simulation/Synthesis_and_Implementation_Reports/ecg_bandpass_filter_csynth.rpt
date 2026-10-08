@@ -1,0 +1,415 @@
+
+
+================================================================
+== Vitis HLS Report for 'ecg_bandpass_filter'
+================================================================
+* Date:           Fri Sep 18 17:35:48 2026
+
+* Version:        2025.1.1 (Build 6214317 on Sep 11 2025)
+* Project:        ecg_bandpass_fir
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------------------------------+----------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                                         |                                              |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |                         Instance                        |                    Module                    |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +---------------------------------------------------------+----------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824  |ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1  |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+        +---------------------------------------------------------+----------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     80|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|   40|    9419|   7945|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       0|     70|    -|
+|Register         |        -|    -|    4155|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|   40|   13574|   8095|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|   18|      12|     15|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------------------------------+----------------------------------------------+---------+----+------+------+-----+
+    |                         Instance                        |                    Module                    | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +---------------------------------------------------------+----------------------------------------------+---------+----+------+------+-----+
+    |grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824  |ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1  |        0|  40|  9419|  7945|    0|
+    +---------------------------------------------------------+----------------------------------------------+---------+----+------+------+-----+
+    |Total                                                    |                                              |        0|  40|  9419|  7945|    0|
+    +---------------------------------------------------------+----------------------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |                               Variable Name                               | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |sub26_fu_1101_p2                                                           |         +|   0|  0|  39|          32|           2|
+    |grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824_out_stream_TREADY  |       and|   0|  0|   2|           1|           1|
+    |icmp_ln79_fu_1743_p2                                                       |      icmp|   0|  0|  39|          32|           1|
+    +---------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                                                      |          |   0|  0|  80|          65|           4|
+    +---------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------------+----+-----------+-----+-----------+
+    |              Name             | LUT| Input Size| Bits| Total Bits|
+    +-------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                      |  25|          5|    1|          5|
+    |in_stream_TREADY_int_regslice  |   9|          2|    1|          2|
+    |out_stream_TDATA_int_regslice  |   9|          2|   16|         32|
+    |out_stream_TKEEP_int_regslice  |   9|          2|    2|          4|
+    |out_stream_TLAST_int_regslice  |   9|          2|    1|          2|
+    |out_stream_TSTRB_int_regslice  |   9|          2|    2|          4|
+    +-------------------------------+----+-----------+-----+-----------+
+    |Total                          |  70|         15|   23|         49|
+    +-------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                          Name                                         | FF | LUT| Bits| Const Bits|
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                                              |   4|   0|    4|          0|
+    |count_read_reg_3654                                                                    |  32|   0|   32|          0|
+    |ecg_bandpass_filter_stream_stream_axis_0_int_shift_reg                                 |  16|   0|   16|          0|
+    |ecg_bandpass_filter_stream_stream_axis_0_int_shift_reg_1                               |  16|   0|   16|          0|
+    |ecg_bandpass_filter_stream_stream_axis_0_int_shift_reg_2                               |  16|   0|   16|          0|
+    |ecg_bandpass_filter_stream_stream_axis_0_int_shift_reg_3                               |  16|   0|   16|          0|
+    |ecg_bandpass_filter_stream_stream_axis_0_int_shift_reg_4                               |  16|   0|   16|          0|
+    |ecg_bandpass_filter_stream_stream_axis_0_int_shift_reg_5                               |  16|   0|   16|          0|
+    |ecg_bandpass_filter_stream_stream_axis_0_int_shift_reg_6                               |  16|   0|   16|          0|
+    |ecg_bandpass_filter_stream_stream_axis_0_int_shift_reg_7                               |  16|   0|   16|          0|
+    |ecg_bandpass_filter_stream_stream_axis_0_int_shift_reg_8                               |  16|   0|   16|          0|
+    |ecg_bandpass_filter_stream_stream_axis_0_int_shift_reg_9                               |  16|   0|   16|          0|
+    |grp_ecg_bandpass_filter_Pipeline_VITIS_LOOP_79_1_fu_824_ap_start_reg                   |   1|   0|    1|          0|
+    |icmp_ln79_reg_4045                                                                     |   1|   0|    1|          0|
+    |out_stream_TDATA_reg                                                                   |  16|   0|   16|          0|
+    |out_stream_TKEEP_reg                                                                   |   2|   0|    2|          0|
+    |out_stream_TLAST_reg                                                                   |   1|   0|    1|          0|
+    |out_stream_TSTRB_reg                                                                   |   2|   0|    2|          0|
+    |p_0_0_092_100503_loc_fu_706                                                            |  16|   0|   16|          0|
+    |p_0_0_092_101505_loc_fu_710                                                            |  16|   0|   16|          0|
+    |p_0_0_092_102507_loc_fu_714                                                            |  16|   0|   16|          0|
+    |p_0_0_092_103509_loc_fu_718                                                            |  16|   0|   16|          0|
+    |p_0_0_092_104511_loc_fu_722                                                            |  16|   0|   16|          0|
+    |p_0_0_092_105513_loc_fu_726                                                            |  16|   0|   16|          0|
+    |p_0_0_092_106515_loc_fu_730                                                            |  16|   0|   16|          0|
+    |p_0_0_092_107517_loc_fu_734                                                            |  16|   0|   16|          0|
+    |p_0_0_092_108519_loc_fu_738                                                            |  16|   0|   16|          0|
+    |p_0_0_092_109521_loc_fu_742                                                            |  16|   0|   16|          0|
+    |p_0_0_092_110523_loc_fu_746                                                            |  16|   0|   16|          0|
+    |p_0_0_092_111525_loc_fu_750                                                            |  16|   0|   16|          0|
+    |p_0_0_092_112527_loc_fu_754                                                            |  16|   0|   16|          0|
+    |p_0_0_092_113529_loc_fu_758                                                            |  16|   0|   16|          0|
+    |p_0_0_092_114531_loc_fu_762                                                            |  16|   0|   16|          0|
+    |p_0_0_092_115533_loc_fu_766                                                            |  16|   0|   16|          0|
+    |p_0_0_092_116535_loc_fu_770                                                            |  16|   0|   16|          0|
+    |p_0_0_092_117537_loc_fu_774                                                            |  16|   0|   16|          0|
+    |p_0_0_092_118539_loc_fu_778                                                            |  16|   0|   16|          0|
+    |p_0_0_092_119541_loc_fu_782                                                            |  16|   0|   16|          0|
+    |p_0_0_092_120543_loc_fu_786                                                            |  16|   0|   16|          0|
+    |p_0_0_092_121545_loc_fu_790                                                            |  16|   0|   16|          0|
+    |p_0_0_092_122547_loc_fu_794                                                            |  16|   0|   16|          0|
+    |p_0_0_092_123549_loc_fu_798                                                            |  16|   0|   16|          0|
+    |p_0_0_092_124551_loc_fu_802                                                            |  16|   0|   16|          0|
+    |p_0_0_092_125553_loc_fu_806                                                            |  16|   0|   16|          0|
+    |p_0_0_092_126555_loc_fu_810                                                            |  16|   0|   16|          0|
+    |p_0_0_092_126557_loc_fu_814                                                            |  16|   0|   16|          0|
+    |p_0_0_092_15336_loc_fu_366                                                             |  16|   0|   16|          0|
+    |p_0_0_092_18340_loc_fu_378                                                             |  16|   0|   16|          0|
+    |p_0_0_092_20343_loc_fu_386                                                             |  16|   0|   16|          0|
+    |p_0_0_092_21345_loc_fu_390                                                             |  16|   0|   16|          0|
+    |p_0_0_092_22347_loc_fu_394                                                             |  16|   0|   16|          0|
+    |p_0_0_092_23349_loc_fu_398                                                             |  16|   0|   16|          0|
+    |p_0_0_092_24351_loc_fu_402                                                             |  16|   0|   16|          0|
+    |p_0_0_092_25353_loc_fu_406                                                             |  16|   0|   16|          0|
+    |p_0_0_092_26355_loc_fu_410                                                             |  16|   0|   16|          0|
+    |p_0_0_092_27357_loc_fu_414                                                             |  16|   0|   16|          0|
+    |p_0_0_092_28359_loc_fu_418                                                             |  16|   0|   16|          0|
+    |p_0_0_092_29361_loc_fu_422                                                             |  16|   0|   16|          0|
+    |p_0_0_092_30363_loc_fu_426                                                             |  16|   0|   16|          0|
+    |p_0_0_092_31365_loc_fu_430                                                             |  16|   0|   16|          0|
+    |p_0_0_092_32367_loc_fu_434                                                             |  16|   0|   16|          0|
+    |p_0_0_092_33369_loc_fu_438                                                             |  16|   0|   16|          0|
+    |p_0_0_092_34371_loc_fu_442                                                             |  16|   0|   16|          0|
+    |p_0_0_092_35373_loc_fu_446                                                             |  16|   0|   16|          0|
+    |p_0_0_092_36375_loc_fu_450                                                             |  16|   0|   16|          0|
+    |p_0_0_092_37377_loc_fu_454                                                             |  16|   0|   16|          0|
+    |p_0_0_092_38379_loc_fu_458                                                             |  16|   0|   16|          0|
+    |p_0_0_092_39381_loc_fu_462                                                             |  16|   0|   16|          0|
+    |p_0_0_092_40383_loc_fu_466                                                             |  16|   0|   16|          0|
+    |p_0_0_092_41385_loc_fu_470                                                             |  16|   0|   16|          0|
+    |p_0_0_092_42387_loc_fu_474                                                             |  16|   0|   16|          0|
+    |p_0_0_092_43389_loc_fu_478                                                             |  16|   0|   16|          0|
+    |p_0_0_092_44391_loc_fu_482                                                             |  16|   0|   16|          0|
+    |p_0_0_092_45393_loc_fu_486                                                             |  16|   0|   16|          0|
+    |p_0_0_092_46395_loc_fu_490                                                             |  16|   0|   16|          0|
+    |p_0_0_092_47397_loc_fu_494                                                             |  16|   0|   16|          0|
+    |p_0_0_092_48399_loc_fu_498                                                             |  16|   0|   16|          0|
+    |p_0_0_092_49401_loc_fu_502                                                             |  16|   0|   16|          0|
+    |p_0_0_092_50403_loc_fu_506                                                             |  16|   0|   16|          0|
+    |p_0_0_092_51405_loc_fu_510                                                             |  16|   0|   16|          0|
+    |p_0_0_092_52407_loc_fu_514                                                             |  16|   0|   16|          0|
+    |p_0_0_092_53409_loc_fu_518                                                             |  16|   0|   16|          0|
+    |p_0_0_092_54411_loc_fu_522                                                             |  16|   0|   16|          0|
+    |p_0_0_092_55413_loc_fu_526                                                             |  16|   0|   16|          0|
+    |p_0_0_092_56415_loc_fu_530                                                             |  16|   0|   16|          0|
+    |p_0_0_092_57417_loc_fu_534                                                             |  16|   0|   16|          0|
+    |p_0_0_092_58419_loc_fu_538                                                             |  16|   0|   16|          0|
+    |p_0_0_092_59421_loc_fu_542                                                             |  16|   0|   16|          0|
+    |p_0_0_092_60423_loc_fu_546                                                             |  16|   0|   16|          0|
+    |p_0_0_092_61425_loc_fu_550                                                             |  16|   0|   16|          0|
+    |p_0_0_092_62427_loc_fu_554                                                             |  16|   0|   16|          0|
+    |p_0_0_092_6323_loc_fu_330                                                              |  16|   0|   16|          0|
+    |p_0_0_092_63429_loc_fu_558                                                             |  16|   0|   16|          0|
+    |p_0_0_092_64431_loc_fu_562                                                             |  16|   0|   16|          0|
+    |p_0_0_092_65433_loc_fu_566                                                             |  16|   0|   16|          0|
+    |p_0_0_092_66435_loc_fu_570                                                             |  16|   0|   16|          0|
+    |p_0_0_092_67437_loc_fu_574                                                             |  16|   0|   16|          0|
+    |p_0_0_092_68439_loc_fu_578                                                             |  16|   0|   16|          0|
+    |p_0_0_092_69441_loc_fu_582                                                             |  16|   0|   16|          0|
+    |p_0_0_092_70443_loc_fu_586                                                             |  16|   0|   16|          0|
+    |p_0_0_092_71445_loc_fu_590                                                             |  16|   0|   16|          0|
+    |p_0_0_092_72447_loc_fu_594                                                             |  16|   0|   16|          0|
+    |p_0_0_092_7325_loc_fu_334                                                              |  16|   0|   16|          0|
+    |p_0_0_092_73449_loc_fu_598                                                             |  16|   0|   16|          0|
+    |p_0_0_092_74451_loc_fu_602                                                             |  16|   0|   16|          0|
+    |p_0_0_092_75453_loc_fu_606                                                             |  16|   0|   16|          0|
+    |p_0_0_092_76455_loc_fu_610                                                             |  16|   0|   16|          0|
+    |p_0_0_092_77457_loc_fu_614                                                             |  16|   0|   16|          0|
+    |p_0_0_092_78459_loc_fu_618                                                             |  16|   0|   16|          0|
+    |p_0_0_092_79461_loc_fu_622                                                             |  16|   0|   16|          0|
+    |p_0_0_092_80463_loc_fu_626                                                             |  16|   0|   16|          0|
+    |p_0_0_092_81465_loc_fu_630                                                             |  16|   0|   16|          0|
+    |p_0_0_092_82467_loc_fu_634                                                             |  16|   0|   16|          0|
+    |p_0_0_092_8327_loc_fu_338                                                              |  16|   0|   16|          0|
+    |p_0_0_092_83469_loc_fu_638                                                             |  16|   0|   16|          0|
+    |p_0_0_092_84471_loc_fu_642                                                             |  16|   0|   16|          0|
+    |p_0_0_092_85473_loc_fu_646                                                             |  16|   0|   16|          0|
+    |p_0_0_092_86475_loc_fu_650                                                             |  16|   0|   16|          0|
+    |p_0_0_092_87477_loc_fu_654                                                             |  16|   0|   16|          0|
+    |p_0_0_092_88479_loc_fu_658                                                             |  16|   0|   16|          0|
+    |p_0_0_092_89481_loc_fu_662                                                             |  16|   0|   16|          0|
+    |p_0_0_092_90483_loc_fu_666                                                             |  16|   0|   16|          0|
+    |p_0_0_092_91485_loc_fu_670                                                             |  16|   0|   16|          0|
+    |p_0_0_092_92487_loc_fu_674                                                             |  16|   0|   16|          0|
+    |p_0_0_092_9329_loc_fu_342                                                              |  16|   0|   16|          0|
+    |p_0_0_092_93489_loc_fu_678                                                             |  16|   0|   16|          0|
+    |p_0_0_092_94491_loc_fu_682                                                             |  16|   0|   16|          0|
+    |p_0_0_092_95493_loc_fu_686                                                             |  16|   0|   16|          0|
+    |p_0_0_092_96495_loc_fu_690                                                             |  16|   0|   16|          0|
+    |p_0_0_092_97497_loc_fu_694                                                             |  16|   0|   16|          0|
+    |p_0_0_092_98499_loc_fu_698                                                             |  16|   0|   16|          0|
+    |p_0_0_092_99501_loc_fu_702                                                             |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb      |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_1    |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_10   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_11   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_116  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_117  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_118  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_119  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_12   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_120  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_121  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_122  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_123  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_124  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_125  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_126  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_127  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_128  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_129  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_13   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_130  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_131  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_132  |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_14   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_15   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_16   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_17   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_18   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_19   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_2    |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_20   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_21   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_22   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_23   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_24   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_25   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_26   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_27   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_28   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_29   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_3    |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_30   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_31   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_32   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_33   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_34   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_35   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_36   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_37   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_38   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_39   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_4    |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_40   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_41   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_42   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_43   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_44   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_45   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_46   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_47   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_48   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_49   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_5    |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_50   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_51   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_52   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_53   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_54   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_55   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_56   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_57   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_58   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_59   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_6    |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_60   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_61   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_62   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_63   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_64   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_65   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_66   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_67   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_68   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_69   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_7    |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_70   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_71   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_72   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_73   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_74   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_75   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_76   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_77   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_78   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_79   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_8    |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_80   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_81   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_82   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_83   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_84   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_85   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_86   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_87   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_88   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_89   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_9    |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_90   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_91   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_92   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_93   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_94   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_95   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_96   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_97   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_98   |  16|   0|   16|          0|
+    |p_ZZ19ecg_bandpass_filterRN3hls6streamINS_4axisI6ap_intILi16EELm0ELm0ELm0ELh56ELb_99   |  16|   0|   16|          0|
+    |p_loc13_fu_374                                                                         |  16|   0|   16|          0|
+    |p_loc14_fu_370                                                                         |  16|   0|   16|          0|
+    |p_loc15_fu_362                                                                         |  16|   0|   16|          0|
+    |p_loc16_fu_358                                                                         |  16|   0|   16|          0|
+    |p_loc17_fu_354                                                                         |  16|   0|   16|          0|
+    |p_loc18_fu_350                                                                         |  16|   0|   16|          0|
+    |p_loc19_fu_346                                                                         |  16|   0|   16|          0|
+    |p_loc20_fu_326                                                                         |  16|   0|   16|          0|
+    |p_loc21_fu_322                                                                         |  16|   0|   16|          0|
+    |p_loc22_fu_318                                                                         |  16|   0|   16|          0|
+    |p_loc23_fu_314                                                                         |  16|   0|   16|          0|
+    |p_loc24_fu_310                                                                         |  16|   0|   16|          0|
+    |p_loc_fu_382                                                                           |  16|   0|   16|          0|
+    |sub26_reg_3659                                                                         |  32|   0|   32|          0|
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                                  |4155|   0| 4155|          0|
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+---------------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  |    Source Object    |    C Type    |
++-------------------+-----+-----+------------+---------------------+--------------+
+|ap_clk             |   in|    1|  ap_ctrl_hs|  ecg_bandpass_filter|  return value|
+|ap_rst_n           |   in|    1|  ap_ctrl_hs|  ecg_bandpass_filter|  return value|
+|ap_start           |   in|    1|  ap_ctrl_hs|  ecg_bandpass_filter|  return value|
+|ap_done            |  out|    1|  ap_ctrl_hs|  ecg_bandpass_filter|  return value|
+|ap_idle            |  out|    1|  ap_ctrl_hs|  ecg_bandpass_filter|  return value|
+|ap_ready           |  out|    1|  ap_ctrl_hs|  ecg_bandpass_filter|  return value|
+|in_stream_TDATA    |   in|   16|        axis|   in_stream_V_data_V|       pointer|
+|in_stream_TVALID   |   in|    1|        axis|   in_stream_V_last_V|       pointer|
+|in_stream_TREADY   |  out|    1|        axis|   in_stream_V_last_V|       pointer|
+|in_stream_TLAST    |   in|    1|        axis|   in_stream_V_last_V|       pointer|
+|in_stream_TKEEP    |   in|    2|        axis|   in_stream_V_keep_V|       pointer|
+|in_stream_TSTRB    |   in|    2|        axis|   in_stream_V_strb_V|       pointer|
+|out_stream_TDATA   |  out|   16|        axis|  out_stream_V_data_V|       pointer|
+|out_stream_TVALID  |  out|    1|        axis|  out_stream_V_last_V|       pointer|
+|out_stream_TREADY  |   in|    1|        axis|  out_stream_V_last_V|       pointer|
+|out_stream_TLAST   |  out|    1|        axis|  out_stream_V_last_V|       pointer|
+|out_stream_TKEEP   |  out|    2|        axis|  out_stream_V_keep_V|       pointer|
+|out_stream_TSTRB   |  out|    2|        axis|  out_stream_V_strb_V|       pointer|
+|count              |   in|   32|     ap_none|                count|        scalar|
++-------------------+-----+-----+------------+---------------------+--------------+
+
