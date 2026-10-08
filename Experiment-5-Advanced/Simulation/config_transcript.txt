@@ -1,0 +1,2 @@
+ALL CONFIG TESTS PASSED: 1216 checks, occupancy 0..21, duplicate writes, random images, CRC rejection, abort and mid-seal reset.
+/workspace/scratch/abd14838a2fc/Project5_BNN_Safety/Testbench/tb_config.sv:61: $finish called at 565800000 (1ps)

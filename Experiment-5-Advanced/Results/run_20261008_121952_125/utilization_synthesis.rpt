@@ -1,0 +1,41 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1.1 (win64) Build 6233196 Thu Sep 11 21:27:30 MDT 2025
+| Date         : Thu Oct  8 12:32:47 2026
+| Host         : KARTIK-PC running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file C:/Users/yamle/OneDrive/Desktop/Project5_BNN_Safety_Complete_Pack_v1/Project5_BNN_Safety/Results/run_20261008_121952_125/utilization_synthesis.rpt
+| Design       : bnn_board_top
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Synthesized
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------------------------+---------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+|                Instance                |                       Module                      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++----------------------------------------+---------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+| bnn_board_top                          |                                             (top) |       5398 |       5366 |       0 |   32 | 5760 |      0 |      0 |          0 |
+|   (bnn_board_top)                      |                                             (top) |         74 |         74 |       0 |    0 |   66 |      0 |      0 |          0 |
+|   system_i                             |                                        bnn_system |       3718 |       3686 |       0 |   32 | 2751 |      0 |      0 |          0 |
+|     (system_i)                         |                                        bnn_system |        126 |        126 |       0 |    0 |  616 |      0 |      0 |          0 |
+|     config_i                           |                                        bnn_config |       2996 |       2996 |       0 |    0 | 1625 |      0 |      0 |          0 |
+|     folded_i                           |                                        bnn_folded |        315 |        315 |       0 |    0 |  120 |      0 |      0 |          0 |
+|     parallel_i                         |                                      bnn_parallel |        204 |        172 |       0 |   32 |  288 |      0 |      0 |          0 |
+|     safety_i                           |                                        bnn_safety |         82 |         82 |       0 |    0 |  102 |      0 |      0 |          0 |
+|   vio_i                                |                                           bnn_vio |       1606 |       1606 |       0 |    0 | 2943 |      0 |      0 |          0 |
+|     inst                               |                           bnn_vio_vio_v3_0_27_vio |       1606 |       1606 |       0 |    0 | 2943 |      0 |      0 |          0 |
+|       U_XSDB_SLAVE                     |                        bnn_vio_xsdbs_v1_0_5_xsdbs |         77 |         77 |       0 |    0 |  161 |      0 |      0 |          0 |
+|       PROBE_IN_INST                    |                  bnn_vio_vio_v3_0_27_probe_in_one |       1443 |       1443 |       0 |    0 | 2564 |      0 |      0 |          0 |
+|       PROBE_OUT_ALL_INST               |                 bnn_vio_vio_v3_0_27_probe_out_all |         34 |         34 |       0 |    0 |  135 |      0 |      0 |          0 |
+|         G_PROBE_OUT[5].PROBE_OUT0_INST | bnn_vio_vio_v3_0_27_probe_out_one__parameterized2 |         15 |         15 |       0 |    0 |   82 |      0 |      0 |          0 |
++----------------------------------------+---------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+
+

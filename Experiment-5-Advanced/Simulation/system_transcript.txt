@@ -1,0 +1,3 @@
+SYSTEM normal: all 625 raw cases, hardware-style mailbox and measured 5/21 cycles PASS
+ALL SYSTEM TESTS PASSED: 6615 checks; 1250 raw comparisons, model loading/switch/rollback, CRC/range/readback, live faults and watchdog.
+/workspace/scratch/abd14838a2fc/Project5_BNN_Safety/Testbench/tb_system.sv:101: $finish called at 779200000 (1ps)

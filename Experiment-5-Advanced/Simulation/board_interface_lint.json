@@ -1,0 +1,6 @@
+{
+  "tool": "Verilator 5.020",
+  "scope": "Board top, pure RTL and matching Clocking Wizard/VIO interface stubs",
+  "result": "No errors or width/latch/multidriver/circular-logic warnings",
+  "limitation": "Vendor IP stub compile only. Actual IP output products and implementation require Vivado."
+}

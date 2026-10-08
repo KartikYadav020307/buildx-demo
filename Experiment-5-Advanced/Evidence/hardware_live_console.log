@@ -1,0 +1,227 @@
+source [file join $p5_project_dir Vivado hardware_safety_test.tcl]
+# source [file join [file dirname [info script]] hardware_lib.tcl]
+## set p5_hw_root [file normalize [file join [file dirname [info script]] ..]]
+## set p5_vios [get_hw_vios -of_objects [current_hw_device]]
+## if {[llength $p5_vios]!=1} {error "Expected one Project 5 VIO. Program the matching bitstream and probes file."}
+## set p5_vio [lindex $p5_vios 0]
+## proc bnn_resolve {base} {
+##     global p5_vio
+##     set matches {}
+##     set pattern [format {(^|/)%s(\[.*\])?$} $base]
+##     foreach obj [get_hw_probes -of_objects $p5_vio] {
+##         if {[regexp $pattern [get_property NAME $obj]]} {lappend matches $obj}
+##     }
+##     if {[llength $matches]!=1} {error "Cannot find unique '$base' probe. Inspect get_hw_probes -of_objects \[get_hw_vios\]. Matches=$matches"}
+##     return [lindex $matches 0]
+## }
+## foreach name {vio_reset request command bank address payload ack status readback active_valid active_bank model_id result_model armed tripped busy action proposal margin scores reasons history sample_id hidden fast folded seal commit comparisons mismatches age accepts decisions raw heartbeat} {
+##     # Status bits active_valid/bank/armed/tripped/busy share probe_in3.
+##     if {$name ni {active_valid active_bank armed tripped busy}} {set p5_probe($name) [bnn_resolve $name]}
+## }
+## set p5_status_probe {}
+## foreach obj [get_hw_probes -of_objects $p5_vio] {
+##     set name [get_property NAME $obj]
+##     if {[regexp {(^|/)state_bits(\[.*\])?$} $name]} {set p5_status_probe $obj}
+## }
+## if {$p5_status_probe eq ""} {error "Cannot find state_bits probe. Use the supplied board top and matching .ltx."}
+## proc bnn_write {name value} {
+##     global p5_probe
+##     set obj $p5_probe($name)
+##     set width [get_property PROBE_PORT_BIT_COUNT $obj]
+##     if {![string is integer -strict $width] || $width<1 || $width>32} {
+##         error "Unexpected output probe width for '$name': $width. Check matching .bit/.ltx."
+##     }
+##     if {![string is entier -strict $value] || $value<0 || $value>=(1<<$width)} {
+##         error "Value '$value' does not fit the $width-bit '$name' output probe."
+##     }
+##     set digits [expr {($width+3)/4}]
+##     set_property OUTPUT_VALUE_RADIX HEX $obj
+##     set_property OUTPUT_VALUE [format %0*lx $digits $value] $obj
+##     commit_hw_vio $obj
+## }
+## proc bnn_read {name} {
+##     global p5_probe p5_status_probe
+##     set bits [dict create active_valid 0 active_bank 1 armed 2 tripped 3 busy 4]
+##     if {[dict exists $bits $name]} {set obj $p5_status_probe} else {set obj $p5_probe($name)}
+##     set_property INPUT_VALUE_RADIX HEX $obj
+##     set raw [string map {_ ""} [get_property INPUT_VALUE $obj]]
+##     if {![regexp {^(0[xX])?[0-9a-fA-F]+$} $raw]} {error "Unknown VIO input '$name'=$raw; check clock/reset."}
+##     # Explicit wide conversion: plain %x can saturate at 0x7fffffff on Windows.
+##     if {[scan $raw %lx v]!=1} {error "Cannot decode VIO input '$name'=$raw."}
+##     if {[dict exists $bits $name]} {return [expr {($v>>[dict get $bits $name])&1}]}
+##     return $v
+## }
+## proc bnn_refresh {} {global p5_vio;refresh_hw_vio $p5_vio}
+## proc bnn_cmd {cmd {bank 0} {address 0} {payload 0} {expected 0}} {
+##     bnn_refresh
+##     set old [bnn_read ack]
+##     global p5_probe
+##     scan [get_property OUTPUT_VALUE $p5_probe(request)] %lx pending_request
+##     if {$pending_request!=$old} {error "An earlier command is still outstanding; wait for acknowledgment."}
+##     bnn_write command $cmd;bnn_write bank $bank;bnn_write address $address;bnn_write payload $payload
+##     bnn_write request [expr {1-$old}]
+##     set deadline [expr {[clock milliseconds]+5000}]
+##     while {1} {
+##         bnn_refresh
+##         if {[bnn_read ack]==1-$old} {break}
+##         if {[clock milliseconds]>$deadline} {error "Command $cmd timed out. Check reset, clock, and matching bit/ltx."}
+##         after 2
+##     }
+##     set got [bnn_read status]
+##     if {$got!=$expected} {error [format "Command %d returned status 0x%02x, expected 0x%02x" $cmd $got $expected]}
+##     return [bnn_read readback]
+## }
+## proc bnn_reset {} {
+##     bnn_write vio_reset 1;after 20;bnn_write vio_reset 0;after 20;bnn_refresh
+##     if {[bnn_read status]!=128||[bnn_read active_valid]||[bnn_read comparisons]} {error "Reset failed."}
+##     set a [bnn_read heartbeat];after 20;bnn_refresh
+##     if {[bnn_read heartbeat]==$a} {error "Heartbeat is not advancing; check board clock and reset."}
+##     puts "CLOCK/VIO SMOKE PASS; reset leaves STOP and no active model."
+## }
+## proc bnn_crc {words} {
+##     set crc 65535;set addr 0
+##     foreach word $words {
+##         foreach byte [list $addr [expr {$word>>8}] [expr {$word&255}]] {
+##             for {set bit 7} {$bit>=0} {incr bit -1} {
+##                 set feedback [expr {(($crc>>15)^(($byte>>$bit)&1))&1}]
+##                 set crc [expr {($crc<<1)&65535}]
+##                 if {$feedback} {set crc [expr {$crc^0x1021}]}
+##             }
+##         }
+##         incr addr
+##     }
+##     return $crc
+## }
+## proc bnn_model_words {profile} {
+##     global p5_hw_root
+##     if {$profile ni {normal cautious}} {error "Use normal or cautious."}
+##     set f [open [file join $p5_hw_root Models ${profile}.mem] r];set text [read $f];close $f
+##     set words {}
+##     foreach h [split $text \n] {
+##         set h [string trim $h];if {$h eq ""} {continue}
+##         if {![regexp {^[0-9a-fA-F]{4}$} $h]} {error "Invalid model word '$h'."}
+##         scan $h %lx value;lappend words $value
+##     }
+##     if {[llength $words]!=42} {error "Incomplete model file."}
+##     return $words
+## }
+## proc bnn_load {profile bank {corrupt_crc 0}} {
+##     set words [bnn_model_words $profile];set start [clock milliseconds]
+##     bnn_cmd 1 $bank
+##     set addr 0
+##     foreach word $words {
+##         bnn_cmd 2 $bank $addr $word
+##         set got [bnn_cmd 3 $bank $addr]
+##         if {$got!=$word} {error "Model readback differs at address $addr."}
+##         incr addr
+##     }
+##     set crc [bnn_crc $words]
+##     if {$corrupt_crc} {
+##         bnn_cmd 4 $bank 0 [expr {$crc^1}] 4
+##         puts "CORRUPT IMAGE REJECTED; active model preserved."
+##     }
+##     bnn_cmd 4 $bank 0 $crc
+##     bnn_refresh
+##     if {[bnn_read seal]!=1008} {error "Unexpected CRC seal cycle count."}
+##     puts "Loaded $profile bank $bank: CRC=[format %04x $crc], seal=1008 cycles, host elapsed=[expr {[clock milliseconds]-$start}] ms."
+## }
+## proc bnn_commit {bank} {
+##     bnn_cmd 5 $bank;bnn_refresh
+##     puts "Committed bank $bank, model ID [bnn_read model_id], drain [bnn_read commit] cycles."
+##     if {[bnn_read commit]>22} {error "Commit drain exceeded folded-core bound."}
+## }
+## proc bnn_snapshot {} {
+##     bnn_refresh;set result [dict create]
+##     foreach name {model_id result_model active_bank armed tripped action proposal margin reasons history sample_id hidden fast folded comparisons mismatches age raw} {dict set result $name [bnn_read $name]}
+##     set packed [bnn_read scores]
+##     for {set i 0} {$i<4} {incr i} {
+##         set v [expr {($packed>>(9*$i))&511}];if {$v>=256} {incr v -512}
+##         dict set result score$i $v
+##     }
+##     return $result
+## }
+## proc bnn_run_case {raw_hex} {
+##     if {![regexp {^[0-9a-fA-F]{4}$} $raw_hex]} {error "Use four hex digits: u,a,v,d; e.g. 0222."}
+##     scan $raw_hex %lx value
+##     bnn_cmd 7 0 0 [expr {65536|$value}]
+##     set r [bnn_snapshot]
+##     if {[dict get $r fast]!=5||[dict get $r folded]!=21||[dict get $r mismatches]!=0} {error "Core comparison failed: $r"}
+##     puts "Input $raw_hex: class=[dict get $r proposal], scores=[list [dict get $r score0] [dict get $r score1] [dict get $r score2] [dict get $r score3]], margin=[dict get $r margin], cycles=5/21"
+##     return $r
+## }
+## proc bnn_live {raw_hex {sensor_valid 1}} {
+##     if {![regexp {^[0-9a-fA-F]{4}$} $raw_hex]} {error "Use four hex digits."}
+##     scan $raw_hex %lx value
+##     bnn_cmd 8 0 0 [expr {131072|($sensor_valid<<16)|$value}]
+##     after 20;set r [bnn_snapshot];puts $r;return $r
+## }
+## proc bnn_arm {} {
+##     # Clear races are allowed to refuse; retry only, never weaken the eligibility rules.
+##     for {set attempt 0} {$attempt<8} {incr attempt} {
+##         if {![catch {bnn_cmd 10} msg]} {puts "ARMED after explicit safe clear.";return}
+##         if {![string match "*status 0x12*" $msg]} {error $msg}
+##         after 5
+##     }
+##     error "Clear refused: use a safe fresh CONTINUE scenario, release BTN0, unpause, and inspect reasons."
+## }
+## proc bnn_pause {paused} {bnn_cmd 9 0 0 $paused;after 20;puts [bnn_snapshot]}
+## proc bnn_disarm {} {bnn_cmd 11;puts "DISARMED: outputs STOP; manual comparison enabled."}
+## puts "Project 5 hardware commands ready. Use bnn_reset, bnn_load, bnn_commit, bnn_run_case, bnn_live, bnn_arm, bnn_pause."
+Project 5 hardware commands ready. Use bnn_reset, bnn_load, bnn_commit, bnn_run_case, bnn_live, bnn_arm, bnn_pause.
+# proc bnn_assert {condition message} {if {![uplevel 1 [list expr $condition]]} {error $message}}
+# proc bnn_live_verify {} {
+#     global p5_hw_root
+#     set f [open [file join $p5_hw_root Results LATEST_SUCCESS_PATH.txt] r];set out [string trim [read $f]];close $f
+#     set pass [file join $out HARDWARE_LIVE_PASS.txt];catch {file delete $pass}
+#     bnn_reset;bnn_load normal 0;bnn_commit 0;bnn_load cautious 1
+#     bnn_live 0000;bnn_arm
+#     set r [bnn_live 0222];bnn_assert {[dict get $r action]==1} "Normal CAUTION failed."
+#     bnn_commit 1;after 20;set r [bnn_snapshot]
+#     bnn_assert {[dict get $r proposal]==2&&[dict get $r action]==2&&[dict get $r model_id]==2} "Live cautious switch failed."
+#     bnn_commit 0;bnn_live 0000;bnn_arm
+#     foreach {raw sensor reason label} {2233 1 4 neural_STOP 0024 1 2 critical_guard 0005 1 1 illegal_level 0000 0 1 invalid_sensor} {
+#         set r [bnn_live $raw $sensor]
+#         bnn_assert {[dict get $r action]==3&&[dict get $r tripped]&&([dict get $r history]&(1<<$reason))} "$label failed."
+#         bnn_live 0000;bnn_arm
+#     }
+#     bnn_pause 1;set r [bnn_snapshot]
+#     bnn_assert {[dict get $r action]==3&&[dict get $r tripped]&&([dict get $r history]&8)} "Watchdog failed."
+#     bnn_pause 0;bnn_live 0000;bnn_arm
+#     bnn_disarm
+#     set f [open $pass w]
+#     puts $f "HARDWARE LIVE PASS: live A/B switch, neural STOP, critical guard, invalid level/sensor, 10 ms watchdog, safe clear."
+#     puts $f "Physical BTN0 emergency/BTN1 clear/BTN2 scenario/SW1 pause checks require operator evidence."
+#     puts $f "Build: $out"
+#     close $f
+#     puts "HARDWARE LIVE PASS. Now record the physical button checks using Documentation/HARDWARE_GUIDE.md."
+# }
+# bnn_live_verify
+CLOCK/VIO SMOKE PASS; reset leaves STOP and no active model.
+Loaded normal bank 0: CRC=a40f, seal=1008 cycles, host elapsed=10195 ms.
+Committed bank 0, model ID 1, drain 1 cycles.
+Loaded cautious bank 1: CRC=9de0, seal=1008 cycles, host elapsed=25148 ms.
+model_id 1 result_model 1 active_bank 0 armed 0 tripped 0 action 3 proposal 0 margin 9 reasons 128 history 0 sample_id 48 hidden 0 fast 0 folded 0 comparisons 0 mismatches 0 age 49413 raw 0 score0 6 score1 -3 score2 -13 score3 -9
+ARMED after explicit safe clear.
+model_id 1 result_model 1 active_bank 0 armed 1 tripped 0 action 1 proposal 1 margin 10 reasons 0 history 0 sample_id 423 hidden 4125 fast 0 folded 0 comparisons 0 mismatches 0 age 44513 raw 546 score0 -4 score1 7 score2 -3 score3 -15
+Committed bank 1, model ID 2, drain 1 cycles.
+Committed bank 0, model ID 1, drain 1 cycles.
+model_id 1 result_model 1 active_bank 0 armed 1 tripped 0 action 0 proposal 0 margin 9 reasons 0 history 0 sample_id 1119 hidden 0 fast 0 folded 0 comparisons 0 mismatches 0 age 32455 raw 0 score0 6 score1 -3 score2 -13 score3 -9
+ARMED after explicit safe clear.
+model_id 1 result_model 1 active_bank 0 armed 1 tripped 1 action 3 proposal 3 margin 12 reasons 16 history 16 sample_id 1553 hidden 65535 fast 0 folded 0 comparisons 0 mismatches 0 age 17505 raw 8755 score0 -14 score1 -15 score2 -5 score3 7
+model_id 1 result_model 1 active_bank 0 armed 1 tripped 1 action 3 proposal 0 margin 9 reasons 16 history 16 sample_id 1763 hidden 0 fast 0 folded 0 comparisons 0 mismatches 0 age 16203 raw 0 score0 6 score1 -3 score2 -13 score3 -9
+ARMED after explicit safe clear.
+model_id 1 result_model 1 active_bank 0 armed 1 tripped 1 action 3 proposal 1 margin 10 reasons 4 history 4 sample_id 2155 hidden 4125 fast 0 folded 0 comparisons 0 mismatches 0 age 47831 raw 36 score0 -4 score1 7 score2 -3 score3 -15
+model_id 1 result_model 1 active_bank 0 armed 1 tripped 1 action 3 proposal 0 margin 9 reasons 4 history 4 sample_id 2411 hidden 0 fast 0 folded 0 comparisons 0 mismatches 0 age 12541 raw 0 score0 6 score1 -3 score2 -13 score3 -9
+ARMED after explicit safe clear.
+model_id 1 result_model 1 active_bank 0 armed 1 tripped 1 action 3 proposal 0 margin 9 reasons 10 history 10 sample_id 2779 hidden 0 fast 0 folded 0 comparisons 0 mismatches 0 age 500000 raw 5 score0 6 score1 -3 score2 -13 score3 -9
+model_id 1 result_model 1 active_bank 0 armed 1 tripped 1 action 3 proposal 0 margin 9 reasons 10 history 10 sample_id 2824 hidden 0 fast 0 folded 0 comparisons 0 mismatches 0 age 4842 raw 0 score0 6 score1 -3 score2 -13 score3 -9
+ARMED after explicit safe clear.
+model_id 1 result_model 1 active_bank 0 armed 1 tripped 1 action 3 proposal 0 margin 9 reasons 10 history 10 sample_id 3158 hidden 0 fast 0 folded 0 comparisons 0 mismatches 0 age 500000 raw 0 score0 6 score1 -3 score2 -13 score3 -9
+model_id 1 result_model 1 active_bank 0 armed 1 tripped 1 action 3 proposal 0 margin 9 reasons 10 history 10 sample_id 3222 hidden 0 fast 0 folded 0 comparisons 0 mismatches 0 age 47780 raw 0 score0 6 score1 -3 score2 -13 score3 -9
+ARMED after explicit safe clear.
+model_id 1 result_model 1 active_bank 0 armed 1 tripped 1 action 3 proposal 0 margin 9 reasons 8 history 8 sample_id 3585 hidden 0 fast 0 folded 0 comparisons 0 mismatches 0 age 500000 raw 0 score0 6 score1 -3 score2 -13 score3 -9
+model_id 1 result_model 1 active_bank 0 armed 1 tripped 1 action 3 proposal 0 margin 9 reasons 8 history 8 sample_id 3651 hidden 0 fast 0 folded 0 comparisons 0 mismatches 0 age 2933 raw 0 score0 6 score1 -3 score2 -13 score3 -9
+model_id 1 result_model 1 active_bank 0 armed 1 tripped 1 action 3 proposal 0 margin 9 reasons 8 history 8 sample_id 3932 hidden 0 fast 0 folded 0 comparisons 0 mismatches 0 age 9412 raw 0 score0 6 score1 -3 score2 -13 score3 -9
+ARMED after explicit safe clear.
+DISARMED: outputs STOP; manual comparison enabled.
+HARDWARE LIVE PASS. Now record the physical button checks using Documentation/HARDWARE_GUIDE.md.

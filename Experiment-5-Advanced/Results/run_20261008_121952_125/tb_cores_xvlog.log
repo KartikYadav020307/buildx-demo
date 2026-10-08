@@ -1,0 +1,9 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yamle/OneDrive/Desktop/Project5_BNN_Safety_Complete_Pack_v1/Project5_BNN_Safety/RTL/bnn_math_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yamle/OneDrive/Desktop/Project5_BNN_Safety_Complete_Pack_v1/Project5_BNN_Safety/RTL/bnn_folded.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bnn_folded
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yamle/OneDrive/Desktop/Project5_BNN_Safety_Complete_Pack_v1/Project5_BNN_Safety/RTL/bnn_parallel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bnn_parallel
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yamle/OneDrive/Desktop/Project5_BNN_Safety_Complete_Pack_v1/Project5_BNN_Safety/Testbench/tb_cores.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_cores
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/yamle/OneDrive/Desktop/Project5_BNN_Safety_Complete_Pack_v1/Project5_BNN_Safety/build/BNN_Safety.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

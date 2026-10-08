@@ -1,0 +1,15 @@
+VCD info: dumpfile waveform.vcd opened for output.
+TRACE PASS profile=0 raw=0000 class=0/0 cycles=5/21
+TRACE PASS profile=0 raw=0111 class=0/0 cycles=5/21
+TRACE PASS profile=0 raw=0222 class=1/1 cycles=5/21
+TRACE PASS profile=0 raw=0233 class=2/2 cycles=5/21
+TRACE PASS profile=0 raw=2233 class=3/3 cycles=5/21
+TRACE PASS profile=0 raw=0024 class=1/1 cycles=5/21
+TRACE PASS profile=1 raw=0000 class=0/0 cycles=5/21
+TRACE PASS profile=1 raw=0111 class=1/1 cycles=5/21
+TRACE PASS profile=1 raw=0222 class=2/2 cycles=5/21
+TRACE PASS profile=1 raw=0233 class=2/2 cycles=5/21
+TRACE PASS profile=1 raw=2233 class=3/3 cycles=5/21
+TRACE PASS profile=1 raw=0024 class=2/2 cycles=5/21
+WAVEFORM TRACE PASS: 12 cases, independent golden matches, model tags, exact 5/21-cycle latency.
+/workspace/scratch/abd14838a2fc/tmp/p5_submission/repo/Experiment-5-Advanced/Testbench/tb_waveform.sv:72: $finish called at 6120000 (1ps)

@@ -1,0 +1,262 @@
+{
+  "normal": {
+    "train": {
+      "count": 375,
+      "correct": 375,
+      "accuracy": 1.0,
+      "confusion_matrix": [
+        [
+          21,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          93,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          147,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          114
+        ]
+      ],
+      "stop_to_continue": 0
+    },
+    "validation": {
+      "count": 125,
+      "correct": 125,
+      "accuracy": 1.0,
+      "confusion_matrix": [
+        [
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          31,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          49,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          38
+        ]
+      ],
+      "stop_to_continue": 0
+    },
+    "test": {
+      "count": 125,
+      "correct": 125,
+      "accuracy": 1.0,
+      "confusion_matrix": [
+        [
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          31,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          49,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          38
+        ]
+      ],
+      "stop_to_continue": 0
+    },
+    "all": {
+      "count": 625,
+      "correct": 625,
+      "accuracy": 1.0,
+      "confusion_matrix": [
+        [
+          35,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          155,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          245,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          190
+        ]
+      ],
+      "stop_to_continue": 0
+    }
+  },
+  "cautious": {
+    "train": {
+      "count": 375,
+      "correct": 375,
+      "accuracy": 1.0,
+      "confusion_matrix": [
+        [
+          9,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          64,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          140,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          162
+        ]
+      ],
+      "stop_to_continue": 0
+    },
+    "validation": {
+      "count": 125,
+      "correct": 125,
+      "accuracy": 1.0,
+      "confusion_matrix": [
+        [
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          21,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          47,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          54
+        ]
+      ],
+      "stop_to_continue": 0
+    },
+    "test": {
+      "count": 125,
+      "correct": 125,
+      "accuracy": 1.0,
+      "confusion_matrix": [
+        [
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          22,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          46,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          54
+        ]
+      ],
+      "stop_to_continue": 0
+    },
+    "all": {
+      "count": 625,
+      "correct": 625,
+      "accuracy": 1.0,
+      "confusion_matrix": [
+        [
+          15,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          107,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          233,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          270
+        ]
+      ],
+      "stop_to_continue": 0
+    }
+  }
+}

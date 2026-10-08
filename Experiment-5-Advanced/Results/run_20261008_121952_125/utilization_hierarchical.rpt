@@ -1,0 +1,62 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1.1 (win64) Build 6233196 Thu Sep 11 21:27:30 MDT 2025
+| Date         : Thu Oct  8 12:44:52 2026
+| Host         : KARTIK-PC running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file C:/Users/yamle/OneDrive/Desktop/Project5_BNN_Safety_Complete_Pack_v1/Project5_BNN_Safety/Results/run_20261008_121952_125/utilization_hierarchical.rpt
+| Design       : bnn_board_top
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-------------------------------------------------------+------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+|                        Instance                       |                        Module                        | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++-------------------------------------------------------+------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+| bnn_board_top                                         |                                                (top) |       5772 |       5716 |      24 |   32 | 6501 |      0 |      0 |          0 |
+|   (bnn_board_top)                                     |                                                (top) |         74 |         74 |       0 |    0 |   66 |      0 |      0 |          0 |
+|   dbg_hub                                             |                                              dbg_hub |        449 |        425 |      24 |    0 |  741 |      0 |      0 |          0 |
+|     inst                                              |                           dbg_hub_xsdbm_v3_0_4_xsdbm |        449 |        425 |      24 |    0 |  741 |      0 |      0 |          0 |
+|       BSCANID.u_xsdbm_id                              |                        dbg_hub_xsdbm_v3_0_4_xsdbm_id |        449 |        425 |      24 |    0 |  741 |      0 |      0 |          0 |
+|         SWITCH_N_EXT_BSCAN.bscan_switch               |                    dbg_hub_xsdbm_v3_0_4_bscan_switch |        124 |        124 |       0 |    0 |  125 |      0 |      0 |          0 |
+|         CORE_XSDB.UUT_MASTER                          |                       dbg_hub_xsdbm_v3_0_4_icon2xsdb |        273 |        249 |      24 |    0 |  554 |      0 |      0 |          0 |
+|           U_ICON_INTERFACE                            |                              dbg_hub_xsdbm_v3_0_4_if |        163 |        139 |      24 |    0 |  450 |      0 |      0 |          0 |
+|             U_CMD6_WR                                 |                           dbg_hub_xsdbm_v3_0_4_wrreg |         46 |         34 |      12 |    0 |  110 |      0 |      0 |          0 |
+|               U_WR_FIFO                               |                          dbg_hub_xsdbm_v3_0_4_wrfifo |         44 |         32 |      12 |    0 |   90 |      0 |      0 |          0 |
+|                 SUBCORE_FIFO.xsdbm_v3_0_4_wrfifo_inst |                       dbg_hub_fifo_generator_v13_1_5 |         42 |         30 |      12 |    0 |   90 |      0 |      0 |          0 |
+|                   inst_fifo_gen                       |                 dbg_hub_fifo_generator_v13_1_5_synth |         42 |         30 |      12 |    0 |   90 |      0 |      0 |          0 |
+|                     gconvfifo.rf                      |                           dbg_hub_fifo_generator_top |         42 |         30 |      12 |    0 |   90 |      0 |      0 |          0 |
+|                       grf.rf                          |                       dbg_hub_fifo_generator_ramfifo |         42 |         30 |      12 |    0 |   90 |      0 |      0 |          0 |
+|             U_CMD4                                    |         dbg_hub_xsdbm_v3_0_4_ctl_reg__parameterized0 |          9 |          9 |       0 |    0 |   62 |      0 |      0 |          0 |
+|             U_CMD6_RD                                 |                           dbg_hub_xsdbm_v3_0_4_rdreg |         67 |         55 |      12 |    0 |  134 |      0 |      0 |          0 |
+|               U_RD_FIFO                               |                          dbg_hub_xsdbm_v3_0_4_rdfifo |         65 |         53 |      12 |    0 |  114 |      0 |      0 |          0 |
+|                 SUBCORE_FIFO.xsdbm_v3_0_4_rdfifo_inst |       dbg_hub_fifo_generator_v13_1_5__parameterized0 |         47 |         35 |      12 |    0 |  114 |      0 |      0 |          0 |
+|                   inst_fifo_gen                       | dbg_hub_fifo_generator_v13_1_5_synth__parameterized0 |         47 |         35 |      12 |    0 |  114 |      0 |      0 |          0 |
+|                     gconvfifo.rf                      |           dbg_hub_fifo_generator_top__parameterized0 |         47 |         35 |      12 |    0 |  114 |      0 |      0 |          0 |
+|                       grf.rf                          |       dbg_hub_fifo_generator_ramfifo__parameterized0 |         47 |         35 |      12 |    0 |  114 |      0 |      0 |          0 |
+|           U_XSDB_BUS_CONTROLLER                       |                         dbg_hub_xsdbm_v3_0_4_bus_ctl |         70 |         70 |       0 |    0 |   48 |      0 |      0 |          0 |
+|   system_i                                            |                                           bnn_system |       3649 |       3617 |       0 |   32 | 2751 |      0 |      0 |          0 |
+|     (system_i)                                        |                                           bnn_system |        126 |        126 |       0 |    0 |  616 |      0 |      0 |          0 |
+|     config_i                                          |                                           bnn_config |       2939 |       2939 |       0 |    0 | 1625 |      0 |      0 |          0 |
+|     folded_i                                          |                                           bnn_folded |        314 |        314 |       0 |    0 |  120 |      0 |      0 |          0 |
+|     parallel_i                                        |                                         bnn_parallel |        204 |        172 |       0 |   32 |  288 |      0 |      0 |          0 |
+|     safety_i                                          |                                           bnn_safety |         80 |         80 |       0 |    0 |  102 |      0 |      0 |          0 |
+|   vio_i                                               |                                              bnn_vio |       1600 |       1600 |       0 |    0 | 2943 |      0 |      0 |          0 |
+|     inst                                              |                              bnn_vio_vio_v3_0_27_vio |       1600 |       1600 |       0 |    0 | 2943 |      0 |      0 |          0 |
+|       U_XSDB_SLAVE                                    |                           bnn_vio_xsdbs_v1_0_5_xsdbs |         77 |         77 |       0 |    0 |  161 |      0 |      0 |          0 |
+|       PROBE_IN_INST                                   |                     bnn_vio_vio_v3_0_27_probe_in_one |       1440 |       1440 |       0 |    0 | 2564 |      0 |      0 |          0 |
+|       PROBE_OUT_ALL_INST                              |                    bnn_vio_vio_v3_0_27_probe_out_all |         33 |         33 |       0 |    0 |  135 |      0 |      0 |          0 |
+|         G_PROBE_OUT[5].PROBE_OUT0_INST                |    bnn_vio_vio_v3_0_27_probe_out_one__parameterized2 |         15 |         15 |       0 |    0 |   82 |      0 |      0 |          0 |
++-------------------------------------------------------+------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

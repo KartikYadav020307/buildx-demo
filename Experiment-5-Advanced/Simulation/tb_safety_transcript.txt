@@ -1,0 +1,2 @@
+ALL SAFETY TESTS PASSED: 26 directed race/priority/boundary checks.
+/workspace/scratch/abd14838a2fc/Project5_BNN_Safety/Testbench/tb_safety.sv:40: $finish called at 1352000 (1ps)

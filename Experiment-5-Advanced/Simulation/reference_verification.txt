@@ -1,0 +1,2 @@
+normal: 65536 signed-dot goldens, 625 hardware rows, CRC and disjoint split membership PASS
+cautious: 65536 signed-dot goldens, 625 hardware rows, CRC and disjoint split membership PASS

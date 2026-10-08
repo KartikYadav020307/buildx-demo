@@ -1,0 +1,8 @@
+Project 5 build complete; hardware testing remains pending.
+Source root: C:/Users/yamle/OneDrive/Desktop/Project5_BNN_Safety_Complete_Pack_v1/Project5_BNN_Safety
+Project: C:/Users/yamle/OneDrive/Desktop/Project5_BNN_Safety_Complete_Pack_v1/Project5_BNN_Safety/build/BNN_Safety.xpr
+Vivado: 2025.1.1; target xc7z020clg400-1; accelerator clock 50 MHz.
+Simulation: CORE, DIAGNOSTIC, CONFIG, SAFETY and SYSTEM pass.
+Routed setup slack: 4.534 ns; hold slack: 0.035 ns; pulse-width failing endpoints: 0.
+DRC errors: 0; datapath DSPs: 0. Review CDC/methodology warnings in these reports.
+Programming pair: bnn_board_top.bit / bnn_board_top.ltx

@@ -1,0 +1,2 @@
+ALL DIAGNOSTIC TESTS PASSED: 1024 arbitrary parameter/input images including extrema and ties; 4096 checks.
+/workspace/scratch/abd14838a2fc/Project5_BNN_Safety/Testbench/tb_diagnostics.sv:45: $finish called at 450632000 (1ps)

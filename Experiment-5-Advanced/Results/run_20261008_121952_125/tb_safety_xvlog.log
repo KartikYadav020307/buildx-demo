@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yamle/OneDrive/Desktop/Project5_BNN_Safety_Complete_Pack_v1/Project5_BNN_Safety/RTL/bnn_safety.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bnn_safety
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yamle/OneDrive/Desktop/Project5_BNN_Safety_Complete_Pack_v1/Project5_BNN_Safety/Testbench/tb_safety.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_safety

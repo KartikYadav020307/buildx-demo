@@ -1,0 +1,42 @@
+%Warning-UNUSEDSIGNAL: Project5_BNN_Safety/RTL/bnn_system.sv:4:47: Bits of signal are not used: 'payload'[31:18]
+                                                                 : ... note: In instance 'bnn_system'
+    4 |  input logic [5:0] address,input logic [31:0] payload,
+      |                                               ^~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.020
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: Project5_BNN_Safety/RTL/bnn_system.sv:20:14: Signal is not used: 'pvalid'
+                                                                  : ... note: In instance 'bnn_system'
+   20 |  logic pbusy,pvalid,prevalid,sbusy,svalid,accept,accept_folded,hold_accept;
+      |              ^~~~~~
+%Warning-UNUSEDSIGNAL: Project5_BNN_Safety/RTL/bnn_system.sv:21:25: Signal is not used: 'pscores'
+                                                                  : ... note: In instance 'bnn_system'
+   21 |  logic [35:0] prescores,pscores,sscores;logic [15:0] prehidden,phidden,shidden,presid,premid,psid,pmid,ssid,smid;
+      |                         ^~~~~~~
+%Warning-UNUSEDSIGNAL: Project5_BNN_Safety/RTL/bnn_system.sv:21:64: Signal is not used: 'phidden'
+                                                                  : ... note: In instance 'bnn_system'
+   21 |  logic [35:0] prescores,pscores,sscores;logic [15:0] prehidden,phidden,shidden,presid,premid,psid,pmid,ssid,smid;
+      |                                                                ^~~~~~~
+%Warning-UNUSEDSIGNAL: Project5_BNN_Safety/RTL/bnn_system.sv:21:94: Signal is not used: 'psid'
+                                                                  : ... note: In instance 'bnn_system'
+   21 |  logic [35:0] prescores,pscores,sscores;logic [15:0] prehidden,phidden,shidden,presid,premid,psid,pmid,ssid,smid;
+      |                                                                                              ^~~~
+%Warning-UNUSEDSIGNAL: Project5_BNN_Safety/RTL/bnn_system.sv:21:99: Signal is not used: 'pmid'
+                                                                  : ... note: In instance 'bnn_system'
+   21 |  logic [35:0] prescores,pscores,sscores;logic [15:0] prehidden,phidden,shidden,presid,premid,psid,pmid,ssid,smid;
+      |                                                                                                   ^~~~
+%Warning-UNUSEDSIGNAL: Project5_BNN_Safety/RTL/bnn_system.sv:22:23: Signal is not used: 'pclass'
+                                                                  : ... note: In instance 'bnn_system'
+   22 |  logic [1:0] preclass,pclass,sclass;logic [8:0] premargin,pmargin,smargin;
+      |                       ^~~~~~
+%Warning-UNUSEDSIGNAL: Project5_BNN_Safety/RTL/bnn_system.sv:22:59: Signal is not used: 'pmargin'
+                                                                  : ... note: In instance 'bnn_system'
+   22 |  logic [1:0] preclass,pclass,sclass;logic [8:0] premargin,pmargin,smargin;
+      |                                                           ^~~~~~~
+%Warning-UNUSEDSIGNAL: Project5_BNN_Safety/RTL/bnn_math_pkg.sv:18:24: Bits of signal are not used: 'difference'[9]
+                                                                    : ... note: In instance 'bnn_system.safety_i'
+   18 |     logic signed [9:0] difference; logic [1:0] cls;
+      |                        ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: Project5_BNN_Safety/RTL/bnn_math_pkg.sv:36:60: Bits of signal are not used: 'raw'[15:12]
+                                                                    : ... note: In instance 'bnn_system.safety_i'
+   36 |   function automatic logic critical_raw(input logic [15:0] raw);
+      |                                                            ^~~

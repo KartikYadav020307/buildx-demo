@@ -1,0 +1,6 @@
+PARALLEL PASS profile 0: 65536 vectors, latency 5, II 1
+FOLDED PASS profile 0: 65536 vectors, latency 21, II 22
+PARALLEL PASS profile 1: 65536 vectors, latency 5, II 1
+FOLDED PASS profile 1: 65536 vectors, latency 21, II 22
+ALL CORE TESTS PASSED: 131072 parallel + 131072 folded golden vectors; 65536 popcounts; 4352 score extremes; reset/latency/encoding.
+/workspace/scratch/abd14838a2fc/Project5_BNN_Safety/Testbench/tb_cores.sv:83: $finish called at 60309620000 (1ps)
