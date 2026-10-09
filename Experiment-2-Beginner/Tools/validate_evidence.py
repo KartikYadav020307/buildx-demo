@@ -5,6 +5,8 @@ import hashlib
 import itertools
 import re
 import zlib
+import zipfile
+import posixpath
 
 ROOT = Path(__file__).resolve().parents[1]
 manifest = (ROOT / "Results/BUILD_SUCCESS.txt").read_text()
@@ -44,6 +46,32 @@ assert len(standard) == 80
 assert [int(r["cut_index"]) for r in standard] == list(range(10, 90))
 assert [int(r["cut_index"]) for r in standard if int(r["detected"])] == [30, 60, 85]
 assert (ROOT / "Video_Link.txt").read_bytes() == b"", "Final demo link must remain blank"
+
+with zipfile.ZipFile(ROOT / "FPGA_Project/Project2_Radar_Vivado_Source.zip") as archive:
+    assert archive.testzip() is None
+    xpr = "Project2_Radar_Final/Build/run_20261008_222502/project2_radar.xpr"
+    text = archive.read(xpr).decode()
+    references = re.findall(r'<File Path="([^"]+)"', text)
+    assert len(references) == 8
+    for reference in references:
+        target = reference.replace("$PPRDIR", posixpath.dirname(xpr)).replace(
+            "$PSRCDIR", posixpath.dirname(xpr) + "/project2_radar.srcs")
+        assert posixpath.normpath(target) in archive.namelist(), reference
+    for name, _, _ in sources:
+        assert archive.read("Project2_Radar_Final/" + name) == (ROOT/name).read_bytes(), name
+    assert not any("run_20261008_221922" in name or ".cache/" in name for name in archive.namelist())
+
+bus_skew = (ROOT / "Reports/bus_skew_routed.rpt").read_text()
+slacks = re.findall(r"Slack \(MET\)\s*:\s*([\d.]+)ns", bus_skew)
+assert slacks == ["19.081", "19.034", "19.339", "19.044"]
+assert "VIOLATED" not in bus_skew
+assert "unconstrained_internal_endpoints (0)" in (ROOT/"Reports/check_timing.rpt").read_text()
+assert "12.176" in (ROOT/"Reports/timing_summary.rpt").read_text()
+assert len(re.findall(r"#\d+ Warning", (ROOT/"Reports/drc.rpt").read_text())) == 5
+assert len(re.findall(r"#\d+ Warning", (ROOT/"Reports/methodology.rpt").read_text())) == 4
 print("EVIDENCE AUDIT PASS: 11 source CRCs, original BIT/LTX SHA-256, 39 physical CSV rows,")
 print("all 32 combinations, 80 simulated windows and three exact target indices; final link blank.")
+print("Native ZIP integrity, all 8 XPR dependencies and all 11 archived sources verified.")
+print("Original reports: 4 bus-skew constraints MET, no unconstrained internal endpoints;")
+print("5 DRC and 4 methodology Warning checks retained and disclosed.")
 print("This is an archive audit; no new physical-board run is claimed.")

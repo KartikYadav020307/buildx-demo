@@ -3,23 +3,23 @@
   "files": [
     {
       "path": "Documentation/Project2_Radar_Report.pdf",
-      "bytes": 2521976,
-      "sha256": "44aef4f8f8f192b7c2a3ccb164ea48cbcacf11e91b64cb4792e115ee97d8d1cb"
+      "bytes": 2522395,
+      "sha256": "090de0bcaa2de7e93fff0ae772ab91c85a306f80cc71a044032033f8920a3097"
     },
     {
       "path": "Documentation/SUBMISSION_READINESS.md",
-      "bytes": 5375,
-      "sha256": "156b88ad10a6766fe2ce243fe8f0017b7f08dcde1c66b5a79d8ccce650ebad69"
+      "bytes": 5109,
+      "sha256": "9a3fe347ad70a183b7f4820a6ba5bd2d4a1403cefd17d38a4ac44a6a0c2fd9d5"
     },
     {
       "path": "Documentation/Video_Script.md",
-      "bytes": 2364,
-      "sha256": "f2bbec4b534584157e28c9838b1423f89b82253fd36fc50db544c8ab2556f13a"
+      "bytes": 2632,
+      "sha256": "882f8d85774419da5e6dbd14de19d0294effe1124ab8b22003bd2358dd1a2fcd"
     },
     {
       "path": "Evidence/PROVENANCE.md",
-      "bytes": 3366,
-      "sha256": "36a0bb809c6ee4e2196eb191ae7f766f16f9f59db4a97140196771deb6face99"
+      "bytes": 3779,
+      "sha256": "a4ffde163a7e70fe47e5e29cbd95ead6149f61b9767aff78f115a7e4825259d0"
     },
     {
       "path": "Evidence/RAW_VIDEO.md",
@@ -32,9 +32,14 @@
       "sha256": "df312887f961c916944f6e5ed72bb4ef3d603a3886ff0a3c1390b0a61aa12a30"
     },
     {
+      "path": "FPGA_Project/Project2_Radar_Vivado_Source.zip",
+      "bytes": 2940497,
+      "sha256": "944ccf4203635eed95f8e876f38d020663379ec1f4fdc1f84a1e5ff6d3ab38af"
+    },
+    {
       "path": "FPGA_Project/README.md",
-      "bytes": 1316,
-      "sha256": "18dbdb3e40f3578256c2ba600b1262f32a2c19be5e765c1b1bea80de74883ee0"
+      "bytes": 1638,
+      "sha256": "554760c292dd7f076a6dfd5613804b2c2ca1a8594127d58c1554b16d7482a136"
     },
     {
       "path": "Hardware/radar_top.bit",
@@ -103,8 +108,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7868,
-      "sha256": "10e198ce71fd48f443bad7d09bc45487007d13e956a6fc9690434fa618f674da"
+      "bytes": 8156,
+      "sha256": "870130f5b6804d34e8ba0906f1ef6de101deb9eda7302a974d12922401265830"
     },
     {
       "path": "RTL/cfar_core.v",
@@ -132,14 +137,64 @@
       "sha256": "a5f72e4c1f307d50b40b5e38873241d1730651738278e56af5b4b81bd9ce453b"
     },
     {
+      "path": "Reports/README.md",
+      "bytes": 2189,
+      "sha256": "cac3755730ec78185d80284059697af53f6f4523262bde2f2c6689f78bc1295b"
+    },
+    {
+      "path": "Reports/bus_skew_routed.rpt",
+      "bytes": 67122,
+      "sha256": "dbdbcb8f5125764d6465c56bdf7762e883e0c5f40a08755ce72a042b438e477b"
+    },
+    {
+      "path": "Reports/check_timing.rpt",
+      "bytes": 3309,
+      "sha256": "165b9132e91e4415268f76164a7235d6db06b4a6dc07fbf9d80953e3f9dd1dd7"
+    },
+    {
+      "path": "Reports/clock_utilization.rpt",
+      "bytes": 21386,
+      "sha256": "8a61d760e2c6e4faf6f76ac5d99a4b4d9eb8b977dacb0d11c8248b3a57217104"
+    },
+    {
+      "path": "Reports/drc.rpt",
+      "bytes": 6123,
+      "sha256": "012a02d6fbe97a736d71263714e1cf7e6202c5fe6df1fe854267585dcf5bb7c3"
+    },
+    {
+      "path": "Reports/methodology.rpt",
+      "bytes": 6089,
+      "sha256": "4d71ceb6ce9db98942cdeb2ac658243e13f2b8f96d8d6c5a16a5dd901a74cce8"
+    },
+    {
+      "path": "Reports/pulse_width.rpt",
+      "bytes": 4603,
+      "sha256": "5ceccdb21ea0a02309e0197f42ee9c9d5627e90a0e4365a36814b56fdab95bc4"
+    },
+    {
+      "path": "Reports/routed_design.dcp",
+      "bytes": 2002599,
+      "sha256": "03d6ca5790ebbf262ab5c0ce23eebbad6765bc005480acd72e1a59375691bbb0"
+    },
+    {
+      "path": "Reports/timing_summary.rpt",
+      "bytes": 120529,
+      "sha256": "4475bee7f96aae41c8ad3ec2d6873848d915bf5e5cae93502dbb1ce910f367ee"
+    },
+    {
+      "path": "Reports/utilization.rpt",
+      "bytes": 7521,
+      "sha256": "bce39ec71fd42246fcb669eb45739e885ec767c22bd5dede2a7cd99cd76fa8bf"
+    },
+    {
       "path": "Results/BUILD_SUCCESS.txt",
       "bytes": 870,
       "sha256": "cf221329260331cdc6535d3276ecd2c9c861c52a44d2736b1397a5b47e557dea"
     },
     {
       "path": "Results/EVIDENCE_AUDIT.txt",
-      "bytes": 241,
-      "sha256": "1c551e7c4a8b0df7101540d508de1093d185b6a14de8e94fd24461c10a6df468"
+      "bytes": 470,
+      "sha256": "23871f56279fc1ad91076753a3755aa0ede79bd8b776733ea342381fcea65c35"
     },
     {
       "path": "Results/HARDWARE_PASS.txt",
@@ -153,8 +208,8 @@
     },
     {
       "path": "START_HERE.md",
-      "bytes": 1421,
-      "sha256": "d05c66b5ef87ab3c6f31db09e7bf4ebd67be10f1fb02f981e4b0da93f813e471"
+      "bytes": 1701,
+      "sha256": "794ac366064e028123910f3226e4b70f02c2134d1cc09dd307bda42967c45758"
     },
     {
       "path": "Simulation/cfar_core.vcd",
@@ -183,8 +238,8 @@
     },
     {
       "path": "Simulation/simulation_report.pdf",
-      "bytes": 272318,
-      "sha256": "0ec63bd48593a6d24e360d373d6e3e2f4ab1da56770d3a8890e4cbd53e7474a8"
+      "bytes": 272362,
+      "sha256": "95390c2dc48894e19167d1ad4b49fe9c942f524b56f66630b464777ce649ad66"
     },
     {
       "path": "Simulation/tb_cfar_core.log",
@@ -248,13 +303,13 @@
     },
     {
       "path": "Tools/generate_reports.py",
-      "bytes": 24612,
-      "sha256": "b0c13df5f883e5043740d64cdc2ef817b375c6e217bf02e3f47f4e7b136ce105"
+      "bytes": 25224,
+      "sha256": "5bcb19a040d4af4ae5d78fab0bf1282d49909026628a8a7a4e6f86148f1af81e"
     },
     {
       "path": "Tools/validate_evidence.py",
-      "bytes": 2382,
-      "sha256": "b3fa80f1d29869aed1bb021d2f2d4e704baa9bfa573a1772eb0edf0e5b4e5a08"
+      "bytes": 4047,
+      "sha256": "ef351af4a6d3ce887ae2b81c71a21aa6915c6a7420459710443757019b376c65"
     },
     {
       "path": "Video_Link.txt",

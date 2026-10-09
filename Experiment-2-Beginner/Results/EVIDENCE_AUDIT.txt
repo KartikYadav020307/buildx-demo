@@ -1,3 +1,6 @@
 EVIDENCE AUDIT PASS: 11 source CRCs, original BIT/LTX SHA-256, 39 physical CSV rows,
 all 32 combinations, 80 simulated windows and three exact target indices; final link blank.
+Native ZIP integrity, all 8 XPR dependencies and all 11 archived sources verified.
+Original reports: 4 bus-skew constraints MET, no unconstrained internal endpoints;
+5 DRC and 4 methodology Warning checks retained and disclosed.
 This is an archive audit; no new physical-board run is claimed.
