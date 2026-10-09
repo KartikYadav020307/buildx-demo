@@ -1,0 +1,61 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1.1 (win64) Build 6233196 Thu Sep 11 21:27:30 MDT 2025
+| Date         : Tue Oct  6 21:08:35 2026
+| Host         : KARTIK-PC running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file C:/Users/yamle/OneDrive/Desktop/Project4_NN_Complete_Pack/Project4_NN/Results/utilization_hierarchical.rpt
+| Design       : nn_board_top
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Routed
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-------------------------------------------------------+--------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+|                        Instance                       |                      Module                      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++-------------------------------------------------------+--------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+| nn_board_top                                          |                                            (top) |       1515 |       1491 |      24 |    0 | 2648 |      0 |      0 |         29 |
+|   (nn_board_top)                                      |                                            (top) |          3 |          3 |       0 |    0 |   27 |      0 |      0 |          0 |
+|   dbg_hub                                             |                                          dbg_hub |        448 |        424 |      24 |    0 |  741 |      0 |      0 |          0 |
+|     inst                                              |                               xsdbm_v3_0_4_xsdbm |        448 |        424 |      24 |    0 |  741 |      0 |      0 |          0 |
+|       BSCANID.u_xsdbm_id                              |                            xsdbm_v3_0_4_xsdbm_id |        448 |        424 |      24 |    0 |  741 |      0 |      0 |          0 |
+|         SWITCH_N_EXT_BSCAN.bscan_switch               |                        xsdbm_v3_0_4_bscan_switch |        124 |        124 |       0 |    0 |  125 |      0 |      0 |          0 |
+|         CORE_XSDB.UUT_MASTER                          |                           xsdbm_v3_0_4_icon2xsdb |        272 |        248 |      24 |    0 |  554 |      0 |      0 |          0 |
+|           U_ICON_INTERFACE                            |                                  xsdbm_v3_0_4_if |        163 |        139 |      24 |    0 |  450 |      0 |      0 |          0 |
+|             U_CMD6_WR                                 |                               xsdbm_v3_0_4_wrreg |         46 |         34 |      12 |    0 |  110 |      0 |      0 |          0 |
+|               U_WR_FIFO                               |                              xsdbm_v3_0_4_wrfifo |         44 |         32 |      12 |    0 |   90 |      0 |      0 |          0 |
+|                 SUBCORE_FIFO.xsdbm_v3_0_4_wrfifo_inst |                           fifo_generator_v13_1_5 |         42 |         30 |      12 |    0 |   90 |      0 |      0 |          0 |
+|                   inst_fifo_gen                       |                     fifo_generator_v13_1_5_synth |         42 |         30 |      12 |    0 |   90 |      0 |      0 |          0 |
+|                     gconvfifo.rf                      |                               fifo_generator_top |         42 |         30 |      12 |    0 |   90 |      0 |      0 |          0 |
+|                       grf.rf                          |                           fifo_generator_ramfifo |         42 |         30 |      12 |    0 |   90 |      0 |      0 |          0 |
+|             U_CMD4                                    |             xsdbm_v3_0_4_ctl_reg__parameterized0 |          9 |          9 |       0 |    0 |   62 |      0 |      0 |          0 |
+|             U_CMD6_RD                                 |                               xsdbm_v3_0_4_rdreg |         67 |         55 |      12 |    0 |  134 |      0 |      0 |          0 |
+|               U_RD_FIFO                               |                              xsdbm_v3_0_4_rdfifo |         65 |         53 |      12 |    0 |  114 |      0 |      0 |          0 |
+|                 SUBCORE_FIFO.xsdbm_v3_0_4_rdfifo_inst |           fifo_generator_v13_1_5__parameterized0 |         47 |         35 |      12 |    0 |  114 |      0 |      0 |          0 |
+|                   inst_fifo_gen                       |     fifo_generator_v13_1_5_synth__parameterized0 |         47 |         35 |      12 |    0 |  114 |      0 |      0 |          0 |
+|                     gconvfifo.rf                      |               fifo_generator_top__parameterized0 |         47 |         35 |      12 |    0 |  114 |      0 |      0 |          0 |
+|                       grf.rf                          |           fifo_generator_ramfifo__parameterized0 |         47 |         35 |      12 |    0 |  114 |      0 |      0 |          0 |
+|           U_XSDB_BUS_CONTROLLER                       |                             xsdbm_v3_0_4_bus_ctl |         69 |         69 |       0 |    0 |   48 |      0 |      0 |          0 |
+|   u_demo                                              |                               nn_demo_controller |        462 |        462 |       0 |    0 |  753 |      0 |      0 |         29 |
+|     (u_demo)                                          |                               nn_demo_controller |          7 |          7 |       0 |    0 |  160 |      0 |      0 |          0 |
+|     u_parallel                                        |                                      nn_parallel |        247 |        247 |       0 |    0 |  263 |      0 |      0 |         28 |
+|     u_serial                                          |                                        nn_serial |        208 |        208 |       0 |    0 |  330 |      0 |      0 |          1 |
+|   u_vio                                               |                                           nn_vio |        602 |        602 |       0 |    0 | 1127 |      0 |      0 |          0 |
+|     inst                                              |                           nn_vio_vio_v3_0_27_vio |        602 |        602 |       0 |    0 | 1127 |      0 |      0 |          0 |
+|       U_XSDB_SLAVE                                    |                        nn_vio_xsdbs_v1_0_5_xsdbs |         77 |         77 |       0 |    0 |  161 |      0 |      0 |          0 |
+|       DECODER_INST                                    |                       nn_vio_vio_v3_0_27_decoder |         41 |         41 |       0 |    0 |   51 |      0 |      0 |          0 |
+|       PROBE_IN_INST                                   |                  nn_vio_vio_v3_0_27_probe_in_one |        455 |        455 |       0 |    0 |  782 |      0 |      0 |          0 |
+|       PROBE_OUT_ALL_INST                              |                 nn_vio_vio_v3_0_27_probe_out_all |         25 |         25 |       0 |    0 |  106 |      0 |      0 |          0 |
+|         G_PROBE_OUT[2].PROBE_OUT0_INST                | nn_vio_vio_v3_0_27_probe_out_one__parameterized1 |         14 |         14 |       0 |    0 |   81 |      0 |      0 |          0 |
++-------------------------------------------------------+--------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

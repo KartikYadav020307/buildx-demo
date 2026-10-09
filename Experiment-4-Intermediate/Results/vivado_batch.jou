@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2025.1.1 (64-bit)
+# SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+# IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+# SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+# Start of session at: Tue Oct  6 20:59:33 2026
+# Process ID         : 8144
+# Current directory  : C:/Users/yamle/OneDrive/Desktop/Project4_NN_Complete_Pack/Project4_NN
+# Command line       : vivado.exe -mode batch -source C:\Users\yamle\OneDrive\Desktop\Project4_NN_Complete_Pack\Project4_NN\Vivado\run_all.tcl -log C:\Users\yamle\OneDrive\Desktop\Project4_NN_Complete_Pack\Project4_NN\Results\vivado_batch.log -journal C:\Users\yamle\OneDrive\Desktop\Project4_NN_Complete_Pack\Project4_NN\Results\vivado_batch.jou
+# Log file           : C:/Users/yamle/OneDrive/Desktop/Project4_NN_Complete_Pack/Project4_NN/Results/vivado_batch.log
+# Journal file       : C:\Users\yamle\OneDrive\Desktop\Project4_NN_Complete_Pack\Project4_NN\Results\vivado_batch.jou
+# Running On         : KARTIK-PC
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-13650HX
+# CPU Frequency      : 2803 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 16873 MB
+# Swap memory        : 25769 MB
+# Total Virtual      : 42643 MB
+# Available Virtual  : 14499 MB
+#-----------------------------------------------------------
+source {C:\Users\yamle\OneDrive\Desktop\Project4_NN_Complete_Pack\Project4_NN\Vivado\run_all.tcl}
+source tb_nn.tcl

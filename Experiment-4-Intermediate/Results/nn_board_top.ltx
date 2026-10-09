@@ -1,0 +1,816 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "XSDB_V3",
+                        "name": "dbg_hub",
+                        "spec": "labtools_xsdbm_v3",
+                        "clk_input_freq_hz": "50000000"
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "u_vio",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 0,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "407D14E81CC958EF8C2E354D7BF170FD",
+                        "pins": [
+                            {
+                                "name": "probe_in0",
+                                "id": 0,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "busy",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in1",
+                                "id": 1,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "done",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in2",
+                                "id": 2,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "mismatch",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in3",
+                                "id": 3,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "parallel_class",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "parallel_class[1]"
+                                            },
+                                            {
+                                                "name": "parallel_class[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in4",
+                                "id": 4,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "serial_class",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "serial_class[1]"
+                                            },
+                                            {
+                                                "name": "serial_class[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in5",
+                                "id": 5,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 7,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "parallel_cycles",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "parallel_cycles[7]"
+                                            },
+                                            {
+                                                "name": "parallel_cycles[6]"
+                                            },
+                                            {
+                                                "name": "parallel_cycles[5]"
+                                            },
+                                            {
+                                                "name": "parallel_cycles[4]"
+                                            },
+                                            {
+                                                "name": "parallel_cycles[3]"
+                                            },
+                                            {
+                                                "name": "parallel_cycles[2]"
+                                            },
+                                            {
+                                                "name": "parallel_cycles[1]"
+                                            },
+                                            {
+                                                "name": "parallel_cycles[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in6",
+                                "id": 6,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 7,
+                                "portIndex": 6,
+                                "nets": [
+                                    {
+                                        "name": "serial_cycles",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "serial_cycles[7]"
+                                            },
+                                            {
+                                                "name": "serial_cycles[6]"
+                                            },
+                                            {
+                                                "name": "serial_cycles[5]"
+                                            },
+                                            {
+                                                "name": "serial_cycles[4]"
+                                            },
+                                            {
+                                                "name": "serial_cycles[3]"
+                                            },
+                                            {
+                                                "name": "serial_cycles[2]"
+                                            },
+                                            {
+                                                "name": "serial_cycles[1]"
+                                            },
+                                            {
+                                                "name": "serial_cycles[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in7",
+                                "id": 7,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 7,
+                                "nets": [
+                                    {
+                                        "name": "score0",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "score0[31]"
+                                            },
+                                            {
+                                                "name": "score0[30]"
+                                            },
+                                            {
+                                                "name": "score0[29]"
+                                            },
+                                            {
+                                                "name": "score0[28]"
+                                            },
+                                            {
+                                                "name": "score0[27]"
+                                            },
+                                            {
+                                                "name": "score0[26]"
+                                            },
+                                            {
+                                                "name": "score0[25]"
+                                            },
+                                            {
+                                                "name": "score0[24]"
+                                            },
+                                            {
+                                                "name": "score0[23]"
+                                            },
+                                            {
+                                                "name": "score0[22]"
+                                            },
+                                            {
+                                                "name": "score0[21]"
+                                            },
+                                            {
+                                                "name": "score0[20]"
+                                            },
+                                            {
+                                                "name": "score0[19]"
+                                            },
+                                            {
+                                                "name": "score0[18]"
+                                            },
+                                            {
+                                                "name": "score0[17]"
+                                            },
+                                            {
+                                                "name": "score0[16]"
+                                            },
+                                            {
+                                                "name": "score0[15]"
+                                            },
+                                            {
+                                                "name": "score0[14]"
+                                            },
+                                            {
+                                                "name": "score0[13]"
+                                            },
+                                            {
+                                                "name": "score0[12]"
+                                            },
+                                            {
+                                                "name": "score0[11]"
+                                            },
+                                            {
+                                                "name": "score0[10]"
+                                            },
+                                            {
+                                                "name": "score0[9]"
+                                            },
+                                            {
+                                                "name": "score0[8]"
+                                            },
+                                            {
+                                                "name": "score0[7]"
+                                            },
+                                            {
+                                                "name": "score0[6]"
+                                            },
+                                            {
+                                                "name": "score0[5]"
+                                            },
+                                            {
+                                                "name": "score0[4]"
+                                            },
+                                            {
+                                                "name": "score0[3]"
+                                            },
+                                            {
+                                                "name": "score0[2]"
+                                            },
+                                            {
+                                                "name": "score0[1]"
+                                            },
+                                            {
+                                                "name": "score0[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in8",
+                                "id": 8,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 8,
+                                "nets": [
+                                    {
+                                        "name": "score1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "score1[31]"
+                                            },
+                                            {
+                                                "name": "score1[30]"
+                                            },
+                                            {
+                                                "name": "score1[29]"
+                                            },
+                                            {
+                                                "name": "score1[28]"
+                                            },
+                                            {
+                                                "name": "score1[27]"
+                                            },
+                                            {
+                                                "name": "score1[26]"
+                                            },
+                                            {
+                                                "name": "score1[25]"
+                                            },
+                                            {
+                                                "name": "score1[24]"
+                                            },
+                                            {
+                                                "name": "score1[23]"
+                                            },
+                                            {
+                                                "name": "score1[22]"
+                                            },
+                                            {
+                                                "name": "score1[21]"
+                                            },
+                                            {
+                                                "name": "score1[20]"
+                                            },
+                                            {
+                                                "name": "score1[19]"
+                                            },
+                                            {
+                                                "name": "score1[18]"
+                                            },
+                                            {
+                                                "name": "score1[17]"
+                                            },
+                                            {
+                                                "name": "score1[16]"
+                                            },
+                                            {
+                                                "name": "score1[15]"
+                                            },
+                                            {
+                                                "name": "score1[14]"
+                                            },
+                                            {
+                                                "name": "score1[13]"
+                                            },
+                                            {
+                                                "name": "score1[12]"
+                                            },
+                                            {
+                                                "name": "score1[11]"
+                                            },
+                                            {
+                                                "name": "score1[10]"
+                                            },
+                                            {
+                                                "name": "score1[9]"
+                                            },
+                                            {
+                                                "name": "score1[8]"
+                                            },
+                                            {
+                                                "name": "score1[7]"
+                                            },
+                                            {
+                                                "name": "score1[6]"
+                                            },
+                                            {
+                                                "name": "score1[5]"
+                                            },
+                                            {
+                                                "name": "score1[4]"
+                                            },
+                                            {
+                                                "name": "score1[3]"
+                                            },
+                                            {
+                                                "name": "score1[2]"
+                                            },
+                                            {
+                                                "name": "score1[1]"
+                                            },
+                                            {
+                                                "name": "score1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in9",
+                                "id": 9,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 9,
+                                "nets": [
+                                    {
+                                        "name": "score2",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "score2[31]"
+                                            },
+                                            {
+                                                "name": "score2[30]"
+                                            },
+                                            {
+                                                "name": "score2[29]"
+                                            },
+                                            {
+                                                "name": "score2[28]"
+                                            },
+                                            {
+                                                "name": "score2[27]"
+                                            },
+                                            {
+                                                "name": "score2[26]"
+                                            },
+                                            {
+                                                "name": "score2[25]"
+                                            },
+                                            {
+                                                "name": "score2[24]"
+                                            },
+                                            {
+                                                "name": "score2[23]"
+                                            },
+                                            {
+                                                "name": "score2[22]"
+                                            },
+                                            {
+                                                "name": "score2[21]"
+                                            },
+                                            {
+                                                "name": "score2[20]"
+                                            },
+                                            {
+                                                "name": "score2[19]"
+                                            },
+                                            {
+                                                "name": "score2[18]"
+                                            },
+                                            {
+                                                "name": "score2[17]"
+                                            },
+                                            {
+                                                "name": "score2[16]"
+                                            },
+                                            {
+                                                "name": "score2[15]"
+                                            },
+                                            {
+                                                "name": "score2[14]"
+                                            },
+                                            {
+                                                "name": "score2[13]"
+                                            },
+                                            {
+                                                "name": "score2[12]"
+                                            },
+                                            {
+                                                "name": "score2[11]"
+                                            },
+                                            {
+                                                "name": "score2[10]"
+                                            },
+                                            {
+                                                "name": "score2[9]"
+                                            },
+                                            {
+                                                "name": "score2[8]"
+                                            },
+                                            {
+                                                "name": "score2[7]"
+                                            },
+                                            {
+                                                "name": "score2[6]"
+                                            },
+                                            {
+                                                "name": "score2[5]"
+                                            },
+                                            {
+                                                "name": "score2[4]"
+                                            },
+                                            {
+                                                "name": "score2[3]"
+                                            },
+                                            {
+                                                "name": "score2[2]"
+                                            },
+                                            {
+                                                "name": "score2[1]"
+                                            },
+                                            {
+                                                "name": "score2[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in10",
+                                "id": 10,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 10,
+                                "nets": [
+                                    {
+                                        "name": "completed_count",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "completed_count[31]"
+                                            },
+                                            {
+                                                "name": "completed_count[30]"
+                                            },
+                                            {
+                                                "name": "completed_count[29]"
+                                            },
+                                            {
+                                                "name": "completed_count[28]"
+                                            },
+                                            {
+                                                "name": "completed_count[27]"
+                                            },
+                                            {
+                                                "name": "completed_count[26]"
+                                            },
+                                            {
+                                                "name": "completed_count[25]"
+                                            },
+                                            {
+                                                "name": "completed_count[24]"
+                                            },
+                                            {
+                                                "name": "completed_count[23]"
+                                            },
+                                            {
+                                                "name": "completed_count[22]"
+                                            },
+                                            {
+                                                "name": "completed_count[21]"
+                                            },
+                                            {
+                                                "name": "completed_count[20]"
+                                            },
+                                            {
+                                                "name": "completed_count[19]"
+                                            },
+                                            {
+                                                "name": "completed_count[18]"
+                                            },
+                                            {
+                                                "name": "completed_count[17]"
+                                            },
+                                            {
+                                                "name": "completed_count[16]"
+                                            },
+                                            {
+                                                "name": "completed_count[15]"
+                                            },
+                                            {
+                                                "name": "completed_count[14]"
+                                            },
+                                            {
+                                                "name": "completed_count[13]"
+                                            },
+                                            {
+                                                "name": "completed_count[12]"
+                                            },
+                                            {
+                                                "name": "completed_count[11]"
+                                            },
+                                            {
+                                                "name": "completed_count[10]"
+                                            },
+                                            {
+                                                "name": "completed_count[9]"
+                                            },
+                                            {
+                                                "name": "completed_count[8]"
+                                            },
+                                            {
+                                                "name": "completed_count[7]"
+                                            },
+                                            {
+                                                "name": "completed_count[6]"
+                                            },
+                                            {
+                                                "name": "completed_count[5]"
+                                            },
+                                            {
+                                                "name": "completed_count[4]"
+                                            },
+                                            {
+                                                "name": "completed_count[3]"
+                                            },
+                                            {
+                                                "name": "completed_count[2]"
+                                            },
+                                            {
+                                                "name": "completed_count[1]"
+                                            },
+                                            {
+                                                "name": "completed_count[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out0",
+                                "id": 11,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "control_reset",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out1",
+                                "id": 12,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "cmd_toggle",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out2",
+                                "id": 13,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "features",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "features[31]"
+                                            },
+                                            {
+                                                "name": "features[30]"
+                                            },
+                                            {
+                                                "name": "features[29]"
+                                            },
+                                            {
+                                                "name": "features[28]"
+                                            },
+                                            {
+                                                "name": "features[27]"
+                                            },
+                                            {
+                                                "name": "features[26]"
+                                            },
+                                            {
+                                                "name": "features[25]"
+                                            },
+                                            {
+                                                "name": "features[24]"
+                                            },
+                                            {
+                                                "name": "features[23]"
+                                            },
+                                            {
+                                                "name": "features[22]"
+                                            },
+                                            {
+                                                "name": "features[21]"
+                                            },
+                                            {
+                                                "name": "features[20]"
+                                            },
+                                            {
+                                                "name": "features[19]"
+                                            },
+                                            {
+                                                "name": "features[18]"
+                                            },
+                                            {
+                                                "name": "features[17]"
+                                            },
+                                            {
+                                                "name": "features[16]"
+                                            },
+                                            {
+                                                "name": "features[15]"
+                                            },
+                                            {
+                                                "name": "features[14]"
+                                            },
+                                            {
+                                                "name": "features[13]"
+                                            },
+                                            {
+                                                "name": "features[12]"
+                                            },
+                                            {
+                                                "name": "features[11]"
+                                            },
+                                            {
+                                                "name": "features[10]"
+                                            },
+                                            {
+                                                "name": "features[9]"
+                                            },
+                                            {
+                                                "name": "features[8]"
+                                            },
+                                            {
+                                                "name": "features[7]"
+                                            },
+                                            {
+                                                "name": "features[6]"
+                                            },
+                                            {
+                                                "name": "features[5]"
+                                            },
+                                            {
+                                                "name": "features[4]"
+                                            },
+                                            {
+                                                "name": "features[3]"
+                                            },
+                                            {
+                                                "name": "features[2]"
+                                            },
+                                            {
+                                                "name": "features[1]"
+                                            },
+                                            {
+                                                "name": "features[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

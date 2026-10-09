@@ -1,0 +1,21 @@
+# Preserve original uploaded source, report, CSV and programming bytes.
+* -text
+*.md diff
+*.sv diff
+*.vh diff
+*.v diff
+*.tcl diff
+*.xdc diff
+*.py diff
+*.csv diff
+*.json diff
+*.txt diff
+*.rpt diff
+*.log diff
+*.jou diff
+*.mem diff
+*.pdf binary
+*.png binary
+*.jpg binary
+*.zip binary
+*.bit binary

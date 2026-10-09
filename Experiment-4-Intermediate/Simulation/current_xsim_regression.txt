@@ -1,0 +1,21 @@
+
+****** xsim v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Fri Oct  9 06:57:15 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/nn_regression/xsim_script.tcl
+# xsim {nn_regression} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS reset abort/recovery, argmax ties, ReLU saturation
+PASS parallel: 4502 vectors, full-rate bursts + bubbles, latency=4 periods
+PASS wrapper: 150 Iris samples, held toggle, busy rejection, reset abort, counters
+PASS serial: 4502 vectors, input latching, latency=36 periods
+ALL TESTS PASSED
+$finish called at time : 3421600 ns : File "C:/Users/yamle/.codex/.chatgpt-projects/g-p-6abdfe3efc1c81918338f193c9249dfb/project4-work/xsim-verification/Testbench/tb_nn.sv" Line 169
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Oct  9 06:57:20 2026...

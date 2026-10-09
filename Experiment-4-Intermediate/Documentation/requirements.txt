@@ -1,0 +1,4 @@
+# Optional PDF and actual-VCD plot regeneration dependencies
+reportlab
+matplotlib
+Pillow

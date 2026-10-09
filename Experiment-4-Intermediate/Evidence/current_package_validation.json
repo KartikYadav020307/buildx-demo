@@ -1,0 +1,36 @@
+{
+  "original_build_artifacts": "12/12 exact matches to current local originals and prior SHA256 records",
+  "original_source_model_main_testbench": "All supplied originals match byte for byte",
+  "physical_csv": {
+    "numeric_matches": 45,
+    "total": 45,
+    "correct_labels": 43,
+    "parallel_cycles": 4,
+    "serial_cycles": 36
+  },
+  "final_video_link_bytes": 0,
+  "permanent_radix_fix": "10 conversions, signed restore and unknown-radix rejection passed",
+  "native_project": {
+    "archive": "Project4_NN_Vivado_Source_Project.zip",
+    "original_descriptor_and_ip_files": 4,
+    "archive_bytes": 340111
+  },
+  "current_simulation": {
+    "tool": "Vivado XSim 2025.1.1",
+    "date_IST": "2026-10-09",
+    "full_suite": "ALL TESTS PASSED; 4502 vectors per core",
+    "waveform_suite": "WAVEFORM TEST PASS; 3 cases; exact scores; 4/36 cycles"
+  },
+  "team_members": [
+    {
+      "name": "Shanshank Pulipati",
+      "registration": "25BEC0573"
+    },
+    {
+      "name": "Kartik Yadav",
+      "registration": "25BEC0087"
+    }
+  ],
+  "team_name": null,
+  "raw_video_url": "https://drive.google.com/file/d/1CRHKfi6c0i63gg7BlZQDZIolw0Ldvm6p/view?usp=sharing"
+}

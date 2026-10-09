@@ -1,0 +1,22 @@
+[
+  {
+    "path": "build/NN_Inference.xpr",
+    "bytes": 19728,
+    "sha256": "bbcd03e3cf8715440e9131492c9189b79393808b748f96b6516ea3d2ff5f3df4"
+  },
+  {
+    "path": "build/NN_Inference.srcs/sources_1/ip/nn_clk/nn_clk.xci",
+    "bytes": 68727,
+    "sha256": "4ecc8d17db9035b5ebfb5fa57c849c34be7fd2320b712ec77b497a6f10561a2e"
+  },
+  {
+    "path": "build/NN_Inference.srcs/sources_1/ip/nn_vio/nn_vio.xci",
+    "bytes": 187091,
+    "sha256": "491207fd65bfb623429f1c137b5d4abac5f7d6d08c78666da9e2f36099e676dc"
+  },
+  {
+    "path": "build/NN_Inference.srcs/utils_1/imports/synth_1/nn_board_top.dcp",
+    "bytes": 228409,
+    "sha256": "2f9585432529b2c022e1ffc402b1aa60d607a116ce15b777584b1bf74adff287"
+  }
+]

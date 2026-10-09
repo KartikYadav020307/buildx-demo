@@ -1,0 +1,12 @@
+VCD info: dumpfile Simulation/waveform.vcd opened for output.
+Parallel core result at 191000: class=0 latency=4 cycles
+Serial core result at 831000: class=0 latency=36 cycles
+PASS demo d6d528e0: class=0 scores=19058,2857,-24757 cycles=4,36 count=1
+Parallel core result at 1131000: class=1 latency=4 cycles
+Serial core result at 1771000: class=1 latency=36 cycles
+PASS demo 09110b2a: class=1 scores=-8102,8917,-3790 cycles=4,36 count=2
+Parallel core result at 2071000: class=2 latency=4 cycles
+Serial core result at 2711000: class=2 latency=36 cycles
+PASS demo 37281210: class=2 scores=-13784,-6177,16696 cycles=4,36 count=3
+WAVEFORM TEST PASS: 3 cases; exact scores; 4/36 cycle latency
+Testbench/tb_nn_waveform.sv:63: $finish called at 2900000 (1ps)

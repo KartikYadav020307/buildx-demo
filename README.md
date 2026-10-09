@@ -1,26 +1,28 @@
 # V-SPACE FPGA Build Challenge 2026
 
-This is the selected team repository for the FPGA challenge. The repository tracks **Experiment 3 (Intermediate): FPGA ECG FIR Filtering and Peak Analysis**
-and now includes **Experiment 5 (Advanced): Reconfigurable FPGA BNN Safety Response**.
+This is the selected team repository for the FPGA challenge. It contains
+**Experiment 3: FPGA ECG FIR Filtering and Peak Analysis**, **Experiment 4:
+FPGA Neural Network Inference Accelerator**, and **Experiment 5:
+Reconfigurable FPGA BNN Safety Response**.
 
 ## Team information
 
 | Field | Value |
 | --- | --- |
-| Team name | Pending verified team details |
-| Team members | Pending verified team details |
-| Registration numbers | Pending verified team details |
-| Selected FPGA board for Experiment 3 | PYNQ-Z2 |
+| Team name | Pending; user has not selected a name |
+| Team members | Shanshank Pulipati; Kartik Yadav |
+| Registration numbers | Shanshank Pulipati: 25BEC0573; Kartik Yadav: 25BEC0087 |
+| Selected FPGA board for Experiments 3, 4 and 5 | PYNQ-Z2 |
 | FPGA device | Xilinx Zynq-7000 XC7Z020 (`xc7z020clg400-1`) |
 
 ## Five-experiment summary
 
 | Experiment | Difficulty | Summary / current package status |
 | --- | --- | --- |
-| 1 | Beginner | Details and completed package not supplied for this upload |
-| 2 | Beginner | Details and completed package not supplied for this upload |
+| 1 | Beginner | FPGA cryptographic accelerator; project title identified in supplied history, completed package not yet uploaded here |
+| 2 | Beginner | FPGA radar signal processing and target detection; project title identified in supplied history, completed package not yet uploaded here |
 | [3](Experiment-3-Intermediate/) | Intermediate | 128-tap FPGA FIR filtering through AXI DMA; Python peak/heart-rate analysis on recorded ECG |
-| 4 | Intermediate | Details and completed package not supplied for this upload |
+| [4](Experiment-4-Intermediate/) | Intermediate | Trained 4-to-4-to-3 Iris classifier; parallel/sequential RTL, 4/36-cycle inference, verified board results, original BIT/LTX, routed reports and native Vivado source archive |
 | [5](Experiment-5-Advanced/) | Advanced | Two live-switchable BNN policy banks, latched emergency/watchdog controller; source, reports, routed build and physical evidence included |
 
 Experiment 3 includes its report, original HLS source and testbench, generated
@@ -36,8 +38,21 @@ report. The team-wide final report remains pending in `Final_Report/`.
 
 The requested naming convention is `FPGA-Build-Challenge-TeamLeader name`.
 This upload uses the repository explicitly selected by the user, `buildx-demo`;
-its current name does not follow that convention. Team identity, the remaining
+its current name does not follow that convention. Team name, the remaining
 experiment packages and the final combined report still need completion.
+
+## Experiment 4
+
+[Project report](Experiment-4-Intermediate/Documentation/Project4_NN_Report.pdf) | [Simulation report](Experiment-4-Intermediate/Simulation/simulation_report.pdf) | [Submission checklist](Experiment-4-Intermediate/Documentation/SUBMISSION_READINESS.md)
+
+The seven-section report, RTL/constraints, testbenches, real waveforms,
+source-elaborated schematic, board/VIO screenshots, physical 45-case CSV and
+original routed FPGA files are included. The unchanged RTL passed both test
+suites again in Vivado XSim 2025.1.1 on 9 October 2026 (IST). The native project
+descriptor/IP files are archived alongside reproducible build scripts.
+The raw supplied video is linked in its evidence notes; the final
+`Video_Link.txt` remains empty as requested. Team name and final narrated
+video remain pending. No new physical-board run is claimed by this upload.
 
 ## Experiment 5
 

@@ -1,0 +1,10 @@
+# Source and evidence provenance
+
+1. Original source/model/testbench/build workflow: Project4_NN_Repair_Pack.zip, created 6 October 2026. Source RTL, frozen data and constraints are retained. Historical instructions are clearly separated from the later hardware status.
+2. Original latest Vivado build: actual earlier uploaded files 02-BUILD_SUCCESS.txt through 13-vivado_batch.log, dated 6 October 21:08. Renamed to their original logical Results filenames without changing bytes. Old 20:16, failed and mocked runs were not used.
+3. Hardware: original user CSV and board/VIO screenshots from this conversation's 7 October physical session. The offline audit independently matches all CSV rows against frozen reference data.
+4. New generated evidence: genuine Icarus full regression and three-case trace; Yosys source schematic (vendor IP explicitly black-boxed); PDFs, checksum inventory and documentation. These are distinguished from the original Vivado/physical results.
+5. Script correction: only the VIO reader changed to honor INPUT_VALUE_RADIX. The function was live-tested successfully after entering it in the user's Vivado session; the repository script now persists it. Numeric-format conversion was additionally checked with Tcl mocks; those are software parser tests, not FPGA evidence.
+6. On 9 October 2026 (IST), the recovered package was checked against the laptop's original RTL, model, main testbench, hardware CSV and all 12 Vivado artifacts. Exact byte/hash matches passed. Full regression and waveform benches passed again in local XSim 2025.1.1, and the radix parser tests passed. Fresh outputs are separately named.
+7. The original laptop .xpr and IP source files were archived with exact bytes and a manifest. The archive preserves original paths/run settings and excludes generated caches/runs; it is not claimed to have been reopened and rebuilt here.
+8. The user confirmed Shanshank Pulipati (25BEC0573) and Kartik Yadav (25BEC0087), and supplied the raw video Drive link. Team name remains pending; final Video_Link.txt remains empty. Only Drive file metadata was checked for the new URL. The combined five-project report remains pending.

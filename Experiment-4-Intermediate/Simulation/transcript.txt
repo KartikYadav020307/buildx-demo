@@ -1,0 +1,6 @@
+PASS reset abort/recovery, argmax ties, ReLU saturation
+PASS parallel: 4502 vectors, full-rate bursts + bubbles, latency=4 periods
+PASS wrapper: 150 Iris samples, held toggle, busy rejection, reset abort, counters
+PASS serial: 4502 vectors, input latching, latency=36 periods
+ALL TESTS PASSED
+Testbench/tb_nn.sv:169: $finish called at 3421600000 (1ps)

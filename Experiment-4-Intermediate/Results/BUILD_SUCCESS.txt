@@ -1,0 +1,8 @@
+Project 4 LOCAL Vivado build completed.
+Vivado: 2025.1.1
+Simulation: ALL TESTS PASSED
+Worst setup slack: 5.813 ns; worst hold slack: 0.048 ns
+Bitstream: C:/Users/yamle/OneDrive/Desktop/Project4_NN_Complete_Pack/Project4_NN/Results/nn_board_top.bit
+Debug probes: C:/Users/yamle/OneDrive/Desktop/Project4_NN_Complete_Pack/Project4_NN/Results/nn_board_top.ltx
+Next: inspect timing/DRC reports, then program and test the PYNQ-Z2.
+Physical board validation has not been performed by this build script.

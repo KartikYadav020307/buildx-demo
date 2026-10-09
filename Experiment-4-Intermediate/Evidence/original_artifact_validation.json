@@ -1,0 +1,100 @@
+{
+  "description": "Original user Vivado artifacts from the latest successful 6 October run, not regenerated during packaging.",
+  "bit_header": {
+    "a": "nn_board_top;UserID=0XFFFFFFFF;Version=2025.1.1;SW_CRC=1aa438c8",
+    "b": "7z020clg400",
+    "c": "2026/10/06",
+    "d": "21:07:26",
+    "configuration_bytes": 4045564
+  },
+  "ltx_core_uuids": [
+    "407D14E81CC958EF8C2E354D7BF170FD"
+  ],
+  "uuid_match_to_original_build_log": true,
+  "original_artifacts": [
+    {
+      "upload_name": "02-BUILD_SUCCESS.txt",
+      "repository_path": "Results/BUILD_SUCCESS.txt",
+      "bytes": 505,
+      "sha256": "ddfaf9ba6d34228522bfe99737227df141cab637c4aa05fb9ad37cee0e434418",
+      "exact_original_bytes": true
+    },
+    {
+      "upload_name": "03-bus_skew.rpt",
+      "repository_path": "Results/bus_skew.rpt",
+      "bytes": 68092,
+      "sha256": "74aeb631f28242771735f4a94bcc42edbfb69de8f4bc532d1a272ed3e778c4ae",
+      "exact_original_bytes": true
+    },
+    {
+      "upload_name": "04-clocks.rpt",
+      "repository_path": "Results/clocks.rpt",
+      "bytes": 2801,
+      "sha256": "e5f4ef88d3139a78f48d59ab2c0b20cbd361e4ad91d28508848d75e64238100e",
+      "exact_original_bytes": true
+    },
+    {
+      "upload_name": "05-drc.rpt",
+      "repository_path": "Results/drc.rpt",
+      "bytes": 17541,
+      "sha256": "4bde61f2e0a03141dd1ecbe7c698143930904047abfea65049fddcad3d9d3a30",
+      "exact_original_bytes": true
+    },
+    {
+      "upload_name": "06-methodology.rpt",
+      "repository_path": "Results/methodology.rpt",
+      "bytes": 6109,
+      "sha256": "a3d5eaf37d97ba6e7bcc822d401a6388f8083d4221adeea88aea1101add48c4f",
+      "exact_original_bytes": true
+    },
+    {
+      "upload_name": "07-nn_board_top.bit",
+      "repository_path": "Results/nn_board_top.bit",
+      "bytes": 4045690,
+      "sha256": "5a4d4fcdd431995198186a0ce50b5f960fdb49525fc87c5547731f8ba1772a65",
+      "exact_original_bytes": true
+    },
+    {
+      "upload_name": "08-nn_board_top.ltx",
+      "repository_path": "Results/nn_board_top.ltx",
+      "bytes": 42378,
+      "sha256": "79c63e0f6a7e098c267a8601831e665a21676964762621612369dd8eb2f769a1",
+      "exact_original_bytes": true
+    },
+    {
+      "upload_name": "09-simulation_pass.flag",
+      "repository_path": "Results/simulation_pass.flag",
+      "bytes": 18,
+      "sha256": "9fae5979a97b984726789d7a8ac04b5c29b743b1f66d9bc59142651cf5004a7e",
+      "exact_original_bytes": true
+    },
+    {
+      "upload_name": "10-timing_summary.rpt",
+      "repository_path": "Results/timing_summary.rpt",
+      "bytes": 123854,
+      "sha256": "a52cbae3dfe40df2f17d8537557f8bc6816e5d760f638e84bd9b738b6e976ac6",
+      "exact_original_bytes": true
+    },
+    {
+      "upload_name": "11-utilization_hierarchical.rpt",
+      "repository_path": "Results/utilization_hierarchical.rpt",
+      "bytes": 8226,
+      "sha256": "3c6374e13635a401381f7735d4426b84ba6f6af4a4c0932e5af900da5ec424a0",
+      "exact_original_bytes": true
+    },
+    {
+      "upload_name": "12-vivado_batch.jou",
+      "repository_path": "Results/vivado_batch.jou",
+      "bytes": 1570,
+      "sha256": "f161353b44d37a9e2789ab2488e77694f190a2f675947b3229b90caf41de366b",
+      "exact_original_bytes": true
+    },
+    {
+      "upload_name": "13-vivado_batch.log",
+      "repository_path": "Results/vivado_batch.log",
+      "bytes": 88269,
+      "sha256": "7f705b78342e304010c39b525eb7fe8cb828f6a4aecc976c6a48b3fb46fab2ad",
+      "exact_original_bytes": true
+    }
+  ]
+}

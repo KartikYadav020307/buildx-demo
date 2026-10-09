@@ -1,0 +1,1566 @@
+
+-- Running command `read_verilog -sv -I RTL RTL/nn_parallel.sv RTL/nn_serial.sv RTL/nn_demo_controller.sv RTL/nn_board_top.sv Simulation/ip_blackboxes_for_schematic.v; hierarchy -check -top nn_board_top; proc; opt; write_json Simulation/rtl_schematic_netlist.json; show -format dot -prefix Images/rtl_schematic nn_board_top' --
+
+1. Executing Verilog-2005 frontend: RTL/nn_parallel.sv
+Parsing SystemVerilog input from `RTL/nn_parallel.sv' to AST representation.
+Generating RTLIL representation for module `\nn_parallel'.
+Warning: Replacing memory \p2 with list of registers. See RTL/nn_parallel.sv:44
+Warning: Replacing memory \scores with list of registers. See RTL/nn_parallel.sv:43
+Warning: Replacing memory \p1 with list of registers. See RTL/nn_parallel.sv:40
+Warning: Replacing memory \hidden with list of registers. See RTL/nn_parallel.sv:39
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: RTL/nn_serial.sv
+Parsing SystemVerilog input from `RTL/nn_serial.sv' to AST representation.
+Generating RTLIL representation for module `\nn_serial'.
+Warning: Replacing memory \x with list of registers. See RTL/nn_serial.sv:29
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: RTL/nn_demo_controller.sv
+Parsing SystemVerilog input from `RTL/nn_demo_controller.sv' to AST representation.
+Generating RTLIL representation for module `\nn_demo_controller'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: RTL/nn_board_top.sv
+Parsing SystemVerilog input from `RTL/nn_board_top.sv' to AST representation.
+Generating RTLIL representation for module `\nn_board_top'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: Simulation/ip_blackboxes_for_schematic.v
+Parsing SystemVerilog input from `Simulation/ip_blackboxes_for_schematic.v' to AST representation.
+Generating RTLIL representation for module `\nn_clk'.
+Generating RTLIL representation for module `\nn_vio'.
+Successfully finished Verilog frontend.
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1. Analyzing design hierarchy..
+Top module:  \nn_board_top
+Used module:     \nn_demo_controller
+Used module:         \nn_serial
+Used module:         \nn_parallel
+
+6.2. Analyzing design hierarchy..
+Top module:  \nn_board_top
+Used module:     \nn_demo_controller
+Used module:         \nn_serial
+Used module:         \nn_parallel
+Removed 0 unused modules.
+Mapping positional arguments of cell nn_demo_controller.u_serial (nn_serial).
+Mapping positional arguments of cell nn_demo_controller.u_parallel (nn_parallel).
+
+7. Executing PROC pass (convert processes to netlists).
+
+7.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+7.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$RTL/nn_board_top.sv:6$543 in module nn_board_top.
+Marked 2 switch rules as full_case in process $proc$RTL/nn_demo_controller.sv:22$531 in module nn_demo_controller.
+Removed 1 dead cases from process $proc$RTL/nn_serial.sv:0$522 in module nn_serial.
+Marked 1 switch rules as full_case in process $proc$RTL/nn_serial.sv:0$522 in module nn_serial.
+Removed 1 dead cases from process $proc$RTL/nn_serial.sv:0$519 in module nn_serial.
+Marked 1 switch rules as full_case in process $proc$RTL/nn_serial.sv:0$519 in module nn_serial.
+Marked 1 switch rules as full_case in process $proc$RTL/nn_weights.vh:0$511 in module nn_serial.
+Marked 1 switch rules as full_case in process $proc$RTL/nn_weights.vh:0$503 in module nn_serial.
+Marked 13 switch rules as full_case in process $proc$RTL/nn_serial.sv:25$388 in module nn_serial.
+Marked 16 switch rules as full_case in process $proc$RTL/nn_parallel.sv:34$107 in module nn_parallel.
+Removed a total of 2 dead cases.
+
+7.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 5 redundant assignments.
+Promoted 158 assignments to connections.
+
+7.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\nn_board_top.$proc$RTL/nn_board_top.sv:27$549'.
+  Set init value: \heartbeat = 25'0000000000000000000000000
+Found init rule in `\nn_board_top.$proc$RTL/nn_board_top.sv:5$548'.
+  Set init value: \lock_reset = 2'11
+
+7.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \locked in `\nn_board_top.$proc$RTL/nn_board_top.sv:6$543'.
+
+7.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 2 switches.
+<suppressed ~36 debug messages>
+
+7.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\nn_board_top.$proc$RTL/nn_board_top.sv:27$549'.
+Creating decoders for process `\nn_board_top.$proc$RTL/nn_board_top.sv:5$548'.
+Creating decoders for process `\nn_board_top.$proc$RTL/nn_board_top.sv:28$546'.
+Creating decoders for process `\nn_board_top.$proc$RTL/nn_board_top.sv:6$543'.
+     1/1: $0\lock_reset[1:0]
+Creating decoders for process `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+     1/13: $0\toggle_previous[0:0]
+     2/13: $0\age[7:0]
+     3/13: $0\completed_count[31:0]
+     4/13: $0\serial_cycles[7:0]
+     5/13: $0\parallel_cycles[7:0]
+     6/13: $0\serial_class[1:0]
+     7/13: $0\parallel_class[1:0]
+     8/13: $0\mismatch[0:0]
+     9/13: $0\done[0:0]
+    10/13: $0\busy[0:0]
+    11/13: $0\score2[31:0]
+    12/13: $0\score1[31:0]
+    13/13: $0\score0[31:0]
+Creating decoders for process `\nn_serial.$proc$RTL/nn_serial.sv:0$522'.
+     1/1: $1$mem2reg_rd$\x$RTL/nn_serial.sv:20$369_DATA[7:0]$524
+Creating decoders for process `\nn_serial.$proc$RTL/nn_serial.sv:0$519'.
+     1/1: $1$mem2reg_rd$\x$RTL/nn_serial.sv:20$368_DATA[7:0]$521
+Creating decoders for process `\nn_serial.$proc$RTL/nn_weights.vh:0$511'.
+     1/1: $1\nn_w2$func$RTL/nn_serial.sv:21$367.$result[7:0]$518
+Creating decoders for process `\nn_serial.$proc$RTL/nn_weights.vh:0$503'.
+     1/1: $1\nn_w1$func$RTL/nn_serial.sv:21$366.$result[7:0]$510
+Creating decoders for process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+     1/78: $4\nn_argmax$func$RTL/nn_serial.sv:60$365.$result[1:0]$502
+     2/78: $3\nn_argmax$func$RTL/nn_serial.sv:60$365.$result[1:0]$499
+     3/78: $3\nn_argmax$func$RTL/nn_serial.sv:60$365.best[31:0]$500
+     4/78: $4\nn_b2$func$RTL/nn_serial.sv:56$364.$result[31:0]$491
+     5/78: $3\nn_b2$func$RTL/nn_serial.sv:56$364.node[31:0]$488
+     6/78: $3\nn_b2$func$RTL/nn_serial.sv:56$364.$result[31:0]$487
+     7/78: $4\nn_b1$func$RTL/nn_serial.sv:46$362.$result[31:0]$482
+     8/78: $3\nn_b1$func$RTL/nn_serial.sv:46$362.node[31:0]$479
+     9/78: $3\nn_b1$func$RTL/nn_serial.sv:46$362.$result[31:0]$478
+    10/78: $4\nn_relu$func$RTL/nn_serial.sv:44$360.$result[15:0]$476
+    11/78: $3\nn_relu$func$RTL/nn_serial.sv:44$360.$result[15:0]$474
+    12/78: $3\i[31:0]
+    13/78: $2\i[31:0]
+    14/78: $2$memwr$\scores$RTL/nn_serial.sv:54$378_EN[31:0]$468
+    15/78: $2$memwr$\scores$RTL/nn_serial.sv:54$378_DATA[31:0]$467
+    16/78: $2$memwr$\scores$RTL/nn_serial.sv:54$378_ADDR[1:0]$466
+    17/78: $2$memwr$\hidden$RTL/nn_serial.sv:44$377_EN[15:0]$465
+    18/78: $2$memwr$\hidden$RTL/nn_serial.sv:44$377_DATA[15:0]$464
+    19/78: $2$memwr$\hidden$RTL/nn_serial.sv:44$377_ADDR[1:0]$463
+    20/78: $2\nn_argmax$func$RTL/nn_serial.sv:60$365.best[31:0]$462
+    21/78: $2\nn_argmax$func$RTL/nn_serial.sv:60$365.c[31:0]$461
+    22/78: $2\nn_argmax$func$RTL/nn_serial.sv:60$365.b[31:0]$460
+    23/78: $2\nn_argmax$func$RTL/nn_serial.sv:60$365.a[31:0]$459
+    24/78: $2\nn_argmax$func$RTL/nn_serial.sv:60$365.$result[1:0]$458
+    25/78: $2\nn_b2$func$RTL/nn_serial.sv:56$364.node[31:0]$457
+    26/78: $2\nn_b2$func$RTL/nn_serial.sv:56$364.$result[31:0]$456
+    27/78: $2\nn_sx24$func$RTL/nn_serial.sv:49$363.v[23:0]$455
+    28/78: $2\nn_sx24$func$RTL/nn_serial.sv:49$363.$result[31:0]$454
+    29/78: $2\nn_b1$func$RTL/nn_serial.sv:46$362.node[31:0]$453
+    30/78: $2\nn_b1$func$RTL/nn_serial.sv:46$362.$result[31:0]$452
+    31/78: $2\nn_relu$func$RTL/nn_serial.sv:44$360.shifted[31:0]$451
+    32/78: $2\nn_relu$func$RTL/nn_serial.sv:44$360.acc[31:0]$450
+    33/78: $2\nn_relu$func$RTL/nn_serial.sv:44$360.$result[15:0]$449
+    34/78: $2\nn_sx24$func$RTL/nn_serial.sv:39$359.v[23:0]$448
+    35/78: $2\nn_sx24$func$RTL/nn_serial.sv:39$359.$result[31:0]$447
+    36/78: $1\i[31:0]
+    37/78: $1$memwr$\scores$RTL/nn_serial.sv:30$376_EN[31:0]$440
+    38/78: $1$memwr$\scores$RTL/nn_serial.sv:30$375_EN[31:0]$439
+    39/78: $1$memwr$\scores$RTL/nn_serial.sv:30$374_EN[31:0]$438
+    40/78: $1$memwr$\hidden$RTL/nn_serial.sv:29$373_EN[15:0]$437
+    41/78: $1$memwr$\hidden$RTL/nn_serial.sv:29$372_EN[15:0]$436
+    42/78: $1$memwr$\hidden$RTL/nn_serial.sv:29$371_EN[15:0]$435
+    43/78: $1$memwr$\hidden$RTL/nn_serial.sv:29$370_EN[15:0]$434
+    44/78: $0\out_valid[0:0]
+    45/78: $1$memwr$\scores$RTL/nn_serial.sv:54$378_EN[31:0]$446
+    46/78: $1$memwr$\scores$RTL/nn_serial.sv:54$378_DATA[31:0]$445
+    47/78: $1$memwr$\scores$RTL/nn_serial.sv:54$378_ADDR[1:0]$444
+    48/78: $1$memwr$\hidden$RTL/nn_serial.sv:44$377_EN[15:0]$443
+    49/78: $1$memwr$\hidden$RTL/nn_serial.sv:44$377_DATA[15:0]$442
+    50/78: $1$memwr$\hidden$RTL/nn_serial.sv:44$377_ADDR[1:0]$441
+    51/78: $1\nn_argmax$func$RTL/nn_serial.sv:60$365.best[31:0]$433
+    52/78: $1\nn_argmax$func$RTL/nn_serial.sv:60$365.c[31:0]$432
+    53/78: $1\nn_argmax$func$RTL/nn_serial.sv:60$365.b[31:0]$431
+    54/78: $1\nn_argmax$func$RTL/nn_serial.sv:60$365.a[31:0]$430
+    55/78: $1\nn_argmax$func$RTL/nn_serial.sv:60$365.$result[1:0]$429
+    56/78: $1\nn_b2$func$RTL/nn_serial.sv:56$364.node[31:0]$428
+    57/78: $1\nn_b2$func$RTL/nn_serial.sv:56$364.$result[31:0]$427
+    58/78: $1\nn_sx24$func$RTL/nn_serial.sv:49$363.v[23:0]$426
+    59/78: $1\nn_sx24$func$RTL/nn_serial.sv:49$363.$result[31:0]$425
+    60/78: $1\nn_b1$func$RTL/nn_serial.sv:46$362.node[31:0]$424
+    61/78: $1\nn_b1$func$RTL/nn_serial.sv:46$362.$result[31:0]$423
+    62/78: $1\nn_relu$func$RTL/nn_serial.sv:44$360.shifted[31:0]$422
+    63/78: $1\nn_relu$func$RTL/nn_serial.sv:44$360.acc[31:0]$421
+    64/78: $1\nn_relu$func$RTL/nn_serial.sv:44$360.$result[15:0]$420
+    65/78: $1\nn_sx24$func$RTL/nn_serial.sv:39$359.v[23:0]$419
+    66/78: $1\nn_sx24$func$RTL/nn_serial.sv:39$359.$result[31:0]$418
+    67/78: $0\accumulator[31:0]
+    68/78: $0\term[1:0]
+    69/78: $0\node[1:0]
+    70/78: $0\state[2:0]
+    71/78: $0\x[3][7:0]
+    72/78: $0\x[2][7:0]
+    73/78: $0\x[1][7:0]
+    74/78: $0\x[0][7:0]
+    75/78: $0\score2[31:0]
+    76/78: $0\score1[31:0]
+    77/78: $0\score0[31:0]
+    78/78: $0\class_id[1:0]
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_parallel.sv:0$324'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$320'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$316'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$312'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$308'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$304'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$300'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$296'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$292'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$288'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$284'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$280'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$276'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$272'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$268'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$264'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$260'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$256'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$252'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$248'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$244'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$240'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$236'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$232'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$228'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$224'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$220'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$216'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_math.vh:0$212'.
+Creating decoders for process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+     1/95: $4\nn_argmax$func$RTL/nn_parallel.sv:61$78.$result[1:0]$211
+     2/95: $3\nn_argmax$func$RTL/nn_parallel.sv:61$78.$result[1:0]$208
+     3/95: $3\nn_argmax$func$RTL/nn_parallel.sv:61$78.best[31:0]$209
+     4/95: $2\nn_argmax$func$RTL/nn_parallel.sv:61$78.$result[1:0]$202
+     5/95: $2\nn_argmax$func$RTL/nn_parallel.sv:61$78.best[31:0]$206
+     6/95: $2\nn_argmax$func$RTL/nn_parallel.sv:61$78.c[31:0]$205
+     7/95: $2\nn_argmax$func$RTL/nn_parallel.sv:61$78.b[31:0]$204
+     8/95: $2\nn_argmax$func$RTL/nn_parallel.sv:61$78.a[31:0]$203
+     9/95: $3\o[31:0]
+    10/95: $2\o[31:0]
+    11/95: $3\i[31:0]
+    12/95: $4\nn_relu$func$RTL/nn_parallel.sv:53$65.$result[15:0]$189
+    13/95: $3\nn_relu$func$RTL/nn_parallel.sv:53$65.$result[15:0]$187
+    14/95: $4\nn_relu$func$RTL/nn_parallel.sv:53$64.$result[15:0]$184
+    15/95: $3\nn_relu$func$RTL/nn_parallel.sv:53$64.$result[15:0]$182
+    16/95: $4\nn_relu$func$RTL/nn_parallel.sv:53$63.$result[15:0]$179
+    17/95: $3\nn_relu$func$RTL/nn_parallel.sv:53$63.$result[15:0]$177
+    18/95: $4\nn_relu$func$RTL/nn_parallel.sv:53$62.$result[15:0]$174
+    19/95: $3\nn_relu$func$RTL/nn_parallel.sv:53$62.$result[15:0]$172
+    20/95: $3\h[31:0]
+    21/95: $2\nn_relu$func$RTL/nn_parallel.sv:53$65.$result[15:0]$167
+    22/95: $2\nn_relu$func$RTL/nn_parallel.sv:53$65.shifted[31:0]$169
+    23/95: $2\nn_relu$func$RTL/nn_parallel.sv:53$65.acc[31:0]$168
+    24/95: $2\nn_relu$func$RTL/nn_parallel.sv:53$64.$result[15:0]$164
+    25/95: $2\nn_relu$func$RTL/nn_parallel.sv:53$64.shifted[31:0]$166
+    26/95: $2\nn_relu$func$RTL/nn_parallel.sv:53$64.acc[31:0]$165
+    27/95: $2\nn_relu$func$RTL/nn_parallel.sv:53$63.$result[15:0]$161
+    28/95: $2\nn_relu$func$RTL/nn_parallel.sv:53$63.shifted[31:0]$163
+    29/95: $2\nn_relu$func$RTL/nn_parallel.sv:53$63.acc[31:0]$162
+    30/95: $2\nn_relu$func$RTL/nn_parallel.sv:53$62.$result[15:0]$158
+    31/95: $2\nn_relu$func$RTL/nn_parallel.sv:53$62.shifted[31:0]$160
+    32/95: $2\nn_relu$func$RTL/nn_parallel.sv:53$62.acc[31:0]$159
+    33/95: $2\h[31:0]
+    34/95: $2\i[31:0]
+    35/95: $1\o[31:0]
+    36/95: $1\i[31:0]
+    37/95: $1\h[31:0]
+    38/95: $0\out_valid[0:0]
+    39/95: $0\valid_pipe[3:0]
+    40/95: $1\nn_argmax$func$RTL/nn_parallel.sv:61$78.best[31:0]$141
+    41/95: $1\nn_argmax$func$RTL/nn_parallel.sv:61$78.c[31:0]$140
+    42/95: $1\nn_argmax$func$RTL/nn_parallel.sv:61$78.b[31:0]$139
+    43/95: $1\nn_argmax$func$RTL/nn_parallel.sv:61$78.a[31:0]$138
+    44/95: $1\nn_argmax$func$RTL/nn_parallel.sv:61$78.$result[1:0]$137
+    45/95: $1\nn_relu$func$RTL/nn_parallel.sv:53$65.shifted[31:0]$136
+    46/95: $1\nn_relu$func$RTL/nn_parallel.sv:53$65.acc[31:0]$135
+    47/95: $1\nn_relu$func$RTL/nn_parallel.sv:53$65.$result[15:0]$134
+    48/95: $1\nn_relu$func$RTL/nn_parallel.sv:53$64.shifted[31:0]$133
+    49/95: $1\nn_relu$func$RTL/nn_parallel.sv:53$64.acc[31:0]$132
+    50/95: $1\nn_relu$func$RTL/nn_parallel.sv:53$64.$result[15:0]$131
+    51/95: $1\nn_relu$func$RTL/nn_parallel.sv:53$63.shifted[31:0]$130
+    52/95: $1\nn_relu$func$RTL/nn_parallel.sv:53$63.acc[31:0]$129
+    53/95: $1\nn_relu$func$RTL/nn_parallel.sv:53$63.$result[15:0]$128
+    54/95: $1\nn_relu$func$RTL/nn_parallel.sv:53$62.shifted[31:0]$127
+    55/95: $1\nn_relu$func$RTL/nn_parallel.sv:53$62.acc[31:0]$126
+    56/95: $1\nn_relu$func$RTL/nn_parallel.sv:53$62.$result[15:0]$125
+    57/95: $0\p2[11][23:0]
+    58/95: $0\p2[10][23:0]
+    59/95: $0\p2[9][23:0]
+    60/95: $0\p2[8][23:0]
+    61/95: $0\p2[7][23:0]
+    62/95: $0\p2[6][23:0]
+    63/95: $0\p2[5][23:0]
+    64/95: $0\p2[4][23:0]
+    65/95: $0\p2[3][23:0]
+    66/95: $0\p2[2][23:0]
+    67/95: $0\p2[1][23:0]
+    68/95: $0\p2[0][23:0]
+    69/95: $0\scores[2][31:0]
+    70/95: $0\scores[1][31:0]
+    71/95: $0\scores[0][31:0]
+    72/95: $0\p1[15][15:0]
+    73/95: $0\p1[14][15:0]
+    74/95: $0\p1[13][15:0]
+    75/95: $0\p1[12][15:0]
+    76/95: $0\p1[11][15:0]
+    77/95: $0\p1[10][15:0]
+    78/95: $0\p1[9][15:0]
+    79/95: $0\p1[8][15:0]
+    80/95: $0\p1[7][15:0]
+    81/95: $0\p1[6][15:0]
+    82/95: $0\p1[5][15:0]
+    83/95: $0\p1[4][15:0]
+    84/95: $0\p1[3][15:0]
+    85/95: $0\p1[2][15:0]
+    86/95: $0\p1[1][15:0]
+    87/95: $0\p1[0][15:0]
+    88/95: $0\hidden[3][15:0]
+    89/95: $0\hidden[2][15:0]
+    90/95: $0\hidden[1][15:0]
+    91/95: $0\hidden[0][15:0]
+    92/95: $0\score2[31:0]
+    93/95: $0\score1[31:0]
+    94/95: $0\score0[31:0]
+    95/95: $0\class_id[1:0]
+
+7.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\nn_serial.$mem2reg_rd$\x$RTL/nn_serial.sv:20$369_DATA' from process `\nn_serial.$proc$RTL/nn_serial.sv:0$522'.
+No latch inferred for signal `\nn_serial.$mem2reg_rd$\x$RTL/nn_serial.sv:20$368_DATA' from process `\nn_serial.$proc$RTL/nn_serial.sv:0$519'.
+No latch inferred for signal `\nn_serial.\nn_w2$func$RTL/nn_serial.sv:21$357.$result' from process `\nn_serial.$proc$RTL/nn_weights.vh:0$511'.
+No latch inferred for signal `\nn_serial.\nn_w2$func$RTL/nn_serial.sv:21$367.$result' from process `\nn_serial.$proc$RTL/nn_weights.vh:0$511'.
+No latch inferred for signal `\nn_serial.\nn_w2$func$RTL/nn_serial.sv:21$367.node' from process `\nn_serial.$proc$RTL/nn_weights.vh:0$511'.
+No latch inferred for signal `\nn_serial.\nn_w2$func$RTL/nn_serial.sv:21$367.term' from process `\nn_serial.$proc$RTL/nn_weights.vh:0$511'.
+No latch inferred for signal `\nn_serial.\nn_w1$func$RTL/nn_serial.sv:21$356.$result' from process `\nn_serial.$proc$RTL/nn_weights.vh:0$503'.
+No latch inferred for signal `\nn_serial.\nn_w1$func$RTL/nn_serial.sv:21$366.$result' from process `\nn_serial.$proc$RTL/nn_weights.vh:0$503'.
+No latch inferred for signal `\nn_serial.\nn_w1$func$RTL/nn_serial.sv:21$366.node' from process `\nn_serial.$proc$RTL/nn_weights.vh:0$503'.
+No latch inferred for signal `\nn_serial.\nn_w1$func$RTL/nn_serial.sv:21$366.term' from process `\nn_serial.$proc$RTL/nn_weights.vh:0$503'.
+No latch inferred for signal `\nn_parallel.\x[0]' from process `\nn_parallel.$proc$RTL/nn_parallel.sv:0$324'.
+No latch inferred for signal `\nn_parallel.\x[1]' from process `\nn_parallel.$proc$RTL/nn_parallel.sv:0$324'.
+No latch inferred for signal `\nn_parallel.\x[2]' from process `\nn_parallel.$proc$RTL/nn_parallel.sv:0$324'.
+No latch inferred for signal `\nn_parallel.\x[3]' from process `\nn_parallel.$proc$RTL/nn_parallel.sv:0$324'.
+No latch inferred for signal `\nn_parallel.\hsum[0]' from process `\nn_parallel.$proc$RTL/nn_parallel.sv:0$324'.
+No latch inferred for signal `\nn_parallel.\hsum[1]' from process `\nn_parallel.$proc$RTL/nn_parallel.sv:0$324'.
+No latch inferred for signal `\nn_parallel.\hsum[2]' from process `\nn_parallel.$proc$RTL/nn_parallel.sv:0$324'.
+No latch inferred for signal `\nn_parallel.\hsum[3]' from process `\nn_parallel.$proc$RTL/nn_parallel.sv:0$324'.
+No latch inferred for signal `\nn_parallel.\osum[0]' from process `\nn_parallel.$proc$RTL/nn_parallel.sv:0$324'.
+No latch inferred for signal `\nn_parallel.\osum[1]' from process `\nn_parallel.$proc$RTL/nn_parallel.sv:0$324'.
+No latch inferred for signal `\nn_parallel.\osum[2]' from process `\nn_parallel.$proc$RTL/nn_parallel.sv:0$324'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$44.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$320'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$106.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$320'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$106.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$320'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$43.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$316'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$105.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$316'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$105.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$316'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$42.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$312'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$104.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$312'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$104.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$312'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$41.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$308'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$103.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$308'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$103.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$308'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$39.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$304'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$102.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$304'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$102.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$304'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$38.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$300'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$101.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$300'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$101.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$300'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$37.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$296'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$100.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$296'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$100.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$296'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$36.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$292'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$99.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$292'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$99.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$292'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$34.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$288'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$98.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$288'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$98.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$288'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$33.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$284'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$97.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$284'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:30$97.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$284'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$32.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$280'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$96.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$280'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$96.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$280'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$31.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$276'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$95.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$276'.
+No latch inferred for signal `\nn_parallel.\nn_sx24$func$RTL/nn_parallel.sv:29$95.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$276'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$29.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$272'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$94.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$272'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$94.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$272'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$28.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$268'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$93.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$268'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$93.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$268'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$27.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$264'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$92.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$264'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$92.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$264'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$26.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$260'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$91.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$260'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$91.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$260'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$24.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$256'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$90.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$256'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$90.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$256'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$23.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$252'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$89.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$252'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$89.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$252'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$22.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$248'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$88.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$248'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$88.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$248'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$21.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$244'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$87.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$244'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$87.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$244'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$19.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$240'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$86.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$240'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$86.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$240'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$18.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$236'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$85.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$236'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$85.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$236'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$17.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$232'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$84.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$232'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$84.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$232'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$16.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$228'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$83.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$228'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$83.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$228'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$14.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$224'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$82.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$224'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$82.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$224'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$13.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$220'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$81.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$220'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:26$81.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$220'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$12.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$216'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$80.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$216'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$80.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$216'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$11.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$212'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$79.$result' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$212'.
+No latch inferred for signal `\nn_parallel.\nn_sx16$func$RTL/nn_parallel.sv:25$79.v' from process `\nn_parallel.$proc$RTL/nn_math.vh:0$212'.
+
+7.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\nn_board_top.\heartbeat' using process `\nn_board_top.$proc$RTL/nn_board_top.sv:28$546'.
+  created $dff cell `$procdff$1786' with positive edge clock.
+Creating register for signal `\nn_board_top.\lock_reset' using process `\nn_board_top.$proc$RTL/nn_board_top.sv:6$543'.
+  created $adff cell `$procdff$1787' with positive edge clock and negative level reset.
+Creating register for signal `\nn_demo_controller.\score0' using process `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+  created $dff cell `$procdff$1788' with positive edge clock.
+Creating register for signal `\nn_demo_controller.\score1' using process `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+  created $dff cell `$procdff$1789' with positive edge clock.
+Creating register for signal `\nn_demo_controller.\score2' using process `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+  created $dff cell `$procdff$1790' with positive edge clock.
+Creating register for signal `\nn_demo_controller.\busy' using process `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+  created $dff cell `$procdff$1791' with positive edge clock.
+Creating register for signal `\nn_demo_controller.\done' using process `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+  created $dff cell `$procdff$1792' with positive edge clock.
+Creating register for signal `\nn_demo_controller.\mismatch' using process `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+  created $dff cell `$procdff$1793' with positive edge clock.
+Creating register for signal `\nn_demo_controller.\parallel_class' using process `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+  created $dff cell `$procdff$1794' with positive edge clock.
+Creating register for signal `\nn_demo_controller.\serial_class' using process `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+  created $dff cell `$procdff$1795' with positive edge clock.
+Creating register for signal `\nn_demo_controller.\parallel_cycles' using process `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+  created $dff cell `$procdff$1796' with positive edge clock.
+Creating register for signal `\nn_demo_controller.\serial_cycles' using process `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+  created $dff cell `$procdff$1797' with positive edge clock.
+Creating register for signal `\nn_demo_controller.\completed_count' using process `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+  created $dff cell `$procdff$1798' with positive edge clock.
+Creating register for signal `\nn_demo_controller.\toggle_previous' using process `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+  created $dff cell `$procdff$1799' with positive edge clock.
+Creating register for signal `\nn_demo_controller.\age' using process `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+  created $dff cell `$procdff$1800' with positive edge clock.
+Creating register for signal `\nn_serial.\out_valid' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1801' with positive edge clock.
+Creating register for signal `\nn_serial.\class_id' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1802' with positive edge clock.
+Creating register for signal `\nn_serial.\score0' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1803' with positive edge clock.
+Creating register for signal `\nn_serial.\score1' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1804' with positive edge clock.
+Creating register for signal `\nn_serial.\score2' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1805' with positive edge clock.
+Creating register for signal `\nn_serial.\i' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1806' with positive edge clock.
+Creating register for signal `\nn_serial.\x[0]' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1807' with positive edge clock.
+Creating register for signal `\nn_serial.\x[1]' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1808' with positive edge clock.
+Creating register for signal `\nn_serial.\x[2]' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1809' with positive edge clock.
+Creating register for signal `\nn_serial.\x[3]' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1810' with positive edge clock.
+Creating register for signal `\nn_serial.\state' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1811' with positive edge clock.
+Creating register for signal `\nn_serial.\node' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1812' with positive edge clock.
+Creating register for signal `\nn_serial.\term' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1813' with positive edge clock.
+Creating register for signal `\nn_serial.\accumulator' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1814' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_sx24$func$RTL/nn_serial.sv:39$359.$result' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1815' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_sx24$func$RTL/nn_serial.sv:39$359.v' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1816' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_relu$func$RTL/nn_serial.sv:44$360.$result' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1817' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_relu$func$RTL/nn_serial.sv:44$360.acc' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1818' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_relu$func$RTL/nn_serial.sv:44$360.shifted' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1819' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_b1$func$RTL/nn_serial.sv:46$362.$result' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1820' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_b1$func$RTL/nn_serial.sv:46$362.node' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1821' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_sx24$func$RTL/nn_serial.sv:49$363.$result' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1822' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_sx24$func$RTL/nn_serial.sv:49$363.v' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1823' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_b2$func$RTL/nn_serial.sv:56$364.$result' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1824' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_b2$func$RTL/nn_serial.sv:56$364.node' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1825' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_argmax$func$RTL/nn_serial.sv:60$365.$result' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1826' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_argmax$func$RTL/nn_serial.sv:60$365.a' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1827' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_argmax$func$RTL/nn_serial.sv:60$365.b' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1828' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_argmax$func$RTL/nn_serial.sv:60$365.c' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1829' with positive edge clock.
+Creating register for signal `\nn_serial.\nn_argmax$func$RTL/nn_serial.sv:60$365.best' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1830' with positive edge clock.
+Creating register for signal `\nn_serial.$memwr$\hidden$RTL/nn_serial.sv:29$370_EN' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1831' with positive edge clock.
+Creating register for signal `\nn_serial.$memwr$\hidden$RTL/nn_serial.sv:29$371_EN' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1832' with positive edge clock.
+Creating register for signal `\nn_serial.$memwr$\hidden$RTL/nn_serial.sv:29$372_EN' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1833' with positive edge clock.
+Creating register for signal `\nn_serial.$memwr$\hidden$RTL/nn_serial.sv:29$373_EN' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1834' with positive edge clock.
+Creating register for signal `\nn_serial.$memwr$\scores$RTL/nn_serial.sv:30$374_EN' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1835' with positive edge clock.
+Creating register for signal `\nn_serial.$memwr$\scores$RTL/nn_serial.sv:30$375_EN' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1836' with positive edge clock.
+Creating register for signal `\nn_serial.$memwr$\scores$RTL/nn_serial.sv:30$376_EN' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1837' with positive edge clock.
+Creating register for signal `\nn_serial.$memwr$\hidden$RTL/nn_serial.sv:44$377_ADDR' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1838' with positive edge clock.
+Creating register for signal `\nn_serial.$memwr$\hidden$RTL/nn_serial.sv:44$377_DATA' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1839' with positive edge clock.
+Creating register for signal `\nn_serial.$memwr$\hidden$RTL/nn_serial.sv:44$377_EN' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1840' with positive edge clock.
+Creating register for signal `\nn_serial.$memwr$\scores$RTL/nn_serial.sv:54$378_ADDR' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1841' with positive edge clock.
+Creating register for signal `\nn_serial.$memwr$\scores$RTL/nn_serial.sv:54$378_DATA' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1842' with positive edge clock.
+Creating register for signal `\nn_serial.$memwr$\scores$RTL/nn_serial.sv:54$378_EN' using process `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+  created $dff cell `$procdff$1843' with positive edge clock.
+Creating register for signal `\nn_parallel.\out_valid' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1844' with positive edge clock.
+Creating register for signal `\nn_parallel.\class_id' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1845' with positive edge clock.
+Creating register for signal `\nn_parallel.\score0' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1846' with positive edge clock.
+Creating register for signal `\nn_parallel.\score1' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1847' with positive edge clock.
+Creating register for signal `\nn_parallel.\score2' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1848' with positive edge clock.
+Creating register for signal `\nn_parallel.\valid_pipe' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1849' with positive edge clock.
+Creating register for signal `\nn_parallel.\h' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1850' with positive edge clock.
+Creating register for signal `\nn_parallel.\i' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1851' with positive edge clock.
+Creating register for signal `\nn_parallel.\o' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1852' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_relu$func$RTL/nn_parallel.sv:53$62.$result' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1853' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_relu$func$RTL/nn_parallel.sv:53$62.acc' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1854' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_relu$func$RTL/nn_parallel.sv:53$62.shifted' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1855' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_relu$func$RTL/nn_parallel.sv:53$63.$result' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1856' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_relu$func$RTL/nn_parallel.sv:53$63.acc' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1857' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_relu$func$RTL/nn_parallel.sv:53$63.shifted' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1858' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_relu$func$RTL/nn_parallel.sv:53$64.$result' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1859' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_relu$func$RTL/nn_parallel.sv:53$64.acc' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1860' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_relu$func$RTL/nn_parallel.sv:53$64.shifted' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1861' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_relu$func$RTL/nn_parallel.sv:53$65.$result' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1862' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_relu$func$RTL/nn_parallel.sv:53$65.acc' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1863' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_relu$func$RTL/nn_parallel.sv:53$65.shifted' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1864' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_argmax$func$RTL/nn_parallel.sv:61$78.$result' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1865' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_argmax$func$RTL/nn_parallel.sv:61$78.a' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1866' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_argmax$func$RTL/nn_parallel.sv:61$78.b' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1867' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_argmax$func$RTL/nn_parallel.sv:61$78.c' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1868' with positive edge clock.
+Creating register for signal `\nn_parallel.\nn_argmax$func$RTL/nn_parallel.sv:61$78.best' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1869' with positive edge clock.
+Creating register for signal `\nn_parallel.\hidden[0]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1870' with positive edge clock.
+Creating register for signal `\nn_parallel.\hidden[1]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1871' with positive edge clock.
+Creating register for signal `\nn_parallel.\hidden[2]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1872' with positive edge clock.
+Creating register for signal `\nn_parallel.\hidden[3]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1873' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[0]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1874' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[1]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1875' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[2]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1876' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[3]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1877' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[4]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1878' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[5]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1879' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[6]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1880' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[7]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1881' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[8]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1882' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[9]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1883' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[10]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1884' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[11]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1885' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[12]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1886' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[13]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1887' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[14]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1888' with positive edge clock.
+Creating register for signal `\nn_parallel.\p1[15]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1889' with positive edge clock.
+Creating register for signal `\nn_parallel.\scores[0]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1890' with positive edge clock.
+Creating register for signal `\nn_parallel.\scores[1]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1891' with positive edge clock.
+Creating register for signal `\nn_parallel.\scores[2]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1892' with positive edge clock.
+Creating register for signal `\nn_parallel.\p2[0]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1893' with positive edge clock.
+Creating register for signal `\nn_parallel.\p2[1]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1894' with positive edge clock.
+Creating register for signal `\nn_parallel.\p2[2]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1895' with positive edge clock.
+Creating register for signal `\nn_parallel.\p2[3]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1896' with positive edge clock.
+Creating register for signal `\nn_parallel.\p2[4]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1897' with positive edge clock.
+Creating register for signal `\nn_parallel.\p2[5]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1898' with positive edge clock.
+Creating register for signal `\nn_parallel.\p2[6]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1899' with positive edge clock.
+Creating register for signal `\nn_parallel.\p2[7]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1900' with positive edge clock.
+Creating register for signal `\nn_parallel.\p2[8]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1901' with positive edge clock.
+Creating register for signal `\nn_parallel.\p2[9]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1902' with positive edge clock.
+Creating register for signal `\nn_parallel.\p2[10]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1903' with positive edge clock.
+Creating register for signal `\nn_parallel.\p2[11]' using process `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+  created $dff cell `$procdff$1904' with positive edge clock.
+
+7.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+7.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `nn_board_top.$proc$RTL/nn_board_top.sv:27$549'.
+Removing empty process `nn_board_top.$proc$RTL/nn_board_top.sv:5$548'.
+Removing empty process `nn_board_top.$proc$RTL/nn_board_top.sv:28$546'.
+Removing empty process `nn_board_top.$proc$RTL/nn_board_top.sv:6$543'.
+Found and cleaned up 5 empty switches in `\nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+Removing empty process `nn_demo_controller.$proc$RTL/nn_demo_controller.sv:22$531'.
+Found and cleaned up 1 empty switch in `\nn_serial.$proc$RTL/nn_serial.sv:0$522'.
+Removing empty process `nn_serial.$proc$RTL/nn_serial.sv:0$522'.
+Found and cleaned up 1 empty switch in `\nn_serial.$proc$RTL/nn_serial.sv:0$519'.
+Removing empty process `nn_serial.$proc$RTL/nn_serial.sv:0$519'.
+Found and cleaned up 1 empty switch in `\nn_serial.$proc$RTL/nn_weights.vh:0$511'.
+Removing empty process `nn_serial.$proc$RTL/nn_weights.vh:0$511'.
+Found and cleaned up 1 empty switch in `\nn_serial.$proc$RTL/nn_weights.vh:0$503'.
+Removing empty process `nn_serial.$proc$RTL/nn_weights.vh:0$503'.
+Found and cleaned up 13 empty switches in `\nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+Removing empty process `nn_serial.$proc$RTL/nn_serial.sv:25$388'.
+Removing empty process `nn_parallel.$proc$RTL/nn_parallel.sv:0$324'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$320'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$316'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$312'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$308'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$304'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$300'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$296'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$292'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$288'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$284'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$280'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$276'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$272'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$268'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$264'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$260'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$256'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$252'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$248'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$244'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$240'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$236'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$232'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$228'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$224'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$220'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$216'.
+Removing empty process `nn_parallel.$proc$RTL/nn_math.vh:0$212'.
+Found and cleaned up 16 empty switches in `\nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+Removing empty process `nn_parallel.$proc$RTL/nn_parallel.sv:34$107'.
+Cleaned up 38 empty switches.
+
+7.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module nn_board_top.
+Optimizing module nn_demo_controller.
+Optimizing module nn_serial.
+<suppressed ~18 debug messages>
+Optimizing module nn_parallel.
+<suppressed ~4 debug messages>
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module nn_board_top.
+Optimizing module nn_demo_controller.
+Optimizing module nn_serial.
+<suppressed ~4 debug messages>
+Optimizing module nn_parallel.
+<suppressed ~20 debug messages>
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\nn_board_top'.
+Finding identical cells in module `\nn_demo_controller'.
+Finding identical cells in module `\nn_serial'.
+<suppressed ~267 debug messages>
+Finding identical cells in module `\nn_parallel'.
+<suppressed ~42 debug messages>
+Removed a total of 103 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \nn_board_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \nn_demo_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \nn_serial..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$1071.
+    dead port 2/2 on $mux $procmux$1071.
+    dead port 1/2 on $mux $procmux$1068.
+    dead port 2/2 on $mux $procmux$1068.
+    dead port 1/2 on $mux $procmux$1065.
+    dead port 2/2 on $mux $procmux$1065.
+    dead port 1/2 on $mux $procmux$1062.
+    dead port 2/2 on $mux $procmux$1062.
+    dead port 1/2 on $mux $procmux$1059.
+    dead port 2/2 on $mux $procmux$1059.
+    dead port 1/2 on $mux $procmux$1056.
+    dead port 2/2 on $mux $procmux$1056.
+    dead port 1/2 on $mux $procmux$1053.
+    dead port 2/2 on $mux $procmux$1053.
+    dead port 1/2 on $mux $procmux$1050.
+    dead port 2/2 on $mux $procmux$1050.
+    dead port 1/2 on $mux $procmux$1047.
+    dead port 2/2 on $mux $procmux$1047.
+    dead port 1/2 on $mux $procmux$1044.
+    dead port 2/2 on $mux $procmux$1044.
+    dead port 1/2 on $mux $procmux$1041.
+    dead port 2/2 on $mux $procmux$1041.
+    dead port 1/2 on $mux $procmux$1038.
+    dead port 2/2 on $mux $procmux$1038.
+    dead port 1/2 on $mux $procmux$1035.
+    dead port 2/2 on $mux $procmux$1035.
+    dead port 1/2 on $mux $procmux$1032.
+    dead port 2/2 on $mux $procmux$1032.
+    dead port 1/2 on $mux $procmux$1029.
+    dead port 2/2 on $mux $procmux$1029.
+    dead port 1/2 on $mux $procmux$1026.
+    dead port 2/2 on $mux $procmux$1026.
+    dead port 1/2 on $mux $procmux$975.
+    dead port 2/2 on $mux $procmux$975.
+    dead port 1/2 on $mux $procmux$972.
+    dead port 2/2 on $mux $procmux$972.
+    dead port 1/2 on $mux $procmux$965.
+    dead port 2/2 on $mux $procmux$965.
+    dead port 1/2 on $mux $procmux$962.
+    dead port 2/2 on $mux $procmux$962.
+    dead port 1/2 on $mux $procmux$955.
+    dead port 2/2 on $mux $procmux$955.
+    dead port 1/2 on $mux $procmux$952.
+    dead port 2/2 on $mux $procmux$952.
+    dead port 1/2 on $mux $procmux$946.
+    dead port 2/2 on $mux $procmux$946.
+    dead port 1/2 on $mux $procmux$943.
+    dead port 2/2 on $mux $procmux$943.
+    dead port 1/2 on $mux $procmux$937.
+    dead port 2/2 on $mux $procmux$937.
+    dead port 1/2 on $mux $procmux$934.
+    dead port 2/2 on $mux $procmux$934.
+    dead port 1/2 on $mux $procmux$928.
+    dead port 2/2 on $mux $procmux$928.
+    dead port 1/2 on $mux $procmux$925.
+    dead port 2/2 on $mux $procmux$925.
+    dead port 1/2 on $mux $procmux$919.
+    dead port 2/2 on $mux $procmux$919.
+    dead port 1/2 on $mux $procmux$916.
+    dead port 2/2 on $mux $procmux$916.
+    dead port 1/2 on $mux $procmux$910.
+    dead port 2/2 on $mux $procmux$910.
+    dead port 1/2 on $mux $procmux$907.
+    dead port 2/2 on $mux $procmux$907.
+    dead port 1/2 on $mux $procmux$902.
+    dead port 2/2 on $mux $procmux$902.
+    dead port 1/2 on $mux $procmux$899.
+    dead port 2/2 on $mux $procmux$899.
+    dead port 1/2 on $mux $procmux$894.
+    dead port 2/2 on $mux $procmux$894.
+    dead port 1/2 on $mux $procmux$891.
+    dead port 2/2 on $mux $procmux$891.
+    dead port 1/2 on $mux $procmux$887.
+    dead port 2/2 on $mux $procmux$887.
+    dead port 1/2 on $mux $procmux$884.
+    dead port 2/2 on $mux $procmux$884.
+    dead port 1/2 on $mux $procmux$880.
+    dead port 2/2 on $mux $procmux$880.
+    dead port 1/2 on $mux $procmux$877.
+    dead port 2/2 on $mux $procmux$877.
+    dead port 1/2 on $mux $procmux$874.
+    dead port 2/2 on $mux $procmux$874.
+    dead port 1/2 on $mux $procmux$871.
+    dead port 2/2 on $mux $procmux$871.
+    dead port 1/2 on $mux $procmux$868.
+    dead port 2/2 on $mux $procmux$868.
+    dead port 1/2 on $mux $procmux$865.
+    dead port 2/2 on $mux $procmux$865.
+    dead port 1/2 on $mux $procmux$862.
+    dead port 2/2 on $mux $procmux$862.
+    dead port 1/2 on $mux $procmux$859.
+    dead port 2/2 on $mux $procmux$859.
+    dead port 1/2 on $mux $procmux$856.
+    dead port 2/2 on $mux $procmux$856.
+    dead port 1/2 on $mux $procmux$853.
+    dead port 2/2 on $mux $procmux$853.
+    dead port 1/2 on $mux $procmux$850.
+    dead port 1/2 on $mux $procmux$841.
+    dead port 1/2 on $mux $procmux$832.
+    dead port 1/2 on $mux $procmux$823.
+    dead port 1/2 on $mux $procmux$816.
+    dead port 1/2 on $mux $procmux$809.
+    dead port 1/2 on $mux $procmux$802.
+    dead port 1/2 on $mux $procmux$791.
+    dead port 2/2 on $mux $procmux$788.
+    dead port 1/2 on $mux $procmux$777.
+    dead port 2/2 on $mux $procmux$774.
+    dead port 1/2 on $mux $procmux$765.
+    dead port 2/2 on $mux $procmux$762.
+    dead port 1/2 on $mux $procmux$760.
+    dead port 1/2 on $mux $procmux$750.
+    dead port 2/2 on $mux $procmux$750.
+    dead port 1/2 on $mux $procmux$747.
+    dead port 2/2 on $mux $procmux$747.
+    dead port 1/2 on $mux $procmux$745.
+    dead port 2/2 on $mux $procmux$745.
+    dead port 1/2 on $mux $procmux$738.
+    dead port 2/2 on $mux $procmux$738.
+    dead port 1/2 on $mux $procmux$735.
+    dead port 2/2 on $mux $procmux$735.
+    dead port 1/2 on $mux $procmux$733.
+    dead port 2/2 on $mux $procmux$733.
+    dead port 1/2 on $mux $procmux$726.
+    dead port 2/2 on $mux $procmux$723.
+    dead port 1/2 on $mux $procmux$721.
+    dead port 1/2 on $mux $procmux$708.
+    dead port 2/2 on $mux $procmux$708.
+    dead port 1/2 on $mux $procmux$705.
+    dead port 2/2 on $mux $procmux$705.
+    dead port 1/2 on $mux $procmux$703.
+    dead port 2/2 on $mux $procmux$703.
+    dead port 1/2 on $mux $procmux$698.
+    dead port 2/2 on $mux $procmux$698.
+    dead port 1/2 on $mux $procmux$695.
+    dead port 2/2 on $mux $procmux$695.
+    dead port 1/2 on $mux $procmux$693.
+    dead port 2/2 on $mux $procmux$693.
+    dead port 1/2 on $mux $procmux$688.
+    dead port 2/2 on $mux $procmux$685.
+    dead port 1/2 on $mux $procmux$683.
+    dead port 1/2 on $mux $procmux$664.
+    dead port 2/2 on $mux $procmux$661.
+    dead port 1/2 on $mux $procmux$655.
+    dead port 2/2 on $mux $procmux$652.
+Running muxtree optimizer on module \nn_parallel..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$1550.
+    dead port 2/2 on $mux $procmux$1550.
+    dead port 1/2 on $mux $procmux$1547.
+    dead port 2/2 on $mux $procmux$1547.
+    dead port 1/2 on $mux $procmux$1544.
+    dead port 2/2 on $mux $procmux$1544.
+    dead port 1/2 on $mux $procmux$1541.
+    dead port 2/2 on $mux $procmux$1541.
+    dead port 1/2 on $mux $procmux$1538.
+    dead port 2/2 on $mux $procmux$1538.
+    dead port 1/2 on $mux $procmux$1535.
+    dead port 2/2 on $mux $procmux$1535.
+    dead port 1/2 on $mux $procmux$1532.
+    dead port 2/2 on $mux $procmux$1532.
+    dead port 1/2 on $mux $procmux$1529.
+    dead port 2/2 on $mux $procmux$1529.
+    dead port 1/2 on $mux $procmux$1526.
+    dead port 2/2 on $mux $procmux$1526.
+    dead port 1/2 on $mux $procmux$1523.
+    dead port 2/2 on $mux $procmux$1523.
+    dead port 1/2 on $mux $procmux$1520.
+    dead port 2/2 on $mux $procmux$1520.
+    dead port 1/2 on $mux $procmux$1517.
+    dead port 2/2 on $mux $procmux$1517.
+    dead port 1/2 on $mux $procmux$1514.
+    dead port 2/2 on $mux $procmux$1514.
+    dead port 1/2 on $mux $procmux$1511.
+    dead port 2/2 on $mux $procmux$1511.
+    dead port 1/2 on $mux $procmux$1508.
+    dead port 2/2 on $mux $procmux$1508.
+    dead port 1/2 on $mux $procmux$1505.
+    dead port 2/2 on $mux $procmux$1505.
+    dead port 1/2 on $mux $procmux$1502.
+    dead port 2/2 on $mux $procmux$1502.
+    dead port 1/2 on $mux $procmux$1484.
+    dead port 1/2 on $mux $procmux$1478.
+    dead port 1/2 on $mux $procmux$1472.
+    dead port 2/2 on $mux $procmux$1472.
+    dead port 1/2 on $mux $procmux$1469.
+    dead port 2/2 on $mux $procmux$1469.
+    dead port 1/2 on $mux $procmux$1466.
+    dead port 2/2 on $mux $procmux$1466.
+    dead port 1/2 on $mux $procmux$1463.
+    dead port 2/2 on $mux $procmux$1463.
+    dead port 1/2 on $mux $procmux$1460.
+    dead port 2/2 on $mux $procmux$1460.
+    dead port 1/2 on $mux $procmux$1457.
+    dead port 2/2 on $mux $procmux$1457.
+    dead port 1/2 on $mux $procmux$1454.
+    dead port 2/2 on $mux $procmux$1454.
+    dead port 1/2 on $mux $procmux$1451.
+    dead port 2/2 on $mux $procmux$1451.
+    dead port 1/2 on $mux $procmux$1448.
+    dead port 2/2 on $mux $procmux$1448.
+    dead port 1/2 on $mux $procmux$1445.
+    dead port 2/2 on $mux $procmux$1445.
+    dead port 1/2 on $mux $procmux$1442.
+    dead port 2/2 on $mux $procmux$1442.
+    dead port 1/2 on $mux $procmux$1439.
+    dead port 2/2 on $mux $procmux$1439.
+    dead port 1/2 on $mux $procmux$1436.
+    dead port 2/2 on $mux $procmux$1436.
+    dead port 1/2 on $mux $procmux$1433.
+    dead port 2/2 on $mux $procmux$1433.
+    dead port 1/2 on $mux $procmux$1430.
+    dead port 2/2 on $mux $procmux$1430.
+    dead port 1/2 on $mux $procmux$1427.
+    dead port 2/2 on $mux $procmux$1427.
+    dead port 1/2 on $mux $procmux$1424.
+    dead port 2/2 on $mux $procmux$1424.
+    dead port 1/2 on $mux $procmux$1421.
+    dead port 2/2 on $mux $procmux$1421.
+    dead port 1/2 on $mux $procmux$1418.
+    dead port 2/2 on $mux $procmux$1418.
+    dead port 1/2 on $mux $procmux$1415.
+    dead port 2/2 on $mux $procmux$1415.
+    dead port 1/2 on $mux $procmux$1412.
+    dead port 2/2 on $mux $procmux$1412.
+    dead port 1/2 on $mux $procmux$1409.
+    dead port 2/2 on $mux $procmux$1409.
+    dead port 1/2 on $mux $procmux$1406.
+    dead port 2/2 on $mux $procmux$1406.
+    dead port 1/2 on $mux $procmux$1403.
+    dead port 2/2 on $mux $procmux$1403.
+    dead port 1/2 on $mux $procmux$1400.
+    dead port 1/2 on $mux $procmux$1394.
+    dead port 2/2 on $mux $procmux$1391.
+    dead port 1/2 on $mux $procmux$1385.
+    dead port 2/2 on $mux $procmux$1382.
+    dead port 1/2 on $mux $procmux$1380.
+    dead port 1/2 on $mux $procmux$1373.
+    dead port 2/2 on $mux $procmux$1370.
+    dead port 1/2 on $mux $procmux$1364.
+    dead port 2/2 on $mux $procmux$1361.
+    dead port 1/2 on $mux $procmux$1359.
+    dead port 1/2 on $mux $procmux$1352.
+    dead port 2/2 on $mux $procmux$1349.
+    dead port 1/2 on $mux $procmux$1343.
+    dead port 2/2 on $mux $procmux$1340.
+    dead port 1/2 on $mux $procmux$1338.
+    dead port 1/2 on $mux $procmux$1331.
+    dead port 2/2 on $mux $procmux$1328.
+    dead port 1/2 on $mux $procmux$1322.
+    dead port 2/2 on $mux $procmux$1319.
+    dead port 1/2 on $mux $procmux$1317.
+    dead port 1/2 on $mux $procmux$1310.
+    dead port 1/2 on $mux $procmux$1304.
+    dead port 1/2 on $mux $procmux$1298.
+    dead port 1/2 on $mux $procmux$1292.
+    dead port 2/2 on $mux $procmux$1292.
+    dead port 1/2 on $mux $procmux$1289.
+    dead port 2/2 on $mux $procmux$1289.
+    dead port 1/2 on $mux $procmux$1286.
+    dead port 2/2 on $mux $procmux$1286.
+    dead port 1/2 on $mux $procmux$1283.
+    dead port 2/2 on $mux $procmux$1283.
+    dead port 1/2 on $mux $procmux$1280.
+    dead port 2/2 on $mux $procmux$1280.
+    dead port 1/2 on $mux $procmux$1277.
+    dead port 2/2 on $mux $procmux$1277.
+    dead port 1/2 on $mux $procmux$1274.
+    dead port 2/2 on $mux $procmux$1274.
+    dead port 1/2 on $mux $procmux$1271.
+    dead port 2/2 on $mux $procmux$1271.
+    dead port 1/2 on $mux $procmux$1268.
+    dead port 2/2 on $mux $procmux$1268.
+    dead port 1/2 on $mux $procmux$1265.
+    dead port 2/2 on $mux $procmux$1265.
+    dead port 1/2 on $mux $procmux$1253.
+    dead port 2/2 on $mux $procmux$1250.
+    dead port 1/2 on $mux $procmux$1244.
+    dead port 2/2 on $mux $procmux$1241.
+Removed 276 multiplexer ports.
+<suppressed ~96 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \nn_board_top.
+  Optimizing cells in module \nn_demo_controller.
+  Optimizing cells in module \nn_serial.
+    Consolidated identical input bits for $mux cell $procmux$829:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$829_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$829_Y [0]
+      New connections: $procmux$829_Y [15:1] = { $procmux$829_Y [0] $procmux$829_Y [0] $procmux$829_Y [0] $procmux$829_Y [0] $procmux$829_Y [0] $procmux$829_Y [0] $procmux$829_Y [0] $procmux$829_Y [0] $procmux$829_Y [0] $procmux$829_Y [0] $procmux$829_Y [0] $procmux$829_Y [0] $procmux$829_Y [0] $procmux$829_Y [0] $procmux$829_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$999:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$999_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$999_Y [0]
+      New connections: $procmux$999_Y [15:1] = { $procmux$999_Y [0] $procmux$999_Y [0] $procmux$999_Y [0] $procmux$999_Y [0] $procmux$999_Y [0] $procmux$999_Y [0] $procmux$999_Y [0] $procmux$999_Y [0] $procmux$999_Y [0] $procmux$999_Y [0] $procmux$999_Y [0] $procmux$999_Y [0] $procmux$999_Y [0] $procmux$999_Y [0] $procmux$999_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$806:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$806_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$806_Y [0]
+      New connections: $procmux$806_Y [31:1] = { $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] $procmux$806_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$996:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$996_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$996_Y [0]
+      New connections: $procmux$996_Y [15:1] = { $procmux$996_Y [0] $procmux$996_Y [0] $procmux$996_Y [0] $procmux$996_Y [0] $procmux$996_Y [0] $procmux$996_Y [0] $procmux$996_Y [0] $procmux$996_Y [0] $procmux$996_Y [0] $procmux$996_Y [0] $procmux$996_Y [0] $procmux$996_Y [0] $procmux$996_Y [0] $procmux$996_Y [0] $procmux$996_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$993:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$993_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$993_Y [0]
+      New connections: $procmux$993_Y [15:1] = { $procmux$993_Y [0] $procmux$993_Y [0] $procmux$993_Y [0] $procmux$993_Y [0] $procmux$993_Y [0] $procmux$993_Y [0] $procmux$993_Y [0] $procmux$993_Y [0] $procmux$993_Y [0] $procmux$993_Y [0] $procmux$993_Y [0] $procmux$993_Y [0] $procmux$993_Y [0] $procmux$993_Y [0] $procmux$993_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$990:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$990_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$990_Y [0]
+      New connections: $procmux$990_Y [15:1] = { $procmux$990_Y [0] $procmux$990_Y [0] $procmux$990_Y [0] $procmux$990_Y [0] $procmux$990_Y [0] $procmux$990_Y [0] $procmux$990_Y [0] $procmux$990_Y [0] $procmux$990_Y [0] $procmux$990_Y [0] $procmux$990_Y [0] $procmux$990_Y [0] $procmux$990_Y [0] $procmux$990_Y [0] $procmux$990_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$987:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$987_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$987_Y [0]
+      New connections: $procmux$987_Y [31:1] = { $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] $procmux$987_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$984:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$984_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$984_Y [0]
+      New connections: $procmux$984_Y [31:1] = { $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] $procmux$984_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$981:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$981_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$981_Y [0]
+      New connections: $procmux$981_Y [31:1] = { $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] $procmux$981_Y [0] }
+    New ctrl vector for $pmux cell $procmux$1095: { $procmux$1209_CMP $procmux$1149_CMP $procmux$1141_CMP $auto$opt_reduce.cc:134:opt_pmux$1915 }
+    New ctrl vector for $pmux cell $procmux$1078: { $procmux$1209_CMP $procmux$1145_CMP $auto$opt_reduce.cc:134:opt_pmux$1917 $procmux$1137_CMP }
+  Optimizing cells in module \nn_serial.
+    Consolidated identical input bits for $mux cell $procmux$1017:
+      Old ports: A=$2$memwr$\hidden$RTL/nn_serial.sv:44$377_EN[15:0]$465, B=16'0000000000000000, Y=$procmux$1017_Y
+      New ports: A=$procmux$829_Y [0], B=1'0, Y=$procmux$1017_Y [0]
+      New connections: $procmux$1017_Y [15:1] = { $procmux$1017_Y [0] $procmux$1017_Y [0] $procmux$1017_Y [0] $procmux$1017_Y [0] $procmux$1017_Y [0] $procmux$1017_Y [0] $procmux$1017_Y [0] $procmux$1017_Y [0] $procmux$1017_Y [0] $procmux$1017_Y [0] $procmux$1017_Y [0] $procmux$1017_Y [0] $procmux$1017_Y [0] $procmux$1017_Y [0] $procmux$1017_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$1008:
+      Old ports: A=$2$memwr$\scores$RTL/nn_serial.sv:54$378_EN[31:0]$468, B=0, Y=$procmux$1008_Y
+      New ports: A=$procmux$806_Y [0], B=1'0, Y=$procmux$1008_Y [0]
+      New connections: $procmux$1008_Y [31:1] = { $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] $procmux$1008_Y [0] }
+  Optimizing cells in module \nn_serial.
+  Optimizing cells in module \nn_parallel.
+Performed a total of 13 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\nn_board_top'.
+Finding identical cells in module `\nn_demo_controller'.
+Finding identical cells in module `\nn_serial'.
+<suppressed ~39 debug messages>
+Finding identical cells in module `\nn_parallel'.
+Removed a total of 13 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$1788 ($dff) from module nn_demo_controller (D = $procmux$627_Y, Q = \score0, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1918 ($sdff) from module nn_demo_controller (D = \p0, Q = \score0).
+Adding SRST signal on $procdff$1789 ($dff) from module nn_demo_controller (D = $procmux$622_Y, Q = \score1, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1920 ($sdff) from module nn_demo_controller (D = \p1, Q = \score1).
+Adding SRST signal on $procdff$1790 ($dff) from module nn_demo_controller (D = $procmux$617_Y, Q = \score2, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1922 ($sdff) from module nn_demo_controller (D = \p2, Q = \score2).
+Adding SRST signal on $procdff$1791 ($dff) from module nn_demo_controller (D = $procmux$610_Y, Q = \busy, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1924 ($sdff) from module nn_demo_controller (D = 1'1, Q = \busy).
+Adding SRST signal on $procdff$1792 ($dff) from module nn_demo_controller (D = $procmux$604_Y, Q = \done, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1928 ($sdff) from module nn_demo_controller (D = $procmux$604_Y, Q = \done).
+Adding SRST signal on $procdff$1793 ($dff) from module nn_demo_controller (D = $procmux$596_Y, Q = \mismatch, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1932 ($sdff) from module nn_demo_controller (D = $procmux$596_Y, Q = \mismatch).
+Adding SRST signal on $procdff$1794 ($dff) from module nn_demo_controller (D = $procmux$588_Y, Q = \parallel_class, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$1936 ($sdff) from module nn_demo_controller (D = \pc, Q = \parallel_class).
+Adding SRST signal on $procdff$1795 ($dff) from module nn_demo_controller (D = $procmux$583_Y, Q = \serial_class, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$1938 ($sdff) from module nn_demo_controller (D = \sc, Q = \serial_class).
+Adding SRST signal on $procdff$1796 ($dff) from module nn_demo_controller (D = $procmux$578_Y, Q = \parallel_cycles, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1940 ($sdff) from module nn_demo_controller (D = \age, Q = \parallel_cycles).
+Adding SRST signal on $procdff$1797 ($dff) from module nn_demo_controller (D = $procmux$573_Y, Q = \serial_cycles, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1942 ($sdff) from module nn_demo_controller (D = \age, Q = \serial_cycles).
+Adding SRST signal on $procdff$1798 ($dff) from module nn_demo_controller (D = $procmux$568_Y, Q = \completed_count, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1944 ($sdff) from module nn_demo_controller (D = $add$RTL/nn_demo_controller.sv:41$542_Y, Q = \completed_count).
+Adding SRST signal on $procdff$1800 ($dff) from module nn_demo_controller (D = $procmux$560_Y, Q = \age, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1946 ($sdff) from module nn_demo_controller (D = $add$RTL/nn_demo_controller.sv:33$532_Y, Q = \age).
+Adding SRST signal on $procdff$1806 ($dff) from module nn_serial (D = $2\i[31:0], Q = \i, rval = 3).
+Adding SRST signal on $procdff$1807 ($dff) from module nn_serial (D = $procmux$1208_Y, Q = \x[0], rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1951 ($sdff) from module nn_serial (D = \features [7:0], Q = \x[0]).
+Adding SRST signal on $procdff$1810 ($dff) from module nn_serial (D = $procmux$1166_Y, Q = \x[3], rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1955 ($sdff) from module nn_serial (D = \features [31:24], Q = \x[3]).
+Adding SRST signal on $procdff$1811 ($dff) from module nn_serial (D = $procmux$1136_Y, Q = \state, rval = 3'000).
+Adding EN signal on $auto$ff.cc:266:slice$1959 ($sdff) from module nn_serial (D = $procmux$1136_Y, Q = \state).
+Adding SRST signal on $procdff$1812 ($dff) from module nn_serial (D = $procmux$1118_Y, Q = \node, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$1969 ($sdff) from module nn_serial (D = $procmux$1118_Y, Q = \node).
+Adding SRST signal on $procdff$1813 ($dff) from module nn_serial (D = $procmux$1095_Y, Q = \term, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$1979 ($sdff) from module nn_serial (D = $procmux$1095_Y, Q = \term).
+Adding SRST signal on $procdff$1814 ($dff) from module nn_serial (D = $procmux$1078_Y, Q = \accumulator, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1987 ($sdff) from module nn_serial (D = $procmux$1078_Y, Q = \accumulator).
+Adding SRST signal on $procdff$1808 ($dff) from module nn_serial (D = $procmux$1194_Y, Q = \x[1], rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1997 ($sdff) from module nn_serial (D = \features [15:8], Q = \x[1]).
+Adding SRST signal on $procdff$1809 ($dff) from module nn_serial (D = $procmux$1180_Y, Q = \x[2], rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$2001 ($sdff) from module nn_serial (D = \features [23:16], Q = \x[2]).
+Adding SRST signal on $procdff$1801 ($dff) from module nn_serial (D = $procmux$1002_Y, Q = \out_valid, rval = 1'0).
+Adding SRST signal on $procdff$1802 ($dff) from module nn_serial (D = $procmux$1232_Y, Q = \class_id, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$2006 ($sdff) from module nn_serial (D = $4\nn_argmax$func$RTL/nn_serial.sv:60$365.$result[1:0]$502, Q = \class_id).
+Adding SRST signal on $procdff$1803 ($dff) from module nn_serial (D = $procmux$1226_Y, Q = \score0, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$2008 ($sdff) from module nn_serial (D = $memrd$\scores$RTL/nn_serial.sv:59$492_DATA, Q = \score0).
+Adding SRST signal on $procdff$1804 ($dff) from module nn_serial (D = $procmux$1220_Y, Q = \score1, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$2010 ($sdff) from module nn_serial (D = $memrd$\scores$RTL/nn_serial.sv:59$493_DATA, Q = \score1).
+Adding SRST signal on $procdff$1805 ($dff) from module nn_serial (D = $procmux$1214_Y, Q = \score2, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$2012 ($sdff) from module nn_serial (D = $memrd$\scores$RTL/nn_serial.sv:59$494_DATA, Q = \score2).
+Setting constant 1-bit at position 0 on $procdff$1826 ($dff) from module nn_serial.
+Setting constant 1-bit at position 1 on $procdff$1826 ($dff) from module nn_serial.
+Setting constant 1-bit at position 0 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 1 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 2 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 3 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 4 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 5 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 6 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 7 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 8 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 9 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 10 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 11 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 12 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 13 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 14 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 15 on $procdff$1817 ($dff) from module nn_serial.
+Setting constant 1-bit at position 0 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 1 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 2 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 3 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 4 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 5 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 6 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 7 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 8 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 9 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 10 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 11 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 12 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 13 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 14 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 15 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 16 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 17 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 18 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 19 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 20 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 21 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 22 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 23 on $procdff$1823 ($dff) from module nn_serial.
+Setting constant 1-bit at position 0 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 1 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 2 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 3 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 4 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 5 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 6 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 7 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 8 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 9 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 10 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 11 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 12 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 13 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 14 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 15 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 16 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 17 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 18 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 19 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 20 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 21 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 22 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 23 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 24 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 25 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 26 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 27 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 28 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 29 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 30 on $procdff$1830 ($dff) from module nn_serial.
+Setting constant 1-bit at position 31 on $procdff$1830 ($dff) from module nn_serial.
+Adding SRST signal on $procdff$1904 ($dff) from module nn_parallel (D = $procmux$1553_Y, Q = \p2[11], rval = 24'000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2014 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:56$201_Y, Q = \p2[11]).
+Adding SRST signal on $procdff$1903 ($dff) from module nn_parallel (D = $procmux$1559_Y, Q = \p2[10], rval = 24'000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2016 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:56$200_Y, Q = \p2[10]).
+Adding SRST signal on $procdff$1902 ($dff) from module nn_parallel (D = $procmux$1565_Y, Q = \p2[9], rval = 24'000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2018 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:56$199_Y, Q = \p2[9]).
+Adding SRST signal on $procdff$1901 ($dff) from module nn_parallel (D = $procmux$1571_Y, Q = \p2[8], rval = 24'000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2020 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:56$198_Y, Q = \p2[8]).
+Adding SRST signal on $procdff$1844 ($dff) from module nn_parallel (D = \valid_pipe [3], Q = \out_valid, rval = 1'0).
+Adding SRST signal on $procdff$1845 ($dff) from module nn_parallel (D = $procmux$1781_Y, Q = \class_id, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$2023 ($sdff) from module nn_parallel (D = $4\nn_argmax$func$RTL/nn_parallel.sv:61$78.$result[1:0]$211, Q = \class_id).
+Adding SRST signal on $procdff$1846 ($dff) from module nn_parallel (D = $procmux$1775_Y, Q = \score0, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$2025 ($sdff) from module nn_parallel (D = \scores[0], Q = \score0).
+Adding SRST signal on $procdff$1847 ($dff) from module nn_parallel (D = $procmux$1769_Y, Q = \score1, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$2027 ($sdff) from module nn_parallel (D = \scores[1], Q = \score1).
+Adding SRST signal on $procdff$1848 ($dff) from module nn_parallel (D = $procmux$1763_Y, Q = \score2, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$2029 ($sdff) from module nn_parallel (D = \scores[2], Q = \score2).
+Adding SRST signal on $procdff$1849 ($dff) from module nn_parallel (D = { \valid_pipe [2:0] \in_valid }, Q = \valid_pipe, rval = 4'0000).
+Adding SRST signal on $procdff$1850 ($dff) from module nn_parallel (D = $3\h[31:0], Q = \h, rval = 4).
+Adding SRST signal on $procdff$1851 ($dff) from module nn_parallel (D = $3\i[31:0], Q = \i, rval = 4).
+Adding SRST signal on $procdff$1852 ($dff) from module nn_parallel (D = $3\o[31:0], Q = \o, rval = 3).
+Adding SRST signal on $procdff$1887 ($dff) from module nn_parallel (D = $procmux$1655_Y, Q = \p1[13], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2035 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$155_Y, Q = \p1[13]).
+Adding SRST signal on $procdff$1888 ($dff) from module nn_parallel (D = $procmux$1649_Y, Q = \p1[14], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2037 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$156_Y, Q = \p1[14]).
+Adding SRST signal on $procdff$1889 ($dff) from module nn_parallel (D = $procmux$1643_Y, Q = \p1[15], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2039 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$157_Y, Q = \p1[15]).
+Adding SRST signal on $procdff$1890 ($dff) from module nn_parallel (D = $procmux$1637_Y, Q = \scores[0], rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$2041 ($sdff) from module nn_parallel (D = \osum[0], Q = \scores[0]).
+Adding SRST signal on $procdff$1891 ($dff) from module nn_parallel (D = $procmux$1631_Y, Q = \scores[1], rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$2043 ($sdff) from module nn_parallel (D = \osum[1], Q = \scores[1]).
+Adding SRST signal on $procdff$1892 ($dff) from module nn_parallel (D = $procmux$1625_Y, Q = \scores[2], rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$2045 ($sdff) from module nn_parallel (D = \osum[2], Q = \scores[2]).
+Adding SRST signal on $procdff$1893 ($dff) from module nn_parallel (D = $procmux$1619_Y, Q = \p2[0], rval = 24'000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2047 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:56$190_Y, Q = \p2[0]).
+Adding SRST signal on $procdff$1894 ($dff) from module nn_parallel (D = $procmux$1613_Y, Q = \p2[1], rval = 24'000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2049 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:56$191_Y, Q = \p2[1]).
+Adding SRST signal on $procdff$1895 ($dff) from module nn_parallel (D = $procmux$1607_Y, Q = \p2[2], rval = 24'000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2051 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:56$192_Y, Q = \p2[2]).
+Adding SRST signal on $procdff$1896 ($dff) from module nn_parallel (D = $procmux$1601_Y, Q = \p2[3], rval = 24'000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2053 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:56$193_Y, Q = \p2[3]).
+Adding SRST signal on $procdff$1897 ($dff) from module nn_parallel (D = $procmux$1595_Y, Q = \p2[4], rval = 24'000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2055 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:56$194_Y, Q = \p2[4]).
+Adding SRST signal on $procdff$1898 ($dff) from module nn_parallel (D = $procmux$1589_Y, Q = \p2[5], rval = 24'000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2057 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:56$195_Y, Q = \p2[5]).
+Adding SRST signal on $procdff$1899 ($dff) from module nn_parallel (D = $procmux$1583_Y, Q = \p2[6], rval = 24'000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2059 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:56$196_Y, Q = \p2[6]).
+Adding SRST signal on $procdff$1900 ($dff) from module nn_parallel (D = $procmux$1577_Y, Q = \p2[7], rval = 24'000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2061 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:56$197_Y, Q = \p2[7]).
+Adding SRST signal on $procdff$1870 ($dff) from module nn_parallel (D = $procmux$1757_Y, Q = \hidden[0], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2063 ($sdff) from module nn_parallel (D = $3\nn_relu$func$RTL/nn_parallel.sv:53$62.$result[15:0]$172, Q = \hidden[0]).
+Adding SRST signal on $procdff$1871 ($dff) from module nn_parallel (D = $procmux$1751_Y, Q = \hidden[1], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2065 ($sdff) from module nn_parallel (D = $3\nn_relu$func$RTL/nn_parallel.sv:53$63.$result[15:0]$177, Q = \hidden[1]).
+Adding SRST signal on $procdff$1872 ($dff) from module nn_parallel (D = $procmux$1745_Y, Q = \hidden[2], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2067 ($sdff) from module nn_parallel (D = $3\nn_relu$func$RTL/nn_parallel.sv:53$64.$result[15:0]$182, Q = \hidden[2]).
+Adding SRST signal on $procdff$1873 ($dff) from module nn_parallel (D = $procmux$1739_Y, Q = \hidden[3], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2069 ($sdff) from module nn_parallel (D = $3\nn_relu$func$RTL/nn_parallel.sv:53$65.$result[15:0]$187, Q = \hidden[3]).
+Adding SRST signal on $procdff$1874 ($dff) from module nn_parallel (D = $procmux$1733_Y, Q = \p1[0], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2071 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$142_Y, Q = \p1[0]).
+Adding SRST signal on $procdff$1875 ($dff) from module nn_parallel (D = $procmux$1727_Y, Q = \p1[1], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2073 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$143_Y, Q = \p1[1]).
+Adding SRST signal on $procdff$1876 ($dff) from module nn_parallel (D = $procmux$1721_Y, Q = \p1[2], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2075 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$144_Y, Q = \p1[2]).
+Adding SRST signal on $procdff$1877 ($dff) from module nn_parallel (D = $procmux$1715_Y, Q = \p1[3], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2077 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$145_Y, Q = \p1[3]).
+Adding SRST signal on $procdff$1878 ($dff) from module nn_parallel (D = $procmux$1709_Y, Q = \p1[4], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2079 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$146_Y, Q = \p1[4]).
+Adding SRST signal on $procdff$1879 ($dff) from module nn_parallel (D = $procmux$1703_Y, Q = \p1[5], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2081 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$147_Y, Q = \p1[5]).
+Adding SRST signal on $procdff$1880 ($dff) from module nn_parallel (D = $procmux$1697_Y, Q = \p1[6], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2083 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$148_Y, Q = \p1[6]).
+Adding SRST signal on $procdff$1881 ($dff) from module nn_parallel (D = $procmux$1691_Y, Q = \p1[7], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2085 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$149_Y, Q = \p1[7]).
+Adding SRST signal on $procdff$1882 ($dff) from module nn_parallel (D = $procmux$1685_Y, Q = \p1[8], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2087 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$150_Y, Q = \p1[8]).
+Adding SRST signal on $procdff$1883 ($dff) from module nn_parallel (D = $procmux$1679_Y, Q = \p1[9], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2089 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$151_Y, Q = \p1[9]).
+Adding SRST signal on $procdff$1884 ($dff) from module nn_parallel (D = $procmux$1673_Y, Q = \p1[10], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2091 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$152_Y, Q = \p1[10]).
+Adding SRST signal on $procdff$1885 ($dff) from module nn_parallel (D = $procmux$1667_Y, Q = \p1[11], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2093 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$153_Y, Q = \p1[11]).
+Adding SRST signal on $procdff$1886 ($dff) from module nn_parallel (D = $procmux$1661_Y, Q = \p1[12], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2095 ($sdff) from module nn_parallel (D = $mul$RTL/nn_parallel.sv:51$154_Y, Q = \p1[12]).
+Setting constant 1-bit at position 0 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 1 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 2 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 3 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 4 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 5 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 6 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 7 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 8 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 9 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 10 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 11 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 12 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 13 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 14 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 15 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 16 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 17 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 18 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 19 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 20 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 21 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 22 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 23 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 24 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 25 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 26 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 27 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 28 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 29 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 30 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 31 on $procdff$1869 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 0 on $procdff$1865 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 1 on $procdff$1865 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 0 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 1 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 2 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 3 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 4 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 5 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 6 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 7 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 8 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 9 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 10 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 11 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 12 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 13 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 14 on $procdff$1862 ($dff) from module nn_parallel.
+Setting constant 1-bit at position 15 on $procdff$1862 ($dff) from module nn_parallel.
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \nn_board_top..
+Finding unused cells or wires in module \nn_demo_controller..
+Finding unused cells or wires in module \nn_serial..
+Finding unused cells or wires in module \nn_parallel..
+Removed 154 unused cells and 1173 unused wires.
+<suppressed ~162 debug messages>
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module nn_board_top.
+Optimizing module nn_demo_controller.
+<suppressed ~2 debug messages>
+Optimizing module nn_parallel.
+Optimizing module nn_serial.
+<suppressed ~3 debug messages>
+
+8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \nn_board_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \nn_demo_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \nn_parallel..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \nn_serial..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \nn_board_top.
+  Optimizing cells in module \nn_demo_controller.
+  Optimizing cells in module \nn_parallel.
+  Optimizing cells in module \nn_serial.
+    New ctrl vector for $pmux cell $procmux$1095: { $eq$RTL/nn_serial.sv:23$385_Y $auto$opt_reduce.cc:134:opt_pmux$2098 $auto$opt_reduce.cc:134:opt_pmux$1915 }
+  Optimizing cells in module \nn_serial.
+Performed a total of 1 changes.
+
+8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\nn_board_top'.
+Finding identical cells in module `\nn_demo_controller'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\nn_parallel'.
+Finding identical cells in module `\nn_serial'.
+<suppressed ~27 debug messages>
+Removed a total of 11 cells.
+
+8.13. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2015 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2017 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2021 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2038 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$2038 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$2038 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2040 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2048 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2052 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2056 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2062 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2074 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$2074 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$2074 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$2074 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2076 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2078 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2082 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2084 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2088 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2092 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2094 ($sdffe) from module nn_parallel.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$2096 ($sdffe) from module nn_parallel.
+Adding EN signal on $auto$ff.cc:266:slice$1980 ($sdffe) from module nn_serial (D = $procmux$1095_Y, Q = \term).
+
+8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \nn_board_top..
+Finding unused cells or wires in module \nn_demo_controller..
+Finding unused cells or wires in module \nn_parallel..
+Finding unused cells or wires in module \nn_serial..
+Removed 0 unused cells and 11 unused wires.
+<suppressed ~2 debug messages>
+
+8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module nn_board_top.
+Optimizing module nn_demo_controller.
+Optimizing module nn_parallel.
+Optimizing module nn_serial.
+
+8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \nn_board_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \nn_demo_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \nn_parallel..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \nn_serial..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~26 debug messages>
+
+8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \nn_board_top.
+  Optimizing cells in module \nn_demo_controller.
+  Optimizing cells in module \nn_parallel.
+  Optimizing cells in module \nn_serial.
+    New input vector for $reduce_and cell $auto$opt_dff.cc:220:make_patterns_logic$2121: { $auto$opt_dff.cc:194:make_patterns_logic$1983 $auto$opt_dff.cc:194:make_patterns_logic$1961 $auto$opt_dff.cc:194:make_patterns_logic$2118 }
+  Optimizing cells in module \nn_serial.
+Performed a total of 1 changes.
+
+8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\nn_board_top'.
+Finding identical cells in module `\nn_demo_controller'.
+Finding identical cells in module `\nn_parallel'.
+Finding identical cells in module `\nn_serial'.
+Removed a total of 0 cells.
+
+8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \nn_board_top..
+Finding unused cells or wires in module \nn_demo_controller..
+Finding unused cells or wires in module \nn_parallel..
+Finding unused cells or wires in module \nn_serial..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module nn_board_top.
+Optimizing module nn_demo_controller.
+Optimizing module nn_parallel.
+Optimizing module nn_serial.
+
+8.23. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.24. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \nn_board_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \nn_demo_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \nn_parallel..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \nn_serial..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~26 debug messages>
+
+8.25. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \nn_board_top.
+  Optimizing cells in module \nn_demo_controller.
+  Optimizing cells in module \nn_parallel.
+  Optimizing cells in module \nn_serial.
+Performed a total of 0 changes.
+
+8.26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\nn_board_top'.
+Finding identical cells in module `\nn_demo_controller'.
+Finding identical cells in module `\nn_parallel'.
+Finding identical cells in module `\nn_serial'.
+Removed a total of 0 cells.
+
+8.27. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \nn_board_top..
+Finding unused cells or wires in module \nn_demo_controller..
+Finding unused cells or wires in module \nn_parallel..
+Finding unused cells or wires in module \nn_serial..
+
+8.29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module nn_board_top.
+Optimizing module nn_demo_controller.
+Optimizing module nn_parallel.
+Optimizing module nn_serial.
+
+8.30. Finished OPT passes. (There is nothing left to do.)
+
+9. Executing JSON backend.
+
+10. Generating Graphviz representation of design.
+Writing dot description to `Images/rtl_schematic.dot'.
+Dumping module nn_board_top to page 1.

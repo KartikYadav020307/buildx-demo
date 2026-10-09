@@ -1,0 +1,7 @@
+Icarus Verilog 12.0; updated testbench verification 2026-10-06
+PASS reset abort/recovery, argmax ties, ReLU saturation
+PASS parallel: 4502 vectors, full-rate bursts + bubbles, latency=4 periods
+PASS wrapper: 150 Iris samples, held toggle, busy rejection, reset abort, counters
+PASS serial: 4502 vectors, input latching, latency=36 periods
+ALL TESTS PASSED
+/workspace/scratch/f71e8cde448c/Project4_NN/Testbench/tb_nn.sv:169: $finish called at 3421600000 (1ps)

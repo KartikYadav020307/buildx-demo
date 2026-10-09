@@ -1,0 +1,26 @@
+
+****** xsim v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Fri Oct  9 06:57:24 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/nn_waveform/xsim_script.tcl
+# xsim {nn_waveform} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+Parallel core result at 191000: class=0 latency=4 cycles
+Serial core result at 831000: class=0 latency=36 cycles
+PASS demo d6d528e0: class=0 scores=19058,2857,-24757 cycles=4,36 count=1
+Parallel core result at 1131000: class=1 latency=4 cycles
+Serial core result at 1771000: class=1 latency=36 cycles
+PASS demo 09110b2a: class=1 scores=-8102,8917,-3790 cycles=4,36 count=2
+Parallel core result at 2071000: class=2 latency=4 cycles
+Serial core result at 2711000: class=2 latency=36 cycles
+PASS demo 37281210: class=2 scores=-13784,-6177,16696 cycles=4,36 count=3
+WAVEFORM TEST PASS: 3 cases; exact scores; 4/36 cycle latency
+$finish called at time : 2900 ns : File "C:/Users/yamle/.codex/.chatgpt-projects/g-p-6abdfe3efc1c81918338f193c9249dfb/project4-work/xsim-verification/Testbench/tb_nn_waveform.sv" Line 63
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Oct  9 06:57:28 2026...
