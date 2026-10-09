@@ -1,6 +1,7 @@
 # V-SPACE FPGA Build Challenge 2026
 
 This is the selected team repository for the FPGA challenge. It contains
+**Experiment 2: Reconfigurable FPGA Radar Target Detection**,
 **Experiment 3: FPGA ECG FIR Filtering and Peak Analysis**, **Experiment 4:
 FPGA Neural Network Inference Accelerator**, and **Experiment 5:
 Reconfigurable FPGA BNN Safety Response**.
@@ -12,7 +13,7 @@ Reconfigurable FPGA BNN Safety Response**.
 | Team name | Beyond Boolean |
 | Team members | Shanshank Pulipati; Kartik Yadav |
 | Registration numbers | Shanshank Pulipati: 25BEC0573; Kartik Yadav: 25BEC0087 |
-| Selected FPGA board for Experiments 3, 4 and 5 | PYNQ-Z2 |
+| Selected FPGA board for Experiments 2, 3, 4 and 5 | PYNQ-Z2 |
 | FPGA device | Xilinx Zynq-7000 XC7Z020 (`xc7z020clg400-1`) |
 
 ## Five-experiment summary
@@ -20,7 +21,7 @@ Reconfigurable FPGA BNN Safety Response**.
 | Experiment | Difficulty | Summary / current package status |
 | --- | --- | --- |
 | 1 | Beginner | FPGA cryptographic accelerator; project title identified in supplied history, completed package not yet uploaded here |
-| 2 | Beginner | FPGA radar signal processing and target detection; project title identified in supplied history, completed package not yet uploaded here |
+| [2](Experiment-2-Beginner/) | Beginner | Streaming 21-cell CA-CFAR radar detector; runtime sensitivity, exact 32-combination physical sweep, original BIT/LTX and required technical documentation included; final narrated video pending |
 | [3](Experiment-3-Intermediate/) | Intermediate | 128-tap FPGA FIR filtering through AXI DMA; Python peak/heart-rate analysis on recorded ECG |
 | [4](Experiment-4-Intermediate/) | Intermediate | Trained 4-to-4-to-3 Iris classifier; parallel/sequential RTL, 4/36-cycle inference, verified board results, original BIT/LTX, routed reports and native Vivado source archive |
 | [5](Experiment-5-Advanced/) | Advanced | Two live-switchable BNN policy banks, latched emergency/watchdog controller; source, reports, routed build and physical evidence included |
@@ -61,3 +62,9 @@ The raw supplied video is linked in its evidence notes; the final
 
 The report covers all seven organizer sections and preserves measured timing/resource and test evidence. The accepted hardware edit lacks the full introductory/RTL presentation segment and ends with watchdog STOP still latched; these limitations are recorded accurately. Original core CSV/PASS exports are now included and verified. See the checklist for project-specific and whole-entry gaps.
 
+
+## Experiment 2
+
+[Project report](Experiment-2-Beginner/Documentation/Project2_Radar_Report.pdf) | [Simulation report](Experiment-2-Beginner/Simulation/simulation_report.pdf) | [Submission checklist](Experiment-2-Beginner/Documentation/SUBMISSION_READINESS.md)
+
+The seven-section report, original RTL/constraints and testbenches, real VCD waveforms/transcript, source-elaborated RTL schematic, board photos, hardware PASS screenshot, 39 saved passing hardware rows and matching BIT/LTX are included. All eleven original build-source checksums match. The reproducible Vivado source flow is included; the original generated native project and full routed reports still need retrieval. Final Video_Link.txt remains blank; the raw recording is linked in the evidence notes.

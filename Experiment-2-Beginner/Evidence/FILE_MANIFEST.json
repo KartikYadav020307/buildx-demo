@@ -1,0 +1,290 @@
+{
+  "scope": "Experiment-2-Beginner; manifest excludes itself",
+  "files": [
+    {
+      "path": "Documentation/Project2_Radar_Report.pdf",
+      "bytes": 2521976,
+      "sha256": "44aef4f8f8f192b7c2a3ccb164ea48cbcacf11e91b64cb4792e115ee97d8d1cb"
+    },
+    {
+      "path": "Documentation/SUBMISSION_READINESS.md",
+      "bytes": 5375,
+      "sha256": "156b88ad10a6766fe2ce243fe8f0017b7f08dcde1c66b5a79d8ccce650ebad69"
+    },
+    {
+      "path": "Documentation/Video_Script.md",
+      "bytes": 2364,
+      "sha256": "f2bbec4b534584157e28c9838b1423f89b82253fd36fc50db544c8ab2556f13a"
+    },
+    {
+      "path": "Evidence/PROVENANCE.md",
+      "bytes": 3366,
+      "sha256": "36a0bb809c6ee4e2196eb191ae7f766f16f9f59db4a97140196771deb6face99"
+    },
+    {
+      "path": "Evidence/RAW_VIDEO.md",
+      "bytes": 1265,
+      "sha256": "ee852a714e23378f6f165232266319eeb452b0cd429d321d9ac84bdec8a21277"
+    },
+    {
+      "path": "Evidence/vivado_build.log",
+      "bytes": 96058,
+      "sha256": "df312887f961c916944f6e5ed72bb4ef3d603a3886ff0a3c1390b0a61aa12a30"
+    },
+    {
+      "path": "FPGA_Project/README.md",
+      "bytes": 1316,
+      "sha256": "18dbdb3e40f3578256c2ba600b1262f32a2c19be5e765c1b1bea80de74883ee0"
+    },
+    {
+      "path": "Hardware/radar_top.bit",
+      "bytes": 4045687,
+      "sha256": "88271fc169ca91f16e16ed15e0bd5f1ef874f0dc97cfdcda7fe1f413f6e44dc6"
+    },
+    {
+      "path": "Hardware/radar_top.ltx",
+      "bytes": 71358,
+      "sha256": "34adb974e793b880dfe469cd21c3c9b3cd039e650a4a76f72d9fe5dcfd575102"
+    },
+    {
+      "path": "Images/block_diagram.png",
+      "bytes": 122892,
+      "sha256": "feddfcced68cc11f5f5a0fbd4616d8ba774254a2d5101c9b02aff1999ec493b5"
+    },
+    {
+      "path": "Images/block_diagram.svg",
+      "bytes": 68264,
+      "sha256": "cdcf9745672b0cecb790c009ae8f3ebf83c15cc966db7de22c5135066010c1bf"
+    },
+    {
+      "path": "Images/board_setup.jpg",
+      "bytes": 4983488,
+      "sha256": "42290ed851528a0f65a55a2b70d12e19902ecf13008816434d6ec5383befae67"
+    },
+    {
+      "path": "Images/cfar_detection.png",
+      "bytes": 90101,
+      "sha256": "72bfd7e66618029d3af2bae20b8b463d087f84ba169808e121fb10d445ea9bd5"
+    },
+    {
+      "path": "Images/hardware_output.jpg",
+      "bytes": 5010569,
+      "sha256": "b2c598e04830bfcdbc0eee8ee80407d2fd2497c6c3c78564de96852559b00d69"
+    },
+    {
+      "path": "Images/hardware_verification.png",
+      "bytes": 186932,
+      "sha256": "c9993945a9e2f7cf71c5d33fb28d39cd649fd7d63306822aded95de7c46a4d2a"
+    },
+    {
+      "path": "Images/rtl_schematic.dot",
+      "bytes": 12749,
+      "sha256": "2faf7dceb8e4224d422c5560580946983deb64869eff3b84799fac350256c169"
+    },
+    {
+      "path": "Images/rtl_schematic.png",
+      "bytes": 1695166,
+      "sha256": "1d20dbf590ef83d312b8b731c7877a19e6ff6331bdf032fbda25b6e4be9a6aba"
+    },
+    {
+      "path": "Images/rtl_schematic.svg",
+      "bytes": 75097,
+      "sha256": "ffe27eb7c8782de6e0bbf017c9715830e09edad0c75d65107c0d36041f628846"
+    },
+    {
+      "path": "Images/simulation_waveform.png",
+      "bytes": 64028,
+      "sha256": "6bcba3d216e7f644c2b6c0a5e19a6c207411745761972c715e27cc502299ac4e"
+    },
+    {
+      "path": "OPEN_PROJECT2.cmd",
+      "bytes": 308,
+      "sha256": "95c37c0cdb8604a18af6bcfd4563fad1823bfe04e662aea2c71c4e962fe6d5d3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7868,
+      "sha256": "10e198ce71fd48f443bad7d09bc45487007d13e956a6fc9690434fa618f674da"
+    },
+    {
+      "path": "RTL/cfar_core.v",
+      "bytes": 3799,
+      "sha256": "98450dbc840674c50024a827897e5f8520f656363b9e5e5bf4c50ab2d9b8df6d"
+    },
+    {
+      "path": "RTL/pynq_z2.xdc",
+      "bytes": 932,
+      "sha256": "31a0ab2a88ff96d8ecccea19254b65a953a61b3d5d49540a440e3281bf9b4959"
+    },
+    {
+      "path": "RTL/radar_demo.v",
+      "bytes": 4830,
+      "sha256": "06ca85f9d41628b6e178fe3eb01bb12d4741a99483f48fc473f8aeb63a98dead"
+    },
+    {
+      "path": "RTL/radar_top.v",
+      "bytes": 3107,
+      "sha256": "0901a8d9b95bd3279fd7ff5f98f9ffd9ab98a32abe89d6e58e1be9b382459598"
+    },
+    {
+      "path": "RUN_PROJECT2.cmd",
+      "bytes": 702,
+      "sha256": "a5f72e4c1f307d50b40b5e38873241d1730651738278e56af5b4b81bd9ce453b"
+    },
+    {
+      "path": "Results/BUILD_SUCCESS.txt",
+      "bytes": 870,
+      "sha256": "cf221329260331cdc6535d3276ecd2c9c861c52a44d2736b1397a5b47e557dea"
+    },
+    {
+      "path": "Results/EVIDENCE_AUDIT.txt",
+      "bytes": 241,
+      "sha256": "1c551e7c4a8b0df7101540d508de1093d185b6a14de8e94fd24461c10a6df468"
+    },
+    {
+      "path": "Results/HARDWARE_PASS.txt",
+      "bytes": 471,
+      "sha256": "8027ce7a92ee4feabe45ae0f0c38ab2e36e528177a7fd03e4620aa8092b0712c"
+    },
+    {
+      "path": "Results/hardware_results.csv",
+      "bytes": 1177,
+      "sha256": "564f4626b6f001867f5a7c198e849265eaea48a80da4bc7e7bca915129fbfe97"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 1421,
+      "sha256": "d05c66b5ef87ab3c6f31db09e7bf4ebd67be10f1fb02f981e4b0da93f813e471"
+    },
+    {
+      "path": "Simulation/cfar_core.vcd",
+      "bytes": 10410086,
+      "sha256": "c6cded422fc8f543c1171b96fe0c102d638d2d7838402ee198844e34370f65e9"
+    },
+    {
+      "path": "Simulation/core_standard_results.csv",
+      "bytes": 1086,
+      "sha256": "e341d93a7dd33f489ee766252dad49ef4053427131473950cb751ef6d4704ad6"
+    },
+    {
+      "path": "Simulation/radar_demo.vcd",
+      "bytes": 800911,
+      "sha256": "d50cef95746021547fdb97be145c2f9fce13e79f1f63601993eb945dd67cb435"
+    },
+    {
+      "path": "Simulation/rtl_netlist.json",
+      "bytes": 507805,
+      "sha256": "44189b2349ce1f24c5e9a6dc8a5b65331b7ecf30731e2f6a325513f628155d36"
+    },
+    {
+      "path": "Simulation/schematic_transcript.txt",
+      "bytes": 136930,
+      "sha256": "38b7128fa0b70702f5f4470f3ff9807da7874ff5090b6c2654acd9f74958b0dc"
+    },
+    {
+      "path": "Simulation/simulation_report.pdf",
+      "bytes": 272318,
+      "sha256": "0ec63bd48593a6d24e360d373d6e3e2f4ab1da56770d3a8890e4cbd53e7474a8"
+    },
+    {
+      "path": "Simulation/tb_cfar_core.log",
+      "bytes": 179,
+      "sha256": "5208172b38d262d5bdc8bdeed365215493eba985bb147bf5f3f64e43531549bd"
+    },
+    {
+      "path": "Simulation/tb_radar_demo.log",
+      "bytes": 2279,
+      "sha256": "814397a8461287c18317988cb2cd29b264df4fcfb9c87c518bc562be0e4ebbad"
+    },
+    {
+      "path": "Simulation/top_elaboration.log",
+      "bytes": 126205,
+      "sha256": "21602852012ee14498e1ee489d8d6639b5d009526e5209c31e3dd08deda68bdc"
+    },
+    {
+      "path": "Simulation/transcript.txt",
+      "bytes": 2746,
+      "sha256": "491467ab983d0107dc1e0d673ea887ccdf8ee895b571386fa8d89b35f87057a9"
+    },
+    {
+      "path": "Simulation/vio_elaboration_stub.v",
+      "bytes": 884,
+      "sha256": "8bee13176ca061b0719f7eef92fff2601da7a46516e96e43d0458a405767189f"
+    },
+    {
+      "path": "Simulation/waveform.png",
+      "bytes": 64028,
+      "sha256": "6bcba3d216e7f644c2b6c0a5e19a6c207411745761972c715e27cc502299ac4e"
+    },
+    {
+      "path": "Simulation/yosys_structural.log",
+      "bytes": 55311,
+      "sha256": "3817dd0dfbd2030d6ac3f163e93e731244094d07a6ac0dbe8885f639093e6493"
+    },
+    {
+      "path": "Testbench/tb_cfar_core.sv",
+      "bytes": 5601,
+      "sha256": "c62e061f3e2dd308ac4a92c557535b9b12045516c28150ef015178bc52dd9c18"
+    },
+    {
+      "path": "Testbench/tb_radar_demo.sv",
+      "bytes": 4184,
+      "sha256": "a5685e9f7af9b2710b51a68da258fbfd73fd3bc0a3eb0b78be5ad3cecd0f9bf1"
+    },
+    {
+      "path": "Tools/SCHEMATIC_REPRODUCTION.md",
+      "bytes": 1468,
+      "sha256": "f1ad6b23942d462d74973319dbfd9bef4966fb77ebd310dd670a1d6c9cb2e320"
+    },
+    {
+      "path": "Tools/find_vivado.cmd",
+      "bytes": 756,
+      "sha256": "1f9903f1fcd7338c0c85d7887674b0128fc20fae3eca289eaca89a106ab013cf"
+    },
+    {
+      "path": "Tools/generate_figures.py",
+      "bytes": 5026,
+      "sha256": "be8412f0a92a3706d21204b1adb74186927c3173f880319314c9dddce17d3042"
+    },
+    {
+      "path": "Tools/generate_reports.py",
+      "bytes": 24612,
+      "sha256": "b0c13df5f883e5043740d64cdc2ef817b375c6e217bf02e3f47f4e7b136ce105"
+    },
+    {
+      "path": "Tools/validate_evidence.py",
+      "bytes": 2382,
+      "sha256": "b3fa80f1d29869aed1bb021d2f2d4e704baa9bfa573a1772eb0edf0e5b4e5a08"
+    },
+    {
+      "path": "Video_Link.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Vivado/build_project.tcl",
+      "bytes": 7207,
+      "sha256": "5a95f14eaf9f3f425e5ef3db1ca933730ba219838fdc8d77fa12cb7c3ed87f4f"
+    },
+    {
+      "path": "Vivado/debug_clock.tcl",
+      "bytes": 331,
+      "sha256": "f5df3300f12913fa1b6ea7aa8a2f07d699775fed5eb01d17d41a1975e03277db"
+    },
+    {
+      "path": "Vivado/hardware_helpers.tcl",
+      "bytes": 4786,
+      "sha256": "c7543caec1a0505d04dbfae2ce013ba00e82b9ccacdd3d4f7c95c88c9c976520"
+    },
+    {
+      "path": "Vivado/hardware_test.tcl",
+      "bytes": 1005,
+      "sha256": "80eac7cb076f2429a19976862d5554edecd1e6a6cddcc129d4eb63995a348cd2"
+    },
+    {
+      "path": "Vivado/program_board.tcl",
+      "bytes": 1417,
+      "sha256": "7e999284278fd8872caa825b972905f72dcb4d5215b9aad2cf67c3899173fb30"
+    }
+  ]
+}

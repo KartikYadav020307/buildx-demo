@@ -1,0 +1,6 @@
+PHYSICAL HARDWARE PASS: 32 scenario/alpha/gap combinations plus a repeated standard target frame.
+Time: Thu Oct 08 23:54:05 +0530 2026
+PROGRAM.FILE: C:/Users/yamle/OneDrive/Desktop/Project2_Radar_Final/Hardware/radar_top.bit
+PROBES.FILE: C:/Users/yamle/OneDrive/Desktop/Project2_Radar_Final/Hardware/radar_top.ltx
+Part: xc7z020
+All cases: 80 valid windows; exact counts, positions, full detection masks, thresholds, cycle counts and latched configuration verified.

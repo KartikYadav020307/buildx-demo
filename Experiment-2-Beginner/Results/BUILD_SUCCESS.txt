@@ -1,0 +1,21 @@
+BUILD SUCCESS
+Thu Oct 08 22:40:16 +0530 2026
+Vivado: 2025.1.1
+Part: xc7z020clg400-1
+Clock: 50 MHz
+WNS: 12.176 ns
+WHS: 0.018 ns
+WPWS: 2.000 ns
+RTL/cfar_core.v bytes=3799 crc32=fea6240e
+RTL/pynq_z2.xdc bytes=932 crc32=1428f71f
+RTL/radar_demo.v bytes=4830 crc32=9fc85336
+RTL/radar_top.v bytes=3107 crc32=63344187
+Testbench/tb_cfar_core.sv bytes=5601 crc32=9c5a4eec
+Testbench/tb_radar_demo.sv bytes=4184 crc32=af84f3e8
+Vivado/build_project.tcl bytes=7207 crc32=f50222b3
+Vivado/debug_clock.tcl bytes=331 crc32=4a98695d
+Vivado/hardware_helpers.tcl bytes=4786 crc32=37dc2034
+Vivado/hardware_test.tcl bytes=1005 crc32=a88d0fea
+Vivado/program_board.tcl bytes=1417 crc32=ad7942a1
+
+Simulation + routed timing + DRC + bitstream complete. Physical board verification is a separate step. Review Reports/methodology.rpt and other warnings before final submission.

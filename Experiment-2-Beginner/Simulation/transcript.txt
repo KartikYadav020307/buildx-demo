@@ -1,0 +1,49 @@
+SIMULATION TRANSCRIPT
+
+Supplied local Icarus Verilog 12.0 verification, 8 October 2026.
+Vivado XSim also passed on 8 October 2026; see ../Evidence/vivado_build.log.
+No simulation is claimed to have been rerun during this publication.
+
+=== tb_cfar_core.log ===
+VCD info: dumpfile Simulation/cfar_core.vcd opened for output.
+CORE SIMULATION PASS: checked=10721 accepted=12963
+Testbench/tb_cfar_core.sv:122: $finish called at 645540000 (1ps)
+
+=== tb_radar_demo.log ===
+VCD info: dumpfile Simulation/radar_demo.vcd opened for output.
+DEMO PASS sc=0 alpha=1 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=0 alpha=1 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=0 alpha=2 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=0 alpha=2 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=0 alpha=4 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=0 alpha=4 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=0 alpha=8 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=0 alpha=8 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=1 alpha=1 gap=0 detections=3 results=80 cycles=104
+DEMO PASS sc=1 alpha=1 gap=1 detections=3 results=80 cycles=302
+DEMO PASS sc=1 alpha=2 gap=0 detections=3 results=80 cycles=104
+DEMO PASS sc=1 alpha=2 gap=1 detections=3 results=80 cycles=302
+DEMO PASS sc=1 alpha=4 gap=0 detections=3 results=80 cycles=104
+DEMO PASS sc=1 alpha=4 gap=1 detections=3 results=80 cycles=302
+DEMO PASS sc=1 alpha=8 gap=0 detections=3 results=80 cycles=104
+DEMO PASS sc=1 alpha=8 gap=1 detections=3 results=80 cycles=302
+DEMO PASS sc=2 alpha=1 gap=0 detections=1 results=80 cycles=104
+DEMO PASS sc=2 alpha=1 gap=1 detections=1 results=80 cycles=302
+DEMO PASS sc=2 alpha=2 gap=0 detections=1 results=80 cycles=104
+DEMO PASS sc=2 alpha=2 gap=1 detections=1 results=80 cycles=302
+DEMO PASS sc=2 alpha=4 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=2 alpha=4 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=2 alpha=8 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=2 alpha=8 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=3 alpha=1 gap=0 detections=1 results=80 cycles=104
+DEMO PASS sc=3 alpha=1 gap=1 detections=1 results=80 cycles=302
+DEMO PASS sc=3 alpha=2 gap=0 detections=1 results=80 cycles=104
+DEMO PASS sc=3 alpha=2 gap=1 detections=1 results=80 cycles=302
+DEMO PASS sc=3 alpha=4 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=3 alpha=4 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=3 alpha=8 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=3 alpha=8 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=1 alpha=4 gap=0 detections=3 results=80 cycles=104
+DEMO SIMULATION PASS: 33 frame checks
+Testbench/tb_radar_demo.sv:80: $finish called at 143060000 (1ps)
+

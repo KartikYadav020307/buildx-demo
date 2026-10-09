@@ -1,0 +1,845 @@
+
+-- Running command `read_verilog RTL/cfar_core.v RTL/radar_demo.v; hierarchy -check -top radar_demo; proc; opt; check -assert; stat' --
+
+1. Executing Verilog-2005 frontend: RTL/cfar_core.v
+Parsing Verilog input from `RTL/cfar_core.v' to AST representation.
+Generating RTLIL representation for module `\cfar_core'.
+Warning: Replacing memory \window_data with list of registers. See RTL/cfar_core.v:30
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: RTL/radar_demo.v
+Parsing Verilog input from `RTL/radar_demo.v' to AST representation.
+Generating RTLIL representation for module `\radar_demo'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \radar_demo
+Used module:     \cfar_core
+
+3.2. Analyzing design hierarchy..
+Top module:  \radar_demo
+Used module:     \cfar_core
+Removed 0 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$RTL/radar_demo.v:55$45 in module radar_demo.
+Marked 8 switch rules as full_case in process $proc$RTL/radar_demo.v:55$45 in module radar_demo.
+Marked 4 switch rules as full_case in process $proc$RTL/radar_demo.v:32$39 in module radar_demo.
+Marked 2 switch rules as full_case in process $proc$RTL/cfar_core.v:28$4 in module cfar_core.
+Removed a total of 1 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 5 redundant assignments.
+Promoted 7 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~22 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+     1/36: $6$lookahead\detection_mask$44[127:0]$80
+     2/36: $4$bitselwrite$data$RTL/radar_demo.v:98$31[127:0]$78
+     3/36: $4$bitselwrite$mask$RTL/radar_demo.v:98$30[127:0]$77
+     4/36: $4$bitselwrite$sel$RTL/radar_demo.v:98$32[15:0]$79
+     5/36: $5$lookahead\detection_mask$44[127:0]$75
+     6/36: $3$bitselwrite$sel$RTL/radar_demo.v:98$32[15:0]$74
+     7/36: $3$bitselwrite$data$RTL/radar_demo.v:98$31[127:0]$73
+     8/36: $3$bitselwrite$mask$RTL/radar_demo.v:98$30[127:0]$72
+     9/36: $4$lookahead\detection_mask$44[127:0]$70
+    10/36: $2$bitselwrite$sel$RTL/radar_demo.v:98$32[15:0]$69
+    11/36: $2$bitselwrite$data$RTL/radar_demo.v:98$31[127:0]$68
+    12/36: $2$bitselwrite$mask$RTL/radar_demo.v:98$30[127:0]$67
+    13/36: $3$lookahead\detection_mask$44[127:0]$58
+    14/36: $2$lookahead\detection_mask$44[127:0]$55
+    15/36: $1$lookahead\detection_mask$44[127:0]$53
+    16/36: $0\start_d[0:0]
+    17/36: $1$bitselwrite$sel$RTL/radar_demo.v:98$32[15:0]$52
+    18/36: $1$bitselwrite$data$RTL/radar_demo.v:98$31[127:0]$51
+    19/36: $1$bitselwrite$mask$RTL/radar_demo.v:98$30[127:0]$50
+    20/36: $0\gap_count[1:0]
+    21/36: $0\sample_index[6:0]
+    22/36: $0\state[1:0]
+    23/36: $0\active_gap[0:0]
+    24/36: $0\active_scale[1:0]
+    25/36: $0\active_scenario[1:0]
+    26/36: $0\frame_id[15:0]
+    27/36: $0\run_cycles[15:0]
+    28/36: $0\last_threshold_full[18:0]
+    29/36: $0\last_threshold[15:0]
+    30/36: $0\target_pos2[15:0]
+    31/36: $0\target_pos1[15:0]
+    32/36: $0\target_pos0[15:0]
+    33/36: $0\result_count[15:0]
+    34/36: $0\detection_count[7:0]
+    35/36: $0\timeout_error[0:0]
+    36/36: $0\done[0:0]
+Creating decoders for process `\radar_demo.$proc$RTL/radar_demo.v:32$39'.
+     1/4: $4\sample_value[15:0]
+     2/4: $3\sample_value[15:0]
+     3/4: $2\sample_value[15:0]
+     4/4: $1\sample_value[15:0]
+Creating decoders for process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+     1/44: $2\i[31:0]
+     2/44: $0\target_detected[0:0]
+     3/44: $0\result_valid[0:0]
+     4/44: $0\valid_s2[0:0]
+     5/44: $0\valid_s1[0:0]
+     6/44: $1\i[31:0]
+     7/44: $0\window_data[20][15:0]
+     8/44: $0\window_data[19][15:0]
+     9/44: $0\window_data[18][15:0]
+    10/44: $0\window_data[17][15:0]
+    11/44: $0\window_data[16][15:0]
+    12/44: $0\window_data[15][15:0]
+    13/44: $0\window_data[14][15:0]
+    14/44: $0\window_data[13][15:0]
+    15/44: $0\window_data[12][15:0]
+    16/44: $0\window_data[11][15:0]
+    17/44: $0\window_data[10][15:0]
+    18/44: $0\window_data[9][15:0]
+    19/44: $0\window_data[8][15:0]
+    20/44: $0\window_data[7][15:0]
+    21/44: $0\window_data[6][15:0]
+    22/44: $0\window_data[5][15:0]
+    23/44: $0\window_data[4][15:0]
+    24/44: $0\window_data[3][15:0]
+    25/44: $0\window_data[2][15:0]
+    26/44: $0\window_data[1][15:0]
+    27/44: $0\window_data[0][15:0]
+    28/44: $0\sum_s2[19:0]
+    29/44: $0\scale_s2[1:0]
+    30/44: $0\scale_s1[1:0]
+    31/44: $0\index_s2[15:0]
+    32/44: $0\cut_s2[15:0]
+    33/44: $0\index_s1[15:0]
+    34/44: $0\cut_s1[15:0]
+    35/44: $0\p3[17:0]
+    36/44: $0\p2[17:0]
+    37/44: $0\p1[17:0]
+    38/44: $0\p0[17:0]
+    39/44: $0\input_index[15:0]
+    40/44: $0\fill_count[4:0]
+    41/44: $0\cut_index[15:0]
+    42/44: $0\cut_value[15:0]
+    43/44: $0\threshold_full[18:0]
+    44/44: $0\threshold_value[15:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\radar_demo.\sample_value' from process `\radar_demo.$proc$RTL/radar_demo.v:32$39'.
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\radar_demo.\done' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$774' with positive edge clock.
+Creating register for signal `\radar_demo.\timeout_error' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$775' with positive edge clock.
+Creating register for signal `\radar_demo.\detection_count' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$776' with positive edge clock.
+Creating register for signal `\radar_demo.\result_count' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$777' with positive edge clock.
+Creating register for signal `\radar_demo.\target_pos0' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$778' with positive edge clock.
+Creating register for signal `\radar_demo.\target_pos1' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$779' with positive edge clock.
+Creating register for signal `\radar_demo.\target_pos2' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$780' with positive edge clock.
+Creating register for signal `\radar_demo.\detection_mask' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$781' with positive edge clock.
+Creating register for signal `\radar_demo.\last_threshold' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$782' with positive edge clock.
+Creating register for signal `\radar_demo.\last_threshold_full' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$783' with positive edge clock.
+Creating register for signal `\radar_demo.\run_cycles' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$784' with positive edge clock.
+Creating register for signal `\radar_demo.\frame_id' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$785' with positive edge clock.
+Creating register for signal `\radar_demo.\active_scenario' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$786' with positive edge clock.
+Creating register for signal `\radar_demo.\active_scale' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$787' with positive edge clock.
+Creating register for signal `\radar_demo.\active_gap' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$788' with positive edge clock.
+Creating register for signal `\radar_demo.\state' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$789' with positive edge clock.
+Creating register for signal `\radar_demo.\start_d' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$790' with positive edge clock.
+Creating register for signal `\radar_demo.\sample_index' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$791' with positive edge clock.
+Creating register for signal `\radar_demo.\gap_count' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$792' with positive edge clock.
+Creating register for signal `\radar_demo.$bitselwrite$mask$RTL/radar_demo.v:98$30' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$793' with positive edge clock.
+Creating register for signal `\radar_demo.$bitselwrite$data$RTL/radar_demo.v:98$31' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$794' with positive edge clock.
+Creating register for signal `\radar_demo.$bitselwrite$sel$RTL/radar_demo.v:98$32' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$795' with positive edge clock.
+Creating register for signal `\radar_demo.$lookahead\detection_mask$44' using process `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+  created $dff cell `$procdff$796' with positive edge clock.
+Creating register for signal `\cfar_core.\result_valid' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$797' with positive edge clock.
+Creating register for signal `\cfar_core.\target_detected' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$798' with positive edge clock.
+Creating register for signal `\cfar_core.\threshold_value' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$799' with positive edge clock.
+Creating register for signal `\cfar_core.\threshold_full' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$800' with positive edge clock.
+Creating register for signal `\cfar_core.\cut_value' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$801' with positive edge clock.
+Creating register for signal `\cfar_core.\cut_index' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$802' with positive edge clock.
+Creating register for signal `\cfar_core.\fill_count' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$803' with positive edge clock.
+Creating register for signal `\cfar_core.\input_index' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$804' with positive edge clock.
+Creating register for signal `\cfar_core.\p0' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$805' with positive edge clock.
+Creating register for signal `\cfar_core.\p1' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$806' with positive edge clock.
+Creating register for signal `\cfar_core.\p2' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$807' with positive edge clock.
+Creating register for signal `\cfar_core.\p3' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$808' with positive edge clock.
+Creating register for signal `\cfar_core.\cut_s1' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$809' with positive edge clock.
+Creating register for signal `\cfar_core.\index_s1' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$810' with positive edge clock.
+Creating register for signal `\cfar_core.\cut_s2' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$811' with positive edge clock.
+Creating register for signal `\cfar_core.\index_s2' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$812' with positive edge clock.
+Creating register for signal `\cfar_core.\scale_s1' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$813' with positive edge clock.
+Creating register for signal `\cfar_core.\scale_s2' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$814' with positive edge clock.
+Creating register for signal `\cfar_core.\valid_s1' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$815' with positive edge clock.
+Creating register for signal `\cfar_core.\valid_s2' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$816' with positive edge clock.
+Creating register for signal `\cfar_core.\sum_s2' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$817' with positive edge clock.
+Creating register for signal `\cfar_core.\i' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$818' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[0]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$819' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[1]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$820' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[2]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$821' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[3]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$822' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[4]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$823' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[5]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$824' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[6]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$825' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[7]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$826' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[8]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$827' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[9]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$828' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[10]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$829' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[11]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$830' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[12]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$831' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[13]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$832' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[14]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$833' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[15]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$834' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[16]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$835' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[17]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$836' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[18]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$837' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[19]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$838' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[20]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+  created $dff cell `$procdff$839' with positive edge clock.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 12 empty switches in `\radar_demo.$proc$RTL/radar_demo.v:55$45'.
+Removing empty process `radar_demo.$proc$RTL/radar_demo.v:55$45'.
+Found and cleaned up 4 empty switches in `\radar_demo.$proc$RTL/radar_demo.v:32$39'.
+Removing empty process `radar_demo.$proc$RTL/radar_demo.v:32$39'.
+Found and cleaned up 6 empty switches in `\cfar_core.$proc$RTL/cfar_core.v:28$4'.
+Removing empty process `cfar_core.$proc$RTL/cfar_core.v:28$4'.
+Cleaned up 22 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module radar_demo.
+<suppressed ~22 debug messages>
+Optimizing module cfar_core.
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module radar_demo.
+<suppressed ~2 debug messages>
+Optimizing module cfar_core.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\radar_demo'.
+<suppressed ~111 debug messages>
+Finding identical cells in module `\cfar_core'.
+<suppressed ~3 debug messages>
+Removed a total of 38 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \radar_demo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$233.
+    dead port 2/2 on $mux $procmux$233.
+    dead port 1/2 on $mux $procmux$230.
+    dead port 2/2 on $mux $procmux$230.
+    dead port 1/2 on $mux $procmux$227.
+    dead port 2/2 on $mux $procmux$227.
+    dead port 2/2 on $mux $procmux$508.
+    dead port 1/2 on $mux $procmux$210.
+    dead port 2/2 on $mux $procmux$207.
+    dead port 1/2 on $mux $procmux$199.
+    dead port 2/2 on $mux $procmux$199.
+    dead port 1/2 on $mux $procmux$196.
+    dead port 2/2 on $mux $procmux$196.
+    dead port 1/2 on $mux $procmux$193.
+    dead port 2/2 on $mux $procmux$193.
+    dead port 1/2 on $mux $procmux$190.
+    dead port 2/2 on $mux $procmux$190.
+    dead port 1/2 on $mux $procmux$187.
+    dead port 2/2 on $mux $procmux$187.
+    dead port 1/2 on $mux $procmux$184.
+    dead port 2/2 on $mux $procmux$184.
+    dead port 1/2 on $mux $procmux$181.
+    dead port 1/2 on $mux $procmux$175.
+    dead port 2/2 on $mux $procmux$175.
+    dead port 1/2 on $mux $procmux$172.
+    dead port 2/2 on $mux $procmux$172.
+    dead port 1/2 on $mux $procmux$170.
+    dead port 2/2 on $mux $procmux$170.
+    dead port 1/2 on $mux $procmux$166.
+    dead port 2/2 on $mux $procmux$166.
+    dead port 1/2 on $mux $procmux$163.
+    dead port 2/2 on $mux $procmux$163.
+    dead port 1/2 on $mux $procmux$161.
+    dead port 2/2 on $mux $procmux$161.
+    dead port 1/2 on $mux $procmux$157.
+    dead port 2/2 on $mux $procmux$157.
+    dead port 1/2 on $mux $procmux$154.
+    dead port 2/2 on $mux $procmux$154.
+    dead port 1/2 on $mux $procmux$152.
+    dead port 2/2 on $mux $procmux$152.
+    dead port 1/2 on $mux $procmux$148.
+    dead port 2/2 on $mux $procmux$145.
+    dead port 1/2 on $mux $procmux$139.
+    dead port 2/2 on $mux $procmux$139.
+    dead port 1/2 on $mux $procmux$136.
+    dead port 2/2 on $mux $procmux$136.
+    dead port 1/2 on $mux $procmux$134.
+    dead port 2/2 on $mux $procmux$134.
+    dead port 1/2 on $mux $procmux$132.
+    dead port 2/2 on $mux $procmux$132.
+    dead port 1/2 on $mux $procmux$127.
+    dead port 2/2 on $mux $procmux$127.
+    dead port 1/2 on $mux $procmux$124.
+    dead port 2/2 on $mux $procmux$124.
+    dead port 1/2 on $mux $procmux$122.
+    dead port 2/2 on $mux $procmux$122.
+    dead port 1/2 on $mux $procmux$120.
+    dead port 2/2 on $mux $procmux$120.
+    dead port 1/2 on $mux $procmux$115.
+    dead port 2/2 on $mux $procmux$115.
+    dead port 1/2 on $mux $procmux$112.
+    dead port 2/2 on $mux $procmux$112.
+    dead port 1/2 on $mux $procmux$110.
+    dead port 2/2 on $mux $procmux$110.
+    dead port 1/2 on $mux $procmux$108.
+    dead port 2/2 on $mux $procmux$108.
+    dead port 1/2 on $mux $procmux$103.
+    dead port 2/2 on $mux $procmux$100.
+    dead port 2/2 on $mux $procmux$98.
+    dead port 2/2 on $mux $procmux$491.
+    dead port 2/2 on $mux $procmux$498.
+Running muxtree optimizer on module \cfar_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$519.
+Removed 72 multiplexer ports.
+<suppressed ~70 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \radar_demo.
+    New ctrl vector for $pmux cell $procmux$212: { $procmux$481_CMP $auto$opt_reduce.cc:134:opt_pmux$841 }
+  Optimizing cells in module \radar_demo.
+  Optimizing cells in module \cfar_core.
+Performed a total of 1 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\radar_demo'.
+Finding identical cells in module `\cfar_core'.
+Removed a total of 0 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$787 ($dff) from module radar_demo (D = $procmux$302_Y, Q = \active_scale, rval = 2'10).
+Adding EN signal on $auto$ff.cc:266:slice$842 ($sdff) from module radar_demo (D = \scale_shift, Q = \active_scale).
+Adding SRST signal on $procdff$788 ($dff) from module radar_demo (D = $procmux$291_Y, Q = \active_gap, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$846 ($sdff) from module radar_demo (D = \gap_mode, Q = \active_gap).
+Adding SRST signal on $procdff$789 ($dff) from module radar_demo (D = $procmux$266_Y, Q = \state, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$850 ($sdff) from module radar_demo (D = $procmux$266_Y, Q = \state).
+Adding SRST signal on $procdff$790 ($dff) from module radar_demo (D = \start, Q = \start_d, rval = 1'0).
+Adding SRST signal on $procdff$791 ($dff) from module radar_demo (D = $procmux$255_Y, Q = \sample_index, rval = 7'0000000).
+Adding EN signal on $auto$ff.cc:266:slice$867 ($sdff) from module radar_demo (D = $procmux$255_Y, Q = \sample_index).
+Adding SRST signal on $procdff$792 ($dff) from module radar_demo (D = $procmux$239_Y, Q = \gap_count, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$879 ($sdff) from module radar_demo (D = $procmux$239_Y, Q = \gap_count).
+Adding SRST signal on $procdff$774 ($dff) from module radar_demo (D = $procmux$482_Y, Q = \done, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$887 ($sdff) from module radar_demo (D = $procmux$482_Y, Q = \done).
+Adding SRST signal on $procdff$775 ($dff) from module radar_demo (D = $procmux$469_Y, Q = \timeout_error, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$897 ($sdff) from module radar_demo (D = $procmux$469_Y, Q = \timeout_error).
+Adding SRST signal on $procdff$776 ($dff) from module radar_demo (D = $procmux$456_Y, Q = \detection_count, rval = 8'00000000).
+Adding SRST signal on $procdff$777 ($dff) from module radar_demo (D = $procmux$439_Y, Q = \result_count, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$906 ($sdff) from module radar_demo (D = $procmux$439_Y, Q = \result_count).
+Adding SRST signal on $procdff$778 ($dff) from module radar_demo (D = $procmux$425_Y, Q = \target_pos0, rval = 16'1111111111111111).
+Adding SRST signal on $procdff$779 ($dff) from module radar_demo (D = $procmux$404_Y, Q = \target_pos1, rval = 16'1111111111111111).
+Adding SRST signal on $procdff$780 ($dff) from module radar_demo (D = $procmux$384_Y, Q = \target_pos2, rval = 16'1111111111111111).
+Adding SRST signal on $procdff$781 ($dff) from module radar_demo (D = $4$lookahead\detection_mask$44[127:0]$70, Q = \detection_mask, rval = 128'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$782 ($dff) from module radar_demo (D = $procmux$365_Y, Q = \last_threshold, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$918 ($sdff) from module radar_demo (D = $procmux$365_Y, Q = \last_threshold).
+Adding SRST signal on $procdff$783 ($dff) from module radar_demo (D = $procmux$351_Y, Q = \last_threshold_full, rval = 19'0000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$926 ($sdff) from module radar_demo (D = $procmux$351_Y, Q = \last_threshold_full).
+Adding SRST signal on $procdff$784 ($dff) from module radar_demo (D = $procmux$337_Y, Q = \run_cycles, rval = 16'0000000000000000).
+Adding SRST signal on $procdff$785 ($dff) from module radar_demo (D = $procmux$324_Y, Q = \frame_id, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$935 ($sdff) from module radar_demo (D = $add$RTL/radar_demo.v:71$59_Y, Q = \frame_id).
+Adding SRST signal on $procdff$786 ($dff) from module radar_demo (D = $procmux$313_Y, Q = \active_scenario, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$939 ($sdff) from module radar_demo (D = \scenario, Q = \active_scenario).
+Setting constant 1-bit at position 0 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 1 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 2 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 3 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 4 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 5 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 6 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 7 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 8 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 9 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 10 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 11 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 12 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 13 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 14 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 15 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 16 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 17 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 18 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 19 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 20 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 21 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 22 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 23 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 24 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 25 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 26 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 27 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 28 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 29 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 30 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 31 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 32 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 33 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 34 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 35 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 36 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 37 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 38 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 39 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 40 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 41 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 42 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 43 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 44 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 45 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 46 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 47 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 48 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 49 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 50 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 51 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 52 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 53 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 54 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 55 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 56 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 57 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 58 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 59 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 60 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 61 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 62 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 63 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 64 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 65 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 66 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 67 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 68 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 69 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 70 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 71 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 72 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 73 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 74 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 75 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 76 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 77 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 78 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 79 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 80 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 81 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 82 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 83 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 84 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 85 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 86 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 87 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 88 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 89 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 90 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 91 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 92 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 93 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 94 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 95 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 96 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 97 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 98 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 99 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 100 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 101 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 102 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 103 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 104 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 105 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 106 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 107 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 108 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 109 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 110 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 111 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 112 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 113 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 114 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 115 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 116 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 117 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 118 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 119 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 120 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 121 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 122 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 123 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 124 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 125 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 126 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 127 on $procdff$796 ($dff) from module radar_demo.
+Setting constant 1-bit at position 0 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 1 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 2 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 3 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 4 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 5 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 6 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 7 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 8 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 9 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 10 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 11 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 12 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 13 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 14 on $procdff$795 ($dff) from module radar_demo.
+Setting constant 1-bit at position 15 on $procdff$795 ($dff) from module radar_demo.
+Adding SRST signal on $procdff$839 ($dff) from module cfar_core (D = $procmux$539_Y, Q = \window_data[20], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$943 ($sdff) from module cfar_core (D = \window_data[19], Q = \window_data[20]).
+Adding SRST signal on $procdff$838 ($dff) from module cfar_core (D = $procmux$545_Y, Q = \window_data[19], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$945 ($sdff) from module cfar_core (D = \window_data[18], Q = \window_data[19]).
+Adding SRST signal on $procdff$797 ($dff) from module cfar_core (D = \valid_s2, Q = \result_valid, rval = 1'0).
+Adding SRST signal on $procdff$798 ($dff) from module cfar_core (D = $gt$RTL/cfar_core.v:75$29_Y, Q = \target_detected, rval = 1'0).
+Adding SRST signal on $procdff$799 ($dff) from module cfar_core (D = $procmux$769_Y, Q = \threshold_value, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$953 ($sdff) from module cfar_core (D = $ternary$RTL/cfar_core.v:73$28_Y, Q = \threshold_value).
+Adding SRST signal on $procdff$800 ($dff) from module cfar_core (D = $procmux$764_Y, Q = \threshold_full, rval = 19'0000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$955 ($sdff) from module cfar_core (D = $shl$RTL/cfar_core.v:25$3_Y, Q = \threshold_full).
+Adding SRST signal on $procdff$801 ($dff) from module cfar_core (D = $procmux$759_Y, Q = \cut_value, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$957 ($sdff) from module cfar_core (D = \cut_s2, Q = \cut_value).
+Adding SRST signal on $procdff$802 ($dff) from module cfar_core (D = $procmux$754_Y, Q = \cut_index, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$959 ($sdff) from module cfar_core (D = \index_s2, Q = \cut_index).
+Adding SRST signal on $procdff$803 ($dff) from module cfar_core (D = $procmux$749_Y, Q = \fill_count, rval = 5'00000).
+Adding EN signal on $auto$ff.cc:266:slice$961 ($sdff) from module cfar_core (D = $add$RTL/cfar_core.v:45$8_Y, Q = \fill_count).
+Adding SRST signal on $procdff$804 ($dff) from module cfar_core (D = $procmux$741_Y, Q = \input_index, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$965 ($sdff) from module cfar_core (D = $add$RTL/cfar_core.v:46$9_Y, Q = \input_index).
+Adding SRST signal on $procdff$805 ($dff) from module cfar_core (D = $procmux$735_Y, Q = \p0, rval = 18'000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$967 ($sdff) from module cfar_core (D = $add$RTL/cfar_core.v:48$13_Y, Q = \p0).
+Adding SRST signal on $procdff$806 ($dff) from module cfar_core (D = $procmux$727_Y, Q = \p1, rval = 18'000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$971 ($sdff) from module cfar_core (D = $add$RTL/cfar_core.v:50$16_Y, Q = \p1).
+Adding SRST signal on $procdff$807 ($dff) from module cfar_core (D = $procmux$719_Y, Q = \p2, rval = 18'000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$975 ($sdff) from module cfar_core (D = $add$RTL/cfar_core.v:52$19_Y, Q = \p2).
+Adding SRST signal on $procdff$808 ($dff) from module cfar_core (D = $procmux$711_Y, Q = \p3, rval = 18'000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$979 ($sdff) from module cfar_core (D = $add$RTL/cfar_core.v:54$22_Y, Q = \p3).
+Adding SRST signal on $procdff$809 ($dff) from module cfar_core (D = $procmux$703_Y, Q = \cut_s1, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$983 ($sdff) from module cfar_core (D = \window_data[9], Q = \cut_s1).
+Adding SRST signal on $procdff$810 ($dff) from module cfar_core (D = $procmux$695_Y, Q = \index_s1, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$987 ($sdff) from module cfar_core (D = $sub$RTL/cfar_core.v:57$23_Y, Q = \index_s1).
+Adding SRST signal on $procdff$811 ($dff) from module cfar_core (D = $procmux$687_Y, Q = \cut_s2, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$991 ($sdff) from module cfar_core (D = \cut_s1, Q = \cut_s2).
+Adding SRST signal on $procdff$812 ($dff) from module cfar_core (D = $procmux$682_Y, Q = \index_s2, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$993 ($sdff) from module cfar_core (D = \index_s1, Q = \index_s2).
+Adding SRST signal on $procdff$813 ($dff) from module cfar_core (D = $procmux$677_Y, Q = \scale_s1, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$995 ($sdff) from module cfar_core (D = \scale_shift, Q = \scale_s1).
+Adding SRST signal on $procdff$814 ($dff) from module cfar_core (D = $procmux$669_Y, Q = \scale_s2, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$999 ($sdff) from module cfar_core (D = \scale_s1, Q = \scale_s2).
+Adding SRST signal on $procdff$815 ($dff) from module cfar_core (D = $logic_and$RTL/cfar_core.v:40$6_Y, Q = \valid_s1, rval = 1'0).
+Adding SRST signal on $procdff$816 ($dff) from module cfar_core (D = \valid_s1, Q = \valid_s2, rval = 1'0).
+Adding SRST signal on $procdff$817 ($dff) from module cfar_core (D = $procmux$664_Y, Q = \sum_s2, rval = 20'00000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1003 ($sdff) from module cfar_core (D = $add$RTL/cfar_core.v:64$26_Y, Q = \sum_s2).
+Adding SRST signal on $procdff$818 ($dff) from module cfar_core (D = $2\i[31:0], Q = \i, rval = 21).
+Adding SRST signal on $procdff$819 ($dff) from module cfar_core (D = $procmux$659_Y, Q = \window_data[0], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1006 ($sdff) from module cfar_core (D = \data_in, Q = \window_data[0]).
+Adding SRST signal on $procdff$820 ($dff) from module cfar_core (D = $procmux$653_Y, Q = \window_data[1], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1008 ($sdff) from module cfar_core (D = \window_data[0], Q = \window_data[1]).
+Adding SRST signal on $procdff$821 ($dff) from module cfar_core (D = $procmux$647_Y, Q = \window_data[2], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1010 ($sdff) from module cfar_core (D = \window_data[1], Q = \window_data[2]).
+Adding SRST signal on $procdff$822 ($dff) from module cfar_core (D = $procmux$641_Y, Q = \window_data[3], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1012 ($sdff) from module cfar_core (D = \window_data[2], Q = \window_data[3]).
+Adding SRST signal on $procdff$823 ($dff) from module cfar_core (D = $procmux$635_Y, Q = \window_data[4], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1014 ($sdff) from module cfar_core (D = \window_data[3], Q = \window_data[4]).
+Adding SRST signal on $procdff$824 ($dff) from module cfar_core (D = $procmux$629_Y, Q = \window_data[5], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1016 ($sdff) from module cfar_core (D = \window_data[4], Q = \window_data[5]).
+Adding SRST signal on $procdff$825 ($dff) from module cfar_core (D = $procmux$623_Y, Q = \window_data[6], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1018 ($sdff) from module cfar_core (D = \window_data[5], Q = \window_data[6]).
+Adding SRST signal on $procdff$826 ($dff) from module cfar_core (D = $procmux$617_Y, Q = \window_data[7], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1020 ($sdff) from module cfar_core (D = \window_data[6], Q = \window_data[7]).
+Adding SRST signal on $procdff$827 ($dff) from module cfar_core (D = $procmux$611_Y, Q = \window_data[8], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1022 ($sdff) from module cfar_core (D = \window_data[7], Q = \window_data[8]).
+Adding SRST signal on $procdff$828 ($dff) from module cfar_core (D = $procmux$605_Y, Q = \window_data[9], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1024 ($sdff) from module cfar_core (D = \window_data[8], Q = \window_data[9]).
+Adding SRST signal on $procdff$829 ($dff) from module cfar_core (D = $procmux$599_Y, Q = \window_data[10], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1026 ($sdff) from module cfar_core (D = \window_data[9], Q = \window_data[10]).
+Adding SRST signal on $procdff$830 ($dff) from module cfar_core (D = $procmux$593_Y, Q = \window_data[11], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1028 ($sdff) from module cfar_core (D = \window_data[10], Q = \window_data[11]).
+Adding SRST signal on $procdff$831 ($dff) from module cfar_core (D = $procmux$587_Y, Q = \window_data[12], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1030 ($sdff) from module cfar_core (D = \window_data[11], Q = \window_data[12]).
+Adding SRST signal on $procdff$832 ($dff) from module cfar_core (D = $procmux$581_Y, Q = \window_data[13], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1032 ($sdff) from module cfar_core (D = \window_data[12], Q = \window_data[13]).
+Adding SRST signal on $procdff$833 ($dff) from module cfar_core (D = $procmux$575_Y, Q = \window_data[14], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1034 ($sdff) from module cfar_core (D = \window_data[13], Q = \window_data[14]).
+Adding SRST signal on $procdff$834 ($dff) from module cfar_core (D = $procmux$569_Y, Q = \window_data[15], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1036 ($sdff) from module cfar_core (D = \window_data[14], Q = \window_data[15]).
+Adding SRST signal on $procdff$835 ($dff) from module cfar_core (D = $procmux$563_Y, Q = \window_data[16], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1038 ($sdff) from module cfar_core (D = \window_data[15], Q = \window_data[16]).
+Adding SRST signal on $procdff$836 ($dff) from module cfar_core (D = $procmux$557_Y, Q = \window_data[17], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1040 ($sdff) from module cfar_core (D = \window_data[16], Q = \window_data[17]).
+Adding SRST signal on $procdff$837 ($dff) from module cfar_core (D = $procmux$551_Y, Q = \window_data[18], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1042 ($sdff) from module cfar_core (D = \window_data[17], Q = \window_data[18]).
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \radar_demo..
+Finding unused cells or wires in module \cfar_core..
+Removed 121 unused cells and 494 unused wires.
+<suppressed ~126 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfar_core.
+Optimizing module radar_demo.
+<suppressed ~8 debug messages>
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfar_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \radar_demo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~23 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfar_core.
+  Optimizing cells in module \radar_demo.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfar_core'.
+<suppressed ~18 debug messages>
+Finding identical cells in module `\radar_demo'.
+<suppressed ~51 debug messages>
+Removed a total of 23 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfar_core..
+Finding unused cells or wires in module \radar_demo..
+Removed 0 unused cells and 23 unused wires.
+<suppressed ~2 debug messages>
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfar_core.
+Optimizing module radar_demo.
+
+5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfar_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \radar_demo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~25 debug messages>
+
+5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfar_core.
+  Optimizing cells in module \radar_demo.
+Performed a total of 0 changes.
+
+5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfar_core'.
+Finding identical cells in module `\radar_demo'.
+Removed a total of 0 cells.
+
+5.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfar_core..
+Finding unused cells or wires in module \radar_demo..
+
+5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfar_core.
+Optimizing module radar_demo.
+
+5.23. Finished OPT passes. (There is nothing left to do.)
+
+6. Executing CHECK pass (checking for obvious problems).
+Checking module cfar_core...
+Checking module radar_demo...
+Found and reported 0 problems.
+
+7. Printing statistics.
+
+=== cfar_core ===
+
+   Number of wires:                 75
+   Number of wire bits:            950
+   Number of public wires:          47
+   Number of public wire bits:     612
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 70
+     $add                           17
+     $ge                             1
+     $gt                             2
+     $logic_and                      1
+     $lt                             1
+     $mux                            1
+     $not                            1
+     $reduce_and                     2
+     $reduce_or                      1
+     $sdff                           4
+     $sdffe                         37
+     $shl                            1
+     $sub                            1
+
+=== radar_demo ===
+
+   Number of wires:                149
+   Number of wire bits:           2361
+   Number of public wires:          35
+   Number of public wire bits:     382
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                138
+     $add                            5
+     $and                            1
+     $eq                            13
+     $ge                             1
+     $logic_and                      5
+     $logic_not                      4
+     $logic_or                       1
+     $lt                             1
+     $mux                           52
+     $ne                             8
+     $neg                            1
+     $not                            1
+     $or                             1
+     $pmux                           7
+     $reduce_and                     7
+     $reduce_bool                    6
+     $reduce_or                      2
+     $sdff                           7
+     $sdffe                         12
+     $shift                          1
+     $sub                            1
+     cfar_core                       1
+
+=== design hierarchy ===
+
+   radar_demo                        1
+     cfar_core                       1
+
+   Number of wires:                224
+   Number of wire bits:           3311
+   Number of public wires:          82
+   Number of public wire bits:     994
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                207
+     $add                           22
+     $and                            1
+     $eq                            13
+     $ge                             2
+     $gt                             2
+     $logic_and                      6
+     $logic_not                      4
+     $logic_or                       1
+     $lt                             2
+     $mux                           53
+     $ne                             8
+     $neg                            1
+     $not                            2
+     $or                             1
+     $pmux                           7
+     $reduce_and                     9
+     $reduce_bool                    6
+     $reduce_or                      3
+     $sdff                          11
+     $sdffe                         49
+     $shift                          1
+     $shl                            1
+     $sub                            2
+

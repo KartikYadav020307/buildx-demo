@@ -1,0 +1,36 @@
+VCD info: dumpfile Simulation/radar_demo.vcd opened for output.
+DEMO PASS sc=0 alpha=1 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=0 alpha=1 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=0 alpha=2 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=0 alpha=2 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=0 alpha=4 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=0 alpha=4 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=0 alpha=8 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=0 alpha=8 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=1 alpha=1 gap=0 detections=3 results=80 cycles=104
+DEMO PASS sc=1 alpha=1 gap=1 detections=3 results=80 cycles=302
+DEMO PASS sc=1 alpha=2 gap=0 detections=3 results=80 cycles=104
+DEMO PASS sc=1 alpha=2 gap=1 detections=3 results=80 cycles=302
+DEMO PASS sc=1 alpha=4 gap=0 detections=3 results=80 cycles=104
+DEMO PASS sc=1 alpha=4 gap=1 detections=3 results=80 cycles=302
+DEMO PASS sc=1 alpha=8 gap=0 detections=3 results=80 cycles=104
+DEMO PASS sc=1 alpha=8 gap=1 detections=3 results=80 cycles=302
+DEMO PASS sc=2 alpha=1 gap=0 detections=1 results=80 cycles=104
+DEMO PASS sc=2 alpha=1 gap=1 detections=1 results=80 cycles=302
+DEMO PASS sc=2 alpha=2 gap=0 detections=1 results=80 cycles=104
+DEMO PASS sc=2 alpha=2 gap=1 detections=1 results=80 cycles=302
+DEMO PASS sc=2 alpha=4 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=2 alpha=4 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=2 alpha=8 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=2 alpha=8 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=3 alpha=1 gap=0 detections=1 results=80 cycles=104
+DEMO PASS sc=3 alpha=1 gap=1 detections=1 results=80 cycles=302
+DEMO PASS sc=3 alpha=2 gap=0 detections=1 results=80 cycles=104
+DEMO PASS sc=3 alpha=2 gap=1 detections=1 results=80 cycles=302
+DEMO PASS sc=3 alpha=4 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=3 alpha=4 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=3 alpha=8 gap=0 detections=0 results=80 cycles=104
+DEMO PASS sc=3 alpha=8 gap=1 detections=0 results=80 cycles=302
+DEMO PASS sc=1 alpha=4 gap=0 detections=3 results=80 cycles=104
+DEMO SIMULATION PASS: 33 frame checks
+Testbench/tb_radar_demo.sv:80: $finish called at 143060000 (1ps)

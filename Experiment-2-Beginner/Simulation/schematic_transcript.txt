@@ -1,0 +1,1783 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog -lib /workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v /workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_xtra.v; read_verilog Simulation/vio_elaboration_stub.v RTL/cfar_core.v RTL/radar_demo.v RTL/radar_top.v; hierarchy -check -top radar_top; proc; opt; check -assert; stat; write_json Simulation/rtl_netlist.json; show -format dot -prefix Images/rtl_schematic radar_top' --
+
+1. Executing Verilog-2005 frontend: /workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v
+Parsing Verilog input from `/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\VCC'.
+Generating RTLIL representation for module `\GND'.
+Generating RTLIL representation for module `\IBUF'.
+Generating RTLIL representation for module `\IBUFG'.
+Generating RTLIL representation for module `\OBUF'.
+Generating RTLIL representation for module `\IOBUF'.
+Generating RTLIL representation for module `\OBUFT'.
+Generating RTLIL representation for module `\BUFG'.
+Generating RTLIL representation for module `\BUFGCTRL'.
+Generating RTLIL representation for module `\BUFHCE'.
+Generating RTLIL representation for module `\INV'.
+Generating RTLIL representation for module `\LUT1'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\LUT3'.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\LUT5'.
+Generating RTLIL representation for module `\LUT6'.
+Generating RTLIL representation for module `\LUT6_2'.
+Generating RTLIL representation for module `\$__ABC9_LUT7'.
+Generating RTLIL representation for module `\$__ABC9_LUT8'.
+Generating RTLIL representation for module `\MUXCY'.
+Generating RTLIL representation for module `\MUXF5'.
+Generating RTLIL representation for module `\MUXF6'.
+Generating RTLIL representation for module `\MUXF7'.
+Generating RTLIL representation for module `\MUXF8'.
+Generating RTLIL representation for module `\MUXF9'.
+Generating RTLIL representation for module `\XORCY'.
+Generating RTLIL representation for module `\CARRY4'.
+Generating RTLIL representation for module `\CARRY8'.
+Generating RTLIL representation for module `\ORCY'.
+Generating RTLIL representation for module `\MULT_AND'.
+Generating RTLIL representation for module `\FDRE'.
+Generating RTLIL representation for module `\FDRE_1'.
+Generating RTLIL representation for module `\FDSE'.
+Generating RTLIL representation for module `\FDSE_1'.
+Generating RTLIL representation for module `\FDRSE'.
+Generating RTLIL representation for module `\FDRSE_1'.
+Generating RTLIL representation for module `\FDCE'.
+Generating RTLIL representation for module `\FDCE_1'.
+Generating RTLIL representation for module `\FDPE'.
+Generating RTLIL representation for module `\FDPE_1'.
+Generating RTLIL representation for module `\FDCPE'.
+Generating RTLIL representation for module `\FDCPE_1'.
+Generating RTLIL representation for module `\LDCE'.
+Generating RTLIL representation for module `\LDPE'.
+Generating RTLIL representation for module `\LDCPE'.
+Generating RTLIL representation for module `\AND2B1L'.
+Generating RTLIL representation for module `\OR2L'.
+Generating RTLIL representation for module `\RAM16X1S'.
+Generating RTLIL representation for module `\RAM16X1S_1'.
+Generating RTLIL representation for module `\RAM32X1S'.
+Generating RTLIL representation for module `\RAM32X1S_1'.
+Generating RTLIL representation for module `\RAM64X1S'.
+Generating RTLIL representation for module `\RAM64X1S_1'.
+Generating RTLIL representation for module `\RAM128X1S'.
+Generating RTLIL representation for module `\RAM128X1S_1'.
+Generating RTLIL representation for module `\RAM256X1S'.
+Generating RTLIL representation for module `\RAM512X1S'.
+Generating RTLIL representation for module `\RAM16X2S'.
+Generating RTLIL representation for module `\RAM32X2S'.
+Generating RTLIL representation for module `\RAM64X2S'.
+Generating RTLIL representation for module `\RAM16X4S'.
+Generating RTLIL representation for module `\RAM32X4S'.
+Generating RTLIL representation for module `\RAM16X8S'.
+Generating RTLIL representation for module `\RAM32X8S'.
+Generating RTLIL representation for module `\RAM16X1D'.
+Generating RTLIL representation for module `\RAM16X1D_1'.
+Generating RTLIL representation for module `\RAM32X1D'.
+Generating RTLIL representation for module `\RAM32X1D_1'.
+Generating RTLIL representation for module `\RAM64X1D'.
+Generating RTLIL representation for module `\RAM64X1D_1'.
+Generating RTLIL representation for module `\RAM128X1D'.
+Generating RTLIL representation for module `\RAM256X1D'.
+Generating RTLIL representation for module `\RAM32M'.
+Generating RTLIL representation for module `\RAM32M16'.
+Generating RTLIL representation for module `\RAM64M'.
+Generating RTLIL representation for module `\RAM64M8'.
+Generating RTLIL representation for module `\RAM32X16DR8'.
+Generating RTLIL representation for module `\RAM64X8SW'.
+Generating RTLIL representation for module `\ROM16X1'.
+Generating RTLIL representation for module `\ROM32X1'.
+Generating RTLIL representation for module `\ROM64X1'.
+Generating RTLIL representation for module `\ROM128X1'.
+Generating RTLIL representation for module `\ROM256X1'.
+Generating RTLIL representation for module `\SRL16'.
+Generating RTLIL representation for module `\SRL16E'.
+Generating RTLIL representation for module `\SRLC16'.
+Generating RTLIL representation for module `\SRLC16E'.
+Generating RTLIL representation for module `\SRLC32E'.
+Generating RTLIL representation for module `\CFGLUT5'.
+Generating RTLIL representation for module `\MULT18X18'.
+Generating RTLIL representation for module `\MULT18X18S'.
+Generating RTLIL representation for module `\MULT18X18SIO'.
+Generating RTLIL representation for module `\DSP48A'.
+Generating RTLIL representation for module `\DSP48A1'.
+Generating RTLIL representation for module `\DSP48'.
+Generating RTLIL representation for module `\DSP48E1'.
+Generating RTLIL representation for module `\RAMB18E1'.
+Generating RTLIL representation for module `\RAMB36E1'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_xtra.v
+Parsing Verilog input from `/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_xtra.v' to AST representation.
+Generating RTLIL representation for module `\RAMB4_S1'.
+Generating RTLIL representation for module `\RAMB4_S2'.
+Generating RTLIL representation for module `\RAMB4_S4'.
+Generating RTLIL representation for module `\RAMB4_S8'.
+Generating RTLIL representation for module `\RAMB4_S16'.
+Generating RTLIL representation for module `\RAMB4_S1_S1'.
+Generating RTLIL representation for module `\RAMB4_S1_S2'.
+Generating RTLIL representation for module `\RAMB4_S1_S4'.
+Generating RTLIL representation for module `\RAMB4_S1_S8'.
+Generating RTLIL representation for module `\RAMB4_S1_S16'.
+Generating RTLIL representation for module `\RAMB4_S2_S2'.
+Generating RTLIL representation for module `\RAMB4_S2_S4'.
+Generating RTLIL representation for module `\RAMB4_S2_S8'.
+Generating RTLIL representation for module `\RAMB4_S2_S16'.
+Generating RTLIL representation for module `\RAMB4_S4_S4'.
+Generating RTLIL representation for module `\RAMB4_S4_S8'.
+Generating RTLIL representation for module `\RAMB4_S4_S16'.
+Generating RTLIL representation for module `\RAMB4_S8_S8'.
+Generating RTLIL representation for module `\RAMB4_S8_S16'.
+Generating RTLIL representation for module `\RAMB4_S16_S16'.
+Generating RTLIL representation for module `\RAMB16_S1'.
+Generating RTLIL representation for module `\RAMB16_S2'.
+Generating RTLIL representation for module `\RAMB16_S4'.
+Generating RTLIL representation for module `\RAMB16_S9'.
+Generating RTLIL representation for module `\RAMB16_S18'.
+Generating RTLIL representation for module `\RAMB16_S36'.
+Generating RTLIL representation for module `\RAMB16_S1_S1'.
+Generating RTLIL representation for module `\RAMB16_S1_S2'.
+Generating RTLIL representation for module `\RAMB16_S1_S4'.
+Generating RTLIL representation for module `\RAMB16_S1_S9'.
+Generating RTLIL representation for module `\RAMB16_S1_S18'.
+Generating RTLIL representation for module `\RAMB16_S1_S36'.
+Generating RTLIL representation for module `\RAMB16_S2_S2'.
+Generating RTLIL representation for module `\RAMB16_S2_S4'.
+Generating RTLIL representation for module `\RAMB16_S2_S9'.
+Generating RTLIL representation for module `\RAMB16_S2_S18'.
+Generating RTLIL representation for module `\RAMB16_S2_S36'.
+Generating RTLIL representation for module `\RAMB16_S4_S4'.
+Generating RTLIL representation for module `\RAMB16_S4_S9'.
+Generating RTLIL representation for module `\RAMB16_S4_S18'.
+Generating RTLIL representation for module `\RAMB16_S4_S36'.
+Generating RTLIL representation for module `\RAMB16_S9_S9'.
+Generating RTLIL representation for module `\RAMB16_S9_S18'.
+Generating RTLIL representation for module `\RAMB16_S9_S36'.
+Generating RTLIL representation for module `\RAMB16_S18_S18'.
+Generating RTLIL representation for module `\RAMB16_S18_S36'.
+Generating RTLIL representation for module `\RAMB16_S36_S36'.
+Generating RTLIL representation for module `\RAMB16BWE_S18'.
+Generating RTLIL representation for module `\RAMB16BWE_S36'.
+Generating RTLIL representation for module `\RAMB16BWE_S18_S9'.
+Generating RTLIL representation for module `\RAMB16BWE_S18_S18'.
+Generating RTLIL representation for module `\RAMB16BWE_S36_S9'.
+Generating RTLIL representation for module `\RAMB16BWE_S36_S18'.
+Generating RTLIL representation for module `\RAMB16BWE_S36_S36'.
+Generating RTLIL representation for module `\RAMB16BWER'.
+Generating RTLIL representation for module `\RAMB8BWER'.
+Generating RTLIL representation for module `\FIFO16'.
+Generating RTLIL representation for module `\RAMB16'.
+Generating RTLIL representation for module `\RAMB32_S64_ECC'.
+Generating RTLIL representation for module `\FIFO18'.
+Generating RTLIL representation for module `\FIFO18_36'.
+Generating RTLIL representation for module `\FIFO36'.
+Generating RTLIL representation for module `\FIFO36_72'.
+Generating RTLIL representation for module `\RAMB18'.
+Generating RTLIL representation for module `\RAMB36'.
+Generating RTLIL representation for module `\RAMB18SDP'.
+Generating RTLIL representation for module `\RAMB36SDP'.
+Generating RTLIL representation for module `\FIFO18E1'.
+Generating RTLIL representation for module `\FIFO36E1'.
+Generating RTLIL representation for module `\FIFO18E2'.
+Generating RTLIL representation for module `\FIFO36E2'.
+Generating RTLIL representation for module `\RAMB18E2'.
+Generating RTLIL representation for module `\RAMB36E2'.
+Generating RTLIL representation for module `\URAM288'.
+Generating RTLIL representation for module `\URAM288_BASE'.
+Generating RTLIL representation for module `\DSP48E'.
+Generating RTLIL representation for module `\DSP48E2'.
+Generating RTLIL representation for module `\FDDRCPE'.
+Generating RTLIL representation for module `\FDDRRSE'.
+Generating RTLIL representation for module `\IFDDRCPE'.
+Generating RTLIL representation for module `\IFDDRRSE'.
+Generating RTLIL representation for module `\OFDDRCPE'.
+Generating RTLIL representation for module `\OFDDRRSE'.
+Generating RTLIL representation for module `\OFDDRTCPE'.
+Generating RTLIL representation for module `\OFDDRTRSE'.
+Generating RTLIL representation for module `\IDDR2'.
+Generating RTLIL representation for module `\ODDR2'.
+Generating RTLIL representation for module `\IDDR'.
+Generating RTLIL representation for module `\IDDR_2CLK'.
+Generating RTLIL representation for module `\ODDR'.
+Generating RTLIL representation for module `\IDELAYCTRL'.
+Generating RTLIL representation for module `\IDELAY'.
+Generating RTLIL representation for module `\ISERDES'.
+Generating RTLIL representation for module `\OSERDES'.
+Generating RTLIL representation for module `\IODELAY'.
+Generating RTLIL representation for module `\ISERDES_NODELAY'.
+Generating RTLIL representation for module `\IODELAYE1'.
+Generating RTLIL representation for module `\ISERDESE1'.
+Generating RTLIL representation for module `\OSERDESE1'.
+Generating RTLIL representation for module `\IDELAYE2'.
+Generating RTLIL representation for module `\ODELAYE2'.
+Generating RTLIL representation for module `\ISERDESE2'.
+Generating RTLIL representation for module `\OSERDESE2'.
+Generating RTLIL representation for module `\PHASER_IN'.
+Generating RTLIL representation for module `\PHASER_IN_PHY'.
+Generating RTLIL representation for module `\PHASER_OUT'.
+Generating RTLIL representation for module `\PHASER_OUT_PHY'.
+Generating RTLIL representation for module `\PHASER_REF'.
+Generating RTLIL representation for module `\PHY_CONTROL'.
+Generating RTLIL representation for module `\IDDRE1'.
+Generating RTLIL representation for module `\ODDRE1'.
+Generating RTLIL representation for module `\IDELAYE3'.
+Generating RTLIL representation for module `\ODELAYE3'.
+Generating RTLIL representation for module `\ISERDESE3'.
+Generating RTLIL representation for module `\OSERDESE3'.
+Generating RTLIL representation for module `\BITSLICE_CONTROL'.
+Generating RTLIL representation for module `\RIU_OR'.
+Generating RTLIL representation for module `\RX_BITSLICE'.
+Generating RTLIL representation for module `\RXTX_BITSLICE'.
+Generating RTLIL representation for module `\TX_BITSLICE'.
+Generating RTLIL representation for module `\TX_BITSLICE_TRI'.
+Generating RTLIL representation for module `\IODELAY2'.
+Generating RTLIL representation for module `\IODRP2'.
+Generating RTLIL representation for module `\IODRP2_MCB'.
+Generating RTLIL representation for module `\ISERDES2'.
+Generating RTLIL representation for module `\OSERDES2'.
+Generating RTLIL representation for module `\IBUF_DLY_ADJ'.
+Generating RTLIL representation for module `\IBUF_IBUFDISABLE'.
+Generating RTLIL representation for module `\IBUF_INTERMDISABLE'.
+Generating RTLIL representation for module `\IBUF_ANALOG'.
+Generating RTLIL representation for module `\IBUFE3'.
+Generating RTLIL representation for module `\IBUFDS'.
+Generating RTLIL representation for module `\IBUFDS_DLY_ADJ'.
+Generating RTLIL representation for module `\IBUFDS_IBUFDISABLE'.
+Generating RTLIL representation for module `\IBUFDS_INTERMDISABLE'.
+Generating RTLIL representation for module `\IBUFDS_DIFF_OUT'.
+Generating RTLIL representation for module `\IBUFDS_DIFF_OUT_IBUFDISABLE'.
+Generating RTLIL representation for module `\IBUFDS_DIFF_OUT_INTERMDISABLE'.
+Generating RTLIL representation for module `\IBUFDSE3'.
+Generating RTLIL representation for module `\IBUFDS_DPHY'.
+Generating RTLIL representation for module `\IBUFGDS'.
+Generating RTLIL representation for module `\IBUFGDS_DIFF_OUT'.
+Generating RTLIL representation for module `\IOBUF_DCIEN'.
+Generating RTLIL representation for module `\IOBUF_INTERMDISABLE'.
+Generating RTLIL representation for module `\IOBUFE3'.
+Generating RTLIL representation for module `\IOBUFDS'.
+Generating RTLIL representation for module `\IOBUFDS_DCIEN'.
+Generating RTLIL representation for module `\IOBUFDS_INTERMDISABLE'.
+Generating RTLIL representation for module `\IOBUFDS_DIFF_OUT'.
+Generating RTLIL representation for module `\IOBUFDS_DIFF_OUT_DCIEN'.
+Generating RTLIL representation for module `\IOBUFDS_DIFF_OUT_INTERMDISABLE'.
+Generating RTLIL representation for module `\IOBUFDSE3'.
+Generating RTLIL representation for module `\OBUFDS'.
+Generating RTLIL representation for module `\OBUFDS_DPHY'.
+Generating RTLIL representation for module `\OBUFTDS'.
+Generating RTLIL representation for module `\KEEPER'.
+Generating RTLIL representation for module `\PULLDOWN'.
+Generating RTLIL representation for module `\PULLUP'.
+Generating RTLIL representation for module `\DCIRESET'.
+Generating RTLIL representation for module `\HPIO_VREF'.
+Generating RTLIL representation for module `\BUFGCE'.
+Generating RTLIL representation for module `\BUFGCE_1'.
+Generating RTLIL representation for module `\BUFGMUX'.
+Generating RTLIL representation for module `\BUFGMUX_1'.
+Generating RTLIL representation for module `\BUFGMUX_CTRL'.
+Generating RTLIL representation for module `\BUFGMUX_VIRTEX4'.
+Generating RTLIL representation for module `\BUFG_GT'.
+Generating RTLIL representation for module `\BUFG_GT_SYNC'.
+Generating RTLIL representation for module `\BUFG_PS'.
+Generating RTLIL representation for module `\BUFGCE_DIV'.
+Generating RTLIL representation for module `\BUFH'.
+Generating RTLIL representation for module `\BUFIO2'.
+Generating RTLIL representation for module `\BUFIO2_2CLK'.
+Generating RTLIL representation for module `\BUFIO2FB'.
+Generating RTLIL representation for module `\BUFPLL'.
+Generating RTLIL representation for module `\BUFPLL_MCB'.
+Generating RTLIL representation for module `\BUFIO'.
+Generating RTLIL representation for module `\BUFIODQS'.
+Generating RTLIL representation for module `\BUFR'.
+Generating RTLIL representation for module `\BUFMR'.
+Generating RTLIL representation for module `\BUFMRCE'.
+Generating RTLIL representation for module `\DCM'.
+Generating RTLIL representation for module `\DCM_SP'.
+Generating RTLIL representation for module `\DCM_CLKGEN'.
+Generating RTLIL representation for module `\DCM_ADV'.
+Generating RTLIL representation for module `\DCM_BASE'.
+Generating RTLIL representation for module `\DCM_PS'.
+Generating RTLIL representation for module `\PMCD'.
+Generating RTLIL representation for module `\PLL_ADV'.
+Generating RTLIL representation for module `\PLL_BASE'.
+Generating RTLIL representation for module `\MMCM_ADV'.
+Generating RTLIL representation for module `\MMCM_BASE'.
+Generating RTLIL representation for module `\MMCME2_ADV'.
+Generating RTLIL representation for module `\MMCME2_BASE'.
+Generating RTLIL representation for module `\PLLE2_ADV'.
+Generating RTLIL representation for module `\PLLE2_BASE'.
+Generating RTLIL representation for module `\MMCME3_ADV'.
+Generating RTLIL representation for module `\MMCME3_BASE'.
+Generating RTLIL representation for module `\PLLE3_ADV'.
+Generating RTLIL representation for module `\PLLE3_BASE'.
+Generating RTLIL representation for module `\MMCME4_ADV'.
+Generating RTLIL representation for module `\MMCME4_BASE'.
+Generating RTLIL representation for module `\PLLE4_ADV'.
+Generating RTLIL representation for module `\PLLE4_BASE'.
+Generating RTLIL representation for module `\BUFT'.
+Generating RTLIL representation for module `\IN_FIFO'.
+Generating RTLIL representation for module `\OUT_FIFO'.
+Generating RTLIL representation for module `\HARD_SYNC'.
+Generating RTLIL representation for module `\STARTUP_SPARTAN3'.
+Generating RTLIL representation for module `\STARTUP_SPARTAN3E'.
+Generating RTLIL representation for module `\STARTUP_SPARTAN3A'.
+Generating RTLIL representation for module `\STARTUP_SPARTAN6'.
+Generating RTLIL representation for module `\STARTUP_VIRTEX4'.
+Generating RTLIL representation for module `\STARTUP_VIRTEX5'.
+Generating RTLIL representation for module `\STARTUP_VIRTEX6'.
+Generating RTLIL representation for module `\STARTUPE2'.
+Generating RTLIL representation for module `\STARTUPE3'.
+Generating RTLIL representation for module `\CAPTURE_SPARTAN3'.
+Generating RTLIL representation for module `\CAPTURE_SPARTAN3A'.
+Generating RTLIL representation for module `\CAPTURE_VIRTEX4'.
+Generating RTLIL representation for module `\CAPTURE_VIRTEX5'.
+Generating RTLIL representation for module `\CAPTURE_VIRTEX6'.
+Generating RTLIL representation for module `\CAPTUREE2'.
+Generating RTLIL representation for module `\ICAP_SPARTAN3A'.
+Generating RTLIL representation for module `\ICAP_SPARTAN6'.
+Generating RTLIL representation for module `\ICAP_VIRTEX4'.
+Generating RTLIL representation for module `\ICAP_VIRTEX5'.
+Generating RTLIL representation for module `\ICAP_VIRTEX6'.
+Generating RTLIL representation for module `\ICAPE2'.
+Generating RTLIL representation for module `\ICAPE3'.
+Generating RTLIL representation for module `\BSCAN_SPARTAN3'.
+Generating RTLIL representation for module `\BSCAN_SPARTAN3A'.
+Generating RTLIL representation for module `\BSCAN_SPARTAN6'.
+Generating RTLIL representation for module `\BSCAN_VIRTEX4'.
+Generating RTLIL representation for module `\BSCAN_VIRTEX5'.
+Generating RTLIL representation for module `\BSCAN_VIRTEX6'.
+Generating RTLIL representation for module `\BSCANE2'.
+Generating RTLIL representation for module `\DNA_PORT'.
+Generating RTLIL representation for module `\DNA_PORTE2'.
+Generating RTLIL representation for module `\FRAME_ECC_VIRTEX4'.
+Generating RTLIL representation for module `\FRAME_ECC_VIRTEX5'.
+Generating RTLIL representation for module `\FRAME_ECC_VIRTEX6'.
+Generating RTLIL representation for module `\FRAME_ECCE2'.
+Generating RTLIL representation for module `\FRAME_ECCE3'.
+Generating RTLIL representation for module `\FRAME_ECCE4'.
+Generating RTLIL representation for module `\USR_ACCESS_VIRTEX4'.
+Generating RTLIL representation for module `\USR_ACCESS_VIRTEX5'.
+Generating RTLIL representation for module `\USR_ACCESS_VIRTEX6'.
+Generating RTLIL representation for module `\USR_ACCESSE2'.
+Generating RTLIL representation for module `\POST_CRC_INTERNAL'.
+Generating RTLIL representation for module `\SUSPEND_SYNC'.
+Generating RTLIL representation for module `\KEY_CLEAR'.
+Generating RTLIL representation for module `\MASTER_JTAG'.
+Generating RTLIL representation for module `\SPI_ACCESS'.
+Generating RTLIL representation for module `\EFUSE_USR'.
+Generating RTLIL representation for module `\SYSMON'.
+Generating RTLIL representation for module `\XADC'.
+Generating RTLIL representation for module `\SYSMONE1'.
+Generating RTLIL representation for module `\SYSMONE4'.
+Generating RTLIL representation for module `\GTPA1_DUAL'.
+Generating RTLIL representation for module `\GT11_CUSTOM'.
+Generating RTLIL representation for module `\GT11_DUAL'.
+Generating RTLIL representation for module `\GT11CLK'.
+Generating RTLIL representation for module `\GT11CLK_MGT'.
+Generating RTLIL representation for module `\GTP_DUAL'.
+Generating RTLIL representation for module `\GTX_DUAL'.
+Generating RTLIL representation for module `\CRC32'.
+Generating RTLIL representation for module `\CRC64'.
+Generating RTLIL representation for module `\GTHE1_QUAD'.
+Generating RTLIL representation for module `\GTXE1'.
+Generating RTLIL representation for module `\IBUFDS_GTXE1'.
+Generating RTLIL representation for module `\IBUFDS_GTHE1'.
+Generating RTLIL representation for module `\GTHE2_CHANNEL'.
+Generating RTLIL representation for module `\GTHE2_COMMON'.
+Generating RTLIL representation for module `\GTPE2_CHANNEL'.
+Generating RTLIL representation for module `\GTPE2_COMMON'.
+Generating RTLIL representation for module `\GTXE2_CHANNEL'.
+Generating RTLIL representation for module `\GTXE2_COMMON'.
+Generating RTLIL representation for module `\IBUFDS_GTE2'.
+Generating RTLIL representation for module `\GTHE3_CHANNEL'.
+Generating RTLIL representation for module `\GTHE3_COMMON'.
+Generating RTLIL representation for module `\GTYE3_CHANNEL'.
+Generating RTLIL representation for module `\GTYE3_COMMON'.
+Generating RTLIL representation for module `\IBUFDS_GTE3'.
+Generating RTLIL representation for module `\OBUFDS_GTE3'.
+Generating RTLIL representation for module `\OBUFDS_GTE3_ADV'.
+Generating RTLIL representation for module `\GTHE4_CHANNEL'.
+Generating RTLIL representation for module `\GTHE4_COMMON'.
+Generating RTLIL representation for module `\GTYE4_CHANNEL'.
+Generating RTLIL representation for module `\GTYE4_COMMON'.
+Generating RTLIL representation for module `\IBUFDS_GTE4'.
+Generating RTLIL representation for module `\OBUFDS_GTE4'.
+Generating RTLIL representation for module `\OBUFDS_GTE4_ADV'.
+Generating RTLIL representation for module `\GTM_DUAL'.
+Generating RTLIL representation for module `\IBUFDS_GTM'.
+Generating RTLIL representation for module `\OBUFDS_GTM'.
+Generating RTLIL representation for module `\OBUFDS_GTM_ADV'.
+Generating RTLIL representation for module `\HSDAC'.
+Generating RTLIL representation for module `\HSADC'.
+Generating RTLIL representation for module `\RFDAC'.
+Generating RTLIL representation for module `\RFADC'.
+Generating RTLIL representation for module `\PCIE_A1'.
+Generating RTLIL representation for module `\PCIE_EP'.
+Generating RTLIL representation for module `\PCIE_2_0'.
+Generating RTLIL representation for module `\PCIE_2_1'.
+Generating RTLIL representation for module `\PCIE_3_0'.
+Generating RTLIL representation for module `\PCIE_3_1'.
+Generating RTLIL representation for module `\PCIE40E4'.
+Generating RTLIL representation for module `\PCIE4CE4'.
+Generating RTLIL representation for module `\EMAC'.
+Generating RTLIL representation for module `\TEMAC'.
+Generating RTLIL representation for module `\TEMAC_SINGLE'.
+Generating RTLIL representation for module `\CMAC'.
+Generating RTLIL representation for module `\CMACE4'.
+Generating RTLIL representation for module `\MCB'.
+Generating RTLIL representation for module `\HBM_REF_CLK'.
+Generating RTLIL representation for module `\HBM_SNGLBLI_INTF_APB'.
+Generating RTLIL representation for module `\HBM_SNGLBLI_INTF_AXI'.
+Generating RTLIL representation for module `\HBM_ONE_STACK_INTF'.
+Generating RTLIL representation for module `\HBM_TWO_STACK_INTF'.
+Generating RTLIL representation for module `\PPC405_ADV'.
+Generating RTLIL representation for module `\PPC440'.
+Generating RTLIL representation for module `\PS7'.
+Generating RTLIL representation for module `\PS8'.
+Generating RTLIL representation for module `\ILKN'.
+Generating RTLIL representation for module `\ILKNE4'.
+Generating RTLIL representation for module `\VCU'.
+Generating RTLIL representation for module `\FE'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: Simulation/vio_elaboration_stub.v
+Parsing Verilog input from `Simulation/vio_elaboration_stub.v' to AST representation.
+Generating RTLIL representation for module `\vio_radar'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: RTL/cfar_core.v
+Parsing Verilog input from `RTL/cfar_core.v' to AST representation.
+Generating RTLIL representation for module `\cfar_core'.
+Warning: Replacing memory \window_data with list of registers. See RTL/cfar_core.v:30
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: RTL/radar_demo.v
+Parsing Verilog input from `RTL/radar_demo.v' to AST representation.
+Generating RTLIL representation for module `\radar_demo'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: RTL/radar_top.v
+Parsing Verilog input from `RTL/radar_top.v' to AST representation.
+Generating RTLIL representation for module `\radar_top'.
+RTL/radar_top.v:8: Warning: Replacing floating point parameter u_mmcm.CLKIN1_PERIOD = 8.000000 with string.
+RTL/radar_top.v:8: Warning: Replacing floating point parameter u_mmcm.CLKFBOUT_MULT_F = 8.000000 with string.
+RTL/radar_top.v:8: Warning: Replacing floating point parameter u_mmcm.CLKOUT0_DIVIDE_F = 20.000000 with string.
+Successfully finished Verilog frontend.
+
+7. Executing HIERARCHY pass (managing design hierarchy).
+
+7.1. Analyzing design hierarchy..
+Top module:  \radar_top
+Used module:     \radar_demo
+Used module:         \cfar_core
+
+7.2. Analyzing design hierarchy..
+Top module:  \radar_top
+Used module:     \radar_demo
+Used module:         \cfar_core
+Removed 0 unused modules.
+
+8. Executing PROC pass (convert processes to netlists).
+
+8.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+8.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$RTL/radar_top.v:53$690 in module radar_top.
+Marked 1 switch rules as full_case in process $proc$RTL/radar_top.v:18$687 in module radar_top.
+Removed 1 dead cases from process $proc$RTL/radar_demo.v:55$639 in module radar_demo.
+Marked 8 switch rules as full_case in process $proc$RTL/radar_demo.v:55$639 in module radar_demo.
+Marked 4 switch rules as full_case in process $proc$RTL/radar_demo.v:32$633 in module radar_demo.
+Marked 2 switch rules as full_case in process $proc$RTL/cfar_core.v:28$598 in module cfar_core.
+Marked 1 switch rules as full_case in process $proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431 in module RAM64M.
+Marked 1 switch rules as full_case in process $proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301 in module RAM32M.
+Marked 1 switch rules as full_case in process $proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$249 in module RAM128X1D.
+Marked 1 switch rules as full_case in process $proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$219 in module RAM64X1D.
+Marked 1 switch rules as full_case in process $proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$192 in module RAM32X1D_1.
+Marked 1 switch rules as full_case in process $proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$165 in module RAM32X1D.
+Marked 1 switch rules as full_case in process $proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:815$30 in module FDPE_1.
+Marked 1 switch rules as full_case in process $proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:774$27 in module FDPE.
+Marked 1 switch rules as full_case in process $proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:736$25 in module FDCE_1.
+Marked 1 switch rules as full_case in process $proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:695$22 in module FDCE.
+Marked 1 switch rules as full_case in process $proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:592$20 in module FDSE_1.
+Marked 1 switch rules as full_case in process $proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:559$16 in module FDSE.
+Marked 1 switch rules as full_case in process $proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:527$14 in module FDRE_1.
+Marked 1 switch rules as full_case in process $proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:494$10 in module FDRE.
+Removed a total of 1 dead cases.
+
+8.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 7 redundant assignments.
+Promoted 96 assignments to connections.
+
+8.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\radar_top.$proc$RTL/radar_top.v:52$694'.
+  Set init value: \heartbeat = 25'0000000000000000000000000
+Found init rule in `\radar_top.$proc$RTL/radar_top.v:17$693'.
+  Set init value: \por_pipe = 8'11111111
+Found init rule in `\SRLC32E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2405$594'.
+  Set init value: \r = 0
+Found init rule in `\SRLC16E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2361$591'.
+  Set init value: \r = 16'0000000000000000
+Found init rule in `\SRLC16.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2329$588'.
+  Set init value: \r = 16'0000000000000000
+Found init rule in `\SRL16E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2292$585'.
+  Set init value: \r = 16'0000000000000000
+Found init rule in `\SRL16.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2264$582'.
+  Set init value: \r = 16'0000000000000000
+Found init rule in `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1980$507'.
+  Set init value: \mem_d = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1979$506'.
+  Set init value: \mem_c = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1978$505'.
+  Set init value: \mem_b = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1977$504'.
+  Set init value: \mem_a = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1806$385'.
+  Set init value: \mem_d = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1805$384'.
+  Set init value: \mem_c = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1804$383'.
+  Set init value: \mem_b = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1803$382'.
+  Set init value: \mem_a = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM128X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1712$268'.
+  Set init value: \mem = 128'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM64X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1607$238'.
+  Set init value: \mem = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM32X1D_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1561$211'.
+  Set init value: \mem = 0
+Found init rule in `\RAM32X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1502$184'.
+  Set init value: \mem = 0
+Found init rule in `\FDPE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$31'.
+  Set init value: \Q = 1'1
+Found init rule in `\FDPE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$29'.
+  Set init value: \Q = 1'1
+Found init rule in `\FDCE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$26'.
+  Set init value: \Q = 1'0
+Found init rule in `\FDCE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$24'.
+  Set init value: \Q = 1'0
+Found init rule in `\FDSE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$21'.
+  Set init value: \Q = 1'1
+Found init rule in `\FDSE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$19'.
+  Set init value: \Q = 1'1
+Found init rule in `\FDRE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$15'.
+  Set init value: \Q = 1'0
+Found init rule in `\FDRE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$13'.
+  Set init value: \Q = 1'0
+
+8.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \locked in `\radar_top.$proc$RTL/radar_top.v:18$687'.
+Found async reset \PRE in `\FDPE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:815$30'.
+Found async reset \PRE in `\FDPE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:774$27'.
+Found async reset \CLR in `\FDCE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:736$25'.
+Found async reset \CLR in `\FDCE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:695$22'.
+
+8.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~44 debug messages>
+
+8.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\radar_top.$proc$RTL/radar_top.v:52$694'.
+Creating decoders for process `\radar_top.$proc$RTL/radar_top.v:17$693'.
+Creating decoders for process `\radar_top.$proc$RTL/radar_top.v:53$690'.
+     1/1: $0\heartbeat[24:0]
+Creating decoders for process `\radar_top.$proc$RTL/radar_top.v:18$687'.
+     1/1: $0\por_pipe[7:0]
+Creating decoders for process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+     1/36: $6$lookahead\detection_mask$638[127:0]$674
+     2/36: $4$bitselwrite$data$RTL/radar_demo.v:98$625[127:0]$672
+     3/36: $4$bitselwrite$mask$RTL/radar_demo.v:98$624[127:0]$671
+     4/36: $4$bitselwrite$sel$RTL/radar_demo.v:98$626[15:0]$673
+     5/36: $5$lookahead\detection_mask$638[127:0]$669
+     6/36: $3$bitselwrite$sel$RTL/radar_demo.v:98$626[15:0]$668
+     7/36: $3$bitselwrite$data$RTL/radar_demo.v:98$625[127:0]$667
+     8/36: $3$bitselwrite$mask$RTL/radar_demo.v:98$624[127:0]$666
+     9/36: $4$lookahead\detection_mask$638[127:0]$664
+    10/36: $2$bitselwrite$sel$RTL/radar_demo.v:98$626[15:0]$663
+    11/36: $2$bitselwrite$data$RTL/radar_demo.v:98$625[127:0]$662
+    12/36: $2$bitselwrite$mask$RTL/radar_demo.v:98$624[127:0]$661
+    13/36: $3$lookahead\detection_mask$638[127:0]$652
+    14/36: $2$lookahead\detection_mask$638[127:0]$649
+    15/36: $1$lookahead\detection_mask$638[127:0]$647
+    16/36: $0\start_d[0:0]
+    17/36: $1$bitselwrite$sel$RTL/radar_demo.v:98$626[15:0]$646
+    18/36: $1$bitselwrite$data$RTL/radar_demo.v:98$625[127:0]$645
+    19/36: $1$bitselwrite$mask$RTL/radar_demo.v:98$624[127:0]$644
+    20/36: $0\gap_count[1:0]
+    21/36: $0\sample_index[6:0]
+    22/36: $0\state[1:0]
+    23/36: $0\active_gap[0:0]
+    24/36: $0\active_scale[1:0]
+    25/36: $0\active_scenario[1:0]
+    26/36: $0\frame_id[15:0]
+    27/36: $0\run_cycles[15:0]
+    28/36: $0\last_threshold_full[18:0]
+    29/36: $0\last_threshold[15:0]
+    30/36: $0\target_pos2[15:0]
+    31/36: $0\target_pos1[15:0]
+    32/36: $0\target_pos0[15:0]
+    33/36: $0\result_count[15:0]
+    34/36: $0\detection_count[7:0]
+    35/36: $0\timeout_error[0:0]
+    36/36: $0\done[0:0]
+Creating decoders for process `\radar_demo.$proc$RTL/radar_demo.v:32$633'.
+     1/4: $4\sample_value[15:0]
+     2/4: $3\sample_value[15:0]
+     3/4: $2\sample_value[15:0]
+     4/4: $1\sample_value[15:0]
+Creating decoders for process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+     1/44: $2\i[31:0]
+     2/44: $0\target_detected[0:0]
+     3/44: $0\result_valid[0:0]
+     4/44: $0\valid_s2[0:0]
+     5/44: $0\valid_s1[0:0]
+     6/44: $1\i[31:0]
+     7/44: $0\window_data[20][15:0]
+     8/44: $0\window_data[19][15:0]
+     9/44: $0\window_data[18][15:0]
+    10/44: $0\window_data[17][15:0]
+    11/44: $0\window_data[16][15:0]
+    12/44: $0\window_data[15][15:0]
+    13/44: $0\window_data[14][15:0]
+    14/44: $0\window_data[13][15:0]
+    15/44: $0\window_data[12][15:0]
+    16/44: $0\window_data[11][15:0]
+    17/44: $0\window_data[10][15:0]
+    18/44: $0\window_data[9][15:0]
+    19/44: $0\window_data[8][15:0]
+    20/44: $0\window_data[7][15:0]
+    21/44: $0\window_data[6][15:0]
+    22/44: $0\window_data[5][15:0]
+    23/44: $0\window_data[4][15:0]
+    24/44: $0\window_data[3][15:0]
+    25/44: $0\window_data[2][15:0]
+    26/44: $0\window_data[1][15:0]
+    27/44: $0\window_data[0][15:0]
+    28/44: $0\sum_s2[19:0]
+    29/44: $0\scale_s2[1:0]
+    30/44: $0\scale_s1[1:0]
+    31/44: $0\index_s2[15:0]
+    32/44: $0\cut_s2[15:0]
+    33/44: $0\index_s1[15:0]
+    34/44: $0\cut_s1[15:0]
+    35/44: $0\p3[17:0]
+    36/44: $0\p2[17:0]
+    37/44: $0\p1[17:0]
+    38/44: $0\p0[17:0]
+    39/44: $0\input_index[15:0]
+    40/44: $0\fill_count[4:0]
+    41/44: $0\cut_index[15:0]
+    42/44: $0\cut_value[15:0]
+    43/44: $0\threshold_full[18:0]
+    44/44: $0\threshold_value[15:0]
+Creating decoders for process `\SRLC32E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2405$594'.
+Creating decoders for process `\SRLC32E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2413$593'.
+     1/1: $0\r[31:0]
+Creating decoders for process `\SRLC16E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2361$591'.
+Creating decoders for process `\SRLC16E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2369$590'.
+     1/1: $0\r[15:0]
+Creating decoders for process `\SRLC16.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2329$588'.
+Creating decoders for process `\SRLC16.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2332$587'.
+Creating decoders for process `\SRL16E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2292$585'.
+Creating decoders for process `\SRL16E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2299$584'.
+     1/1: $0\r[15:0]
+Creating decoders for process `\SRL16.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2264$582'.
+Creating decoders for process `\SRL16.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2266$581'.
+Creating decoders for process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1980$507'.
+Creating decoders for process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1979$506'.
+Creating decoders for process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1978$505'.
+Creating decoders for process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1977$504'.
+Creating decoders for process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+     1/16: $1$lookahead\mem_d$430[63:0]$463
+     2/16: $1$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1991$420[63:0]$458
+     3/16: $1$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1991$419[63:0]$457
+     4/16: $1$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1991$421[5:0]$459
+     5/16: $1$lookahead\mem_c$429[63:0]$462
+     6/16: $1$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1990$417[63:0]$455
+     7/16: $1$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1990$416[63:0]$454
+     8/16: $1$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1990$418[5:0]$456
+     9/16: $1$lookahead\mem_b$428[63:0]$461
+    10/16: $1$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1989$414[63:0]$452
+    11/16: $1$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1989$413[63:0]$451
+    12/16: $1$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1989$415[5:0]$453
+    13/16: $1$lookahead\mem_a$427[63:0]$460
+    14/16: $1$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1988$411[63:0]$449
+    15/16: $1$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1988$410[63:0]$448
+    16/16: $1$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1988$412[5:0]$450
+Creating decoders for process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1806$385'.
+Creating decoders for process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1805$384'.
+Creating decoders for process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1804$383'.
+Creating decoders for process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1803$382'.
+Creating decoders for process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+     1/16: $1$lookahead\mem_d$300[63:0]$333
+     2/16: $1$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1817$282[63:0]$328
+     3/16: $1$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1817$281[63:0]$327
+     4/16: $1$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1817$283[31:0]$329
+     5/16: $1$lookahead\mem_c$299[63:0]$332
+     6/16: $1$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1816$279[63:0]$325
+     7/16: $1$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1816$278[63:0]$324
+     8/16: $1$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1816$280[31:0]$326
+     9/16: $1$lookahead\mem_b$298[63:0]$331
+    10/16: $1$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1815$276[63:0]$322
+    11/16: $1$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1815$275[63:0]$321
+    12/16: $1$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1815$277[31:0]$323
+    13/16: $1$lookahead\mem_a$297[63:0]$330
+    14/16: $1$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1814$273[63:0]$319
+    15/16: $1$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1814$272[63:0]$318
+    16/16: $1$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1814$274[31:0]$320
+Creating decoders for process `\RAM128X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1712$268'.
+Creating decoders for process `\RAM128X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$249'.
+     1/4: $1$lookahead\mem$248[127:0]$257
+     2/4: $1$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$243[127:0]$255
+     3/4: $1$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$242[127:0]$254
+     4/4: $1$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$244[6:0]$256
+Creating decoders for process `\RAM64X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1607$238'.
+Creating decoders for process `\RAM64X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$219'.
+     1/4: $1$lookahead\mem$218[63:0]$227
+     2/4: $1$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$213[63:0]$225
+     3/4: $1$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$212[63:0]$224
+     4/4: $1$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$214[5:0]$226
+Creating decoders for process `\RAM32X1D_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1561$211'.
+Creating decoders for process `\RAM32X1D_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$192'.
+     1/4: $1$lookahead\mem$191[31:0]$200
+     2/4: $1$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$186[31:0]$198
+     3/4: $1$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$185[31:0]$197
+     4/4: $1$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$187[4:0]$199
+Creating decoders for process `\RAM32X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1502$184'.
+Creating decoders for process `\RAM32X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$165'.
+     1/4: $1$lookahead\mem$164[31:0]$173
+     2/4: $1$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$159[31:0]$171
+     3/4: $1$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$158[31:0]$170
+     4/4: $1$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$160[4:0]$172
+Creating decoders for process `\FDPE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$31'.
+Creating decoders for process `\FDPE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:815$30'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\FDPE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$29'.
+Creating decoders for process `\FDPE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:774$27'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\FDCE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$26'.
+Creating decoders for process `\FDCE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:736$25'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\FDCE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$24'.
+Creating decoders for process `\FDCE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:695$22'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\FDSE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$21'.
+Creating decoders for process `\FDSE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:592$20'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\FDSE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$19'.
+Creating decoders for process `\FDSE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:559$16'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\FDRE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$15'.
+Creating decoders for process `\FDRE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:527$14'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\FDRE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$13'.
+Creating decoders for process `\FDRE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:494$10'.
+     1/1: $0\Q[0:0]
+
+8.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\radar_demo.\sample_value' from process `\radar_demo.$proc$RTL/radar_demo.v:32$633'.
+
+8.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\radar_top.\heartbeat' using process `\radar_top.$proc$RTL/radar_top.v:53$690'.
+  created $dff cell `$procdff$1557' with positive edge clock.
+Creating register for signal `\radar_top.\por_pipe' using process `\radar_top.$proc$RTL/radar_top.v:18$687'.
+  created $adff cell `$procdff$1558' with positive edge clock and negative level reset.
+Creating register for signal `\radar_demo.\done' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1559' with positive edge clock.
+Creating register for signal `\radar_demo.\timeout_error' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1560' with positive edge clock.
+Creating register for signal `\radar_demo.\detection_count' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1561' with positive edge clock.
+Creating register for signal `\radar_demo.\result_count' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1562' with positive edge clock.
+Creating register for signal `\radar_demo.\target_pos0' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1563' with positive edge clock.
+Creating register for signal `\radar_demo.\target_pos1' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1564' with positive edge clock.
+Creating register for signal `\radar_demo.\target_pos2' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1565' with positive edge clock.
+Creating register for signal `\radar_demo.\detection_mask' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1566' with positive edge clock.
+Creating register for signal `\radar_demo.\last_threshold' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1567' with positive edge clock.
+Creating register for signal `\radar_demo.\last_threshold_full' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1568' with positive edge clock.
+Creating register for signal `\radar_demo.\run_cycles' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1569' with positive edge clock.
+Creating register for signal `\radar_demo.\frame_id' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1570' with positive edge clock.
+Creating register for signal `\radar_demo.\active_scenario' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1571' with positive edge clock.
+Creating register for signal `\radar_demo.\active_scale' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1572' with positive edge clock.
+Creating register for signal `\radar_demo.\active_gap' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1573' with positive edge clock.
+Creating register for signal `\radar_demo.\state' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1574' with positive edge clock.
+Creating register for signal `\radar_demo.\start_d' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1575' with positive edge clock.
+Creating register for signal `\radar_demo.\sample_index' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1576' with positive edge clock.
+Creating register for signal `\radar_demo.\gap_count' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1577' with positive edge clock.
+Creating register for signal `\radar_demo.$bitselwrite$mask$RTL/radar_demo.v:98$624' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1578' with positive edge clock.
+Creating register for signal `\radar_demo.$bitselwrite$data$RTL/radar_demo.v:98$625' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1579' with positive edge clock.
+Creating register for signal `\radar_demo.$bitselwrite$sel$RTL/radar_demo.v:98$626' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1580' with positive edge clock.
+Creating register for signal `\radar_demo.$lookahead\detection_mask$638' using process `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+  created $dff cell `$procdff$1581' with positive edge clock.
+Creating register for signal `\cfar_core.\result_valid' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1582' with positive edge clock.
+Creating register for signal `\cfar_core.\target_detected' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1583' with positive edge clock.
+Creating register for signal `\cfar_core.\threshold_value' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1584' with positive edge clock.
+Creating register for signal `\cfar_core.\threshold_full' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1585' with positive edge clock.
+Creating register for signal `\cfar_core.\cut_value' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1586' with positive edge clock.
+Creating register for signal `\cfar_core.\cut_index' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1587' with positive edge clock.
+Creating register for signal `\cfar_core.\fill_count' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1588' with positive edge clock.
+Creating register for signal `\cfar_core.\input_index' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1589' with positive edge clock.
+Creating register for signal `\cfar_core.\p0' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1590' with positive edge clock.
+Creating register for signal `\cfar_core.\p1' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1591' with positive edge clock.
+Creating register for signal `\cfar_core.\p2' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1592' with positive edge clock.
+Creating register for signal `\cfar_core.\p3' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1593' with positive edge clock.
+Creating register for signal `\cfar_core.\cut_s1' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1594' with positive edge clock.
+Creating register for signal `\cfar_core.\index_s1' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1595' with positive edge clock.
+Creating register for signal `\cfar_core.\cut_s2' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1596' with positive edge clock.
+Creating register for signal `\cfar_core.\index_s2' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1597' with positive edge clock.
+Creating register for signal `\cfar_core.\scale_s1' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1598' with positive edge clock.
+Creating register for signal `\cfar_core.\scale_s2' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1599' with positive edge clock.
+Creating register for signal `\cfar_core.\valid_s1' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1600' with positive edge clock.
+Creating register for signal `\cfar_core.\valid_s2' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1601' with positive edge clock.
+Creating register for signal `\cfar_core.\sum_s2' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1602' with positive edge clock.
+Creating register for signal `\cfar_core.\i' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1603' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[0]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1604' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[1]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1605' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[2]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1606' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[3]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1607' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[4]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1608' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[5]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1609' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[6]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1610' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[7]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1611' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[8]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1612' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[9]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1613' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[10]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1614' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[11]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1615' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[12]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1616' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[13]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1617' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[14]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1618' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[15]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1619' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[16]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1620' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[17]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1621' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[18]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1622' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[19]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1623' with positive edge clock.
+Creating register for signal `\cfar_core.\window_data[20]' using process `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+  created $dff cell `$procdff$1624' with positive edge clock.
+Creating register for signal `\SRLC32E.\r' using process `\SRLC32E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2413$593'.
+  created $dff cell `$procdff$1625' with positive edge clock.
+Creating register for signal `\SRLC16E.\r' using process `\SRLC16E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2369$590'.
+  created $dff cell `$procdff$1626' with positive edge clock.
+Creating register for signal `\SRLC16.\r' using process `\SRLC16.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2332$587'.
+  created $dff cell `$procdff$1627' with positive edge clock.
+Creating register for signal `\SRL16E.\r' using process `\SRL16E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2299$584'.
+  created $dff cell `$procdff$1628' with positive edge clock.
+Creating register for signal `\SRL16.\r' using process `\SRL16.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2266$581'.
+  created $dff cell `$procdff$1629' with positive edge clock.
+Creating register for signal `\RAM64M.\mem_a' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1630' with positive edge clock.
+Creating register for signal `\RAM64M.\mem_b' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1631' with positive edge clock.
+Creating register for signal `\RAM64M.\mem_c' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1632' with positive edge clock.
+Creating register for signal `\RAM64M.\mem_d' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1633' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1988$410' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1634' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1988$411' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1635' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1988$412' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1636' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1989$413' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1637' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1989$414' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1638' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1989$415' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1639' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1990$416' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1640' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1990$417' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1641' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1990$418' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1642' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1991$419' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1643' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1991$420' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1644' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1991$421' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1645' with positive edge clock.
+Creating register for signal `\RAM64M.$lookahead\mem_a$427' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1646' with positive edge clock.
+Creating register for signal `\RAM64M.$lookahead\mem_b$428' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1647' with positive edge clock.
+Creating register for signal `\RAM64M.$lookahead\mem_c$429' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1648' with positive edge clock.
+Creating register for signal `\RAM64M.$lookahead\mem_d$430' using process `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+  created $dff cell `$procdff$1649' with positive edge clock.
+Creating register for signal `\RAM32M.\mem_a' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1650' with positive edge clock.
+Creating register for signal `\RAM32M.\mem_b' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1651' with positive edge clock.
+Creating register for signal `\RAM32M.\mem_c' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1652' with positive edge clock.
+Creating register for signal `\RAM32M.\mem_d' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1653' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1814$272' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1654' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1814$273' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1655' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1814$274' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1656' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1815$275' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1657' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1815$276' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1658' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1815$277' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1659' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1816$278' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1660' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1816$279' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1661' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1816$280' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1662' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1817$281' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1663' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1817$282' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1664' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1817$283' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1665' with positive edge clock.
+Creating register for signal `\RAM32M.$lookahead\mem_a$297' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1666' with positive edge clock.
+Creating register for signal `\RAM32M.$lookahead\mem_b$298' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1667' with positive edge clock.
+Creating register for signal `\RAM32M.$lookahead\mem_c$299' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1668' with positive edge clock.
+Creating register for signal `\RAM32M.$lookahead\mem_d$300' using process `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+  created $dff cell `$procdff$1669' with positive edge clock.
+Creating register for signal `\RAM128X1D.\mem' using process `\RAM128X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$249'.
+  created $dff cell `$procdff$1670' with positive edge clock.
+Creating register for signal `\RAM128X1D.$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$242' using process `\RAM128X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$249'.
+  created $dff cell `$procdff$1671' with positive edge clock.
+Creating register for signal `\RAM128X1D.$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$243' using process `\RAM128X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$249'.
+  created $dff cell `$procdff$1672' with positive edge clock.
+Creating register for signal `\RAM128X1D.$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$244' using process `\RAM128X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$249'.
+  created $dff cell `$procdff$1673' with positive edge clock.
+Creating register for signal `\RAM128X1D.$lookahead\mem$248' using process `\RAM128X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$249'.
+  created $dff cell `$procdff$1674' with positive edge clock.
+Creating register for signal `\RAM64X1D.\mem' using process `\RAM64X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$219'.
+  created $dff cell `$procdff$1675' with positive edge clock.
+Creating register for signal `\RAM64X1D.$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$212' using process `\RAM64X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$219'.
+  created $dff cell `$procdff$1676' with positive edge clock.
+Creating register for signal `\RAM64X1D.$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$213' using process `\RAM64X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$219'.
+  created $dff cell `$procdff$1677' with positive edge clock.
+Creating register for signal `\RAM64X1D.$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$214' using process `\RAM64X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$219'.
+  created $dff cell `$procdff$1678' with positive edge clock.
+Creating register for signal `\RAM64X1D.$lookahead\mem$218' using process `\RAM64X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$219'.
+  created $dff cell `$procdff$1679' with positive edge clock.
+Creating register for signal `\RAM32X1D_1.\mem' using process `\RAM32X1D_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$192'.
+  created $dff cell `$procdff$1680' with negative edge clock.
+Creating register for signal `\RAM32X1D_1.$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$185' using process `\RAM32X1D_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$192'.
+  created $dff cell `$procdff$1681' with negative edge clock.
+Creating register for signal `\RAM32X1D_1.$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$186' using process `\RAM32X1D_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$192'.
+  created $dff cell `$procdff$1682' with negative edge clock.
+Creating register for signal `\RAM32X1D_1.$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$187' using process `\RAM32X1D_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$192'.
+  created $dff cell `$procdff$1683' with negative edge clock.
+Creating register for signal `\RAM32X1D_1.$lookahead\mem$191' using process `\RAM32X1D_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$192'.
+  created $dff cell `$procdff$1684' with negative edge clock.
+Creating register for signal `\RAM32X1D.\mem' using process `\RAM32X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$165'.
+  created $dff cell `$procdff$1685' with positive edge clock.
+Creating register for signal `\RAM32X1D.$bitselwrite$mask$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$158' using process `\RAM32X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$165'.
+  created $dff cell `$procdff$1686' with positive edge clock.
+Creating register for signal `\RAM32X1D.$bitselwrite$data$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$159' using process `\RAM32X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$165'.
+  created $dff cell `$procdff$1687' with positive edge clock.
+Creating register for signal `\RAM32X1D.$bitselwrite$sel$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$160' using process `\RAM32X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$165'.
+  created $dff cell `$procdff$1688' with positive edge clock.
+Creating register for signal `\RAM32X1D.$lookahead\mem$164' using process `\RAM32X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$165'.
+  created $dff cell `$procdff$1689' with positive edge clock.
+Creating register for signal `\FDPE_1.\Q' using process `\FDPE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:815$30'.
+  created $adff cell `$procdff$1690' with negative edge clock and positive level reset.
+Creating register for signal `\FDPE.\Q' using process `\FDPE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:774$27'.
+  created $adff cell `$procdff$1691' with positive edge clock and positive level reset.
+Creating register for signal `\FDCE_1.\Q' using process `\FDCE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:736$25'.
+  created $adff cell `$procdff$1692' with negative edge clock and positive level reset.
+Creating register for signal `\FDCE.\Q' using process `\FDCE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:695$22'.
+  created $adff cell `$procdff$1693' with positive edge clock and positive level reset.
+Creating register for signal `\FDSE_1.\Q' using process `\FDSE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:592$20'.
+  created $dff cell `$procdff$1694' with negative edge clock.
+Creating register for signal `\FDSE.\Q' using process `\FDSE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:559$16'.
+  created $dff cell `$procdff$1695' with positive edge clock.
+Creating register for signal `\FDRE_1.\Q' using process `\FDRE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:527$14'.
+  created $dff cell `$procdff$1696' with negative edge clock.
+Creating register for signal `\FDRE.\Q' using process `\FDRE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:494$10'.
+  created $dff cell `$procdff$1697' with positive edge clock.
+
+8.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+8.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `radar_top.$proc$RTL/radar_top.v:52$694'.
+Removing empty process `radar_top.$proc$RTL/radar_top.v:17$693'.
+Found and cleaned up 1 empty switch in `\radar_top.$proc$RTL/radar_top.v:53$690'.
+Removing empty process `radar_top.$proc$RTL/radar_top.v:53$690'.
+Removing empty process `radar_top.$proc$RTL/radar_top.v:18$687'.
+Found and cleaned up 12 empty switches in `\radar_demo.$proc$RTL/radar_demo.v:55$639'.
+Removing empty process `radar_demo.$proc$RTL/radar_demo.v:55$639'.
+Found and cleaned up 4 empty switches in `\radar_demo.$proc$RTL/radar_demo.v:32$633'.
+Removing empty process `radar_demo.$proc$RTL/radar_demo.v:32$633'.
+Found and cleaned up 6 empty switches in `\cfar_core.$proc$RTL/cfar_core.v:28$598'.
+Removing empty process `cfar_core.$proc$RTL/cfar_core.v:28$598'.
+Removing empty process `SRLC32E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2405$594'.
+Found and cleaned up 1 empty switch in `\SRLC32E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2413$593'.
+Removing empty process `SRLC32E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2413$593'.
+Removing empty process `SRLC16E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2361$591'.
+Found and cleaned up 1 empty switch in `\SRLC16E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2369$590'.
+Removing empty process `SRLC16E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2369$590'.
+Removing empty process `SRLC16.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2329$588'.
+Removing empty process `SRLC16.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2332$587'.
+Removing empty process `SRL16E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2292$585'.
+Found and cleaned up 1 empty switch in `\SRL16E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2299$584'.
+Removing empty process `SRL16E.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2299$584'.
+Removing empty process `SRL16.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2264$582'.
+Removing empty process `SRL16.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:2266$581'.
+Removing empty process `RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1980$507'.
+Removing empty process `RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1979$506'.
+Removing empty process `RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1978$505'.
+Removing empty process `RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1977$504'.
+Found and cleaned up 1 empty switch in `\RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+Removing empty process `RAM64M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1986$431'.
+Removing empty process `RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1806$385'.
+Removing empty process `RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1805$384'.
+Removing empty process `RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1804$383'.
+Removing empty process `RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1803$382'.
+Found and cleaned up 1 empty switch in `\RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+Removing empty process `RAM32M.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1812$301'.
+Removing empty process `RAM128X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1712$268'.
+Found and cleaned up 1 empty switch in `\RAM128X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$249'.
+Removing empty process `RAM128X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1716$249'.
+Removing empty process `RAM64X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1607$238'.
+Found and cleaned up 1 empty switch in `\RAM64X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$219'.
+Removing empty process `RAM64X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1611$219'.
+Removing empty process `RAM32X1D_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1561$211'.
+Found and cleaned up 1 empty switch in `\RAM32X1D_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$192'.
+Removing empty process `RAM32X1D_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1565$192'.
+Removing empty process `RAM32X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1502$184'.
+Found and cleaned up 1 empty switch in `\RAM32X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$165'.
+Removing empty process `RAM32X1D.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:1506$165'.
+Removing empty process `FDPE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$31'.
+Found and cleaned up 1 empty switch in `\FDPE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:815$30'.
+Removing empty process `FDPE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:815$30'.
+Removing empty process `FDPE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$29'.
+Found and cleaned up 1 empty switch in `\FDPE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:774$27'.
+Removing empty process `FDPE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:774$27'.
+Removing empty process `FDCE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$26'.
+Found and cleaned up 1 empty switch in `\FDCE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:736$25'.
+Removing empty process `FDCE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:736$25'.
+Removing empty process `FDCE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$24'.
+Found and cleaned up 1 empty switch in `\FDCE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:695$22'.
+Removing empty process `FDCE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:695$22'.
+Removing empty process `FDSE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$21'.
+Found and cleaned up 2 empty switches in `\FDSE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:592$20'.
+Removing empty process `FDSE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:592$20'.
+Removing empty process `FDSE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$19'.
+Found and cleaned up 2 empty switches in `\FDSE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:559$16'.
+Removing empty process `FDSE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:559$16'.
+Removing empty process `FDRE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$15'.
+Found and cleaned up 2 empty switches in `\FDRE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:527$14'.
+Removing empty process `FDRE_1.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:527$14'.
+Removing empty process `FDRE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:0$13'.
+Found and cleaned up 2 empty switches in `\FDRE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:494$10'.
+Removing empty process `FDRE.$proc$/workspace/scratch/fac49747d82a/tmp/hdl_tools/root/usr/share/yosys/xilinx/cells_sim.v:494$10'.
+Cleaned up 44 empty switches.
+
+8.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module radar_top.
+<suppressed ~1 debug messages>
+Optimizing module radar_demo.
+<suppressed ~22 debug messages>
+Optimizing module cfar_core.
+
+9. Executing OPT pass (performing simple optimizations).
+
+9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module radar_top.
+Optimizing module radar_demo.
+<suppressed ~2 debug messages>
+Optimizing module cfar_core.
+
+9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\radar_top'.
+Finding identical cells in module `\radar_demo'.
+<suppressed ~111 debug messages>
+Finding identical cells in module `\cfar_core'.
+<suppressed ~3 debug messages>
+Removed a total of 38 cells.
+
+9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \radar_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \radar_demo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$838.
+    dead port 2/2 on $mux $procmux$838.
+    dead port 1/2 on $mux $procmux$835.
+    dead port 2/2 on $mux $procmux$835.
+    dead port 1/2 on $mux $procmux$832.
+    dead port 2/2 on $mux $procmux$832.
+    dead port 2/2 on $mux $procmux$1113.
+    dead port 1/2 on $mux $procmux$815.
+    dead port 2/2 on $mux $procmux$812.
+    dead port 1/2 on $mux $procmux$804.
+    dead port 2/2 on $mux $procmux$804.
+    dead port 1/2 on $mux $procmux$801.
+    dead port 2/2 on $mux $procmux$801.
+    dead port 1/2 on $mux $procmux$798.
+    dead port 2/2 on $mux $procmux$798.
+    dead port 1/2 on $mux $procmux$795.
+    dead port 2/2 on $mux $procmux$795.
+    dead port 1/2 on $mux $procmux$792.
+    dead port 2/2 on $mux $procmux$792.
+    dead port 1/2 on $mux $procmux$789.
+    dead port 2/2 on $mux $procmux$789.
+    dead port 1/2 on $mux $procmux$786.
+    dead port 1/2 on $mux $procmux$780.
+    dead port 2/2 on $mux $procmux$780.
+    dead port 1/2 on $mux $procmux$777.
+    dead port 2/2 on $mux $procmux$777.
+    dead port 1/2 on $mux $procmux$775.
+    dead port 2/2 on $mux $procmux$775.
+    dead port 1/2 on $mux $procmux$771.
+    dead port 2/2 on $mux $procmux$771.
+    dead port 1/2 on $mux $procmux$768.
+    dead port 2/2 on $mux $procmux$768.
+    dead port 1/2 on $mux $procmux$766.
+    dead port 2/2 on $mux $procmux$766.
+    dead port 1/2 on $mux $procmux$762.
+    dead port 2/2 on $mux $procmux$762.
+    dead port 1/2 on $mux $procmux$759.
+    dead port 2/2 on $mux $procmux$759.
+    dead port 1/2 on $mux $procmux$757.
+    dead port 2/2 on $mux $procmux$757.
+    dead port 1/2 on $mux $procmux$753.
+    dead port 2/2 on $mux $procmux$750.
+    dead port 1/2 on $mux $procmux$744.
+    dead port 2/2 on $mux $procmux$744.
+    dead port 1/2 on $mux $procmux$741.
+    dead port 2/2 on $mux $procmux$741.
+    dead port 1/2 on $mux $procmux$739.
+    dead port 2/2 on $mux $procmux$739.
+    dead port 1/2 on $mux $procmux$737.
+    dead port 2/2 on $mux $procmux$737.
+    dead port 1/2 on $mux $procmux$732.
+    dead port 2/2 on $mux $procmux$732.
+    dead port 1/2 on $mux $procmux$729.
+    dead port 2/2 on $mux $procmux$729.
+    dead port 1/2 on $mux $procmux$727.
+    dead port 2/2 on $mux $procmux$727.
+    dead port 1/2 on $mux $procmux$725.
+    dead port 2/2 on $mux $procmux$725.
+    dead port 1/2 on $mux $procmux$720.
+    dead port 2/2 on $mux $procmux$720.
+    dead port 1/2 on $mux $procmux$717.
+    dead port 2/2 on $mux $procmux$717.
+    dead port 1/2 on $mux $procmux$715.
+    dead port 2/2 on $mux $procmux$715.
+    dead port 1/2 on $mux $procmux$713.
+    dead port 2/2 on $mux $procmux$713.
+    dead port 1/2 on $mux $procmux$708.
+    dead port 2/2 on $mux $procmux$705.
+    dead port 2/2 on $mux $procmux$703.
+    dead port 2/2 on $mux $procmux$1096.
+    dead port 2/2 on $mux $procmux$1103.
+Running muxtree optimizer on module \cfar_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$1124.
+Removed 72 multiplexer ports.
+<suppressed ~71 debug messages>
+
+9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \radar_top.
+  Optimizing cells in module \radar_demo.
+    New ctrl vector for $pmux cell $procmux$817: { $procmux$1086_CMP $auto$opt_reduce.cc:134:opt_pmux$1699 }
+  Optimizing cells in module \radar_demo.
+  Optimizing cells in module \cfar_core.
+Performed a total of 1 changes.
+
+9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\radar_top'.
+Finding identical cells in module `\radar_demo'.
+Finding identical cells in module `\cfar_core'.
+Removed a total of 0 cells.
+
+9.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$1557 ($dff) from module radar_top (D = $add$RTL/radar_top.v:55$691_Y, Q = \heartbeat, rval = 25'0000000000000000000000000).
+Adding SRST signal on $procdff$1572 ($dff) from module radar_demo (D = $procmux$907_Y, Q = \active_scale, rval = 2'10).
+Adding EN signal on $auto$ff.cc:266:slice$1701 ($sdff) from module radar_demo (D = \scale_shift, Q = \active_scale).
+Adding SRST signal on $procdff$1573 ($dff) from module radar_demo (D = $procmux$896_Y, Q = \active_gap, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1705 ($sdff) from module radar_demo (D = \gap_mode, Q = \active_gap).
+Adding SRST signal on $procdff$1574 ($dff) from module radar_demo (D = $procmux$871_Y, Q = \state, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$1709 ($sdff) from module radar_demo (D = $procmux$871_Y, Q = \state).
+Adding SRST signal on $procdff$1575 ($dff) from module radar_demo (D = \start, Q = \start_d, rval = 1'0).
+Adding SRST signal on $procdff$1576 ($dff) from module radar_demo (D = $procmux$860_Y, Q = \sample_index, rval = 7'0000000).
+Adding EN signal on $auto$ff.cc:266:slice$1726 ($sdff) from module radar_demo (D = $procmux$860_Y, Q = \sample_index).
+Adding SRST signal on $procdff$1577 ($dff) from module radar_demo (D = $procmux$844_Y, Q = \gap_count, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$1738 ($sdff) from module radar_demo (D = $procmux$844_Y, Q = \gap_count).
+Adding SRST signal on $procdff$1559 ($dff) from module radar_demo (D = $procmux$1087_Y, Q = \done, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1746 ($sdff) from module radar_demo (D = $procmux$1087_Y, Q = \done).
+Adding SRST signal on $procdff$1560 ($dff) from module radar_demo (D = $procmux$1074_Y, Q = \timeout_error, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1756 ($sdff) from module radar_demo (D = $procmux$1074_Y, Q = \timeout_error).
+Adding SRST signal on $procdff$1561 ($dff) from module radar_demo (D = $procmux$1061_Y, Q = \detection_count, rval = 8'00000000).
+Adding SRST signal on $procdff$1562 ($dff) from module radar_demo (D = $procmux$1044_Y, Q = \result_count, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1765 ($sdff) from module radar_demo (D = $procmux$1044_Y, Q = \result_count).
+Adding SRST signal on $procdff$1563 ($dff) from module radar_demo (D = $procmux$1030_Y, Q = \target_pos0, rval = 16'1111111111111111).
+Adding SRST signal on $procdff$1564 ($dff) from module radar_demo (D = $procmux$1009_Y, Q = \target_pos1, rval = 16'1111111111111111).
+Adding SRST signal on $procdff$1565 ($dff) from module radar_demo (D = $procmux$989_Y, Q = \target_pos2, rval = 16'1111111111111111).
+Adding SRST signal on $procdff$1566 ($dff) from module radar_demo (D = $4$lookahead\detection_mask$638[127:0]$664, Q = \detection_mask, rval = 128'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$1567 ($dff) from module radar_demo (D = $procmux$970_Y, Q = \last_threshold, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1777 ($sdff) from module radar_demo (D = $procmux$970_Y, Q = \last_threshold).
+Adding SRST signal on $procdff$1568 ($dff) from module radar_demo (D = $procmux$956_Y, Q = \last_threshold_full, rval = 19'0000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1785 ($sdff) from module radar_demo (D = $procmux$956_Y, Q = \last_threshold_full).
+Adding SRST signal on $procdff$1569 ($dff) from module radar_demo (D = $procmux$942_Y, Q = \run_cycles, rval = 16'0000000000000000).
+Adding SRST signal on $procdff$1570 ($dff) from module radar_demo (D = $procmux$929_Y, Q = \frame_id, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1794 ($sdff) from module radar_demo (D = $add$RTL/radar_demo.v:71$653_Y, Q = \frame_id).
+Adding SRST signal on $procdff$1571 ($dff) from module radar_demo (D = $procmux$918_Y, Q = \active_scenario, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$1798 ($sdff) from module radar_demo (D = \scenario, Q = \active_scenario).
+Setting constant 1-bit at position 0 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 1 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 2 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 3 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 4 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 5 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 6 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 7 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 8 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 9 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 10 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 11 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 12 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 13 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 14 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 15 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 16 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 17 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 18 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 19 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 20 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 21 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 22 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 23 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 24 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 25 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 26 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 27 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 28 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 29 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 30 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 31 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 32 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 33 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 34 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 35 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 36 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 37 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 38 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 39 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 40 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 41 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 42 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 43 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 44 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 45 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 46 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 47 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 48 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 49 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 50 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 51 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 52 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 53 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 54 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 55 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 56 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 57 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 58 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 59 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 60 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 61 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 62 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 63 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 64 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 65 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 66 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 67 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 68 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 69 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 70 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 71 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 72 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 73 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 74 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 75 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 76 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 77 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 78 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 79 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 80 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 81 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 82 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 83 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 84 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 85 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 86 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 87 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 88 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 89 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 90 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 91 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 92 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 93 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 94 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 95 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 96 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 97 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 98 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 99 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 100 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 101 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 102 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 103 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 104 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 105 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 106 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 107 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 108 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 109 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 110 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 111 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 112 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 113 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 114 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 115 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 116 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 117 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 118 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 119 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 120 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 121 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 122 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 123 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 124 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 125 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 126 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 127 on $procdff$1581 ($dff) from module radar_demo.
+Setting constant 1-bit at position 0 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 1 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 2 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 3 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 4 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 5 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 6 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 7 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 8 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 9 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 10 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 11 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 12 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 13 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 14 on $procdff$1580 ($dff) from module radar_demo.
+Setting constant 1-bit at position 15 on $procdff$1580 ($dff) from module radar_demo.
+Adding SRST signal on $procdff$1624 ($dff) from module cfar_core (D = $procmux$1144_Y, Q = \window_data[20], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1802 ($sdff) from module cfar_core (D = \window_data[19], Q = \window_data[20]).
+Adding SRST signal on $procdff$1623 ($dff) from module cfar_core (D = $procmux$1150_Y, Q = \window_data[19], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1804 ($sdff) from module cfar_core (D = \window_data[18], Q = \window_data[19]).
+Adding SRST signal on $procdff$1582 ($dff) from module cfar_core (D = \valid_s2, Q = \result_valid, rval = 1'0).
+Adding SRST signal on $procdff$1583 ($dff) from module cfar_core (D = $gt$RTL/cfar_core.v:75$623_Y, Q = \target_detected, rval = 1'0).
+Adding SRST signal on $procdff$1584 ($dff) from module cfar_core (D = $procmux$1374_Y, Q = \threshold_value, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1812 ($sdff) from module cfar_core (D = $ternary$RTL/cfar_core.v:73$622_Y, Q = \threshold_value).
+Adding SRST signal on $procdff$1585 ($dff) from module cfar_core (D = $procmux$1369_Y, Q = \threshold_full, rval = 19'0000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1814 ($sdff) from module cfar_core (D = $shl$RTL/cfar_core.v:25$597_Y, Q = \threshold_full).
+Adding SRST signal on $procdff$1586 ($dff) from module cfar_core (D = $procmux$1364_Y, Q = \cut_value, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1816 ($sdff) from module cfar_core (D = \cut_s2, Q = \cut_value).
+Adding SRST signal on $procdff$1587 ($dff) from module cfar_core (D = $procmux$1359_Y, Q = \cut_index, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1818 ($sdff) from module cfar_core (D = \index_s2, Q = \cut_index).
+Adding SRST signal on $procdff$1588 ($dff) from module cfar_core (D = $procmux$1354_Y, Q = \fill_count, rval = 5'00000).
+Adding EN signal on $auto$ff.cc:266:slice$1820 ($sdff) from module cfar_core (D = $add$RTL/cfar_core.v:45$602_Y, Q = \fill_count).
+Adding SRST signal on $procdff$1589 ($dff) from module cfar_core (D = $procmux$1346_Y, Q = \input_index, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1824 ($sdff) from module cfar_core (D = $add$RTL/cfar_core.v:46$603_Y, Q = \input_index).
+Adding SRST signal on $procdff$1590 ($dff) from module cfar_core (D = $procmux$1340_Y, Q = \p0, rval = 18'000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1826 ($sdff) from module cfar_core (D = $add$RTL/cfar_core.v:48$607_Y, Q = \p0).
+Adding SRST signal on $procdff$1591 ($dff) from module cfar_core (D = $procmux$1332_Y, Q = \p1, rval = 18'000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1830 ($sdff) from module cfar_core (D = $add$RTL/cfar_core.v:50$610_Y, Q = \p1).
+Adding SRST signal on $procdff$1592 ($dff) from module cfar_core (D = $procmux$1324_Y, Q = \p2, rval = 18'000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1834 ($sdff) from module cfar_core (D = $add$RTL/cfar_core.v:52$613_Y, Q = \p2).
+Adding SRST signal on $procdff$1593 ($dff) from module cfar_core (D = $procmux$1316_Y, Q = \p3, rval = 18'000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1838 ($sdff) from module cfar_core (D = $add$RTL/cfar_core.v:54$616_Y, Q = \p3).
+Adding SRST signal on $procdff$1594 ($dff) from module cfar_core (D = $procmux$1308_Y, Q = \cut_s1, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1842 ($sdff) from module cfar_core (D = \window_data[9], Q = \cut_s1).
+Adding SRST signal on $procdff$1595 ($dff) from module cfar_core (D = $procmux$1300_Y, Q = \index_s1, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1846 ($sdff) from module cfar_core (D = $sub$RTL/cfar_core.v:57$617_Y, Q = \index_s1).
+Adding SRST signal on $procdff$1596 ($dff) from module cfar_core (D = $procmux$1292_Y, Q = \cut_s2, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1850 ($sdff) from module cfar_core (D = \cut_s1, Q = \cut_s2).
+Adding SRST signal on $procdff$1597 ($dff) from module cfar_core (D = $procmux$1287_Y, Q = \index_s2, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1852 ($sdff) from module cfar_core (D = \index_s1, Q = \index_s2).
+Adding SRST signal on $procdff$1598 ($dff) from module cfar_core (D = $procmux$1282_Y, Q = \scale_s1, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$1854 ($sdff) from module cfar_core (D = \scale_shift, Q = \scale_s1).
+Adding SRST signal on $procdff$1599 ($dff) from module cfar_core (D = $procmux$1274_Y, Q = \scale_s2, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$1858 ($sdff) from module cfar_core (D = \scale_s1, Q = \scale_s2).
+Adding SRST signal on $procdff$1600 ($dff) from module cfar_core (D = $logic_and$RTL/cfar_core.v:40$600_Y, Q = \valid_s1, rval = 1'0).
+Adding SRST signal on $procdff$1601 ($dff) from module cfar_core (D = \valid_s1, Q = \valid_s2, rval = 1'0).
+Adding SRST signal on $procdff$1602 ($dff) from module cfar_core (D = $procmux$1269_Y, Q = \sum_s2, rval = 20'00000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1862 ($sdff) from module cfar_core (D = $add$RTL/cfar_core.v:64$620_Y, Q = \sum_s2).
+Adding SRST signal on $procdff$1603 ($dff) from module cfar_core (D = $2\i[31:0], Q = \i, rval = 21).
+Adding SRST signal on $procdff$1604 ($dff) from module cfar_core (D = $procmux$1264_Y, Q = \window_data[0], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1865 ($sdff) from module cfar_core (D = \data_in, Q = \window_data[0]).
+Adding SRST signal on $procdff$1605 ($dff) from module cfar_core (D = $procmux$1258_Y, Q = \window_data[1], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1867 ($sdff) from module cfar_core (D = \window_data[0], Q = \window_data[1]).
+Adding SRST signal on $procdff$1606 ($dff) from module cfar_core (D = $procmux$1252_Y, Q = \window_data[2], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1869 ($sdff) from module cfar_core (D = \window_data[1], Q = \window_data[2]).
+Adding SRST signal on $procdff$1607 ($dff) from module cfar_core (D = $procmux$1246_Y, Q = \window_data[3], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1871 ($sdff) from module cfar_core (D = \window_data[2], Q = \window_data[3]).
+Adding SRST signal on $procdff$1608 ($dff) from module cfar_core (D = $procmux$1240_Y, Q = \window_data[4], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1873 ($sdff) from module cfar_core (D = \window_data[3], Q = \window_data[4]).
+Adding SRST signal on $procdff$1609 ($dff) from module cfar_core (D = $procmux$1234_Y, Q = \window_data[5], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1875 ($sdff) from module cfar_core (D = \window_data[4], Q = \window_data[5]).
+Adding SRST signal on $procdff$1610 ($dff) from module cfar_core (D = $procmux$1228_Y, Q = \window_data[6], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1877 ($sdff) from module cfar_core (D = \window_data[5], Q = \window_data[6]).
+Adding SRST signal on $procdff$1611 ($dff) from module cfar_core (D = $procmux$1222_Y, Q = \window_data[7], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1879 ($sdff) from module cfar_core (D = \window_data[6], Q = \window_data[7]).
+Adding SRST signal on $procdff$1612 ($dff) from module cfar_core (D = $procmux$1216_Y, Q = \window_data[8], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1881 ($sdff) from module cfar_core (D = \window_data[7], Q = \window_data[8]).
+Adding SRST signal on $procdff$1613 ($dff) from module cfar_core (D = $procmux$1210_Y, Q = \window_data[9], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1883 ($sdff) from module cfar_core (D = \window_data[8], Q = \window_data[9]).
+Adding SRST signal on $procdff$1614 ($dff) from module cfar_core (D = $procmux$1204_Y, Q = \window_data[10], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1885 ($sdff) from module cfar_core (D = \window_data[9], Q = \window_data[10]).
+Adding SRST signal on $procdff$1615 ($dff) from module cfar_core (D = $procmux$1198_Y, Q = \window_data[11], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1887 ($sdff) from module cfar_core (D = \window_data[10], Q = \window_data[11]).
+Adding SRST signal on $procdff$1616 ($dff) from module cfar_core (D = $procmux$1192_Y, Q = \window_data[12], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1889 ($sdff) from module cfar_core (D = \window_data[11], Q = \window_data[12]).
+Adding SRST signal on $procdff$1617 ($dff) from module cfar_core (D = $procmux$1186_Y, Q = \window_data[13], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1891 ($sdff) from module cfar_core (D = \window_data[12], Q = \window_data[13]).
+Adding SRST signal on $procdff$1618 ($dff) from module cfar_core (D = $procmux$1180_Y, Q = \window_data[14], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1893 ($sdff) from module cfar_core (D = \window_data[13], Q = \window_data[14]).
+Adding SRST signal on $procdff$1619 ($dff) from module cfar_core (D = $procmux$1174_Y, Q = \window_data[15], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1895 ($sdff) from module cfar_core (D = \window_data[14], Q = \window_data[15]).
+Adding SRST signal on $procdff$1620 ($dff) from module cfar_core (D = $procmux$1168_Y, Q = \window_data[16], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1897 ($sdff) from module cfar_core (D = \window_data[15], Q = \window_data[16]).
+Adding SRST signal on $procdff$1621 ($dff) from module cfar_core (D = $procmux$1162_Y, Q = \window_data[17], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1899 ($sdff) from module cfar_core (D = \window_data[16], Q = \window_data[17]).
+Adding SRST signal on $procdff$1622 ($dff) from module cfar_core (D = $procmux$1156_Y, Q = \window_data[18], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1901 ($sdff) from module cfar_core (D = \window_data[17], Q = \window_data[18]).
+
+9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \radar_top..
+Finding unused cells or wires in module \radar_demo..
+Finding unused cells or wires in module \cfar_core..
+Removed 123 unused cells and 503 unused wires.
+<suppressed ~129 debug messages>
+
+9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfar_core.
+Optimizing module radar_demo.
+<suppressed ~8 debug messages>
+Optimizing module radar_top.
+
+9.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfar_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \radar_demo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \radar_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~23 debug messages>
+
+9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfar_core.
+  Optimizing cells in module \radar_demo.
+  Optimizing cells in module \radar_top.
+Performed a total of 0 changes.
+
+9.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfar_core'.
+<suppressed ~18 debug messages>
+Finding identical cells in module `\radar_demo'.
+<suppressed ~51 debug messages>
+Finding identical cells in module `\radar_top'.
+Removed a total of 23 cells.
+
+9.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfar_core..
+Finding unused cells or wires in module \radar_demo..
+Finding unused cells or wires in module \radar_top..
+Removed 0 unused cells and 23 unused wires.
+<suppressed ~2 debug messages>
+
+9.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfar_core.
+Optimizing module radar_demo.
+Optimizing module radar_top.
+
+9.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfar_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \radar_demo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \radar_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~25 debug messages>
+
+9.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfar_core.
+  Optimizing cells in module \radar_demo.
+  Optimizing cells in module \radar_top.
+Performed a total of 0 changes.
+
+9.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfar_core'.
+Finding identical cells in module `\radar_demo'.
+Finding identical cells in module `\radar_top'.
+Removed a total of 0 cells.
+
+9.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfar_core..
+Finding unused cells or wires in module \radar_demo..
+Finding unused cells or wires in module \radar_top..
+
+9.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfar_core.
+Optimizing module radar_demo.
+Optimizing module radar_top.
+
+9.23. Finished OPT passes. (There is nothing left to do.)
+
+10. Executing CHECK pass (checking for obvious problems).
+Checking module cfar_core...
+Checking module radar_demo...
+Checking module radar_top...
+Found and reported 0 problems.
+
+11. Printing statistics.
+
+=== cfar_core ===
+
+   Number of wires:                 75
+   Number of wire bits:            950
+   Number of public wires:          47
+   Number of public wire bits:     612
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 70
+     $add                           17
+     $ge                             1
+     $gt                             2
+     $logic_and                      1
+     $lt                             1
+     $mux                            1
+     $not                            1
+     $reduce_and                     2
+     $reduce_or                      1
+     $sdff                           4
+     $sdffe                         37
+     $shl                            1
+     $sub                            1
+
+=== radar_demo ===
+
+   Number of wires:                149
+   Number of wire bits:           2361
+   Number of public wires:          35
+   Number of public wire bits:     382
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                138
+     $add                            5
+     $and                            1
+     $eq                            13
+     $ge                             1
+     $logic_and                      5
+     $logic_not                      4
+     $logic_or                       1
+     $lt                             1
+     $mux                           52
+     $ne                             8
+     $neg                            1
+     $not                            1
+     $or                             1
+     $pmux                           7
+     $reduce_and                     7
+     $reduce_bool                    6
+     $reduce_or                      2
+     $sdff                           7
+     $sdffe                         12
+     $shift                          1
+     $sub                            1
+     cfar_core                       1
+
+=== radar_top ===
+
+   Number of wires:                 34
+   Number of wire bits:            384
+   Number of public wires:          33
+   Number of public wire bits:     359
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 11
+     $add                            1
+     $adff                           1
+     $or                             1
+     $reduce_bool                    1
+     $sdff                           1
+     BUFG                            2
+     IBUF                            1
+     MMCME2_BASE                     1
+     radar_demo                      1
+     vio_radar                       1
+
+=== design hierarchy ===
+
+   radar_top                         1
+     radar_demo                      1
+       cfar_core                     1
+
+   Number of wires:                258
+   Number of wire bits:           3695
+   Number of public wires:         115
+   Number of public wire bits:    1353
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                217
+     $add                           23
+     $adff                           1
+     $and                            1
+     $eq                            13
+     $ge                             2
+     $gt                             2
+     $logic_and                      6
+     $logic_not                      4
+     $logic_or                       1
+     $lt                             2
+     $mux                           53
+     $ne                             8
+     $neg                            1
+     $not                            2
+     $or                             2
+     $pmux                           7
+     $reduce_and                     9
+     $reduce_bool                    7
+     $reduce_or                      3
+     $sdff                          12
+     $sdffe                         49
+     $shift                          1
+     $shl                            1
+     $sub                            2
+     BUFG                            2
+     IBUF                            1
+     MMCME2_BASE                     1
+     vio_radar                       1
+
+12. Executing JSON backend.
+
+13. Generating Graphviz representation of design.
+Writing dot description to `Images/rtl_schematic.dot'.
+Dumping module radar_top to page 1.
+
+Warnings: 4 unique messages, 4 total
+End of script. Logfile hash: 3541cd49b8, CPU: user 1.01s system 0.06s, MEM: 133.79 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 48% 8x read_verilog (0 sec), 16% 2x write_json (0 sec), ...

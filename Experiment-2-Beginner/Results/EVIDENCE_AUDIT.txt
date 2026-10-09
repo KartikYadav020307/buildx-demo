@@ -1,0 +1,3 @@
+EVIDENCE AUDIT PASS: 11 source CRCs, original BIT/LTX SHA-256, 39 physical CSV rows,
+all 32 combinations, 80 simulated windows and three exact target indices; final link blank.
+This is an archive audit; no new physical-board run is claimed.

@@ -1,0 +1,3 @@
+VCD info: dumpfile Simulation/cfar_core.vcd opened for output.
+CORE SIMULATION PASS: checked=10721 accepted=12963
+Testbench/tb_cfar_core.sv:122: $finish called at 645540000 (1ps)

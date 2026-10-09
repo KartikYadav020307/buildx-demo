@@ -1,0 +1,1337 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "XSDB_V3",
+                        "name": "dbg_hub",
+                        "spec": "labtools_xsdbm_v3",
+                        "clk_input_freq_hz": "50000000"
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "u_vio",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 0,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "407D14E81CC958EF8C2E354D7BF170FD",
+                        "pins": [
+                            {
+                                "name": "probe_in0",
+                                "id": 0,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "busy",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in1",
+                                "id": 1,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "done",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in2",
+                                "id": 2,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 7,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "detection_count",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "detection_count[7]"
+                                            },
+                                            {
+                                                "name": "detection_count[6]"
+                                            },
+                                            {
+                                                "name": "detection_count[5]"
+                                            },
+                                            {
+                                                "name": "detection_count[4]"
+                                            },
+                                            {
+                                                "name": "detection_count[3]"
+                                            },
+                                            {
+                                                "name": "detection_count[2]"
+                                            },
+                                            {
+                                                "name": "detection_count[1]"
+                                            },
+                                            {
+                                                "name": "detection_count[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in3",
+                                "id": 3,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "result_count",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "result_count[15]"
+                                            },
+                                            {
+                                                "name": "result_count[14]"
+                                            },
+                                            {
+                                                "name": "result_count[13]"
+                                            },
+                                            {
+                                                "name": "result_count[12]"
+                                            },
+                                            {
+                                                "name": "result_count[11]"
+                                            },
+                                            {
+                                                "name": "result_count[10]"
+                                            },
+                                            {
+                                                "name": "result_count[9]"
+                                            },
+                                            {
+                                                "name": "result_count[8]"
+                                            },
+                                            {
+                                                "name": "result_count[7]"
+                                            },
+                                            {
+                                                "name": "result_count[6]"
+                                            },
+                                            {
+                                                "name": "result_count[5]"
+                                            },
+                                            {
+                                                "name": "result_count[4]"
+                                            },
+                                            {
+                                                "name": "result_count[3]"
+                                            },
+                                            {
+                                                "name": "result_count[2]"
+                                            },
+                                            {
+                                                "name": "result_count[1]"
+                                            },
+                                            {
+                                                "name": "result_count[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in4",
+                                "id": 4,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "target_pos0",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "target_pos0[15]"
+                                            },
+                                            {
+                                                "name": "target_pos0[14]"
+                                            },
+                                            {
+                                                "name": "target_pos0[13]"
+                                            },
+                                            {
+                                                "name": "target_pos0[12]"
+                                            },
+                                            {
+                                                "name": "target_pos0[11]"
+                                            },
+                                            {
+                                                "name": "target_pos0[10]"
+                                            },
+                                            {
+                                                "name": "target_pos0[9]"
+                                            },
+                                            {
+                                                "name": "target_pos0[8]"
+                                            },
+                                            {
+                                                "name": "target_pos0[7]"
+                                            },
+                                            {
+                                                "name": "target_pos0[6]"
+                                            },
+                                            {
+                                                "name": "target_pos0[5]"
+                                            },
+                                            {
+                                                "name": "target_pos0[4]"
+                                            },
+                                            {
+                                                "name": "target_pos0[3]"
+                                            },
+                                            {
+                                                "name": "target_pos0[2]"
+                                            },
+                                            {
+                                                "name": "target_pos0[1]"
+                                            },
+                                            {
+                                                "name": "target_pos0[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in5",
+                                "id": 5,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "target_pos1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "target_pos1[15]"
+                                            },
+                                            {
+                                                "name": "target_pos1[14]"
+                                            },
+                                            {
+                                                "name": "target_pos1[13]"
+                                            },
+                                            {
+                                                "name": "target_pos1[12]"
+                                            },
+                                            {
+                                                "name": "target_pos1[11]"
+                                            },
+                                            {
+                                                "name": "target_pos1[10]"
+                                            },
+                                            {
+                                                "name": "target_pos1[9]"
+                                            },
+                                            {
+                                                "name": "target_pos1[8]"
+                                            },
+                                            {
+                                                "name": "target_pos1[7]"
+                                            },
+                                            {
+                                                "name": "target_pos1[6]"
+                                            },
+                                            {
+                                                "name": "target_pos1[5]"
+                                            },
+                                            {
+                                                "name": "target_pos1[4]"
+                                            },
+                                            {
+                                                "name": "target_pos1[3]"
+                                            },
+                                            {
+                                                "name": "target_pos1[2]"
+                                            },
+                                            {
+                                                "name": "target_pos1[1]"
+                                            },
+                                            {
+                                                "name": "target_pos1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in6",
+                                "id": 6,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 6,
+                                "nets": [
+                                    {
+                                        "name": "target_pos2",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "target_pos2[15]"
+                                            },
+                                            {
+                                                "name": "target_pos2[14]"
+                                            },
+                                            {
+                                                "name": "target_pos2[13]"
+                                            },
+                                            {
+                                                "name": "target_pos2[12]"
+                                            },
+                                            {
+                                                "name": "target_pos2[11]"
+                                            },
+                                            {
+                                                "name": "target_pos2[10]"
+                                            },
+                                            {
+                                                "name": "target_pos2[9]"
+                                            },
+                                            {
+                                                "name": "target_pos2[8]"
+                                            },
+                                            {
+                                                "name": "target_pos2[7]"
+                                            },
+                                            {
+                                                "name": "target_pos2[6]"
+                                            },
+                                            {
+                                                "name": "target_pos2[5]"
+                                            },
+                                            {
+                                                "name": "target_pos2[4]"
+                                            },
+                                            {
+                                                "name": "target_pos2[3]"
+                                            },
+                                            {
+                                                "name": "target_pos2[2]"
+                                            },
+                                            {
+                                                "name": "target_pos2[1]"
+                                            },
+                                            {
+                                                "name": "target_pos2[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in7",
+                                "id": 7,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 7,
+                                "nets": [
+                                    {
+                                        "name": "last_threshold",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "last_threshold[15]"
+                                            },
+                                            {
+                                                "name": "last_threshold[14]"
+                                            },
+                                            {
+                                                "name": "last_threshold[13]"
+                                            },
+                                            {
+                                                "name": "last_threshold[12]"
+                                            },
+                                            {
+                                                "name": "last_threshold[11]"
+                                            },
+                                            {
+                                                "name": "last_threshold[10]"
+                                            },
+                                            {
+                                                "name": "last_threshold[9]"
+                                            },
+                                            {
+                                                "name": "last_threshold[8]"
+                                            },
+                                            {
+                                                "name": "last_threshold[7]"
+                                            },
+                                            {
+                                                "name": "last_threshold[6]"
+                                            },
+                                            {
+                                                "name": "last_threshold[5]"
+                                            },
+                                            {
+                                                "name": "last_threshold[4]"
+                                            },
+                                            {
+                                                "name": "last_threshold[3]"
+                                            },
+                                            {
+                                                "name": "last_threshold[2]"
+                                            },
+                                            {
+                                                "name": "last_threshold[1]"
+                                            },
+                                            {
+                                                "name": "last_threshold[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in8",
+                                "id": 8,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 18,
+                                "portIndex": 8,
+                                "nets": [
+                                    {
+                                        "name": "last_threshold_full",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "last_threshold_full[18]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[17]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[16]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[15]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[14]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[13]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[12]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[11]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[10]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[9]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[8]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[7]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[6]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[5]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[4]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[3]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[2]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[1]"
+                                            },
+                                            {
+                                                "name": "last_threshold_full[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in9",
+                                "id": 9,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 9,
+                                "nets": [
+                                    {
+                                        "name": "run_cycles",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "run_cycles[15]"
+                                            },
+                                            {
+                                                "name": "run_cycles[14]"
+                                            },
+                                            {
+                                                "name": "run_cycles[13]"
+                                            },
+                                            {
+                                                "name": "run_cycles[12]"
+                                            },
+                                            {
+                                                "name": "run_cycles[11]"
+                                            },
+                                            {
+                                                "name": "run_cycles[10]"
+                                            },
+                                            {
+                                                "name": "run_cycles[9]"
+                                            },
+                                            {
+                                                "name": "run_cycles[8]"
+                                            },
+                                            {
+                                                "name": "run_cycles[7]"
+                                            },
+                                            {
+                                                "name": "run_cycles[6]"
+                                            },
+                                            {
+                                                "name": "run_cycles[5]"
+                                            },
+                                            {
+                                                "name": "run_cycles[4]"
+                                            },
+                                            {
+                                                "name": "run_cycles[3]"
+                                            },
+                                            {
+                                                "name": "run_cycles[2]"
+                                            },
+                                            {
+                                                "name": "run_cycles[1]"
+                                            },
+                                            {
+                                                "name": "run_cycles[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in10",
+                                "id": 10,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 10,
+                                "nets": [
+                                    {
+                                        "name": "frame_id",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "frame_id[15]"
+                                            },
+                                            {
+                                                "name": "frame_id[14]"
+                                            },
+                                            {
+                                                "name": "frame_id[13]"
+                                            },
+                                            {
+                                                "name": "frame_id[12]"
+                                            },
+                                            {
+                                                "name": "frame_id[11]"
+                                            },
+                                            {
+                                                "name": "frame_id[10]"
+                                            },
+                                            {
+                                                "name": "frame_id[9]"
+                                            },
+                                            {
+                                                "name": "frame_id[8]"
+                                            },
+                                            {
+                                                "name": "frame_id[7]"
+                                            },
+                                            {
+                                                "name": "frame_id[6]"
+                                            },
+                                            {
+                                                "name": "frame_id[5]"
+                                            },
+                                            {
+                                                "name": "frame_id[4]"
+                                            },
+                                            {
+                                                "name": "frame_id[3]"
+                                            },
+                                            {
+                                                "name": "frame_id[2]"
+                                            },
+                                            {
+                                                "name": "frame_id[1]"
+                                            },
+                                            {
+                                                "name": "frame_id[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in11",
+                                "id": 11,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 11,
+                                "nets": [
+                                    {
+                                        "name": "timeout_error",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in12",
+                                "id": 12,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 12,
+                                "nets": [
+                                    {
+                                        "name": "active_scenario",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "active_scenario[1]"
+                                            },
+                                            {
+                                                "name": "active_scenario[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in13",
+                                "id": 13,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 13,
+                                "nets": [
+                                    {
+                                        "name": "active_scale",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "active_scale[1]"
+                                            },
+                                            {
+                                                "name": "active_scale[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in14",
+                                "id": 14,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 14,
+                                "nets": [
+                                    {
+                                        "name": "active_gap",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in15",
+                                "id": 15,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 127,
+                                "portIndex": 15,
+                                "nets": [
+                                    {
+                                        "name": "detection_mask",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "detection_mask[127]"
+                                            },
+                                            {
+                                                "name": "detection_mask[126]"
+                                            },
+                                            {
+                                                "name": "detection_mask[125]"
+                                            },
+                                            {
+                                                "name": "detection_mask[124]"
+                                            },
+                                            {
+                                                "name": "detection_mask[123]"
+                                            },
+                                            {
+                                                "name": "detection_mask[122]"
+                                            },
+                                            {
+                                                "name": "detection_mask[121]"
+                                            },
+                                            {
+                                                "name": "detection_mask[120]"
+                                            },
+                                            {
+                                                "name": "detection_mask[119]"
+                                            },
+                                            {
+                                                "name": "detection_mask[118]"
+                                            },
+                                            {
+                                                "name": "detection_mask[117]"
+                                            },
+                                            {
+                                                "name": "detection_mask[116]"
+                                            },
+                                            {
+                                                "name": "detection_mask[115]"
+                                            },
+                                            {
+                                                "name": "detection_mask[114]"
+                                            },
+                                            {
+                                                "name": "detection_mask[113]"
+                                            },
+                                            {
+                                                "name": "detection_mask[112]"
+                                            },
+                                            {
+                                                "name": "detection_mask[111]"
+                                            },
+                                            {
+                                                "name": "detection_mask[110]"
+                                            },
+                                            {
+                                                "name": "detection_mask[109]"
+                                            },
+                                            {
+                                                "name": "detection_mask[108]"
+                                            },
+                                            {
+                                                "name": "detection_mask[107]"
+                                            },
+                                            {
+                                                "name": "detection_mask[106]"
+                                            },
+                                            {
+                                                "name": "detection_mask[105]"
+                                            },
+                                            {
+                                                "name": "detection_mask[104]"
+                                            },
+                                            {
+                                                "name": "detection_mask[103]"
+                                            },
+                                            {
+                                                "name": "detection_mask[102]"
+                                            },
+                                            {
+                                                "name": "detection_mask[101]"
+                                            },
+                                            {
+                                                "name": "detection_mask[100]"
+                                            },
+                                            {
+                                                "name": "detection_mask[99]"
+                                            },
+                                            {
+                                                "name": "detection_mask[98]"
+                                            },
+                                            {
+                                                "name": "detection_mask[97]"
+                                            },
+                                            {
+                                                "name": "detection_mask[96]"
+                                            },
+                                            {
+                                                "name": "detection_mask[95]"
+                                            },
+                                            {
+                                                "name": "detection_mask[94]"
+                                            },
+                                            {
+                                                "name": "detection_mask[93]"
+                                            },
+                                            {
+                                                "name": "detection_mask[92]"
+                                            },
+                                            {
+                                                "name": "detection_mask[91]"
+                                            },
+                                            {
+                                                "name": "detection_mask[90]"
+                                            },
+                                            {
+                                                "name": "detection_mask[89]"
+                                            },
+                                            {
+                                                "name": "detection_mask[88]"
+                                            },
+                                            {
+                                                "name": "detection_mask[87]"
+                                            },
+                                            {
+                                                "name": "detection_mask[86]"
+                                            },
+                                            {
+                                                "name": "detection_mask[85]"
+                                            },
+                                            {
+                                                "name": "detection_mask[84]"
+                                            },
+                                            {
+                                                "name": "detection_mask[83]"
+                                            },
+                                            {
+                                                "name": "detection_mask[82]"
+                                            },
+                                            {
+                                                "name": "detection_mask[81]"
+                                            },
+                                            {
+                                                "name": "detection_mask[80]"
+                                            },
+                                            {
+                                                "name": "detection_mask[79]"
+                                            },
+                                            {
+                                                "name": "detection_mask[78]"
+                                            },
+                                            {
+                                                "name": "detection_mask[77]"
+                                            },
+                                            {
+                                                "name": "detection_mask[76]"
+                                            },
+                                            {
+                                                "name": "detection_mask[75]"
+                                            },
+                                            {
+                                                "name": "detection_mask[74]"
+                                            },
+                                            {
+                                                "name": "detection_mask[73]"
+                                            },
+                                            {
+                                                "name": "detection_mask[72]"
+                                            },
+                                            {
+                                                "name": "detection_mask[71]"
+                                            },
+                                            {
+                                                "name": "detection_mask[70]"
+                                            },
+                                            {
+                                                "name": "detection_mask[69]"
+                                            },
+                                            {
+                                                "name": "detection_mask[68]"
+                                            },
+                                            {
+                                                "name": "detection_mask[67]"
+                                            },
+                                            {
+                                                "name": "detection_mask[66]"
+                                            },
+                                            {
+                                                "name": "detection_mask[65]"
+                                            },
+                                            {
+                                                "name": "detection_mask[64]"
+                                            },
+                                            {
+                                                "name": "detection_mask[63]"
+                                            },
+                                            {
+                                                "name": "detection_mask[62]"
+                                            },
+                                            {
+                                                "name": "detection_mask[61]"
+                                            },
+                                            {
+                                                "name": "detection_mask[60]"
+                                            },
+                                            {
+                                                "name": "detection_mask[59]"
+                                            },
+                                            {
+                                                "name": "detection_mask[58]"
+                                            },
+                                            {
+                                                "name": "detection_mask[57]"
+                                            },
+                                            {
+                                                "name": "detection_mask[56]"
+                                            },
+                                            {
+                                                "name": "detection_mask[55]"
+                                            },
+                                            {
+                                                "name": "detection_mask[54]"
+                                            },
+                                            {
+                                                "name": "detection_mask[53]"
+                                            },
+                                            {
+                                                "name": "detection_mask[52]"
+                                            },
+                                            {
+                                                "name": "detection_mask[51]"
+                                            },
+                                            {
+                                                "name": "detection_mask[50]"
+                                            },
+                                            {
+                                                "name": "detection_mask[49]"
+                                            },
+                                            {
+                                                "name": "detection_mask[48]"
+                                            },
+                                            {
+                                                "name": "detection_mask[47]"
+                                            },
+                                            {
+                                                "name": "detection_mask[46]"
+                                            },
+                                            {
+                                                "name": "detection_mask[45]"
+                                            },
+                                            {
+                                                "name": "detection_mask[44]"
+                                            },
+                                            {
+                                                "name": "detection_mask[43]"
+                                            },
+                                            {
+                                                "name": "detection_mask[42]"
+                                            },
+                                            {
+                                                "name": "detection_mask[41]"
+                                            },
+                                            {
+                                                "name": "detection_mask[40]"
+                                            },
+                                            {
+                                                "name": "detection_mask[39]"
+                                            },
+                                            {
+                                                "name": "detection_mask[38]"
+                                            },
+                                            {
+                                                "name": "detection_mask[37]"
+                                            },
+                                            {
+                                                "name": "detection_mask[36]"
+                                            },
+                                            {
+                                                "name": "detection_mask[35]"
+                                            },
+                                            {
+                                                "name": "detection_mask[34]"
+                                            },
+                                            {
+                                                "name": "detection_mask[33]"
+                                            },
+                                            {
+                                                "name": "detection_mask[32]"
+                                            },
+                                            {
+                                                "name": "detection_mask[31]"
+                                            },
+                                            {
+                                                "name": "detection_mask[30]"
+                                            },
+                                            {
+                                                "name": "detection_mask[29]"
+                                            },
+                                            {
+                                                "name": "detection_mask[28]"
+                                            },
+                                            {
+                                                "name": "detection_mask[27]"
+                                            },
+                                            {
+                                                "name": "detection_mask[26]"
+                                            },
+                                            {
+                                                "name": "detection_mask[25]"
+                                            },
+                                            {
+                                                "name": "detection_mask[24]"
+                                            },
+                                            {
+                                                "name": "detection_mask[23]"
+                                            },
+                                            {
+                                                "name": "detection_mask[22]"
+                                            },
+                                            {
+                                                "name": "detection_mask[21]"
+                                            },
+                                            {
+                                                "name": "detection_mask[20]"
+                                            },
+                                            {
+                                                "name": "detection_mask[19]"
+                                            },
+                                            {
+                                                "name": "detection_mask[18]"
+                                            },
+                                            {
+                                                "name": "detection_mask[17]"
+                                            },
+                                            {
+                                                "name": "detection_mask[16]"
+                                            },
+                                            {
+                                                "name": "detection_mask[15]"
+                                            },
+                                            {
+                                                "name": "detection_mask[14]"
+                                            },
+                                            {
+                                                "name": "detection_mask[13]"
+                                            },
+                                            {
+                                                "name": "detection_mask[12]"
+                                            },
+                                            {
+                                                "name": "detection_mask[11]"
+                                            },
+                                            {
+                                                "name": "detection_mask[10]"
+                                            },
+                                            {
+                                                "name": "detection_mask[9]"
+                                            },
+                                            {
+                                                "name": "detection_mask[8]"
+                                            },
+                                            {
+                                                "name": "detection_mask[7]"
+                                            },
+                                            {
+                                                "name": "detection_mask[6]"
+                                            },
+                                            {
+                                                "name": "detection_mask[5]"
+                                            },
+                                            {
+                                                "name": "detection_mask[4]"
+                                            },
+                                            {
+                                                "name": "detection_mask[3]"
+                                            },
+                                            {
+                                                "name": "detection_mask[2]"
+                                            },
+                                            {
+                                                "name": "detection_mask[1]"
+                                            },
+                                            {
+                                                "name": "detection_mask[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in16",
+                                "id": 16,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 16,
+                                "nets": [
+                                    {
+                                        "name": "design_id",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "design_id[31]"
+                                            },
+                                            {
+                                                "name": "design_id[30]"
+                                            },
+                                            {
+                                                "name": "design_id[29]"
+                                            },
+                                            {
+                                                "name": "design_id[28]"
+                                            },
+                                            {
+                                                "name": "design_id[27]"
+                                            },
+                                            {
+                                                "name": "design_id[26]"
+                                            },
+                                            {
+                                                "name": "design_id[25]"
+                                            },
+                                            {
+                                                "name": "design_id[24]"
+                                            },
+                                            {
+                                                "name": "design_id[23]"
+                                            },
+                                            {
+                                                "name": "design_id[22]"
+                                            },
+                                            {
+                                                "name": "design_id[21]"
+                                            },
+                                            {
+                                                "name": "design_id[20]"
+                                            },
+                                            {
+                                                "name": "design_id[19]"
+                                            },
+                                            {
+                                                "name": "design_id[18]"
+                                            },
+                                            {
+                                                "name": "design_id[17]"
+                                            },
+                                            {
+                                                "name": "design_id[16]"
+                                            },
+                                            {
+                                                "name": "design_id[15]"
+                                            },
+                                            {
+                                                "name": "design_id[14]"
+                                            },
+                                            {
+                                                "name": "design_id[13]"
+                                            },
+                                            {
+                                                "name": "design_id[12]"
+                                            },
+                                            {
+                                                "name": "design_id[11]"
+                                            },
+                                            {
+                                                "name": "design_id[10]"
+                                            },
+                                            {
+                                                "name": "design_id[9]"
+                                            },
+                                            {
+                                                "name": "design_id[8]"
+                                            },
+                                            {
+                                                "name": "design_id[7]"
+                                            },
+                                            {
+                                                "name": "design_id[6]"
+                                            },
+                                            {
+                                                "name": "design_id[5]"
+                                            },
+                                            {
+                                                "name": "design_id[4]"
+                                            },
+                                            {
+                                                "name": "design_id[3]"
+                                            },
+                                            {
+                                                "name": "design_id[2]"
+                                            },
+                                            {
+                                                "name": "design_id[1]"
+                                            },
+                                            {
+                                                "name": "design_id[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out0",
+                                "id": 17,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "reset_cmd",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out1",
+                                "id": 18,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "start_cmd",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out2",
+                                "id": 19,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "scenario_cmd",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "scenario_cmd[1]"
+                                            },
+                                            {
+                                                "name": "scenario_cmd[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out3",
+                                "id": 20,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "scale_cmd",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "scale_cmd[1]"
+                                            },
+                                            {
+                                                "name": "scale_cmd[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out4",
+                                "id": 21,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "gap_cmd",
+                                        "isBus": false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
