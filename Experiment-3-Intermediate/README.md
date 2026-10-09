@@ -2,7 +2,8 @@
 
 V-SPACE FPGA Build Challenge 2026 | Intermediate | PYNQ-Z2 / XC7Z020
 
-**Team name, members and registration numbers:** pending verified team details.
+**Team:** Beyond Boolean
+**Members:** Shanshank Pulipati (25BEC0573); Kartik Yadav (25BEC0087).
 **Tools:** Vitis HLS and Vivado 2025.1.1; Python/Jupyter on PYNQ.
 
 ## What was implemented
@@ -38,9 +39,9 @@ validated arrhythmia classifier or a hardware QRS detector.
 | `RTL/Generated_Verilog/` | Actual HLS top module and its generated Verilog dependencies; Vivado wrapper |
 | `RTL/Vivado_Block_Design/` | Recovered `system.bd` and original project descriptor |
 | `RTL/Constraints/` | Actual generated IP/out-of-context XDC files and provenance |
-| `Testbench/` | Original HLS C++ testbench |
-| `Simulation/` | Original C-simulation logs and synthesis/implementation reports |
-| `Images/` | Saved board plots and a block diagram reconstructed from `system.bd` |
+| `Testbench/` | Original HLS C++ testbench, executable RTL testbench and vector generator |
+| `Simulation/` | Original HLS reports plus executed RTL waveform, transcript, samples and report |
+| `Images/` | Actual board/Jupyter captures, real Vivado PDF/PNG, original result plots and source-derived block diagram |
 | `PYNQ_Hardware/` | Matching BIT/HWH/XSA, executed notebooks, input data and captured results |
 | `Video_Link.txt` | Intentionally empty until the final demo URL is supplied |
 
@@ -79,11 +80,10 @@ Use the complete original HLS and Vivado project archives linked in
 the descriptor alone is not the entire Vivado project. The expanded packaged
 HLS IP can be added as a Vivado IP repository. The HLS configuration targets
 `xc7z020clg400-1`, a 10 ns clock and `ecg_bandpass_filter` as the top function.
-No fresh synthesis, implementation or independent RTL simulation was performed
-during this packaging step.
+No fresh synthesis or implementation was performed during this update.
+Independent RTL simulation was executed against the original generated core.
 
-The required RTL waveform, separate Verilog testbench, schematic screenshot,
-physical board photo and final video are still absent. See the explicit
+Independent RTL verification is now included: 28,672 exact samples across 14 batches, with actual waveform, transcript and simulation report. An original Jupyter screenshot has been recovered. The actual Vivado schematic and physical board photograph are now included. Only the final demo URL remains outstanding for Project 3. See the explicit
 [submission audit](Documentation/SUBMISSION_READINESS.md).
 
 ## ECG data attribution
@@ -91,3 +91,7 @@ physical board photo and final video are still absent. See the explicit
 MIT-BIH Arrhythmia Database v1.0.0, record 100, channel MLII, samples 0–12287 at
 360 Hz. Attribution and data license are in `PYNQ_Hardware/DATA_SOURCE.md`.
 Source: https://physionet.org/content/mitdb/1.0.0/.
+
+## Completion package update - 9 October 2026
+
+Independent Icarus RTL simulation, the original Jupyter capture, actual PYNQ-Z2 photograph and real Vivado hierarchy PDF/PNG are included. The report incorporates these captures and the confirmed Beyond Boolean team details. See Documentation/SUBMISSION_READINESS.md. The final demo link remains blank by instruction; the physical-board run was not repeated.

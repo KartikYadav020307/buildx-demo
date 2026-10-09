@@ -1,0 +1,32 @@
+Project 3 RTL simulation
+{
+  "utc_run_time": "2026-10-09T09:15:40.327767+00:00",
+  "simulator": "Icarus Verilog version 12.0 (stable) ()",
+  "compile_return_code": 0,
+  "run_return_code": 0,
+  "passed": true,
+  "checked_samples": 28672,
+  "payload_samples": 20480,
+  "zero_flush_samples": 8192,
+  "batches": 14,
+  "clock_period_ns": 10,
+  "unit_scope": "HLS FIR core; not full Zynq PS or vendor DMA simulation"
+}
+
+Commands (normal installation):
+python Testbench/generate_vectors.py
+iverilog -g2012 -I RTL/Generated_Verilog -s tb_top -o Simulation/rtl_sim.vvp Testbench/tb_top.v RTL/Generated_Verilog/ecg_bandpass_filter*.v
+vvp Simulation/rtl_sim.vvp
+
+Compiler output:
+
+Simulator output:
+VCD info: dumpfile Simulation/rtl_waveform.vcd opened for output.
+DUT: unchanged Vitis HLS generated ecg_bandpass_filter; clock=100 MHz; count=2048
+Tests: reset, impulse, sine, signed random, ECG, batch history, KEEP/STRB, TLAST, backpressure
+CASE 1: samples=4096 exact_matches=4096 batches=2 cycles=6063 output_stall_cycles=1279 input_gap_cycles=640 errors=0
+CASE 2: samples=4096 exact_matches=4096 batches=2 cycles=6064 output_stall_cycles=1277 input_gap_cycles=642 errors=0
+CASE 3: samples=6144 exact_matches=6144 batches=3 cycles=9087 output_stall_cycles=1916 input_gap_cycles=963 errors=0
+CASE 4: samples=14336 exact_matches=14336 batches=7 cycles=21176 output_stall_cycles=4472 input_gap_cycles=2245 errors=0
+RTL TEST PASS: 28672/28672 exact samples, 0 LSB error, 14 batches; all protocol checks passed
+Testbench/tb_top.v:164: $finish called at 424420000 (1ps)

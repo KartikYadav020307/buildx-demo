@@ -1,26 +1,42 @@
 {
   "experiment": 3,
-  "audit_date": "2026-10-08",
+  "team": "Beyond Boolean",
+  "update_date": "2026-10-09",
   "files": [
+    {
+      "path": "Documentation/CAPTURE_PROVENANCE.md",
+      "bytes": 1397,
+      "sha256": "71f9bb01c11c0a9e663229e1bcc711c7439dc5f5bf819ca009a99725752bf4ad"
+    },
     {
       "path": "Documentation/DEMO_RECORDING_GUIDE.md",
       "bytes": 1421,
       "sha256": "39d7eeee3ece29e35195be71e48a05113d116e9d7ba46afe8d394ccf0a2a88a6"
     },
     {
+      "path": "Documentation/GET_REMAINING_CAPTURES.md",
+      "bytes": 1096,
+      "sha256": "39e286b6823e486d13788d97cb665226a798fb318803884690d8454e7a14672e"
+    },
+    {
+      "path": "Documentation/HARDWARE_SCREENSHOT_PROVENANCE.md",
+      "bytes": 514,
+      "sha256": "a7be3bbc47f4d08f86c179ae5888d3f7adb069c21b3a9a2332085cd0bf3747ff"
+    },
+    {
       "path": "Documentation/Project3_ECG_Report.pdf",
-      "bytes": 640193,
-      "sha256": "016b92d17de65272012cc53fc41f3354b8de4e970d8f7052fe2cf7b1669aec13"
+      "bytes": 2306506,
+      "sha256": "9036ca0259d27e565a4a8c3aa0f5017db7416de9c644620f3a51e9e1f2f8594f"
     },
     {
       "path": "Documentation/SOURCE_PROVENANCE.md",
-      "bytes": 1754,
-      "sha256": "226703ab56642d7248e6fe9d29fb191ff54a554028c88040cc10194111eb2d58"
+      "bytes": 2169,
+      "sha256": "092a5ed31a27dd48001425c41bc779dc9ae209b5a0e7aeec92d81037379349d3"
     },
     {
       "path": "Documentation/SUBMISSION_READINESS.md",
-      "bytes": 5126,
-      "sha256": "907cad43af58772d0ff2d50566312933370debe7a706e932ca77b8cd7bd1a37b"
+      "bytes": 2708,
+      "sha256": "46afa7b6924cc69297e2f768419da660b277701cd5b2cdf49bb09fcee8c9b021"
     },
     {
       "path": "Images/01_sine_verification.png",
@@ -34,8 +50,8 @@
     },
     {
       "path": "Images/IMAGE_EVIDENCE_STATUS.md",
-      "bytes": 600,
-      "sha256": "f3cacbb1be94dd6db6d2d5b98c29a092dd771a4fb4b14b777b69b294eaf7d972"
+      "bytes": 751,
+      "sha256": "8d788c8deab46927f9e705e924bca674609d56892e477e27c82c54f8e3ee4a1a"
     },
     {
       "path": "Images/block_diagram.png",
@@ -46,6 +62,36 @@
       "path": "Images/block_diagram_reconstructed_from_bd.png",
       "bytes": 54206,
       "sha256": "9ee48e1c20a068abfd594439806c761fe581ac1a9c641d10b0850e5c483cc3f7"
+    },
+    {
+      "path": "Images/board_setup.jpg",
+      "bytes": 116955,
+      "sha256": "1b2694e63531353de11fa5ee6adbe5028d5ebbd1bddd324e01c91714b98089db"
+    },
+    {
+      "path": "Images/hardware_output.jpg",
+      "bytes": 334318,
+      "sha256": "6835f97ce44baf4e76a21c27e2b52463407c659e188c6a727f835964ea826cac"
+    },
+    {
+      "path": "Images/hardware_output_original.png",
+      "bytes": 87267,
+      "sha256": "6a8081cd600aac30b8ff3264f20b835e1250832fba69511033a078e92dff1e20"
+    },
+    {
+      "path": "Images/rtl_schematic.pdf",
+      "bytes": 108063,
+      "sha256": "9e5921d0844e7947d75f3d62d6a95948643026d63e0ceefbfa99b2472ef3a133"
+    },
+    {
+      "path": "Images/rtl_schematic.png",
+      "bytes": 1144557,
+      "sha256": "547f5b98bed99fc79fe71e934110e48dd862db8c4b30fc4adb2bb0083c472b25"
+    },
+    {
+      "path": "Images/rtl_schematic_input_detail.png",
+      "bytes": 32413,
+      "sha256": "88c10635b0e5fcc9e0d79ad2a617c0546f282011973f1ec506596b997192cdf6"
     },
     {
       "path": "PYNQ_Hardware/DATA_SOURCE.md",
@@ -109,8 +155,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5097,
-      "sha256": "b5ee05943cbe22439554180d0ee8ccbe665a50f25c4ef447e11eac46181f9e6c"
+      "bytes": 5858,
+      "sha256": "541242242e3ea3b6a83e0dd02710cebed49df43dd4b1316f5b843204c48b1936"
     },
     {
       "path": "RTL/Constraints/README.md",
@@ -129,8 +175,8 @@
     },
     {
       "path": "RTL/Generated_Verilog/README.md",
-      "bytes": 531,
-      "sha256": "d6f1ac87e7b34d91fae3dbb3c71d7b9fb48f28b563023ff8df9a62bb50efa0a1"
+      "bytes": 622,
+      "sha256": "18111ad15c90ea713a8ead2b58dca6fb03822a760b65d2cf6d4c3140d1eb2653"
     },
     {
       "path": "RTL/Generated_Verilog/ecg_bandpass_filter.v",
@@ -433,6 +479,11 @@
       "sha256": "054db036d9fecfe965cb90d4ff302790c0bafc34720f3987f76a0c6561559177"
     },
     {
+      "path": "RTL/Vivado_Block_Design/CAPTURE_RTL_SCHEMATIC.tcl",
+      "bytes": 1404,
+      "sha256": "9053543a4c19440d3198163b9a508d37581922a551ddd81bfb071e8278896b8d"
+    },
+    {
       "path": "RTL/Vivado_Block_Design/project_1.xpr",
       "bytes": 42227,
       "sha256": "d4a31262a4feb58c1e5087655813fcf29185974526ed7dd53312e05e8f88abe5"
@@ -454,8 +505,8 @@
     },
     {
       "path": "Simulation/SIMULATION_STATUS.md",
-      "bytes": 685,
-      "sha256": "7d8a39a6a087695f5fabd40a80c847d4123c398eb00240b4d4a9a4ea2534b711"
+      "bytes": 660,
+      "sha256": "a9934d6e28c2f48cfcae5050464c17a9a49bc7c494f75df01cad1d3125d04e48"
     },
     {
       "path": "Simulation/Synthesis_and_Implementation_Reports/ecg_bandpass_filter_csynth.rpt",
@@ -478,14 +529,109 @@
       "sha256": "15e57354a75515e104acbf4cc486d035b7311b4a6176f91d2017e3b439cd7321"
     },
     {
+      "path": "Simulation/rtl_output_samples.csv",
+      "bytes": 806039,
+      "sha256": "04f0e9d48ac371be2ea48bcdf42106c6ea8ccebc909e3fe6148594d9b5fcba28"
+    },
+    {
+      "path": "Simulation/rtl_run.log",
+      "bytes": 867,
+      "sha256": "56c94519f61b7ca591b8137a3f0838cc3bd5e8b81fbec69f89bca07d21f6e68b"
+    },
+    {
+      "path": "Simulation/rtl_run_metadata.json",
+      "bytes": 3000,
+      "sha256": "1ecfd0305c27ea3f3e7095c5914e0cdbde6434f5b45bfbc56a7b74886f6e70b3"
+    },
+    {
+      "path": "Simulation/rtl_waveform.vcd.gz",
+      "bytes": 912864,
+      "sha256": "12775a98c893fdac87e8d372f3497a6fd02d4ffef6c45e6919a32a90d0853c68"
+    },
+    {
+      "path": "Simulation/simulation_report.pdf",
+      "bytes": 114544,
+      "sha256": "5392f722e213e497973bff4c03439e2b55b262c0b85161e947901441122120b1"
+    },
+    {
+      "path": "Simulation/transcript.txt",
+      "bytes": 1555,
+      "sha256": "a6f89a75d6806e6793a4c6a9f5ee9ee1bd460bacf6c9972558e0f9a63378c0b7"
+    },
+    {
+      "path": "Simulation/waveform.png",
+      "bytes": 92599,
+      "sha256": "16a3bdc26281c40de3c8cf0f68848104b76ba7a38a1a7d3f712edf5b6fec81dc"
+    },
+    {
+      "path": "Simulation/waveform_tlast.png",
+      "bytes": 93029,
+      "sha256": "3ce78fa74bdc84ed9d62ae0dedbae3a8d08078c9619eac9dd484e39af518c787"
+    },
+    {
       "path": "Testbench/README.md",
-      "bytes": 340,
-      "sha256": "b3b769cb79cc0e1045f8cf78942b0867da761349b56fdf3187f18b0a0c5f974c"
+      "bytes": 612,
+      "sha256": "26bb73716258b57061ab08ad033b058eabc6ea19671fc0186433f83a63f14346"
     },
     {
       "path": "Testbench/ecg_bandpass_filter_tb.cpp",
       "bytes": 9823,
       "sha256": "35ec3dc7c4e484a0a3bceb60c5c05a5e0eb34b6f0aed4e39f15920867641042c"
+    },
+    {
+      "path": "Testbench/generate_vectors.py",
+      "bytes": 2515,
+      "sha256": "0909ebf0f54842f1cbd637357113799f708fe97111bd3d3688cd037bddc7ad9f"
+    },
+    {
+      "path": "Testbench/run_rtl_sim.py",
+      "bytes": 3089,
+      "sha256": "ef9d3199395f412b2098f2139354e79c89c5d16c131972724f9d74f240576ccc"
+    },
+    {
+      "path": "Testbench/tb_top.v",
+      "bytes": 7391,
+      "sha256": "80f12d8f365e36d269c7062a6ac3632e33d9910826c6eb416cbde2d82e8e1190"
+    },
+    {
+      "path": "Testbench/vectors/ecg_expected.hex",
+      "bytes": 71680,
+      "sha256": "260bcef097cab2f3bf366118413b3f7984d90085b7d90ebc93088f84c1cdd711"
+    },
+    {
+      "path": "Testbench/vectors/ecg_input.hex",
+      "bytes": 71680,
+      "sha256": "272c4947527b133aa0976cb9bc2f37cae057ed113c2943c11ce633fb7957cc61"
+    },
+    {
+      "path": "Testbench/vectors/impulse_expected.hex",
+      "bytes": 20480,
+      "sha256": "d8cc67adad1bcfe18759ed031006ca44e7a0e8793c8300112e78239a93c03151"
+    },
+    {
+      "path": "Testbench/vectors/impulse_input.hex",
+      "bytes": 20480,
+      "sha256": "d065bee10214eb81d5f803668f8ca8ee5fe4d8dbb2f249ca5712ac9ac89d5932"
+    },
+    {
+      "path": "Testbench/vectors/random_expected.hex",
+      "bytes": 30720,
+      "sha256": "a9d0fcda679ba9edd2705eeeeadfdcac1eac583aeb51473049b1096b31dd6f22"
+    },
+    {
+      "path": "Testbench/vectors/random_input.hex",
+      "bytes": 30720,
+      "sha256": "e647f5965f2dc1a9670599e2847bc7665408d6f7472be6ae5842cae6b8f2f240"
+    },
+    {
+      "path": "Testbench/vectors/sine_expected.hex",
+      "bytes": 20480,
+      "sha256": "14c363a211a25fb7706b10b8b9e6738a290cafff607acda052c1b5a0ff91915a"
+    },
+    {
+      "path": "Testbench/vectors/sine_input.hex",
+      "bytes": 20480,
+      "sha256": "3788ce0c4d36dc78cc901c3cc12e4df6395eac4f2f81eb6b3261417cf3a84646"
     },
     {
       "path": "Video_Link.txt",

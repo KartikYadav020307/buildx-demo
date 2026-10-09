@@ -25,3 +25,6 @@ audit and recording guide added; video-link file emptied at the user's request.
 `Documentation/FILE_MANIFEST.json` records SHA-256 checksums of the published
 experiment files, excluding itself. No newly simulated results have been
 substituted for saved physical-board evidence.
+
+## Completion update
+Independent Icarus RTL evidence was produced on 9 October 2026 against the original generated core, without logic changes. Run metadata hashes all tested sources. An actual earlier Jupyter screenshot was recovered and preserved with a JPEG derivative. The actual physical board photo and Vivado schematic were subsequently supplied by the team and are incorporated; see CAPTURE_PROVENANCE.md.

@@ -6,5 +6,6 @@ multiply-add, register-slice and monitor files were extracted unchanged from
 using the core. `system_wrapper.v` is the original Vivado block-design wrapper,
 which requires generation of the block-design/vendor IP hierarchy.
 
-No independent RTL simulation has been run in this packaging step. The original
-HLS C++ testbench is in `../../Testbench/`.
+Independent RTL simulation has now passed against this unchanged generated core.
+The executable Verilog testbench and original HLS C++ testbench are in
+`../../Testbench/`; actual results are in `../../Simulation/`.

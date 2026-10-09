@@ -1,11 +1,13 @@
-# Image evidence status
+# Project 3 image evidence
 
-`01_sine_verification.png` and `02_ecg_peaks.png` are original saved board-result
-plots. `block_diagram.png` and `block_diagram_reconstructed_from_bd.png` are the
-same source-derived architecture drawing, reconstructed from verified net
-names in `system.bd`; neither is a Vivado GUI screenshot.
+All four requested image files are present:
+- block_diagram.png: architecture reconstructed from original system.bd.
+- rtl_schematic.png: 600 dpi rendering of the team's actual Vivado PDF.
+- board_setup.jpg: original team-supplied JPEG, preserved byte-for-byte.
+- hardware_output.jpg: uncropped JPEG derivative of the original Jupyter screenshot.
 
-Still required: `rtl_schematic.png` captured from Vivado, `board_setup.jpg` from
-the actual board and its connections, and `hardware_output.jpg` captured from
-the actual board notebook session. No synthetic photo or relabeled output plot
-has been substituted for these captures.
+rtl_schematic.pdf preserves the original vector export unchanged.
+rtl_schematic_input_detail.png is a directly rendered, magnified excerpt of its
+input register slice; it changes the view only. hardware_output_original.png
+preserves the original Jupyter screenshot unchanged. Original saved sine and ECG
+result plots remain included. See Documentation/CAPTURE_PROVENANCE.md.

@@ -1,0 +1,9 @@
+VCD info: dumpfile Simulation/rtl_waveform.vcd opened for output.
+DUT: unchanged Vitis HLS generated ecg_bandpass_filter; clock=100 MHz; count=2048
+Tests: reset, impulse, sine, signed random, ECG, batch history, KEEP/STRB, TLAST, backpressure
+CASE 1: samples=4096 exact_matches=4096 batches=2 cycles=6063 output_stall_cycles=1279 input_gap_cycles=640 errors=0
+CASE 2: samples=4096 exact_matches=4096 batches=2 cycles=6064 output_stall_cycles=1277 input_gap_cycles=642 errors=0
+CASE 3: samples=6144 exact_matches=6144 batches=3 cycles=9087 output_stall_cycles=1916 input_gap_cycles=963 errors=0
+CASE 4: samples=14336 exact_matches=14336 batches=7 cycles=21176 output_stall_cycles=4472 input_gap_cycles=2245 errors=0
+RTL TEST PASS: 28672/28672 exact samples, 0 LSB error, 14 batches; all protocol checks passed
+Testbench/tb_top.v:164: $finish called at 424420000 (1ps)
