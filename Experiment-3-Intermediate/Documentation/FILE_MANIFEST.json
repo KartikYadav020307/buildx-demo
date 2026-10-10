@@ -30,8 +30,8 @@
     },
     {
       "path": "Documentation/SOURCE_PROVENANCE.md",
-      "bytes": 2167,
-      "sha256": "f99d4539ca6c4006692cd91a6505cf73f13622f99168b02759661417ad6cc064"
+      "bytes": 2815,
+      "sha256": "eddca351996ee23799ede0782189cd0b4f7e298efcac2fa01cc2f9c55c406b23"
     },
     {
       "path": "Documentation/SUBMISSION_READINESS.md",
@@ -280,8 +280,8 @@
     },
     {
       "path": "RTL/HLS_Source/ecg_bandpass_filter.cpp",
-      "bytes": 7868,
-      "sha256": "2ffb275dfc8b1807c99b3fb743bd1445ad14d555d8b205f5e6e502f208a6404b"
+      "bytes": 6803,
+      "sha256": "67431bfd63a29f01926fb50cd9e31cdbe5a7ed72934680150b0e9088cbb48b80"
     },
     {
       "path": "RTL/HLS_Source/ecg_bandpass_filter.h",

@@ -25,18 +25,8 @@ void ecg_bandpass_filter(
     // =========================================================================
     //  FIR coefficient ROM  —  128 taps, Hamming window, 0.5–40 Hz @ 360 Hz
     // =========================================================================
-    //
-    //  ┌──────────────────────────────────────────────────────────────────────┐
-    //  │  COEFFICIENT PLACEHOLDER                                             │
-    //  │                                                                      │
-    //  │  All 128 entries are currently zero.  The filter will produce zero   │
-    //  │  output until you replace this initialiser block with real values.   │
-    //  │                                                                      │
-    //  │  HOW TO GENERATE REAL COEFFICIENTS:                                  │
-    //  │  Run the Python script at the bottom of this audit document.         │
-    //  │  It prints a drop-in replacement for the entire h[128] block below.  │
-    //  │  Copy-paste that block over this one, then re-run C Simulation.      │
-    //  └──────────────────────────────────────────────────────────────────────┘
+    // Fixed 128-tap FIR coefficients used by this implementation.
+    // Values are represented using the data_t fixed-point type.
     static const data_t h[128] = {
     0.00000, -0.00024, -0.00049, -0.00073, -0.00049, -0.00024, 0.00000, 0.00024,
     0.00024, 0.00000, -0.00073, -0.00122, -0.00146, -0.00122, -0.00049, 0.00024,
@@ -64,11 +54,11 @@ void ecg_bandpass_filter(
 #pragma HLS ARRAY_PARTITION variable=h complete dim=1
 
     // -------------------------------------------------------------------------
-    // Shift register — FIR delay line
-    // 'static': persists across calls in C-sim (correct stream behaviour) and
-    // maps to a register array in RTL. With ap_ctrl_hs the array is reset to
-    // zero on ap_rst assertion. The explicit '= {}' guarantees zero-init in
-    // C-simulation on the first call.
+    // FIR delay line: static storage persists across function calls.
+    // '= {}' initializes the array to zero in C simulation.
+    // Hardware reset behavior depends on the HLS configuration and
+    // generated RTL; ap_ctrl_hs alone does not guarantee state clearing.
+    // The supplied demonstration flushes filter history with zero samples.
     // -------------------------------------------------------------------------
     static data_t shift_reg[128] = {};
 #pragma HLS ARRAY_PARTITION variable=shift_reg complete dim=1

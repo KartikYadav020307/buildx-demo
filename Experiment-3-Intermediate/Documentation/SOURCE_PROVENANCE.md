@@ -28,3 +28,14 @@ substituted for saved physical-board evidence.
 
 ## Completion update
 Independent Icarus RTL evidence was produced on 9 October 2026 against the original generated core, without logic changes. Run metadata hashes all tested sources. An actual earlier Jupyter screenshot was recovered and preserved with a JPEG derivative. The actual physical board photo and Vivado schematic were subsequently supplied by the team and are incorporated; see CAPTURE_PROVENANCE.md.
+
+## Comment-only correction - 10 October 2026
+
+Corrected the stale coefficient-placeholder instructions and FIR delay-line reset
+comment in `RTL/HLS_Source/ecg_bandpass_filter.cpp`. The fixed coefficients,
+pragmas and executable code are unchanged. Static initialization in C simulation
+is distinguished from generated hardware reset behavior; the supplied
+demonstration uses zero-sample flushing. This edit does not change the archived
+original workspace/IP sources or generated RTL and does not claim new HLS
+synthesis, HDL simulation, FPGA implementation or physical-board testing.
+The current file hashes are refreshed in `FILE_MANIFEST.json`.
