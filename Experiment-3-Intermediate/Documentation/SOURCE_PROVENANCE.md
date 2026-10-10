@@ -14,13 +14,13 @@ The GitHub package preserves the supplied report and executed notebook outputs.
 The generated Verilog dependency files and expanded IP were extracted from the
 original packaged IP ZIP without modifying the generated logic. The original
 top module matches the packaged IP top byte-for-byte. The BIT and HWH match the
-user-uploaded hardware files byte-for-byte. The supplied XSA contains that same
+original hardware files byte-for-byte. The supplied XSA contains that same
 BIT and has been included as `PYNQ_Hardware/ecg_filter.xsa`.
 
 Packaging changes: notebook input files moved beside the notebook to satisfy
 its relative paths; generated RTL dependencies exposed; matching XSA added;
 block diagram also supplied at the organizer's requested filename; README,
-audit and recording guide added; video-link file emptied at the user's request.
+audit and recording guide added; final video-link file updated on 10 October 2026.
 
 `Documentation/FILE_MANIFEST.json` records SHA-256 checksums of the published
 experiment files, excluding itself. No newly simulated results have been

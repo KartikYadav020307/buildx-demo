@@ -4,8 +4,8 @@ Team: **Beyond Boolean**. Confirmed members: **Shanshank Pulipati (25BEC0573)**
 and **Kartik Yadav (25BEC0087)**, using the spellings supplied by the team.
 
 The Project 3 documentation, source and evidence file set is complete.
-The final demonstration URL remains blank by instruction, so the complete
-Project 3 submission is not yet 100% finished.
+The final demonstration URL is recorded in Video_Link.txt. Final video content
+and public reviewer access still need review; see VIDEO_REVIEW.md.
 
 | Organizer item | File / evidence | Status |
 | --- | --- | --- |
@@ -21,7 +21,7 @@ Project 3 submission is not yet 100% finished.
 | Simulation PDF | Simulation/simulation_report.pdf | Complete |
 | FPGA execution files | PYNQ_Hardware/; matching BIT/HWH/XSA, executed notebooks, data and saved results | Complete |
 | File manifest | Documentation/FILE_MANIFEST.json; SHA-256 and sizes for every other Project 3 file | Complete |
-| Final demo video URL | Video_Link.txt | Intentionally blank; outstanding |
+| Final demo video URL | Video_Link.txt | Final link present; content/access review pending |
 
 The RTL test passed 28,672/28,672 exact signed Q4.12 samples (20,480 payload and
 8,192 zero-flush samples) across 14 batches. The maximum error is 0 LSB; stalls,

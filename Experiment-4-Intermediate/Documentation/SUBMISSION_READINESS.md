@@ -2,7 +2,8 @@
 
 Audit: 9 October 2026 (IST). Reference: repository-root `Submission_Guidelines/documents_req.pdf`.
 
-**Required technical documentation and saved implementation/test evidence are present. Submission is not 100% complete.** The final demo link is intentionally blank, the final video must cover the requested content, and the team name remains pending. The user confirmed both members and registration numbers. No arbitrary percentage is assigned.
+**Required technical files, team identity and final demo link are present.**
+Final video content and public reviewer access still need review; see VIDEO_REVIEW.md.
 
 | Organizer item | Status | Evidence / remaining work |
 | --- | --- | --- |
@@ -20,25 +21,23 @@ Audit: 9 October 2026 (IST). Reference: repository-root `Submission_Guidelines/d
 | Simulation/simulation_report.pdf | Present | Simulator, coverage, output, waveform and reproduction |
 | Images/block_diagram.png | Present | Original source-derived diagram |
 | Images/rtl_schematic.png | Present, source-derived | Genuine Yosys schematic, proprietary clock/VIO black boxes; not a Vivado GUI capture. SVG/netlist/tool transcript/recipe included |
-| Images/board_setup.jpg | Present | User-supplied real PYNQ-Z2/USB/Ethernet photo |
+| Images/board_setup.jpg | Present | Team real PYNQ-Z2/USB/Ethernet photo |
 | Images/hardware_output.jpg | Present | Final actual VIO decimal/signed screenshot |
 | Original FPGA programming files | Present | Matching original 6 October 21:08 .bit/.ltx, exact bytes retained |
 | Original routed reports/logs | Present | Success marker, batch log/journal, timing/clock/utilization/DRC/methodology/bus-skew |
 | FPGA project files | Present with relocation caveat | FPGA_Project/ contains original laptop .xpr and clock/VIO IP source archive; original paths/run settings retained, generated caches/runs excluded; Tcl/launcher recreate a clean project |
 | Physical numeric validation | Present | Original 45-row CSV and independent audit: 45/45 exact reference matches |
 | Permanent radix fix | Present | Reader honors INPUT_VALUE_RADIX; current script retains live-tested correction |
-| Final video / Drive URL | Pending by request | Video_Link.txt is zero bytes; final narration/content/upload remain |
-| Verified team identity | Partly complete | Shanshank Pulipati (25BEC0573), Kartik Yadav (25BEC0087) confirmed; team name pending |
+| Final video / Drive URL | Link present | Video_Link.txt; content/access review pending |
+| Verified team identity | Complete | Beyond Boolean; Shanshank Pulipati (25BEC0573), Kartik Yadav (25BEC0087) |
 | Current local simulation | Passed | Full regression and three-case waveform test rerun successfully with Vivado XSim 2025.1.1 on 9 October 2026 (IST); current_xsim files preserved |
-| Team-wide final report / all five packages | Repository-wide pending | 3/4/5 linked; other completed packages and combined final PDF needed |
+| Team-wide final report / all five packages | Present, outside this audit | All five folders and Final_Report/Beyond_Boolean_Final_Report.pdf exist; projects 1/2 retain their existing content; combined PDF sections 3–5 refreshed |
 | Repository name convention | Needs review | Selected buildx-demo remains; organizer requests FPGA-Build-Challenge-TeamLeader name |
 
-## Remaining inputs
+## Final review items
 
-1. Final narrated Project 4 video Drive URL when ready; intentionally leave it blank now.
-2. Team name for README/report identity; both member names and registration numbers are now filled.
-3. If your evaluator specifically requires a **Vivado GUI schematic**, supply that capture. The organizer requests an RTL schematic image; the included actual Yosys schematic meets that file category and is labeled accurately. The native source project is now archived; a full generated workspace is not claimed.
+1. Review the final demo content and anonymous reviewer access (VIDEO_REVIEW.md).
+2. Organizer naming convention: the repository is currently buildx-demo; confirm the required name before submission.
+3. Confirm the organizer deadline or extension; the printed PDF lists 23 September 2026.
 
-The earlier work history describes a short hardware clip demonstrating the board and three cases. The user has now supplied a Drive recording titled Video Demo(script to be voice-over).mp4; its metadata is verified and its URL is preserved in Evidence/RAW_VIDEO.md. This task has not reviewed that linked recording's contents or verified public judge access. Check the final edit for introduction, problem, architecture/RTL in software, working setup/demonstration and conclusion. Video_Link.txt stays empty as requested.
-
-The latest successful artifacts were separated from old/failed/mocked runs. Historical review notes retain their old pending-board wording as historical evidence; later CSV/screenshots establish current physical completion.
+The native source project is archived. The RTL image is a genuine Yosys/Graphviz elaboration with vendor IP black boxes; the organizer requests an RTL schematic image and does not explicitly require a Vivado GUI export. Historical notes describe their original review date; raw logs and physical CSV/screenshots are preserved.

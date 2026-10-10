@@ -12,4 +12,4 @@ The exact project title, 16-16-4 topology, two runtime banks, independent guard,
 
 **Operator flow:** reset leaves no active model; the hardware script loads, reads back, seals and commits it. Presets are synthetic frames generated on the FPGA at 1 kHz. Live RUN is selected by the script and can also be requested by SW0 once live mode is selected. Physical button/switch positions must be checked before arming.
 
-**Testing:** the source pack is locally simulated and linted. XSim and actual FPGA implementation run on the user's laptop. Build/API mocks verify failure handling and host script consistency, and are explicitly not Vivado or physical-board evidence.
+**Testing:** the source pack is locally simulated and linted. XSim and actual FPGA implementation run on the build workstation. Build/API mocks verify failure handling and host script consistency, and are explicitly not Vivado or physical-board evidence.

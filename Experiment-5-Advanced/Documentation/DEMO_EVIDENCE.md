@@ -1,6 +1,10 @@
+# Earlier recording evidence
+
+This note describes the earlier recording and saved hardware observations. The replacement final demo is listed in Documentation/VIDEO_REVIEW.md; its content has not been independently reviewed.
+
 # Demo evidence and limitations
 
-Final supplied demo: https://drive.google.com/file/d/1cCgPG9Q1963mofc-caVfxCnzxhqogs_V/view?usp=sharing
+Final supplied demo: https://drive.google.com/file/d/11JItdx7IdNwuDhve5nBIV5tBiZsHoPV7/view?usp=sharing
 
 The accepted edit removes waiting gaps and aligns board clips with screen commands. Clips 1-4 are associated by their visible LED states; their exact original synchronization is not established. Clips 5-8 were identified by the operator as the emergency, explicit-clear, watchdog and recovery steps.
 

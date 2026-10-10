@@ -31,14 +31,16 @@ Experiment 3 includes its completed seven-section report, original HLS source,
 generated RTL/dependencies, Verilog testbench, actual passing 28,672-sample RTL
 waveform/transcript/report, real Vivado schematic, board/Jupyter photographs,
 build reports, matching BIT/HWH/XSA, executed board notebooks and saved results.
-Its final video link is intentionally blank. See
+Its final demo URL is recorded in Video_Link.txt. See
 [the Project 3 checklist](Experiment-3-Intermediate/Documentation/SUBMISSION_READINESS.md).
 
 The organizer's original checklist is in
 [`Submission_Guidelines/documents_req.pdf`](Submission_Guidelines/documents_req.pdf).
 It requests one repository containing all five experiments and a combined team
 report. The [combined team report](Final_Report/Beyond_Boolean_Final_Report.pdf)
-now contains all five project reports and a current evidence/status overview.
+contains all five project reports; the Project 3–5 sections and corresponding
+status overview were refreshed on 10 October. Projects 1 and 2 retain their
+existing content and limitations.
 See [the whole-entry checklist](Final_Report/SUBMISSION_STATUS.md) for remaining items.
 
 The requested naming convention is `FPGA-Build-Challenge-TeamLeader name`.
@@ -70,16 +72,16 @@ source-elaborated schematic, board/VIO screenshots, physical 45-case CSV and
 original routed FPGA files are included. The unchanged RTL passed both test
 suites again in Vivado XSim 2025.1.1 on 9 October 2026 (IST). The native project
 descriptor/IP files are archived alongside reproducible build scripts.
-The raw supplied video is linked in its evidence notes; the final
-`Video_Link.txt` remains empty as requested. The final narrated video remains pending. No new physical-board run is claimed by this upload.
+The raw video is referenced in the evidence notes; the final edit is linked in
+`Video_Link.txt`. See Documentation/VIDEO_REVIEW.md for content/access review status.
 
 ## Experiment 5
 
 [Project report](Experiment-5-Advanced/Documentation/Project5_Report.pdf) | [Simulation report](Experiment-5-Advanced/Simulation/simulation_report.pdf) | [Submission checklist](Experiment-5-Advanced/Documentation/SUBMISSION_CHECKLIST.md)
 
-[Final supplied Project 5 demo](https://drive.google.com/file/d/1cCgPG9Q1963mofc-caVfxCnzxhqogs_V/view?usp=sharing).
+[Final Project 5 demo](https://drive.google.com/file/d/11JItdx7IdNwuDhve5nBIV5tBiZsHoPV7/view?usp=sharing).
 
-The report covers all seven organizer sections and preserves measured timing/resource and test evidence. The accepted hardware edit lacks the full introductory/RTL presentation segment and ends with watchdog STOP still latched; these limitations are recorded accurately. Original core CSV/PASS exports are now included and verified. See the checklist for project-specific and whole-entry gaps.
+The report covers all seven organizer sections and preserves measured timing/resource and test evidence. The earlier hardware edit lacked presentation sections and ended with watchdog STOP still latched. A replacement final edit is linked; see the project video-review note for its content/access review status. Original core CSV/PASS exports are now included and verified. See the checklist for project-specific and whole-entry gaps.
 
 
 ## Experiment 2

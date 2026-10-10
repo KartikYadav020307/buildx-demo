@@ -42,7 +42,7 @@ Not executed during preparation:
 - Physical timing/resource/power measurements or sustained application throughput.
 
 The Vivado Tcl flow targets 2025.1.1 and uses documented AMD interfaces.
-It must still be run on the user's installed Vivado and checked as described
+It must still be run on the installed Vivado and checked as described
 in START_HERE.md. There is no prebuilt `.bit`, `.ltx`, or `.xpr` in this pack.
 
 The on-board counters report core edge-to-edge latency, compensating for

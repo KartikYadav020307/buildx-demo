@@ -4,9 +4,9 @@
 
 **Working outline: complete the physical implementation evidence before
 exporting this as the submission PDF.** The source pack has been simulated;
-it has not been programmed onto the user's board during preparation.
+it has not been programmed onto the physical board during preparation.
 
-Team: [enter team name, member names, registration numbers]
+Team: Beyond Boolean; Shanshank Pulipati (25BEC0573), Kartik Yadav (25BEC0087).
 Board: PYNQ-Z2, Zynq-7000 XC7Z020-1CLG400C.
 Tools: Vivado 2025.1.1; optional NumPy training/reference scripts.
 
@@ -44,7 +44,7 @@ checks cover streaming bursts and bubbles, input latching, reset abort and
 recovery, held toggle commands, busy-command rejection, argmax ties, and
 ReLU saturation.
 
-The preparation run passes with Icarus Verilog 12.0. Add the user's Vivado
+The preparation run passes with Icarus Verilog 12.0. Add the corresponding Vivado
 XSim transcript and waveform, and state its actual result.
 
 Model dataset split: 90 train, 15 validation, 45 held-out test. Normalization

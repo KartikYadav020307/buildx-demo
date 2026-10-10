@@ -43,7 +43,7 @@ validated arrhythmia classifier or a hardware QRS detector.
 | `Simulation/` | Original HLS reports plus executed RTL waveform, transcript, samples and report |
 | `Images/` | Actual board/Jupyter captures, real Vivado PDF/PNG, original result plots and source-derived block diagram |
 | `PYNQ_Hardware/` | Matching BIT/HWH/XSA, executed notebooks, input data and captured results |
-| `Video_Link.txt` | Intentionally empty until the final demo URL is supplied |
+| `Video_Link.txt` | Final demo URL recorded; content/access review status in Documentation/VIDEO_REVIEW.md |
 
 The synthesis top is named `ecg_bandpass_filter`, rather than the organizer's
 generic example `top_module`. Its generated submodules are now included as files
@@ -94,4 +94,4 @@ Source: https://physionet.org/content/mitdb/1.0.0/.
 
 ## Completion package update - 9 October 2026
 
-Independent Icarus RTL simulation, the original Jupyter capture, actual PYNQ-Z2 photograph and real Vivado hierarchy PDF/PNG are included. The report incorporates these captures and the confirmed Beyond Boolean team details. See Documentation/SUBMISSION_READINESS.md. The final demo link remains blank by instruction; the physical-board run was not repeated.
+Independent Icarus RTL simulation, the original Jupyter capture, actual PYNQ-Z2 photograph and real Vivado hierarchy PDF/PNG are included. The report incorporates these captures and the confirmed Beyond Boolean team details. See Documentation/SUBMISSION_READINESS.md. The final demo link is recorded in Video_Link.txt; the physical-board run was not repeated.

@@ -1,5 +1,5 @@
 {
-  "source": "user-uploaded hardware_test_results.csv, 7 October 2026",
+  "source": "recorded physical-board hardware_test_results.csv, 7 October 2026",
   "rows": 45,
   "unique_indices": 45,
   "independent_frozen_reference_matches": 45,

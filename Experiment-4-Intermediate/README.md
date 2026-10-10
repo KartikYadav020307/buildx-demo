@@ -11,7 +11,9 @@ A trained **4 -> 4 ReLU -> 3 Iris classifier** on PYNQ-Z2 compares a parallel pi
 - [Original physical-board CSV](Evidence/hardware_test_results.csv)
 - [Source schematic](Images/rtl_schematic.png) and [actual waveform](Simulation/waveform.png)
 
-**Final demo URL:** intentionally blank in `Video_Link.txt`. The supplied [raw video](Evidence/RAW_VIDEO.md) is preserved as an evidence reference; the final narrated edit remains pending. Members are Shanshank Pulipati (25BEC0573) and Kartik Yadav (25BEC0087); team name is pending. The documented implementation and test evidence are present, but submission is not 100% complete while final video and team name remain open.
+**Team:** Beyond Boolean — Shanshank Pulipati (25BEC0573), Kartik Yadav (25BEC0087).
+
+**Final demo:** [Drive video](https://drive.google.com/file/d/1iKShZ_66BI91TXDw6vPuZwFjw929anQ-/view?usp=sharing). See [video review](Documentation/VIDEO_REVIEW.md) for content/access review status. The raw recording remains in Evidence/RAW_VIDEO.md.
 
 | Verified metric | Result |
 | --- | --- |
@@ -33,7 +35,7 @@ Core latency excludes host/USB/JTAG overhead. The wrapper waits for both cores; 
 
 Keep the board's working power/SD boot setup, connect USB/JTAG, then use Vivado Hardware Manager to program **the matching `Results/nn_board_top.bit` and `Results/nn_board_top.ltx` pair**. No rebuild is needed for the demonstrated frozen model.
 
-Source `Vivado/hardware_test.tcl` using this folder's actual absolute path on your PC. It resets and validates all 45 held-out cases, writing fresh `Results/hardware_test_results.csv`. The original uploaded CSV remains separately preserved in `Evidence/`.
+Source `Vivado/hardware_test.tcl` using this folder's actual absolute path on your PC. It resets and validates all 45 held-out cases, writing fresh `Results/hardware_test_results.csv`. The original recorded CSV remains separately preserved in `Evidence/`.
 
 Then run:
 ```tcl
