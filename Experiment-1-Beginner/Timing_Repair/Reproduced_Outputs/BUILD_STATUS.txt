@@ -1,0 +1,2 @@
+TIMING PASSED: setup, hold and pulse width under the unchanged 8 ns clock constraint.
+Mode: repaired. Physical-board verification of this new BIT/LTX remains pending.

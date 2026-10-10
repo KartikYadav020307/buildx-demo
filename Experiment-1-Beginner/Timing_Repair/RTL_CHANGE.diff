@@ -1,0 +1,94 @@
+--- Project1_AES_Timing_Repair/Original_RTL/aes_core.v	2026-10-10 09:54:52.599019411 +0000
++++ Project1_AES_Timing_Repair/RTL/aes_core.v	2026-10-10 09:56:35.310214983 +0000
+@@ -1,4 +1,3 @@
+-/* STREAMING_CHUNK:Defining module inputs and FSM states... */
+ `timescale 1ns / 1ps
+ module aes_core (
+ input wire clk,
+@@ -20,7 +19,8 @@
+ reg [127:0] state_data;
+ reg [127:0] round_keys [0:10];
+ reg [3:0] k_idx;
+-/* STREAMING_CHUNK:Defining the Rijndael S-Box lookup table... */
++// Direct previous-key register avoids the indexed key-bank read in expansion.
++reg [127:0] previous_key;
+ // Rijndael S-Box lookup table function
+ function [7:0] sbox_lut(input [7:0] in_byte);
+ case (in_byte)
+@@ -90,7 +90,6 @@
+ 8'hfc: sbox_lut = 8'hb0; 8'hfd: sbox_lut = 8'h54; 8'hfe: sbox_lut = 8'hbb; 8'hff: sbox_lut = 8'h16;
+ endcase
+ endfunction
+-/* STREAMING_CHUNK:Configuring Round Constants and Galois Field Math... */
+ // Round Constant (Rcon) lookup
+ function [7:0] rcon(input [3:0] idx);
+ case (idx)
+@@ -111,16 +110,15 @@
+ function [7:0] xtime(input [7:0] b);
+ xtime = (b[7]) ? ((b << 1) ^ 8'h1b) : (b << 1);
+ endfunction
+-/* STREAMING_CHUNK:Structuring the Key Expansion Logic... */
+ // Key Expansion Combinational Logic
+ reg [31:0] k_w0, k_w1, k_w2, k_w3;
+ reg [31:0] rot_sub_w;
+ reg [31:0] next_w0, next_w1, next_w2, next_w3;
+ always @(*) begin
+-k_w0 = round_keys[k_idx-1][127:96];
+-k_w1 = round_keys[k_idx-1][95:64];
+-k_w2 = round_keys[k_idx-1][63:32];
+-k_w3 = round_keys[k_idx-1][31:0];
++k_w0 = previous_key[127:96];
++k_w1 = previous_key[95:64];
++k_w2 = previous_key[63:32];
++k_w3 = previous_key[31:0];
+ // RotWord + SubWord + Rcon on the last word
+ rot_sub_w = {sbox_lut(k_w3[23:16]) ^ rcon(k_idx),
+ sbox_lut(k_w3[15:8]),
+@@ -131,7 +129,6 @@
+ next_w2 = k_w2 ^ next_w1;
+ next_w3 = k_w3 ^ next_w2;
+ end
+-/* STREAMING_CHUNK:Building SubBytes and ShiftRows combinational paths... */
+ // ---------------------------------------------------------
+ // AES ROUND TRANSFORMATION BLOCKS (Combinational)
+ // ---------------------------------------------------------
+@@ -170,7 +167,6 @@
+ assign shift_rows_out[39:32]   = sub_bytes_out[71:64];
+ assign shift_rows_out[7:0]     = sub_bytes_out[39:32];
+ 
+-/* STREAMING_CHUNK:Constructing MixColumns math logic... */
+ // 3. MixColumns Transformation
+ wire [127:0] mix_cols_out;
+ genvar c;
+@@ -186,7 +182,6 @@
+ assign mix_cols_out[(3-c)*32 + 0 +: 8] = xtime(a0) ^ a0 ^ a1 ^ a2 ^ xtime(a3);
+ end
+ endgenerate
+-/* STREAMING_CHUNK:Finalizing the FSM Sequential Control block... */
+ // ---------------------------------------------------------
+ // SEQUENTIAL STATE MACHINE (Iterative Control)
+ // ---------------------------------------------------------
+@@ -196,6 +191,7 @@
+ round_ctr <= 4'd0;
+ k_idx <= 4'd1;
+ state_data <= 128'd0;
++previous_key <= 128'd0;
+ ciphertext <= 128'd0;
+ done <= 1'b0;
+ end else begin
+@@ -205,6 +201,7 @@
+ if (start) begin
+ // Initial AddRoundKey (Round 0)
+ round_keys[0] <= key;
++previous_key <= key;
+ state_data <= plaintext ^ key;
+ k_idx <= 4'd1;
+ state <= S_KEY_EXP;
+@@ -213,6 +210,7 @@
+ S_KEY_EXP: begin
+ // Expand 10 round keys over 10 clock cycles to save area (LUTs)
+ round_keys[k_idx] <= {next_w0, next_w1, next_w2, next_w3};
++previous_key <= {next_w0, next_w1, next_w2, next_w3};
+ if (k_idx == 4'd10) begin
+ round_ctr <= 4'd1;
+ state <= S_ROUNDS;

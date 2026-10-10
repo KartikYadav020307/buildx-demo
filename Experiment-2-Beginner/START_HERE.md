@@ -1,9 +1,11 @@
-# Project 2 - use the verified package
+# Project 2 - verified radar package
 
-Read `README.md` for scope, evidence, all required files and remaining inputs. The original successful build and physical board results are included. The final demo link is intentionally blank.
+Team: Beyond Boolean. Shanshank Pulipati (25BEC0573); Kartik Yadav (25BEC0087).
 
-To program the existing original BIT/LTX, open Vivado Hardware Manager, use the board's normal working power/boot setup and USB/JTAG, and source `Vivado/program_board.tcl` from this folder. Source `Vivado/hardware_test.tcl` to run the complete verification. No rebuild or original `.xpr` is needed to program the included hardware files. Programming and tests clear/rewrite old physical result files, so work in a separate copy to preserve the archive.
+Read [README.md](README.md) for the exact scope and evidence. The [final video](https://drive.google.com/file/d/1GVxgJAPUFZR8cL2akO7Jz29AENO5zwNO/view?usp=sharing) is recorded in `Video_Link.txt`; playback/content and anonymous access still require review.
 
-To reproduce the entire build, use a folder path without spaces, run `RUN_PROJECT2.cmd`, wait for BUILD SUCCESS, then run `OPEN_PROJECT2.cmd`. The build creates a genuine native `.xpr` and generated VIO IP and records the project path in `Results/project_path.txt`. To open the recovered original laptop project instead, extract the whole `FPGA_Project/Project2_Radar_Vivado_Source.zip` and open `Project2_Radar_Final/Build/run_20261008_222502/project2_radar.xpr`. Preserve its folder layout; Vivado may need to regenerate IP/build products. A build clears existing result markers/hardware outputs before creating new ones.
+Use the original matched `Hardware/radar_top.bit` and `radar_top.ltx` in Hardware Manager with the normal PYNQ boot/power setup and USB/JTAG. `Vivado/program_board.tcl` programs the board; `Vivado/hardware_test.tcl` performs verification. Programming/testing replaces saved results, so use a separate copy.
 
-`Documentation/SUBMISSION_READINESS.md` lists the final video as the only remaining Project 2 input. Original routed reports/checkpoint and native `.xpr`/IP source archive are now included; `Reports/README.md` documents the reviewed implementation warnings. The technical report, simulation report, exact RTL/testbenches, real waveforms and actual board/PASS images are already present.
+For reproduction, use a path without spaces and run `RUN_PROJECT2.cmd`, followed by `OPEN_PROJECT2.cmd` after BUILD SUCCESS. This build replaces outputs; preserve the archive first. To open the original project, extract `FPGA_Project/Project2_Radar_Vivado_Source.zip` and open `Project2_Radar_Final/Build/run_20261008_222502/project2_radar.xpr`, retaining the full relative layout.
+
+[Submission checklist](Documentation/SUBMISSION_READINESS.md) | [Validation](Documentation/FINAL_VALIDATION.md) | [Warning review](Reports/README.md)
