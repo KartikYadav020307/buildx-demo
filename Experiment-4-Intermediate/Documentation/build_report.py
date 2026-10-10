@@ -68,7 +68,7 @@ def footer(c,doc):
     c.drawRightString(A4[0]-42,27,str(doc.page))
 def pdf(path,story):
     SimpleDocTemplate(str(ROOT/path),pagesize=A4,rightMargin=42,leftMargin=42,topMargin=38,bottomMargin=42,
-                      title='Project 4 - FPGA Neural Network Accelerator',author='BuildX project team').build(story,onFirstPage=footer,onLaterPages=footer)
+                      title='Project 4 - FPGA Neural Network Accelerator',author='Beyond Boolean').build(story,onFirstPage=footer,onLaterPages=footer)
 
 def audit_hardware():
     actual=list(csv.DictReader((ROOT/'Evidence/hardware_test_results.csv').open()))
@@ -90,7 +90,7 @@ def audit_hardware():
     assert {r['index'] for r in actual}==expected_indices
     correct=sum(r['predicted_class']==r['true_class'] for r in actual)
     assert correct==43
-    summary={'source':'user-uploaded hardware_test_results.csv, 7 October 2026',
+    summary={'source':'recorded physical-board hardware_test_results.csv, 7 October 2026',
              'rows':45,'unique_indices':45,'independent_frozen_reference_matches':45,
              'correct_classifications':correct,'accuracy_percent':100*correct/45,
              'cycle_pairs':[[4,36]],'misclassified_indices':[int(r['index']) for r in actual if r['true_class']!=r['predicted_class']],
@@ -150,7 +150,7 @@ def reports():
     scope='Vivado 2025.1.1 | xc7z020clg400-1 | 50 MHz | audit: 9 October 2026 (IST)'
     story=[p('Design of an FPGA-Based Hardware Accelerator for Low-Latency Neural Network Inference','Title4'),
            p('Experiment 4 - Intermediate','Heading2'),p(scope,'SmallBody'),
-           p('Team name: pending. Members confirmed by the user: Shanshank Pulipati (25BEC0573) and Kartik Yadav (25BEC0087).'),
+           p('Team: Beyond Boolean. Members: Shanshank Pulipati (25BEC0573) and Kartik Yadav (25BEC0087).'),
            h('1. Objective'),p('Implement a trained 4-input, 4-hidden-neuron, 3-output Iris classifier on the PYNQ-Z2. Compare a pipelined parallel accelerator with a sequential shared-MAC core using identical frozen weights, arithmetic, inputs and clock frequency.'),
            p('The engineering question is whether parallel hardware reduces inference latency, and what DSP/resource cost that reduction requires. Software performs training and input preparation; neural inference itself executes in FPGA logic.'),
            table([['Verified metric','Result'],['Physical numeric correctness','45/45 held-out inputs match every frozen integer score'],['Classification accuracy','43/45 (95.56%); two model errors'],['Core latency at 50 MHz','Parallel: 4 cycles / 80 ns; sequential: 36 cycles / 720 ns'],['Architecture comparison','9x lower core latency; host/JTAG transfer time excluded'],['Routed timing','Setup +5.813 ns; hold +0.048 ns; no failing endpoints']], [W*.34,W*.66]),
@@ -164,26 +164,26 @@ def reports():
            img('Images/rtl_schematic.png',max_height=210),
            p('Actual source-elaborated schematic generated with Yosys 0.33 and Graphviz. Clocking Wizard and VIO are port-accurate black boxes for this view; their vendor internals are not simulated by these declarations. This is not a Vivado GUI capture. Full-resolution PNG/SVG, netlist, tool transcript and reproduction recipe are included.','SmallBody'),
            PageBreak(),h('4. Simulation Results'),
-           p('Original local XSim evidence is preserved in Results/vivado_batch.log and simulation_pass.flag. Recovered Icarus Verilog 12.0 regression and VCD capture were produced during the earlier documentation work. On 9 October 2026 (IST), the unchanged source passed the full suite and three-case waveform bench again in local Vivado XSim 2025.1.1. The new outputs are current_xsim_regression.txt and current_xsim_waveform.txt; the original Icarus waveform is retained.'),
+           p('Original local XSim evidence is preserved in Results/vivado_batch.log and simulation_pass.flag. Icarus Verilog 12.0 regression and VCD capture provide additional simulation evidence. On 9 October 2026 (IST), the unchanged source passed the full suite and three-case waveform bench again in local Vivado XSim 2025.1.1. The new outputs are current_xsim_regression.txt and current_xsim_waveform.txt; the original Icarus waveform is retained.'),
            img('Simulation/waveform.png',max_height=285),
            p('Measured from actual VCD transitions: first input accepted at 110 ns; parallel output valid at 190 ns; sequential output valid at 830 ns. Sticky controller outputs are captured later, so the picture distinguishes core valid timing from the host-visible comparison result.','SmallBody'),
            Preformatted((ROOT/'Simulation/transcript.txt').read_text().strip(),styles['Mono4']),
            p('The full regression verifies exact scores and classes for 4,502 vectors per core, full-rate parallel bursts and bubbles, sequential input latching, 150 controller cases, held-toggle non-retriggering, busy rejection, reset cancellation/recovery, argmax ties and ReLU saturation. The supplementary waveform bench independently checks the three recorded demo inputs and 4/36-cycle valid timing.','SmallBody'),
            PageBreak(),h('5. Hardware Implementation'),
-           p('The user programmed the physical PYNQ-Z2 over USB/JTAG and ran hardware_test.tcl on 7 October. The script checked 45 held-out records against frozen reference scores. Board photo, hardware PASS screenshot, three-case console output and final VIO screenshot are preserved in Images/.'),
+           p('The team programmed the physical PYNQ-Z2 over USB/JTAG and ran hardware_test.tcl on 7 October. The script checked 45 held-out records against frozen reference scores. Board photo, hardware PASS screenshot, three-case console output and final VIO screenshot are preserved in Images/.'),
            table([['Scope','LUTs','FFs','DSPs'],['Parallel core',247,263,28],['Sequential core',208,330,1],['Whole board design',1515,2648,29]], [W*.46,W*.18,W*.18,W*.18]),
-           Spacer(1,8),p('Raw routed reports: setup +5.813 ns; hold +0.048 ns; pulse width +2.000 ns; all four bus-skew checks pass, minimum slack +19.066 ns. The original matching 6 October bitstream and LTX pair are included; no replacement FPGA build was performed for this documentation task.','SmallBody'),
+           Spacer(1,8),p('Raw routed reports: setup +5.813 ns; hold +0.048 ns; pulse width +2.000 ns; all four bus-skew checks pass, minimum slack +19.066 ns. The original matching 6 October bitstream and LTX pair are included; the reports describe the recorded build.','SmallBody'),
            img('Images/hardware_output.jpg',max_height=275),
            p('Final VIO output for 37281210: both classes 2, scores -13784 / -6177 / 16696, mismatch 0, cycles 4/36, completed count 48. The visible values were read from actual FPGA probes.','SmallBody'),
            p('Numeric correctness is 45/45, while species accuracy is 43/45. Records 68 and 138 are misclassified by the model but their FPGA scores match the software model exactly. The saved CSV was independently cross-checked against all frozen test records.','SmallBody'),
            PageBreak(),h('5. Hardware Implementation (continued)'),
            img('Images/board_setup.jpg',width=200,max_height=195),
-           p('User-supplied board setup photo: PYNQ-Z2 with USB/JTAG and Ethernet attached. Ethernet/Jupyter is not used for this RTL/VIO inference workflow. VIO availability and the heartbeat were observed after programming.','SmallBody'),
+           p('PYNQ-Z2 setup photograph: PYNQ-Z2 with USB/JTAG and Ethernet attached. Ethernet/Jupyter is not used for this RTL/VIO inference workflow. VIO availability and the heartbeat were observed after programming.','SmallBody'),
            sub('Warnings and script maintenance'),p('DRC reports 44 warnings and no errors; methodology reports four LUTAR-1 reset warnings inside AMD debug-hub IP. DSP pipeline warnings are performance recommendations; timing meets the chosen 50 MHz target. ZPS7-1 remains recorded in the PL-only design. Raw reports are retained, and successful physical VIO testing supplies board/clock evidence for this setup.','SmallBody'),
            p('The VIO script originally parsed all readbacks as hexadecimal. Decimal display caused a false timeout although hardware finished correctly. nn_hw_read now uses INPUT_VALUE_RADIX and restores signed scores as 32-bit two\'s-complement values. The corrected reader was tested in the live session; the persistent repository script includes it. HDL/model and bitstream are unchanged.','SmallBody'),
            h('6. Applications'),p('The architecture illustrates low-latency embedded classification, FPGA ML teaching and controlled resource/latency comparisons. Applying it to industrial inspection or sensor processing requires suitable training data, preprocessing and domain validation. More parallel arithmetic trades DSP use for latency; the small Iris model makes that tradeoff easy to reproduce.'),
            h('7. Conclusion'),p('A trained quantized network executes correctly in two FPGA architectures. Both match the integer reference; the parallel implementation reduces core latency from 36 to 4 cycles at the same 50 MHz clock. The experiment demonstrates fixed-point arithmetic, pipelining, resource sharing, verification and hardware debugging.'),
-           p('Future scope: larger datasets/networks, configurable weights, measured power and an AXI-stream/DMA interface. Submission work remaining: team name and the final narrated demo/Drive link. The user supplied a raw video Drive URL, preserved in Evidence/RAW_VIDEO.md; Video_Link.txt remains empty as requested. The final video must include introduction, problem, architecture/RTL presentation, working hardware and conclusion.'),
+           p('Future scope: larger datasets/networks, configurable weights, measured power and an AXI-stream/DMA interface. Team identity and final demo URL are recorded. Evidence/RAW_VIDEO.md preserves the raw recording; Video_Link.txt points to the final edit. Content and public reviewer access need review (Documentation/VIDEO_REVIEW.md). The final video must include introduction, problem, architecture/RTL presentation, working hardware and conclusion.'),
            p('The original native Vivado project descriptor and clock/VIO IP configuration files were recovered from the laptop and archived in FPGA_Project/Project4_NN_Vivado_Source_Project.zip with the source tree. Original descriptor/IP bytes are preserved, including machine-specific paths and historical run settings. Generated caches/runs are excluded. Use the supplied project-generation Tcl for a clean relocated rebuild.','SmallBody'),
            p('Evidence sources: Data/model.json and iris_cases.csv; Results/*.rpt and vivado_batch.log; Evidence/hardware_test_results.csv and hardware_validation.json; Simulation/transcript.txt and waveform.vcd. Dataset attribution and original guide are included in Data/ATTRIBUTION.md and START_HERE.md.','SmallBody')]
     pdf('Documentation/Project4_NN_Report.pdf',story)

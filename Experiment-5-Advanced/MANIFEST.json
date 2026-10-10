@@ -3,12 +3,12 @@
   "version": "1.1-submission",
   "target_part": "xc7z020clg400-1",
   "vivado": "2025.1/2025.1.1",
-  "scope": "Reproducible build/model/test/host inputs; refreshed for portable uploaded build pointer. Generated evidence and reports are inventoried separately in SHA256SUMS.txt.",
+  "scope": "Reproducible build/model/test/host inputs; refreshed for portable recorded build pointer. Generated evidence and reports are inventoried separately in SHA256SUMS.txt.",
   "files": [
     {
       "path": "Data/cautious_golden.mem",
-      "sha256": "8c6494add987b8265f509a3f396afaa19ed33be5a07310254f9165436d380cf5",
-      "size_bytes": 1376256
+      "sha256": "caf907badae3f3685195bb5fde69b3782fb9a19c80e5e4d338e7c45a9b498905",
+      "size_bytes": 1441792
     },
     {
       "path": "Data/cautious_hardware_cases.csv",
@@ -17,8 +17,8 @@
     },
     {
       "path": "Data/cautious_splits.json",
-      "sha256": "28ba4173a723d319af51c5f41c6e3b4dd4a2c80b548ec95d65a531fa9e664ea6",
-      "size_bytes": 5572
+      "sha256": "a04e3d443c35944c3928b6f31a68589e15696fa1a94d54fd715409784dd282f4",
+      "size_bytes": 6204
     },
     {
       "path": "Data/dataset.csv",
@@ -27,8 +27,8 @@
     },
     {
       "path": "Data/normal_golden.mem",
-      "sha256": "31df15144f5e54a71fa6ff4d72e1aaf4312bdf76fda3f1dc62e77052bb7ea5d6",
-      "size_bytes": 1376256
+      "sha256": "9da313ec59d9f2978d1b837775e8a3c9dd83284ed00dbe7e4a2855626726c76a",
+      "size_bytes": 1441792
     },
     {
       "path": "Data/normal_hardware_cases.csv",
@@ -37,18 +37,18 @@
     },
     {
       "path": "Data/normal_splits.json",
-      "sha256": "e059cb02a3236e5f122e34bb8846e31068da9a30b1b059ce0c57efd1d8f97b13",
-      "size_bytes": 5572
+      "sha256": "ac038d5607fe00931945b78112ce28d3d84fc38567999ad948cd603a80c2d52f",
+      "size_bytes": 6204
     },
     {
       "path": "Models/cautious.json",
-      "sha256": "809a59361476a5f89470f4e9796d06c6562e4634f8ea83295618ce1d47363b2d",
-      "size_bytes": 1163
+      "sha256": "3df6a3bd20b2fc794589af0ea9a4b7d393dc49655d9a79259f6f7b9373761927",
+      "size_bytes": 1263
     },
     {
       "path": "Models/cautious.mem",
-      "sha256": "231eecba49d5017a764df57747c938eefb51c8f2e430ad00ac0b9d8ca73e8116",
-      "size_bytes": 210
+      "sha256": "9ab7b0177f578211e5f4a55eb90802fd19d2ce9593b0ca4097737a7f7638b105",
+      "size_bytes": 252
     },
     {
       "path": "Models/cautious_training_checkpoint.npz",
@@ -57,18 +57,18 @@
     },
     {
       "path": "Models/metrics.json",
-      "sha256": "2fc1b00c546054a9362c9ae76b03c4f45f9a07a70397be6c63b0806cd3346357",
-      "size_bytes": 3594
+      "sha256": "1f0e44d110bcca55b895c878f1d39379eb20c8ce89de3a6dc79833f00dd1f766",
+      "size_bytes": 3856
     },
     {
       "path": "Models/normal.json",
-      "sha256": "bd917770a557760432a7d247495348e2d31668673a31ea761ae9e5fd238bd43a",
-      "size_bytes": 1192
+      "sha256": "06aeb21e3f603a0a11f3bb7bbb2d83b01045fec234133c0e8b7f5b73a6159bf7",
+      "size_bytes": 1292
     },
     {
       "path": "Models/normal.mem",
-      "sha256": "713f7ba346ecf1b03b425a30cbb8c77529882de8a29b936e9b96e9ca2de920c2",
-      "size_bytes": 210
+      "sha256": "90172292376d97e6181764a356bff8266edbc6aa12e210ece81b45814af13be5",
+      "size_bytes": 252
     },
     {
       "path": "Models/normal_training_checkpoint.npz",
@@ -77,68 +77,68 @@
     },
     {
       "path": "Python/export_training.py",
-      "sha256": "badd208f162a081ab7788f1c7fb000595317440a042d89e9a38453bbaa68412d",
-      "size_bytes": 4214
+      "sha256": "1b9b42a6bebc15d8a726049c80733f1bcdaed081e35c0f324e77c9f6b87d029d",
+      "size_bytes": 4269
     },
     {
       "path": "Python/reference.py",
-      "sha256": "0573b1445f42935e9c7073d0a14a1cf934cc7c7b0b814b2e2de847864ca485a6",
-      "size_bytes": 3310
+      "sha256": "5e6467f8f1895422fa51bfaf4ecdb6b3190c05711a8ab07be8eb77a422725d1b",
+      "size_bytes": 3358
     },
     {
       "path": "Python/requirements_optional.txt",
-      "sha256": "917e795d7b2b1fabc1f6c3970077f8582d00133d332f80b8d3d22335eabce4a0",
-      "size_bytes": 33
+      "sha256": "d07c8bd0d74ae2a858f1fd8e76428532db8de48919d7599db48cea243a8ebfa2",
+      "size_bytes": 35
     },
     {
       "path": "Python/run_open_source_tests.py",
-      "sha256": "12cbe39c4eb2f5b5905ee141ccfa040db1675768ec4f79bd163e8073172503b6",
-      "size_bytes": 1735
+      "sha256": "9a094af161af44df44370202573cf9b4350dbc8025124aee2f285fde4c319ea1",
+      "size_bytes": 1754
     },
     {
       "path": "Python/train_models.py",
-      "sha256": "682f7fd062d16e52ec5abb92a65544b42385911f51625a7c97f752a7b469b3b3",
-      "size_bytes": 2899
+      "sha256": "c91135577617ef35c8a04e6a1012fd8f170328c4a881d814975f27f25fa1c928",
+      "size_bytes": 2945
     },
     {
       "path": "RTL/bnn_board_top.sv",
-      "sha256": "bfbe34a4e62bff883c79d13f6a0575f94bd2a2e386bc26dd421947f613c1ca27",
-      "size_bytes": 3000
+      "sha256": "0e97d604df43b9a6e68367d3c18ca3a3bbc399942300d99fb5abd2d7c2dda19b",
+      "size_bytes": 3045
     },
     {
       "path": "RTL/bnn_config.sv",
-      "sha256": "af1c04f7775ee500212609c025c10fb783f9c8667bc6f1d79bb935d59e3eab23",
-      "size_bytes": 4013
+      "sha256": "87112225ddd7e9441a5a8afb7133b7aa3343e5ec3da90b539d2f094ac88993d7",
+      "size_bytes": 4095
     },
     {
       "path": "RTL/bnn_folded.sv",
-      "sha256": "1bdbcff5d1272131e0aa565fc144fc11a17c5a9d3eebf94f0cf97da45e5bb110",
-      "size_bytes": 1322
+      "sha256": "d55be8eff41a4b5d5947f35e0e4c07e29068796df636107322b4b81262290f51",
+      "size_bytes": 1355
     },
     {
       "path": "RTL/bnn_math_pkg.sv",
-      "sha256": "f605e7afe6555c1c9fe9173a1544c58692d2e8886ef81d06443398b97e61e31c",
-      "size_bytes": 1840
+      "sha256": "ffb0bb22611477ccea75ad6e747181a9234592e5788432a1920684236d52994a",
+      "size_bytes": 1882
     },
     {
       "path": "RTL/bnn_parallel.sv",
-      "sha256": "6e4b243f56e40a5192ec2915a33ae9bd4f03e95aa424d611ae85241995242d51",
-      "size_bytes": 1916
+      "sha256": "fcf8caea19c73949792d5c2395990db1d1fc7327df73ec90161fe8204f258860",
+      "size_bytes": 1958
     },
     {
       "path": "RTL/bnn_safety.sv",
-      "sha256": "1b00de8d1c55028a481ab2f454e04a4985b0d311eaf9c0f235ab07f041bbf7f4",
-      "size_bytes": 3329
+      "sha256": "d759c5b258dde3545a95c3ee63628e23bf6cd96140afb99a63874b034c7a2392",
+      "size_bytes": 3394
     },
     {
       "path": "RTL/bnn_system.sv",
-      "sha256": "8ad4c275a894ab306c631d475b5c8f21b29953f8b896cfdcdcbc6bc83703765b",
-      "size_bytes": 8824
+      "sha256": "39ee4dbd2a2bb11852c454b8277ffe28780b6d25c5f6308460196bd8e240d1bf",
+      "size_bytes": 8958
     },
     {
       "path": "RTL/pynq_z2.xdc",
-      "sha256": "96b820ff6f8ebd75e96e0d7227b1b8c0bf8d2fd8fac84a0cb886fa566f94c2ae",
-      "size_bytes": 1325
+      "sha256": "2c865ee2a14df2522ef60070d23599ca56a0787bb0847e2f71cd5e7b332cfcb7",
+      "size_bytes": 1342
     },
     {
       "path": "RUN_PROJECT5.cmd",
@@ -147,93 +147,93 @@
     },
     {
       "path": "Testbench/Mocks/mock_build.tcl",
-      "sha256": "eaf924cb5c59434ea5f7b73f3aa7e4bc52d4c4e9d5fecade8bc94c99634ace68",
-      "size_bytes": 3460
+      "sha256": "4c7fb7d18dac16f5786e71028c3f122db96c4227da579e5712d48d10b43122ae",
+      "size_bytes": 3533
     },
     {
       "path": "Testbench/Mocks/mock_hardware.tcl",
-      "sha256": "7630ea6a3304ac86b026e3784813619ad353a0d0fee0d18df1e3426f77c48cc3",
-      "size_bytes": 4037
+      "sha256": "248bd1f1f324ebe0f2a95c0fde7372c4d3301b67a35f5e3bbc3d692d23a9ba6e",
+      "size_bytes": 4107
     },
     {
       "path": "Testbench/tb_config.sv",
-      "sha256": "3901e809c3b1419f1082745f1c542d8fd4f10e71bee072cdda0b22493020f080",
-      "size_bytes": 3893
+      "sha256": "2958b608bea61d70ca9d0f1815f5f15de85254c91855ef6f159ec5aeba88b347",
+      "size_bytes": 3957
     },
     {
       "path": "Testbench/tb_cores.sv",
-      "sha256": "6e6513036a3a0bec5874c04f5aa9021c99b7a3dbc1ad6b86d1b73c9d61e85df4",
-      "size_bytes": 4674
+      "sha256": "2b007634e80ec3454d20f6ad138e1307646b5ed20ad679b735f935ec6278079e",
+      "size_bytes": 4760
     },
     {
       "path": "Testbench/tb_diagnostics.sv",
-      "sha256": "5fa2f3b983c239d44400a2697006733e540c2a8b8d29203237f788759b9275a8",
-      "size_bytes": 2866
+      "sha256": "247b4e210b55cd1c8f96e65ce12725f3c0b486497328fe0cf4c57064e7c07b03",
+      "size_bytes": 2913
     },
     {
       "path": "Testbench/tb_safety.sv",
-      "sha256": "ad91dada5c11980ee35c41bb94ca888218eeaaa9b85fb0721e6d7ed4bd5848fb",
-      "size_bytes": 3592
+      "sha256": "357f0a1ecda0994cf48dc11bec072969b9d8f78ef9cbab0c3fd5d798bd2778b4",
+      "size_bytes": 3634
     },
     {
       "path": "Testbench/tb_system.sv",
-      "sha256": "cdcd48b2c5f52a90dfd9b109e045404cb20fd85413c9d67d2208ae6deaba65bd",
-      "size_bytes": 7178
+      "sha256": "3ab7eda62da97fc948f7a7727c3b48b21fda88d84dd780c3ae7687d3ae98abd7",
+      "size_bytes": 7282
     },
     {
       "path": "Vivado/collect_reports.tcl",
-      "sha256": "4b39ef82c3187cc1342077acd7f6ed35bb54e23763eb63809f5c3b55c3981b9c",
-      "size_bytes": 3237
+      "sha256": "cffd4f53e241dd38b0b6042ddcf6830f0ffb36b4e3e5c0bc6ac70b731aac0fe2",
+      "size_bytes": 3283
     },
     {
       "path": "Vivado/create_project.tcl",
-      "sha256": "8552575264e9830c08a7324aa0b4397938bef19c7a266e74463b6a713e59df68",
-      "size_bytes": 2177
+      "sha256": "19829b4238a1aa1d50587c4f4a446d5bc9f736a43c2ae2a4dc1beed9418bf1a9",
+      "size_bytes": 2215
     },
     {
       "path": "Vivado/hardware_lib.tcl",
-      "sha256": "058b3ff39194c3ab42da61aebfe546fe1c3bd26b2ada268da12179708f2a3cc0",
-      "size_bytes": 8454
+      "sha256": "06ada4c68a13cd038488d25b7e5d10337065e57df01fca145220afa9a2168499",
+      "size_bytes": 8623
     },
     {
       "path": "Vivado/hardware_safety_test.tcl",
-      "sha256": "6d7cb3beda56122b1a0a25465492d3600853d60ce08dd0484b785fbfbb8e3044",
-      "size_bytes": 1853
+      "sha256": "eac32039dcc15d92c8e99543e5a8e91f84cd5c78251de28f261f411a6da5b83d",
+      "size_bytes": 1883
     },
     {
       "path": "Vivado/hardware_test.tcl",
-      "sha256": "5dcc755f3476904b84cd2e87b7f3935b74ade0da6173259cb1a9643efb3ab28b",
-      "size_bytes": 2802
+      "sha256": "12a3205a08e836046cbb608d61681140132b84681d702b62e15fa2e33a9711c6",
+      "size_bytes": 2845
     },
     {
       "path": "Vivado/preflight.ps1",
-      "sha256": "ea033490c73caed8685eeea36092567dedd8c5b84a9b32131b6e1b72272f857b",
-      "size_bytes": 719
+      "sha256": "bd70e6eb3a8f943a5bc644cf1f252adea968bf5858b174c12b47bf388e3df924",
+      "size_bytes": 730
     },
     {
       "path": "Vivado/program_board.tcl",
-      "sha256": "a5ac6b2f55b298341114721414f44daa8d16c7daae0e4e30f48668fcba5cee3c",
-      "size_bytes": 1453
+      "sha256": "a7e50df930d1feca4e008fdd36861f44b33f4f96a21cfde0d2f9a6dffd0c3e2a",
+      "size_bytes": 1476
     },
     {
       "path": "Vivado/run_all.tcl",
-      "sha256": "8c8cd41cbb365b9cc96d105e77a096e0bd0cf1f4be95193a74b3edb0038383b4",
-      "size_bytes": 4247
+      "sha256": "75fca31259f1496d5aebcb45e19d375e47a75637e01c4ae814f7dd401fb7d915",
+      "size_bytes": 4321
     },
     {
       "path": "Testbench/tb_waveform.sv",
-      "sha256": "0069fbc69ba309e6c8b77dc807bad3327b499c22325275ecee28d9f1ff9e808a",
-      "size_bytes": 3788
+      "sha256": "f3dfaa87a58d8ac23f2a4d230f54b1b4afea2cb3ac58707dccb7ae9fe4d69568",
+      "size_bytes": 3862
     },
     {
       "path": "Python/plot_waveform.py",
-      "sha256": "ee9788e0cd8deffeeff56fad6c7303e50f238b0eb08d6c07f6723ebcb36d72e4",
-      "size_bytes": 1646
+      "sha256": "683452aaf3e9194d79db07af91843035d9e997976eaee72c2fe9910ca1d7906b",
+      "size_bytes": 1675
     },
     {
       "path": "Vivado/unpack_bitstream.tcl",
-      "sha256": "06f212e81bd18ada22bc0253888801351c3ada30d7841558d36817745936a581",
-      "size_bytes": 581
+      "sha256": "d931648e21684870e83868c5fba639050798cfa8fee108945d3e77b988c82cbd",
+      "size_bytes": 593
     }
   ]
 }

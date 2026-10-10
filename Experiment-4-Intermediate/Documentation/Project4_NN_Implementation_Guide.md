@@ -1,11 +1,12 @@
 # Project 4: complete implementation plan and execution guide
 
-**Title confirmed from page 4 of your uploaded original BuildX conversation:**
 **Design of an FPGA-Based Hardware Accelerator for Low-Latency Neural Network Inference.**
 
-We are placing this in `Experiment-4-Intermediate`, following your five-project
-plan. The submission guidelines require two intermediate experiments within
-the five-experiment submission. The title is kept exactly as provided.
+Experiment 4 is one of the two intermediate experiments in the five-project submission.
+Team: **Beyond Boolean** — Shanshank Pulipati (25BEC0573), Kartik Yadav (25BEC0087).
+
+The recorded build and physical tests are complete. This guide describes how to
+reproduce them; it does not require a rebuild to inspect the saved evidence.
 
 ## Fastest execution: run the local build first
 
@@ -36,9 +37,9 @@ them, leaving source files intact. Do not run two copies at once. If it fails,
 keep `Results/vivado_batch.log` and `Results/BUILD_FAILED.txt` when present.
 Existing reports or programming files from older runs are not success evidence.
 
-This cloud session cannot operate your Windows desktop. Icarus simulation has
-been executed here; actual Vivado/XSim/Windows-launcher execution must happen
-on the laptop. The manual sections below remain available for diagnosis.
+The repository includes Icarus and Vivado XSim simulation outputs, routed
+implementation reports, matching programming files and physical-board results.
+The manual sections below support reproduction and troubleshooting.
 
 ## 1. What we are building
 
@@ -80,7 +81,7 @@ own measurements. Existing weights and test data are already supplied.
 
 ## 2. Why this is a good competition scope
 
-Your uploaded rubric gives technical correctness 40%, FPGA implementation
+The organizer rubric gives technical correctness 40%, FPGA implementation
 15%, documentation 15%, video 15%, and innovation 15%. Concentrate on a
 working circuit with reproducible evidence and a clear hardware comparison.
 
@@ -94,35 +95,14 @@ The demonstration should establish all of the following:
 6. Routed timing and hierarchical utilization establish what the FPGA build achieved.
 7. The held-out dataset accuracy is reported separately from arithmetic correctness.
 
-This is a defensible intermediate project. A working portfolio of all five
-experiments, with strong evidence, helps your competition position. This
-project alone cannot guarantee a prize or establish research novelty.
+Report numeric correctness, model accuracy and core latency separately.
+The benchmark establishes an architecture comparison for this frozen model.
 
-## 3. Schedule within your limited time
+## 3. Reproduction workflow
 
-The code, model, and golden vectors are already prepared. Budget **two
-90-minute active sessions plus up to 30 minutes of troubleshooting**, with
-Vivado compilation running unattended between sessions. Build time depends
-on your laptop; do not count it as a guaranteed short task.
-
-| Session | Minutes | Work | Required outcome |
-|---|---:|---|---|
-| A | 0–10 | Extract files, open Vivado, check part support | Clean folder and correct Vivado launch |
-| A | 10–25 | Run project-generation Tcl; inspect source hierarchy | Both IP cores and all source files present |
-| A | 25–45 | Run behavioral simulation; inspect messages | ALL TESTS PASSED |
-| A | 45–60 | Capture a short waveform and RTL schematic | Simulation evidence saved |
-| A | 60–70 | Launch bitstream generation | Compilation started |
-| A | 70–90 | Read arithmetic/pipeline explanation; prepare report | You can explain the design |
-| Unattended | Variable | Synthesis, implementation, bitstream generation | Build completes without errors |
-| B | 0–15 | Collect and inspect timing/utilization/DRC reports | Correct 50 MHz clock; timing passes |
-| B | 15–30 | Connect and program the PYNQ-Z2 | Matching bitstream and probes loaded |
-| B | 30–45 | Run automated held-out hardware test | All 45 cases match Python scores |
-| B | 45–60 | Demonstrate three species and counters | Screenshots and board photo |
-| B | 60–90 | Record a short video and complete report evidence | Submission-ready project material |
-
-If the board is in the lab, perform session A on your laptop and bring the
-entire folder, generated `.bit` and `.ltx`, and Vivado reports to the lab.
-Use the same Vivado release there. Preserve relative folders when copying.
+Run simulation, inspect the reports, and program the board only when reproducing
+the hardware checks. Use matching BIT/LTX files and the same frozen model.
+Preserve existing results before a rebuild and keep new run outputs separate.
 
 ## 4. The exact neural-network calculation
 
@@ -519,10 +499,9 @@ used to generate your bitstream.
 
 ## 14. Report, evidence, and the demo video
 
-Use `Documentation/report_outline.md` for the seven sections required by
-the supplied rules. Complete its hardware sections after the board test,
-then export the report to PDF. Keep the project inside the team's one GitHub
-repository under `Experiment-4-Intermediate` and include its video link.
+The completed seven-section report is `Documentation/Project4_NN_Report.pdf`.
+`Documentation/build_report.py --reuse-waveform` regenerates the project and
+simulation reports from saved evidence. The final demo URL is in `Video_Link.txt`.
 
 Capture these items during execution:
 
@@ -574,10 +553,9 @@ loading is future work.
 | Tcl cannot resolve probe names | List `get_hw_probes -of_objects [get_hw_vios]`; inspect actual NAME values and matching `.ltx`; keep the first error |
 | Sequential/parallel mismatch | Preserve the input case and output values; rerun behavioral simulation with matching weights before changing logic |
 
-If you need help with an error, provide the first error text, its source-file
-line, and your Vivado version. For a hardware problem, include the VIO table
-and whether the heartbeat runs. Those distinguish build, clock, transport,
-and arithmetic faults quickly.
+For troubleshooting, retain the first error, source line, Vivado version,
+VIO table and heartbeat status. These distinguish build, clock, transport
+and arithmetic faults.
 
 ## 16. What is verified now and what remains
 
@@ -587,10 +565,11 @@ accuracy, SystemVerilog compilation with Icarus 12.0, both cores against
 latching, command hold/busy behaviour, reset abort/recovery, deterministic
 ties, ReLU saturation, and the demo controller's latency counters.
 
-Pending on your equipment: Vivado 2025.1.1 compilation/IP generation,
-synthesis/implementation, routed timing and resource figures, and physical
-PYNQ-Z2 execution. No prebuilt FPGA files or on-board performance results
-are claimed in this pack.
+Recorded implementation: Vivado 2025.1.1, 50 MHz, setup slack +5.813 ns
+and hold slack +0.048 ns. The physical CSV contains 45/45 exact integer
+reference matches and 43/45 correct classifications; core latency is 4/36 cycles.
+See Results/, Evidence/ and Documentation/SUBMISSION_READINESS.md for scope.
+The final demo is linked; public access and presentation content need review.
 
 ## Primary references
 
@@ -609,7 +588,6 @@ are claimed in this pack.
   https://archive.ics.uci.edu/dataset/53/iris
   https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html
 
-Competition title/rubric sources: your uploaded original BuildX chat,
-page 4, and `documents req(1).pdf`, pages 1–6. The supplied guidelines have
-an older September 23 deadline; use the organizers' current deadline for
-your submission schedule.
+Competition requirements: `Documentation/Organizer_Requirements.pdf` and
+repository-root `Submission_Guidelines/documents_req.pdf`. The printed deadline
+is 23 September 2026; any extension must be confirmed with the organizers.

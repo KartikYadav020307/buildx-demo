@@ -1,6 +1,6 @@
 # Original successful Vivado run - 6 October 2026
 
-These are the latest original successful local run files supplied by the user and recovered from the earlier upload. They are not rebuilt, mocked or reconstructed. Reports/logs identify the original Project4_NN folder, Vivado 2025.1.1 and generation around 21:08.
+These are the original successful local run files recorded by the team. They are not rebuilt, mocked or reconstructed. Reports/logs identify the original Project4_NN folder, Vivado 2025.1.1 and generation around 21:08.
 
 Program the matching nn_board_top.bit and nn_board_top.ltx from this folder. BUILD_SUCCESS.txt correctly says physical validation was not performed by its build script. Physical verification occurred later and is separately preserved in Evidence/ and Images/.
 

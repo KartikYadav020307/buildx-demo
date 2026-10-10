@@ -1,7 +1,7 @@
 # Earlier source-pack records
 
 These files preserve the original preparation and repair records from before
-the successful user Vivado build and physical board verification. Their
+the successful Vivado build and physical board verification. Their
 pending-build or pending-board statements describe that earlier state.
 
 `source_pack_SHA256SUMS.txt` inventories the original unpacked repair pack with

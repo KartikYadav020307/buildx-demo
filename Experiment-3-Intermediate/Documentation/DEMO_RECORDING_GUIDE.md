@@ -1,6 +1,6 @@
 # Final demo recording guide
 
-The final video URL remains blank. Record the actual board and a real notebook
+The final video URL is in Video_Link.txt. Record the actual board and a real notebook
 run; use saved outputs only if clearly introduced as a previous saved run.
 
 | Approximate time | Show | Explain |

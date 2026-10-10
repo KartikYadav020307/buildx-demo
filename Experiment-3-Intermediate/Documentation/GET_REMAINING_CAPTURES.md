@@ -14,6 +14,6 @@ The full diagram is tall because the generated pipeline exposes many state pins.
 Use the vector PDF to inspect labels; the report includes a magnified input-side
 excerpt. See CAPTURE_PROVENANCE.md for the exact original-file sources.
 
-Only the final demo URL remains outstanding for Project 3. Video_Link.txt stays
-blank as requested. Confirmed team: Beyond Boolean; Shanshank Pulipati (25BEC0573)
+The final demo URL is recorded in Video_Link.txt; review content and public access
+as described in VIDEO_REVIEW.md. Confirmed team: Beyond Boolean; Shanshank Pulipati (25BEC0573)
 and Kartik Yadav (25BEC0087).

@@ -1,6 +1,8 @@
 # Project 5 - Reconfigurable FPGA BNN Safety Response
 
-PYNQ-Z2 | Advanced experiment | Evidence updated 9 October 2026
+PYNQ-Z2 | Advanced experiment | Evidence updated 10 October 2026
+
+Team: Beyond Boolean — Shanshank Pulipati (25BEC0573), Kartik Yadav (25BEC0087).
 
 ## 1. Objective
 
@@ -32,13 +34,13 @@ Normal/cautious synthetic classifiers achieve 125/125 held-out cases each; 625/6
 
 ## 5. Hardware implementation
 
-Actual uploaded Vivado 2025.1.1 run: xc7z020clg400-1, 125 MHz physical reference and 50 MHz design clock. Routed setup slack +4.534 ns; hold +0.035 ns; pulse-width violations 0; all four bus-skew constraints pass. DRC has 0 errors and 5 warnings (debug LUT/unloaded-net issues and absent PS7/startup-clock caution). Raw DRC, methodology and CDC reports are included rather than treating warnings as zero.
+Original Vivado 2025.1.1 run: xc7z020clg400-1, 125 MHz physical reference and 50 MHz design clock. Routed setup slack +4.534 ns; hold +0.035 ns; pulse-width violations 0; all four bus-skew constraints pass. DRC has 0 errors and 5 warnings (debug LUT/unloaded-net issues and absent PS7/startup-clock caution). Raw DRC, methodology and CDC reports are included rather than treating warnings as zero.
 
 Whole routed board/debug design uses 5,772 LUTs and 6,501 FFs, with 0 BRAM and 0 DSP. Parallel core: 204 total LUTs, 288 FFs. Folded: 314 LUTs, 120 FFs. Thus folding saves FFs but increases LUTs here. Neural result latencies are 100 and 420 ns at 50 MHz; their 4.2 ratio is not a complete system-speedup measurement.
 
 Physical core verification shows HARDWARE CORE PASS: 64/64 (32 cases/profile). The supplied complete live Tcl log ends HARDWARE LIVE PASS. Operator telemetry and video demonstrate model 1 CAUTION to model 2 BRAKE for raw 0222, emergency latching, fresh input retaining STOP, explicit emergency clear and watchdog history 8.
 
-The final accepted video does not successfully finish watchdog recovery: final state remains action 3/tripped 1/history 8 after rollback, then disarms. Earlier operator snapshots did show eligible watchdog clear to action 0/tripped 0. The original hardware CSV and both hardware PASS files are now included in the Results run. All 64 CSV rows were checked against the frozen reference cases: hidden bits, all four signed scores, class, margin, model ID and 5/21-cycle latencies match. Original generated .xpr was not supplied; Tcl/IP scripts regenerate it.
+The earlier recording does not successfully finish watchdog recovery: final state remains action 3/tripped 1/history 8 after rollback, then disarms. Earlier operator snapshots did show eligible watchdog clear to action 0/tripped 0. The original hardware CSV and both hardware PASS files are now included in the Results run. All 64 CSV rows were checked against the frozen reference cases: hidden bits, all four signed scores, class, margin, model ID and 5/21-cycle latencies match. Original generated .xpr was not archived; Tcl/IP scripts regenerate it.
 
 ## 6. Applications
 
@@ -50,7 +52,7 @@ A deployment would need representative measured sensor data, interface and actua
 
 The supplied design has passed exhaustive arithmetic/core simulation, directed system/fault tests, routed timing checks and available physical FPGA verification. Main learning outcomes are pipeline/folded tradeoffs, signed integer correctness, guarded parameter updates, tagged-result freshness and latched fault recovery.
 
-Future work: complete the full narrated presentation and a clean final watchdog-recovery take if stronger video evidence is desired; expand real sensor validation and compare power/area on additional architectures. The required Project 5 file categories are present. Whole-entry completion still needs team details, Experiments 1-4, the combined report and the prescribed repository naming.
+Future work: complete the full narrated presentation and a clean final watchdog-recovery take if stronger video evidence is desired; expand real sensor validation and compare power/area on additional architectures. The required Project 5 file categories, team identity and final demo link are present. The replacement edit needs content/access review. Repository naming and deadline confirmation remain separate entry requirements.
 
 ## Evidence references
 

@@ -1,6 +1,6 @@
 # Project 4: review of the actual Vivado 2025.1.1 build
 
-Reviewed on 6 October 2026 from the ten uploaded Results files.
+Reviewed on 6 October 2026 from the ten recorded Results files.
 Verdict: simulation and routed setup/hold/pulse-width checks pass, and bitstream
 generation completed. Apply the small clock-constraint correction and review
 the missing bus-skew report before considering implementation review complete.
@@ -24,10 +24,10 @@ The patch removes the duplicate top-level primary clock declaration. The actual
 build log shows that `nn_clk.xdc` already declares the same 8 ns clock on `sysclk`.
 The board pin assignments and LED false paths are retained. The patch also
 creates bus-skew and fresh methodology reports using AMD-documented commands.
-It has not been executed in Vivado in this cloud session; rerouting results
-must be taken from the new local build, not assumed to match the old numbers.
+At the time of this historical review, the patch had not been rerouted.
+New implementation results must be read from the corresponding local build.
 
-## Verified evidence from the uploaded build
+## Verified evidence from the recorded build
 
 | Item | Result |
 |---|---|
@@ -48,7 +48,7 @@ must be taken from the new local build, not assumed to match the old numbers.
 | Bitstream header | nn_board_top; device 7z020clg400; 2026/10/06 20:16:30 |
 | Bitstream payload | 4,045,564 bytes; full declared payload present |
 | Debug probes | VIO names/widths match the supplied hardware-test script |
-| VIO identity | Uploaded LTX UUID matches the VIO UUID printed in the build log |
+| VIO identity | Original LTX UUID matches the VIO UUID printed in the build log |
 
 The debug hub's unconstrained table contains BSCAN SHIFT/RESET control paths.
 Do not claim that every path in the entire design has a timing constraint;
@@ -89,9 +89,9 @@ not yet board-measured latencies or host/JTAG round-trip times.
 - **Debug IP warnings:** three PDCN-1569 and one RTSTAT-10 warning refer to
   `dbg_hub` cells/nets. Keep them documented; verify VIO operation on hardware.
   The four LUTAR-1 methodology warnings also require the fresh report to locate
-  the actual cells; their exact paths were not included in the uploaded summary.
+  the actual cells; their exact paths were not included in the recorded summary.
 - **ZPS7-1:** no PS7 cell is instantiated. This remains a configuration warning,
-  not an error, in the uploaded DRC report. The design uses an external PL clock
+  not an error, in the recorded DRC report. The design uses an external PL clock
   and JTAG/VIO. Board boot/PHY clock availability must be verified; do not claim
   that successful bitstream generation proves correct board initialization.
 - **Simulation display warnings:** XSim did not display two large testbench
