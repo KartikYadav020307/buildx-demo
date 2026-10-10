@@ -1,5 +1,5 @@
-# Combined final report - pending
+# Project 5 and the combined report
 
-The organizers require TeamName_Final_Report.pdf covering all five experiments. Only Project 5 material was supplied for this repository task. Its final report is in Experiment-5-Advanced/Documentation/Project5_Report.pdf.
+The complete five-project report is [Beyond_Boolean_Final_Report.pdf](Beyond_Boolean_Final_Report.pdf); confirmed team details and all five individual reports are included. The former Project-5-only packaging note has been superseded.
 
-To prepare an accurate combined PDF, supply the team identity, members/registration numbers and finalized evidence/reports for Experiments 1-4. A Project-5-only document is not mislabeled as the complete five-project report.
+Project 5's report and replacement video URL are present. Final-video review, eligible watchdog recovery and physical-button evidence remain separate checks. See [SUBMISSION_STATUS.md](SUBMISSION_STATUS.md) and [Project 5 checklist](../Experiment-5-Advanced/Documentation/SUBMISSION_CHECKLIST.md).

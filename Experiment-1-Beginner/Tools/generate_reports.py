@@ -74,13 +74,17 @@ page(report,'6. Applications',
     p('An iterative AES block can support an embedded cryptographic coprocessor or laboratory teaching platform. This VIO-controlled experiment verifies block encryption. Production use needs suitable interfaces, buffering, secure key handling, an encryption mode and authentication; those capabilities are future work.'),
     p('7. Conclusion and Future Scope','Heading1'),
     p('The original design has authentic single-vector simulation and physical demonstration evidence but retains its negative 125 MHz setup slack. The separate key-expansion repair passes an extended functional equivalence regression and the supplied routed checkpoint closes static timing under the unchanged clock constraint. Original technical assets and measurements remain preserved.'),
-    p('Physical verification of the repaired files and a final compliant Project 1 video/link are still pending. Test the repaired pair on the actual board, retain the build identity and result screenshots, and review PS initialization/debug-IP warnings. No final Project 1 URL was supplied; Video_Link.txt remains empty.'),
+    p('Physical verification of the repaired files and review of final video content/public access remain pending. Test the repaired pair on the actual board, retain the build identity and result screenshots, and review PS initialization/debug-IP warnings. The supplied <link href="https://drive.google.com/file/d/1HdQFdZ9_jw4ydN3tetVhZn5XoXck3o-m/view?usp=sharing">final demonstration URL</link> is recorded in Video_Link.txt. Its presence does not establish all required presentation sections or repaired-board execution.'),
     p('Reproducibility','Heading2'),
     p('Original native source: FPGA_Project_Files/Native_Project/Project1_AES_Vivado_Source.zip. Repaired native source: Project1_AES_Repaired_Vivado_Source.zip in the same folder; extract the complete layout and open AESRepair/build_repaired/aes125_repaired.xpr. Clean repair reproduction uses Timing_Repair/BUILD_REPAIRED.tcl in a new short writable folder. Each BIT/LTX pair is tied to its own checkpoint and manifest.'),
     p('Provenance and preserved records','Heading2'),
     p('Hardware frames come unchanged from the supplied ZIP. Architecture/connectivity drawings are source-based illustrations. Original RTL, constraints, IP, testbench, reports, native project, programming files, WDB, transcript and photographs are preserved. The previous report PDF is retained in Documentation/Archive. New validation logs/reports are labeled by origin; no fresh board execution is claimed.'),
     p('AI assistance was used to prepare documentation and validation tooling. This disclosure does not assign a percentage of HDL authorship. Organizer file requirements are mapped in SUBMISSION_READINESS.md. The original organizer PDF lists 23 September 2026 as its deadline; current deadline/naming must be confirmed separately.','Caption2'))
 build('Documentation/Project1_AES_Report.pdf',report,'Project 1 AES-128 - original evidence and timing repair')
+import sys
+if '--report-only' in sys.argv:
+    print('Generated current Project 1 report; saved simulation PDF preserved')
+    raise SystemExit(0)
 sim=[]
 page(sim,'AES timing repair - simulation and evidence review',
     p('Beyond Boolean: Shanshank Pulipati (25BEC0573); Kartik Yadav (25BEC0087). Vivado XSim 2025.1.1, 10 October 2026. DUT: Timing_Repair/RTL/aes_core.v; comparison: Testbench/aes_core_original.v.'),

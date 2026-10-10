@@ -1,0 +1,485 @@
+{
+  "description": "Verified submission package; this inventory excludes itself and SHA256SUMS.txt.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 294,
+      "sha256": "4a46bd157de4dc5d88d6085a2fc9f336539b081343a9d81a47e9254fbc13c79a"
+    },
+    {
+      "path": "Data/ATTRIBUTION.md",
+      "bytes": 805,
+      "sha256": "4b52fa39914d69b2085cdbc9cc075bb8ba1bbbad0ce03bc311a2beec9d9029b1"
+    },
+    {
+      "path": "Data/golden_vectors.mem",
+      "bytes": 153068,
+      "sha256": "ffe031767635af998c4f15c8784faf4c4bbd7ccbcbb5391661f7e0a4e2c725ec"
+    },
+    {
+      "path": "Data/iris.csv",
+      "bytes": 2756,
+      "sha256": "81269defbe7c559bfe8c9c79a46698e32ef1dd3dbdf9d9c91a42a039bf85df2d"
+    },
+    {
+      "path": "Data/iris_cases.csv",
+      "bytes": 10658,
+      "sha256": "7d1f07d2669549619e8af1e44248ee947c47f5144b4246938cde1f383ada4152"
+    },
+    {
+      "path": "Data/model.json",
+      "bytes": 1873,
+      "sha256": "858150ed03bafe177eccb30db8abbeeed487c9d4da13a1ca477ce956157c93ba"
+    },
+    {
+      "path": "Documentation/build_report.py",
+      "bytes": 22153,
+      "sha256": "dfb8c90e4157a87dccc6083746ef72e268a99747e4a3dde5a01ed37776c16e97"
+    },
+    {
+      "path": "Documentation/model_metrics.json",
+      "bytes": 1905,
+      "sha256": "34c31c31a3da9221e689c6080e621c097e6cc7f6b06737683c998a1d1dab01fa"
+    },
+    {
+      "path": "Documentation/Organizer_Requirements.pdf",
+      "bytes": 264278,
+      "sha256": "2f327e74f8ffadbbcb3c4319fd6685f3b34997b584194c16ec1190f40642f47b"
+    },
+    {
+      "path": "Documentation/Project4_NN_Implementation_Guide.md",
+      "bytes": 30571,
+      "sha256": "3190593f96c23e5457ea4726d270d0716e36b32278a1c1f77c583a3a39f70daa"
+    },
+    {
+      "path": "Documentation/Project4_NN_Report.pdf",
+      "bytes": 1896693,
+      "sha256": "5fbc7147361b29a6f619cbfd98dad31f21f14fb2b962e16cecfd67d8a3fafcb6"
+    },
+    {
+      "path": "Documentation/requirements.txt",
+      "bytes": 89,
+      "sha256": "6b871a9b55cc6b13db716ea98bf0929fa4cf60a6911365b7aaf71d757d60f8cc"
+    },
+    {
+      "path": "Documentation/SOURCE_PROVENANCE.md",
+      "bytes": 2168,
+      "sha256": "e354c9a2792144be10c8fd3effdffc5560656ba55c4baee77f5c2c76e6777182"
+    },
+    {
+      "path": "Documentation/SUBMISSION_READINESS.md",
+      "bytes": 4865,
+      "sha256": "433f41fc3570e5024997e30fcd16ac1fbae96c359740040bd382d39ecf064d28"
+    },
+    {
+      "path": "Documentation/verification_scope.md",
+      "bytes": 2392,
+      "sha256": "e50666abd78e3f56f660960d2d9aadccdff7aa4c3480299f320bd4b6ca122d3e"
+    },
+    {
+      "path": "Documentation/VIDEO_GUIDE.md",
+      "bytes": 1283,
+      "sha256": "7372c1dc1fb60a6fb74c73b60d54bee50f7d2f7ba175f1226506455101120922"
+    },
+    {
+      "path": "Evidence/current_package_validation.json",
+      "bytes": 1203,
+      "sha256": "9ead349344a46b2ac66841d6d7a7a1b03902fefb2ccd8cedcf43ffb7a6fd869c"
+    },
+    {
+      "path": "Evidence/current_radix_validation.txt",
+      "bytes": 388,
+      "sha256": "68adea4cfaa6aab67c2be2292692e3b1c94da178d53a5fc42c20994fc5611674"
+    },
+    {
+      "path": "Evidence/hardware_test_results.csv",
+      "bytes": 1808,
+      "sha256": "c4d895d6ef6e3dc71b61fdc627dcf4f491c3a11d065bd33d857fb37ffae4d6fb"
+    },
+    {
+      "path": "Evidence/hardware_validation.json",
+      "bytes": 439,
+      "sha256": "d0f7f24b38143a5f3a8ccbc2f1e919e2ea1a84e27553dd27adba86990546c29d"
+    },
+    {
+      "path": "Evidence/Historical/local_build_review_20261006.md",
+      "bytes": 7370,
+      "sha256": "760fd86e67521bb9b562494091dbc60cdf07d2190c57c4752c0f4d64a9065b31"
+    },
+    {
+      "path": "Evidence/Historical/README.md",
+      "bytes": 757,
+      "sha256": "512d8383ff9cbbbb1e937e26f4178f184b5961d55389ca6e7598c258abe4560a"
+    },
+    {
+      "path": "Evidence/Historical/REPAIR_README.md",
+      "bytes": 1404,
+      "sha256": "06dad45c0d340286ce1255ffc1e75e396301d45e004fbf75633da1a5cdfa3ae0"
+    },
+    {
+      "path": "Evidence/Historical/report_outline_template.md",
+      "bytes": 4852,
+      "sha256": "ff559e9093c3183a3cb0fd798e2500da5b1d6b4bc4d613b4a94c37d428eff7d6"
+    },
+    {
+      "path": "Evidence/Historical/source_pack_SHA256SUMS.txt",
+      "bytes": 3007,
+      "sha256": "7581304d6758f646b3804585687a3fb9c33f675afd1418e5a2a56b8142481cf0"
+    },
+    {
+      "path": "Evidence/Historical/verification_scope_preboard.md",
+      "bytes": 2728,
+      "sha256": "64a07961000380f9526a6425940ffe09e43e8ea8c619592e5825f9d64a21c08d"
+    },
+    {
+      "path": "Evidence/original_artifact_validation.json",
+      "bytes": 3476,
+      "sha256": "a1a56dbec6cbc25a07c64067a5e0792c00f275680c818f53f439dbe8f6838bf6"
+    },
+    {
+      "path": "Evidence/RAW_VIDEO.md",
+      "bytes": 749,
+      "sha256": "9615ebe1fdc2ab3e218f1a778b3c8c2fad4ce31b1ba5eb0d07232d994b108c54"
+    },
+    {
+      "path": "Evidence/README.md",
+      "bytes": 794,
+      "sha256": "709ea29a7809bc8b26ce204c14d3f23067c4c3d5e277df86337cab1d7fce92c0"
+    },
+    {
+      "path": "FPGA_Project/ORIGINAL_NATIVE_MANIFEST.json",
+      "bytes": 725,
+      "sha256": "cfe09cf5d254ecc8e5d87632a9cb95b70337b7f6d6ecb9cebcf4a26c1fb20c2f"
+    },
+    {
+      "path": "FPGA_Project/Project4_NN_Vivado_Source_Project.zip",
+      "bytes": 340111,
+      "sha256": "0de06c00b3c1a753c49a573c59505720346fbe4dd470006256f2d348c34cab9b"
+    },
+    {
+      "path": "FPGA_Project/README.md",
+      "bytes": 804,
+      "sha256": "17e31650e144686c886f3b79c77065720abd460d887c34a97843d0ca80f7d510"
+    },
+    {
+      "path": "Images/block_diagram.png",
+      "bytes": 187549,
+      "sha256": "43051d305fc6cd6259f2f3e8cfcfac032cb60f901ad2d0df7b933edf0c0d168e"
+    },
+    {
+      "path": "Images/block_diagram.svg",
+      "bytes": 96558,
+      "sha256": "5d84e4448fe84b114b10172d42f7d7a451cbae437a89a93ae274e5c8debb6c22"
+    },
+    {
+      "path": "Images/board_setup.jpg",
+      "bytes": 201464,
+      "sha256": "065a7d380ea233a65a617699df7011d32bcc325ee2a2e1a8ac58a9c70f29303d"
+    },
+    {
+      "path": "Images/hardware_output.jpg",
+      "bytes": 441487,
+      "sha256": "141deb3db4194ab7174657ef39fd9ead20020c13c3cd1e725518e0670871422d"
+    },
+    {
+      "path": "Images/hardware_pass.png",
+      "bytes": 145182,
+      "sha256": "a0608bc136af93209175f05f95ddc608fc9d3d25744026bf196250b633fb2bc5"
+    },
+    {
+      "path": "Images/README.md",
+      "bytes": 832,
+      "sha256": "a6095ab3d9119249b907483aa6ab5c441f65fb49acba2af9b142ff2f657c77b6"
+    },
+    {
+      "path": "Images/rtl_schematic.dot",
+      "bytes": 7091,
+      "sha256": "71fbb9e933e9b4da1d9cc327581998e926897530330444742d1325580fcf7f7b"
+    },
+    {
+      "path": "Images/rtl_schematic.png",
+      "bytes": 713041,
+      "sha256": "c248f48e1832582fd930e9effb6d022cff765237c10c515276b45fe63e8cc86a"
+    },
+    {
+      "path": "Images/rtl_schematic.svg",
+      "bytes": 40863,
+      "sha256": "f65f4cbf3fb416e1b602b8eb396f59996a4685c474fe60d1870fef636e5e1275"
+    },
+    {
+      "path": "Images/three_case_console.png",
+      "bytes": 149312,
+      "sha256": "643c2f716363bcef0d93917734defd9dc4691080ccecdc318154be3a2e1ff0ed"
+    },
+    {
+      "path": "Images/vivado_build_complete.png",
+      "bytes": 150270,
+      "sha256": "7ea6227abdc08c24ea1d1ebbb3f51410d529e351768b381d4dbc2baa29c56752"
+    },
+    {
+      "path": "python/predict.py",
+      "bytes": 808,
+      "sha256": "e990581c9921d9d4ea52b5f99d4fcd0486484c02117202d121ba730991f4145d"
+    },
+    {
+      "path": "python/requirements.txt",
+      "bytes": 15,
+      "sha256": "99f43573522565d7c480efd1f954892948033915df6a4e685327e995d3396eb6"
+    },
+    {
+      "path": "python/run_open_source_tests.py",
+      "bytes": 1328,
+      "sha256": "482f1a47ae32889a708f1436e19fbc97f766e6e8f9ae4de7f47ec45e5978978c"
+    },
+    {
+      "path": "python/test_vio_radix.py",
+      "bytes": 1823,
+      "sha256": "de876567ef030617410e57826ddefb9e267a81e14ff3f6d663ac275b55cb5397"
+    },
+    {
+      "path": "python/train_export.py",
+      "bytes": 8144,
+      "sha256": "5e8e91b42146f8d35d68850d14f07b892f07fac21628aa84ada7fd9548d39b21"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5046,
+      "sha256": "9f73eb26ef072410f0118b78b6a040d0a24fd9496c959bd589b7a6ba668f4b4c"
+    },
+    {
+      "path": "Results/BUILD_SUCCESS.txt",
+      "bytes": 505,
+      "sha256": "ddfaf9ba6d34228522bfe99737227df141cab637c4aa05fb9ad37cee0e434418"
+    },
+    {
+      "path": "Results/bus_skew.rpt",
+      "bytes": 68092,
+      "sha256": "74aeb631f28242771735f4a94bcc42edbfb69de8f4bc532d1a272ed3e778c4ae"
+    },
+    {
+      "path": "Results/clocks.rpt",
+      "bytes": 2801,
+      "sha256": "e5f4ef88d3139a78f48d59ab2c0b20cbd361e4ad91d28508848d75e64238100e"
+    },
+    {
+      "path": "Results/drc.rpt",
+      "bytes": 17541,
+      "sha256": "4bde61f2e0a03141dd1ecbe7c698143930904047abfea65049fddcad3d9d3a30"
+    },
+    {
+      "path": "Results/methodology.rpt",
+      "bytes": 6109,
+      "sha256": "a3d5eaf37d97ba6e7bcc822d401a6388f8083d4221adeea88aea1101add48c4f"
+    },
+    {
+      "path": "Results/nn_board_top.bit",
+      "bytes": 4045690,
+      "sha256": "5a4d4fcdd431995198186a0ce50b5f960fdb49525fc87c5547731f8ba1772a65"
+    },
+    {
+      "path": "Results/nn_board_top.ltx",
+      "bytes": 42378,
+      "sha256": "79c63e0f6a7e098c267a8601831e665a21676964762621612369dd8eb2f769a1"
+    },
+    {
+      "path": "Results/README.md",
+      "bytes": 852,
+      "sha256": "d693a3ffb4720c6f4f8dc62d3a88fab2d60991f394d5a13e9a8eb7a472551dd9"
+    },
+    {
+      "path": "Results/simulation_pass.flag",
+      "bytes": 18,
+      "sha256": "9fae5979a97b984726789d7a8ac04b5c29b743b1f66d9bc59142651cf5004a7e"
+    },
+    {
+      "path": "Results/timing_summary.rpt",
+      "bytes": 123854,
+      "sha256": "a52cbae3dfe40df2f17d8537557f8bc6816e5d760f638e84bd9b738b6e976ac6"
+    },
+    {
+      "path": "Results/utilization_hierarchical.rpt",
+      "bytes": 8226,
+      "sha256": "3c6374e13635a401381f7735d4426b84ba6f6af4a4c0932e5af900da5ec424a0"
+    },
+    {
+      "path": "Results/vivado_batch.jou",
+      "bytes": 1570,
+      "sha256": "f161353b44d37a9e2789ab2488e77694f190a2f675947b3229b90caf41de366b"
+    },
+    {
+      "path": "Results/vivado_batch.log",
+      "bytes": 88269,
+      "sha256": "7f705b78342e304010c39b525eb7fe8cb828f6a4aecc976c6a48b3fb46fab2ad"
+    },
+    {
+      "path": "RTL/nn_board_top.sv",
+      "bytes": 1683,
+      "sha256": "818203914de8e7dbe17a551a891817c6ed3f21b81f2d93b71d8555ae1c885a88"
+    },
+    {
+      "path": "RTL/nn_demo_controller.sv",
+      "bytes": 1960,
+      "sha256": "37772edf4810a058ea01391cf4cedc0f1eb7d9d4514ffafa7b958d1ac51f99cd"
+    },
+    {
+      "path": "RTL/nn_math.vh",
+      "bytes": 880,
+      "sha256": "29eb56a7e8812518dc23b2899519b3aa8779c3661ff81120cd0199da6aa54339"
+    },
+    {
+      "path": "RTL/nn_parallel.sv",
+      "bytes": 2605,
+      "sha256": "36c12aba589c4509fe949229cf91e3d4f856944aab31deab2c0e919c546bc49a"
+    },
+    {
+      "path": "RTL/nn_serial.sv",
+      "bytes": 3001,
+      "sha256": "6cab0a50c1c844cc491ded8e6046414856f78db653a690c3a2eb5187d5a9ec1c"
+    },
+    {
+      "path": "RTL/nn_weights.vh",
+      "bytes": 1555,
+      "sha256": "cdb4dbccb9018278414fda5d68f77a2a66e9c72c8d0494664a8d9a7bca203801"
+    },
+    {
+      "path": "RTL/pynq_z2.xdc",
+      "bytes": 734,
+      "sha256": "f22f6707bd1679c079306e50b1efda446afca49802a24ca7bd27f2e38e6feefa"
+    },
+    {
+      "path": "RUN_PROJECT4.cmd",
+      "bytes": 1919,
+      "sha256": "1f5e58658008af921a9e264c7a7dd7f051f359229eca167aed18235c76b41d1e"
+    },
+    {
+      "path": "Simulation/current_xsim_regression.txt",
+      "bytes": 1091,
+      "sha256": "643ced531fb32a329a9a7f0ad6e2eaa6cfa83ee9349e2997b581b4985874be09"
+    },
+    {
+      "path": "Simulation/current_xsim_waveform.txt",
+      "bytes": 1428,
+      "sha256": "235fe44b980ac2e8bf8ec5b537fc8b966275dca52ec222c927f840cf073fda50"
+    },
+    {
+      "path": "Simulation/ip_blackboxes_for_schematic.v",
+      "bytes": 494,
+      "sha256": "8f6bab40904053557d807ac2b8a1f0ba75284eb376b0ecd8d80258b694f6e343"
+    },
+    {
+      "path": "Simulation/nn_simulation_pass.flag",
+      "bytes": 17,
+      "sha256": "984bc58aed2fd7c5669bae60fec4dcdbbab73b06545e25f216ae136c630ec667"
+    },
+    {
+      "path": "Simulation/radix_reader_transcript.txt",
+      "bytes": 377,
+      "sha256": "7449adc3e997915072386cbb1035518c6e2dff4ded0169baffe9fcb64e4d71dc"
+    },
+    {
+      "path": "Simulation/README.md",
+      "bytes": 1139,
+      "sha256": "9c00a03b7927d99576146b964faafdd161652b45e1ee745feb210f45d7f83510"
+    },
+    {
+      "path": "Simulation/rtl_schematic_netlist.json",
+      "bytes": 396749,
+      "sha256": "086a9f98e43dc053ae1f5c7d1847f64962a333080570eef8bfbadc7398c7db3d"
+    },
+    {
+      "path": "Simulation/SCHEMATIC_REPRODUCTION.md",
+      "bytes": 1050,
+      "sha256": "1394d79be6563c559430a131ea53ec979d2597e7a33145284dfcf44bd0ead879"
+    },
+    {
+      "path": "Simulation/schematic_transcript.txt",
+      "bytes": 117122,
+      "sha256": "287cbb56ad90beb11cbf9498a7e2becbfed4956e98d0d759670534d91271516a"
+    },
+    {
+      "path": "Simulation/simulation_report.pdf",
+      "bytes": 161300,
+      "sha256": "87e78d98a2cb831a14803d59927376655637e049aa4f313adfe8756b05ddce62"
+    },
+    {
+      "path": "Simulation/transcript.txt",
+      "bytes": 352,
+      "sha256": "f268fb7f3acfc2aa899df34bbc29dac85537472a6e74845af18439cdd2c4ccc9"
+    },
+    {
+      "path": "Simulation/verified_iverilog_transcript.txt",
+      "bytes": 459,
+      "sha256": "7925506173b88061a6a98ff198fc671a6fc3379809b92e6afeb891b0cb01ecc2"
+    },
+    {
+      "path": "Simulation/waveform.png",
+      "bytes": 102104,
+      "sha256": "aa31428e7c331f5666173061e5bcf7999054d1f4ae437deccb053bebcf5f8f3c"
+    },
+    {
+      "path": "Simulation/waveform.vcd",
+      "bytes": 5973,
+      "sha256": "3ac225d2bd0746d92dffe8a9d4c66cd05967a4ed9685abded7e6c8105b1d43d3"
+    },
+    {
+      "path": "Simulation/waveform_measurements.csv",
+      "bytes": 195,
+      "sha256": "a28fb096bf9e9c2eb3f40f8c5efc861c6787a8bcd51697ef6f9df11d36fac5fc"
+    },
+    {
+      "path": "Simulation/waveform_transcript.txt",
+      "bytes": 750,
+      "sha256": "c47529d133750c43dc2f6d17db8175a109bbdf23b5f6cf224048412b1254027a"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 30936,
+      "sha256": "730b9904c806c9417acdf475951dbb0e277b62697ed1f17c967128c471101ed7"
+    },
+    {
+      "path": "Testbench/tb_nn.sv",
+      "bytes": 7209,
+      "sha256": "7222fd3cb5f36127f3cf4cf21575e888e035e3bb99fb33f530b4567fa54a28f6"
+    },
+    {
+      "path": "Testbench/tb_nn_waveform.sv",
+      "bytes": 3079,
+      "sha256": "5c973e1ac381a95df647e79ab1ba4c13002f1150decfc7ba5e64911423dca39b"
+    },
+    {
+      "path": "Testbench/vector_count.vh",
+      "bytes": 26,
+      "sha256": "8575ba3f9b0cdc49a48b19b1fa24b10ae5e3dca3706eab89e20f8f0663c1fbb8"
+    },
+    {
+      "path": "Video_Link.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Vivado/build_bitstream.tcl",
+      "bytes": 365,
+      "sha256": "da33c27bbafed6769ec363aa5f17338af4f18075cc9682a0518e8c7914d7dd4e"
+    },
+    {
+      "path": "Vivado/collect_reports.tcl",
+      "bytes": 1845,
+      "sha256": "0d8a33b4b0d7f8baa2c94c74d8e922668c464872dcf596717a84a9fd4adbc07b"
+    },
+    {
+      "path": "Vivado/create_project.tcl",
+      "bytes": 3076,
+      "sha256": "1a36c5de4b0495f22dbd01a8618e163525a76525d8d3d673bd63154ee94529cd"
+    },
+    {
+      "path": "Vivado/hardware_test.tcl",
+      "bytes": 5871,
+      "sha256": "b820010d1e2fa55a2a44f5482977e95dec11e5a8b940899d242bc7b0f7b48bd7"
+    },
+    {
+      "path": "Vivado/run_all.tcl",
+      "bytes": 3395,
+      "sha256": "5477ed95d2e8aef005bb928792bf5e0f4ba4ba36220fb1ca9dffcabf3cc9c69e"
+    }
+  ]
+}

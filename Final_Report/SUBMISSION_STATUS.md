@@ -1,28 +1,31 @@
 # Whole-entry organizer audit
 
-Audit: 10 October 2026. Source: `Submission_Guidelines/documents_req.pdf`.
+Updated: 10 October 2026. Source: `../Submission_Guidelines/documents_req.pdf`.
+Team: Beyond Boolean; Shanshank Pulipati (25BEC0573); Kartik Yadav (25BEC0087).
+Board: PYNQ-Z2 / xc7z020clg400-1.
 
-The repository now has the required two beginner, two intermediate and one advanced experiment folders. Root README contains Beyond Boolean, the two members and registration numbers, PYNQ-Z2 and summaries of all five experiments. The combined report is `Beyond_Boolean_Final_Report.pdf`.
+All five experiment folders and the required technical file categories are present. The home README records team/registration details, FPGA platform and all five project summaries. `Beyond_Boolean_Final_Report.pdf` now contains a refreshed overview and the current individual reports in experiment order.
 
-| Experiment | Technical-document categories | Remaining submission / evidence work |
+| Experiment | Recorded technical evidence | Remaining verification |
 | --- | --- | --- |
-| 1 - AES-128 | All seven report sections, RTL/XDC/IP, testbench, simulation PNG/transcript/PDF, four required image filenames and native FPGA files are present | Hardware-output image is a low-resolution preview; readable completed-result evidence is needed. Final video/link is deliberately blank. Archived 125 MHz implementation fails setup timing: WNS -0.104 ns, four failing endpoints. |
-| 2 - Radar | All required technical-document categories complete; original native project/IP, BIT/LTX, routed checkpoint/eight reports, simulation and 39 saved passing hardware rows included | Final narrated video and accessible Drive URL. Video_Link.txt is deliberately blank. |
-| 3 - ECG | Required report/source/testbench/simulation/images, actual Vivado schematic, board photo and executed BIT/HWH/notebook/results included | Final demo link recorded; content and public reviewer access need review. |
-| 4 - NN inference | Required report/source/testbench/simulation/images and original BIT/LTX, reports, native project source and 45-case physical results included | Final demo link and Beyond Boolean identity recorded; content and public reviewer access need review. |
-| 5 - BNN response | Required file categories, reproducible FPGA project flow, original routed files and physical PASS/CSV exports included; replacement final demo URL recorded | Replacement final edit needs content/public access review. Earlier recording omitted presentation sections and ended in STOP; those historical observations remain disclosed. |
+| 1 - AES-128 | Current seven-section report, original RTL/native/programming files and readable genuine original-result frames; separate repaired source, 104-vector regression and full reproduced build. Original 125 MHz WNS -0.104 ns; repaired WNS +1.490 ns. Final URL recorded. | Physical-board verification of repaired BIT/LTX; final video sections/content and anonymous access. Original footage does not verify the repaired revision. |
+| 2 - Radar CA-CFAR | Current eight-page report, native source/IP archive, matching BIT/LTX/checkpoint, routed reports, saved 39 PASS rows covering 32 combinations; final URL recorded. | Final video sections/content and anonymous access. No new board run is claimed. |
+| 3 - ECG FIR | Current report, generated RTL/HLS/IP and block design, actual Vivado hierarchy, saved simulation/board outputs, matching BIT/HWH/XSA; final URL recorded. | Final video sections/content/access. Full original workspace archives are externally linked; the committed descriptor retains original paths. |
+| 4 - NN inference | Current report, frozen model/RTL, saved simulation, 45 hardware rows matching integer reference (43 correct labels), original native/programming files; final URL recorded. Inventory/status metadata refreshed; old snapshots preserved. | Final video sections/content/access. Original native paths may require relocation; Tcl rebuild is supplied. |
+| 5 - BNN response | Current report, RTL/model/test suites, original routed/programming evidence and saved core/live PASS exports; replacement final URL recorded. | Replacement video content/access, eligible watchdog recovery and physical-button evidence. Automated VIO PASS is distinct from operator button checks. |
 
-## Project 2 answer
+## Final videos
 
-**Technical documentation: complete against the organizer's file/section checklist. Final submission: not 100%, because the finished narrated demo and its Drive link remain pending.** No original Project 2 source archive, routed report or checkpoint is still missing. The latest user-uploaded Project2_Radar_Final (2).zip matches 21 directly comparable original RTL/testbench/Tcl/hardware/report files already present in this repository; documentation and schematic/evidence supplements are also present.
+All five final Drive URLs are recorded in each experiment's `Video_Link.txt`; none is blank. URL presence is not a completed video review. Organizer page 6 requires introduction/problem, architecture and RTL in software, physical setup/connections/working demonstration, and conclusion. Verify each final edit and signed-out reviewer access. Project 5's earlier edit ended with watchdog STOP latched; the replacement has not been reviewed here.
 
-## Shared items
+## Project 4 inventory correction
 
-- Combined five-project PDF: now supplied, with all five seven-section reports and an opening current-status overview.
-- Team identity and all-five README summaries: supplied. The existing confirmed member spelling is retained.
-- Repository-name format: the organizer requests `FPGA-Build-Challenge-TeamLeader name`; the explicitly selected repository remains `buildx-demo`. It has not been renamed.
-- Video access/presentation: Final links for Projects 3–5 are recorded. Projects 1/2 remain outside this cleanup. Anonymous judge access and full presentation content for the three final edits have not been independently verified.
+The former `Documentation/FILE_MANIFEST.json` and `Evidence/current_package_validation.json` are preserved byte-for-byte under `Experiment-4-Intermediate/Evidence/Historical/`. The current inventory records current package bytes and the validation summary records the final URL and confirmed team name. Earlier simulation/board claims retain their original dates and provenance. This metadata refresh does not claim new hardware or HDL execution.
 
-No new physical-board measurements or implementation runs were performed by this audit. File presence is not an evaluation score or proof of technical correctness. Project-specific timing, warning, scope and evidence qualifications remain in their reports.
+## Shared remaining checks
 
-The new Project 1 upload includes required deliverables and useful reproduction/evidence dependencies. Chat exports, recovery-helper scripts, duplicate photos, disposable Vivado caches and failed/temporary run folders are excluded.
+- Repaired AES board test: use one matching repaired BIT/LTX set, retain its build identity and genuine results, and review disclosed boot/debug-reset warnings.
+- Verify final videos and anonymous judge access for all five projects; no sharing permissions were changed.
+- Confirm the active deadline/extension and accepted repository name with organizers. The supplied PDF prints 23 September 2026 and differing leader/team naming examples; the repository remains `buildx-demo`.
+
+Raw timing/DRC/methodology reports, source-derived diagram labels, AI-assistance disclosures and original technical evidence are preserved. No new board execution, HDL simulation, synthesis or routing is claimed by this documentation update. Technical file presence does not imply all application or submission checks have passed.

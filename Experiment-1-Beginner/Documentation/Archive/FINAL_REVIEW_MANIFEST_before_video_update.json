@@ -6,21 +6,13 @@
       "normalization": "crlf_to_lf",
       "sha256": "8fcc90c5f5abd98a012c1830e115f7f9daf649e9f76ccf833843d67bad11f7dd"
     },
-    "Documentation/Archive/FINAL_REVIEW_MANIFEST_before_video_update.json": {
-      "normalization": "crlf_to_lf",
-      "sha256": "00975da19599a4b796f766f088066665d2c4b4c9061927c07d0bc1ff11a972fe"
-    },
     "Documentation/Archive/Project1_AES_Report_before_final_review.pdf": {
       "normalization": "none",
       "sha256": "50de83d4683a1f8ab3c883cfc62d1d335d8fd38bff5fa8314e520a839e243d75"
     },
-    "Documentation/Archive/Project1_AES_Report_before_video_update.pdf": {
-      "normalization": "none",
-      "sha256": "0407cda50553880f4b31a987321afc6d418903158340e89adf43bc1f62784227"
-    },
     "Documentation/FINAL_VALIDATION.md": {
       "normalization": "crlf_to_lf",
-      "sha256": "42f9332987f2cccbc42f07b2a1c543abb87bad8d72e4a757b194fd79cdd9002e"
+      "sha256": "9fe8d5770b649587ddadb3aa60415df6b34edd5d06b7875575a79e977e510732"
     },
     "Documentation/Implementation_Reports/aes_top_bus_skew_routed.rpt": {
       "normalization": "crlf_to_lf",
@@ -76,11 +68,11 @@
     },
     "Documentation/Project1_AES_Report.pdf": {
       "normalization": "none",
-      "sha256": "1f0109563f479a6f9f76ddf69b112db5cf35c42312200b2e7feae1addad07c35"
+      "sha256": "0407cda50553880f4b31a987321afc6d418903158340e89adf43bc1f62784227"
     },
     "Documentation/SUBMISSION_READINESS.md": {
       "normalization": "crlf_to_lf",
-      "sha256": "b2a350bb21268c65de68dcdb5b447a1c53a718117182db43ee195b66f8e0b894"
+      "sha256": "38e93a4fd72a07c33afe91fa485259c80d8f3d988e44723a5ef8b8f9ea83a03f"
     },
     "FPGA_Project_Files/Checkpoints/aes_top_routed.dcp": {
       "normalization": "none",
@@ -132,7 +124,7 @@
     },
     "README.md": {
       "normalization": "crlf_to_lf",
-      "sha256": "5842eda4aaac28376210822ac77dd63bee5f669073281c050bd8ae03d0d03653"
+      "sha256": "ae542dcd8c3bdfaee07cffb5c5d04062372ada29a7a800c3e15a3c300d35af9e"
     },
     "RTL/aes_core.v": {
       "normalization": "crlf_to_lf",
@@ -388,15 +380,15 @@
     },
     "Tools/generate_reports.py": {
       "normalization": "crlf_to_lf",
-      "sha256": "0832991e03e23c1099c76e7d91f897a7c4c934fcb2dc72f36ca6f8e25f0a27eb"
+      "sha256": "7b66b0edbeb8ec30d9aa21008bbef11b7bb9c47130af9d6251b5c2f61f1767d8"
     },
     "Tools/validate_evidence.py": {
       "normalization": "crlf_to_lf",
-      "sha256": "fff4409227c2cee3e8b32e09db6157c541063cedbc1d6188f24a46f548b3b9a3"
+      "sha256": "47127782a24e8fabf59e90fb48a2e30272775c366b4c8e0253d51cd187af47f6"
     },
     "Video_Link.txt": {
       "normalization": "crlf_to_lf",
-      "sha256": "22d49a63de4aad0300ffdc181ddf2e7174a2a7ef699682cd53dc1b0ce77fba0d"
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   }
 }

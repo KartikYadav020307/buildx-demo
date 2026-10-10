@@ -8,7 +8,7 @@
     "parallel_cycles": 4,
     "serial_cycles": 36
   },
-  "final_video_link_bytes": 0,
+  "final_video_link_bytes": 83,
   "permanent_radix_fix": "10 conversions, signed restore and unknown-radix rejection passed",
   "native_project": {
     "archive": "Project4_NN_Vivado_Source_Project.zip",
@@ -31,6 +31,18 @@
       "registration": "25BEC0087"
     }
   ],
-  "team_name": null,
-  "raw_video_url": "https://drive.google.com/file/d/1CRHKfi6c0i63gg7BlZQDZIolw0Ldvm6p/view?usp=sharing"
+  "team_name": "Beyond Boolean",
+  "raw_video_url": "https://drive.google.com/file/d/1CRHKfi6c0i63gg7BlZQDZIolw0Ldvm6p/view?usp=sharing",
+  "final_video_url": "https://drive.google.com/file/d/1iKShZ_66BI91TXDw6vPuZwFjw929anQ-/view?usp=sharing",
+  "metadata_refresh": {
+    "date_IST": "2026-10-10",
+    "baseline_commit": "f22f90757221d62611059a21b7858885c4731484",
+    "scope": "Package metadata and saved-evidence checks only; no new board/simulation/build run.",
+    "historical_summary": "Evidence/Historical/package_validation_before_submission_sync.json",
+    "historical_inventory": "Evidence/Historical/FILE_MANIFEST_before_submission_sync.json",
+    "inherited_results": "Original-build, physical CSV and XSim fields above retain the earlier validation provenance; this refresh does not re-execute those tools.",
+    "video_content_and_anonymous_access": "unverified",
+    "inventory_entries": 99,
+    "checksum_entries": 100
+  }
 }

@@ -2,7 +2,7 @@
 
 Audit: 10 October 2026 (Asia/Kolkata). Reference: `../../Submission_Guidelines/documents_req.pdf`, identical to the supplied six-page organizer PDF. Team: Beyond Boolean; Shanshank Pulipati 25BEC0573; Kartik Yadav 25BEC0087.
 
-**Technical file categories are present. Final video/link and physical verification of the repaired revision remain incomplete.** Existing original hardware evidence is preserved and clearly distinguished from repaired simulation/timing evidence.
+**Technical file categories and the final video URL are present. Final video content/access review and physical verification of the repaired revision remain incomplete.** Existing original hardware evidence is preserved and clearly distinguished from repaired simulation/timing evidence.
 
 | Organizer requirement | Evidence / status |
 | --- | --- |
@@ -25,10 +25,10 @@ Audit: 10 October 2026 (Asia/Kolkata). Reference: `../../Submission_Guidelines/d
 | Images/hardware_output.jpg | Original preview preserved; readable recorded_hardware_output.png now supplied and used in report |
 | FPGA project files | Original native source ZIP/BIT/LTX/checkpoint preserved; repaired native source ZIP and separate repaired output sets supplied |
 | Optional utilization | Original 3222 LUT / 3912 FF; supplied repair 2860 LUT / 4043 FF, each whole top including VIO/debug |
-| Final Drive video link and presentation | Missing Project 1 final URL; Video_Link.txt stays empty |
+| Final Drive video link and presentation | [Final URL recorded](https://drive.google.com/file/d/1HdQFdZ9_jw4ydN3tetVhZn5XoXck3o-m/view?usp=sharing); content, required sections and anonymous access unverified |
 
 The final video must include introduction/problem, architecture and RTL in software, physical setup/connections and working demonstration, and conclusion (organizer page 6). Do not represent original footage as a repaired-board test. At 125 MHz the original archived build still fails setup (-0.104 ns); the separate supplied repaired checkpoint passes (+1.490 ns). Original metrics and evidence were not replaced.
 
 Five DRC Warning checks and four methodology Warning checks remain disclosed for the repaired design, including missing PS7 initialization and debug-hub asynchronous-reset hazards. Passing static timing does not resolve those warnings or substitute for board testing.
 
-Repository-wide recommendations: refresh only the Project 1-2 content in the combined team PDF and root status summaries after this review; those files are out of the authorized edit scope. The organizer PDF lists 23 September 2026 as its deadline and gives differing leader/team naming examples on pages 1-2; confirm current deadline and naming with organizers without renaming this repository automatically.
+The subsequent authorized submission synchronization refreshes the combined team PDF and root status summaries using the current individual reports. Projects 3-5 technical measurements are preserved. The organizer PDF lists 23 September 2026 as its deadline and gives differing leader/team naming examples on pages 1-2; confirm current deadline and naming with organizers without renaming this repository automatically.

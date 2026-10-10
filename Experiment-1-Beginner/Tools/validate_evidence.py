@@ -43,6 +43,6 @@ else:
     for i in range(0,len(vectors),3):
         assert AES.new(bytes.fromhex(vectors[i]),AES.MODE_ECB).encrypt(bytes.fromhex(vectors[i+1])).hex()==vectors[i+2].lower()
     print('PASS: 104 AES golden vectors recomputed independently')
-assert (ROOT/'Video_Link.txt').read_bytes()==b''
+assert (ROOT/'Video_Link.txt').read_text().strip()=='https://drive.google.com/file/d/1HdQFdZ9_jw4ydN3tetVhZn5XoXck3o-m/view?usp=sharing', 'Incorrect final Project 1 video URL'
 print('PASS: current package manifest, supplied/fresh timing, bus skew, warnings, matched payload/probes and archive integrity')
-print('Project 1 video URL and repaired physical-board execution remain pending.')
+print('Project 1 final URL is recorded; video content/access and repaired physical-board execution remain unverified.')

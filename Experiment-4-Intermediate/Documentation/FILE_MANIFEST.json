@@ -1,5 +1,7 @@
 {
-  "description": "Verified submission package; this inventory excludes itself and SHA256SUMS.txt.",
+  "description": "Current submission inventory; exact bytes; excludes itself and SHA256SUMS.txt. Historical inventory retained under Evidence/Historical/.",
+  "updated_date_IST": "2026-10-10",
+  "baseline_commit": "f22f90757221d62611059a21b7858885c4731484",
   "files": [
     {
       "path": ".gitattributes",
@@ -33,8 +35,8 @@
     },
     {
       "path": "Documentation/build_report.py",
-      "bytes": 22153,
-      "sha256": "dfb8c90e4157a87dccc6083746ef72e268a99747e4a3dde5a01ed37776c16e97"
+      "bytes": 22102,
+      "sha256": "14d09bbc55d2cb359175b0f0164eb1deb73fb4aff1ad401fc70bd1949926fc9d"
     },
     {
       "path": "Documentation/model_metrics.json",
@@ -48,13 +50,13 @@
     },
     {
       "path": "Documentation/Project4_NN_Implementation_Guide.md",
-      "bytes": 30571,
-      "sha256": "3190593f96c23e5457ea4726d270d0716e36b32278a1c1f77c583a3a39f70daa"
+      "bytes": 28992,
+      "sha256": "8c9d716cd91dc2836eed0ed06c472692f18dfc0653db6152f9ef4a95ccf3927a"
     },
     {
       "path": "Documentation/Project4_NN_Report.pdf",
-      "bytes": 1896693,
-      "sha256": "5fbc7147361b29a6f619cbfd98dad31f21f14fb2b962e16cecfd67d8a3fafcb6"
+      "bytes": 1896671,
+      "sha256": "f2b96097f226731bdb904ae47052c59f578b570478b00cf0c5000becf6bedb32"
     },
     {
       "path": "Documentation/requirements.txt",
@@ -63,28 +65,33 @@
     },
     {
       "path": "Documentation/SOURCE_PROVENANCE.md",
-      "bytes": 2168,
-      "sha256": "e354c9a2792144be10c8fd3effdffc5560656ba55c4baee77f5c2c76e6777182"
+      "bytes": 2095,
+      "sha256": "41d297b1a832330a3b5bb8cb22994feb1ca0214fb3780a8bda8647d87a021f12"
     },
     {
       "path": "Documentation/SUBMISSION_READINESS.md",
-      "bytes": 4865,
-      "sha256": "433f41fc3570e5024997e30fcd16ac1fbae96c359740040bd382d39ecf064d28"
+      "bytes": 4084,
+      "sha256": "977c11902c80542edd6597b6a3ca03207f2fa914f39333f38ee8474f93350f30"
     },
     {
       "path": "Documentation/verification_scope.md",
-      "bytes": 2392,
-      "sha256": "e50666abd78e3f56f660960d2d9aadccdff7aa4c3480299f320bd4b6ca122d3e"
+      "bytes": 2437,
+      "sha256": "c5460d02af4474b3bf1f438c2c0eea47584e75abc0bf642f996b65e4bcb49d1a"
     },
     {
       "path": "Documentation/VIDEO_GUIDE.md",
-      "bytes": 1283,
-      "sha256": "7372c1dc1fb60a6fb74c73b60d54bee50f7d2f7ba175f1226506455101120922"
+      "bytes": 1272,
+      "sha256": "3d1eb16dec43b8b408b3225f9e3c33b5114063e6e63e167f3ec2eeeb3c3b73b5"
+    },
+    {
+      "path": "Documentation/VIDEO_REVIEW.md",
+      "bytes": 631,
+      "sha256": "0f6bb12e60e5011b7bc26b27c55478db704fa749b5b727c2d9c2ac06022972e6"
     },
     {
       "path": "Evidence/current_package_validation.json",
-      "bytes": 1203,
-      "sha256": "9ead349344a46b2ac66841d6d7a7a1b03902fefb2ccd8cedcf43ffb7a6fd869c"
+      "bytes": 1982,
+      "sha256": "e1e91cb3bbb0dbf23be18d042b4049a9df597e4dd24c512dcbd06b7c4528da9b"
     },
     {
       "path": "Evidence/current_radix_validation.txt",
@@ -98,18 +105,28 @@
     },
     {
       "path": "Evidence/hardware_validation.json",
-      "bytes": 439,
-      "sha256": "d0f7f24b38143a5f3a8ccbc2f1e919e2ea1a84e27553dd27adba86990546c29d"
+      "bytes": 430,
+      "sha256": "c8f53b65e252414ef38e40a402d2fae4228afadc1fb9ee6e553fd764882df274"
+    },
+    {
+      "path": "Evidence/Historical/FILE_MANIFEST_before_submission_sync.json",
+      "bytes": 16210,
+      "sha256": "aaf75bd3af4a3aa969fb89f66cff308c0a8a4cafa5132693c6044f34252799aa"
     },
     {
       "path": "Evidence/Historical/local_build_review_20261006.md",
-      "bytes": 7370,
-      "sha256": "760fd86e67521bb9b562494091dbc60cdf07d2190c57c4752c0f4d64a9065b31"
+      "bytes": 7364,
+      "sha256": "75ca40e2b5aaef6004d9ed8226d2712a9ab622d171fcc69e64a19a8320995f9c"
+    },
+    {
+      "path": "Evidence/Historical/package_validation_before_submission_sync.json",
+      "bytes": 1203,
+      "sha256": "9ead349344a46b2ac66841d6d7a7a1b03902fefb2ccd8cedcf43ffb7a6fd869c"
     },
     {
       "path": "Evidence/Historical/README.md",
-      "bytes": 757,
-      "sha256": "512d8383ff9cbbbb1e937e26f4178f184b5961d55389ca6e7598c258abe4560a"
+      "bytes": 752,
+      "sha256": "f2d4c56d82440f249436a556df6e1411a4eda2b65707812f09ab936dcce0642d"
     },
     {
       "path": "Evidence/Historical/REPAIR_README.md",
@@ -118,8 +135,8 @@
     },
     {
       "path": "Evidence/Historical/report_outline_template.md",
-      "bytes": 4852,
-      "sha256": "ff559e9093c3183a3cb0fd798e2500da5b1d6b4bc4d613b4a94c37d428eff7d6"
+      "bytes": 4881,
+      "sha256": "d4a2f42178d1bfea522f45fa72b30c387f99d5c73614d42f45b1ee1537e66572"
     },
     {
       "path": "Evidence/Historical/source_pack_SHA256SUMS.txt",
@@ -128,8 +145,8 @@
     },
     {
       "path": "Evidence/Historical/verification_scope_preboard.md",
-      "bytes": 2728,
-      "sha256": "64a07961000380f9526a6425940ffe09e43e8ea8c619592e5825f9d64a21c08d"
+      "bytes": 2721,
+      "sha256": "c8d3074f6dd83207a890768040b535e89fb16ee4f18d09e7cd1e376bd6f824df"
     },
     {
       "path": "Evidence/original_artifact_validation.json",
@@ -138,13 +155,13 @@
     },
     {
       "path": "Evidence/RAW_VIDEO.md",
-      "bytes": 749,
-      "sha256": "9615ebe1fdc2ab3e218f1a778b3c8c2fad4ce31b1ba5eb0d07232d994b108c54"
+      "bytes": 788,
+      "sha256": "8b7abda7d93a756d514c7422a8b4827adb2ec73097becca6aa84e9b7286c102d"
     },
     {
       "path": "Evidence/README.md",
-      "bytes": 794,
-      "sha256": "709ea29a7809bc8b26ce204c14d3f23067c4c3d5e277df86337cab1d7fce92c0"
+      "bytes": 791,
+      "sha256": "0daa8e203bf9596e86e596b74f11c78f66d83a4ea808e6ef6780b820233da0be"
     },
     {
       "path": "FPGA_Project/ORIGINAL_NATIVE_MANIFEST.json",
@@ -188,8 +205,8 @@
     },
     {
       "path": "Images/README.md",
-      "bytes": 832,
-      "sha256": "a6095ab3d9119249b907483aa6ab5c441f65fb49acba2af9b142ff2f657c77b6"
+      "bytes": 823,
+      "sha256": "4a88a91bb3f3c393f60bf650a636de645536503961800587893d68c2331ad1ae"
     },
     {
       "path": "Images/rtl_schematic.dot",
@@ -243,8 +260,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5046,
-      "sha256": "9f73eb26ef072410f0118b78b6a040d0a24fd9496c959bd589b7a6ba668f4b4c"
+      "bytes": 4959,
+      "sha256": "a346ad216a539e9f80763e0bfdf5f7b64cf7141e854e21b1fc269f93310b2990"
     },
     {
       "path": "Results/BUILD_SUCCESS.txt",
@@ -283,8 +300,8 @@
     },
     {
       "path": "Results/README.md",
-      "bytes": 852,
-      "sha256": "d693a3ffb4720c6f4f8dc62d3a88fab2d60991f394d5a13e9a8eb7a472551dd9"
+      "bytes": 807,
+      "sha256": "5af83b230b8206e1f8210b767b19bf48930b50b23dda6273dc0e55fceeef7623"
     },
     {
       "path": "Results/simulation_pass.flag",
@@ -398,8 +415,8 @@
     },
     {
       "path": "Simulation/simulation_report.pdf",
-      "bytes": 161300,
-      "sha256": "87e78d98a2cb831a14803d59927376655637e049aa4f313adfe8756b05ddce62"
+      "bytes": 161295,
+      "sha256": "ca55a82ef94baab693171f99f73788e39dc391b5939506b1baf47f0212f71bb1"
     },
     {
       "path": "Simulation/transcript.txt",
@@ -433,8 +450,8 @@
     },
     {
       "path": "START_HERE.md",
-      "bytes": 30936,
-      "sha256": "730b9904c806c9417acdf475951dbb0e277b62697ed1f17c967128c471101ed7"
+      "bytes": 959,
+      "sha256": "45a513315c40da95f0367b55d925eeb7ae602c69ddcaa42a36a7a80ba91ffbfa"
     },
     {
       "path": "Testbench/tb_nn.sv",
@@ -453,8 +470,8 @@
     },
     {
       "path": "Video_Link.txt",
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "bytes": 83,
+      "sha256": "fa94e2c3f064f230dc7d3c5cc3b6db39c043565ba6f912bec0611ce81feded85"
     },
     {
       "path": "Vivado/build_bitstream.tcl",
