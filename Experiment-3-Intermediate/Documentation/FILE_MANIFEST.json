@@ -160,8 +160,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5889,
-      "sha256": "97cec59f6e4d4aad9eb7716e062c93a307fb157bb8c2cd3400c1e9916aaca9e7"
+      "bytes": 5946,
+      "sha256": "b0da5285a740ab6e771b585ed3842f11acf0fdbb9c86e802a337b2761474c6ca"
     },
     {
       "path": "RTL/Constraints/ecg_bandpass_filter_ooc_generated.xdc",
