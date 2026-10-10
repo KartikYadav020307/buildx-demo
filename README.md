@@ -1,6 +1,7 @@
 # V-SPACE FPGA Build Challenge 2026
 
 This is the selected team repository for the FPGA challenge. It contains
+**Experiment 1: AES-128 Hardware Encryption Accelerator**,
 **Experiment 2: Reconfigurable FPGA Radar Target Detection**,
 **Experiment 3: FPGA ECG FIR Filtering and Peak Analysis**, **Experiment 4:
 FPGA Neural Network Inference Accelerator**, and **Experiment 5:
@@ -13,14 +14,14 @@ Reconfigurable FPGA BNN Safety Response**.
 | Team name | Beyond Boolean |
 | Team members | Shanshank Pulipati; Kartik Yadav |
 | Registration numbers | Shanshank Pulipati: 25BEC0573; Kartik Yadav: 25BEC0087 |
-| Selected FPGA board for Experiments 2, 3, 4 and 5 | PYNQ-Z2 |
+| Selected FPGA board for all five experiments | PYNQ-Z2 |
 | FPGA device | Xilinx Zynq-7000 XC7Z020 (`xc7z020clg400-1`) |
 
 ## Five-experiment summary
 
 | Experiment | Difficulty | Summary / current package status |
 | --- | --- | --- |
-| 1 | Beginner | FPGA cryptographic accelerator; project title identified in supplied history, completed package not yet uploaded here |
+| [1](Experiment-1-Beginner/) | Beginner | Iterative AES-128 with VIO/JTAG; original RTL/testbench, saved passing vector, native project/IP, BIT/LTX, reports and required documentation included; result image provisional, final video blank, archived setup timing fails |
 | [2](Experiment-2-Beginner/) | Beginner | Streaming 21-cell CA-CFAR radar detector; runtime sensitivity, exact 32-combination physical sweep, original BIT/LTX and required technical documentation included; final narrated video pending |
 | [3](Experiment-3-Intermediate/) | Intermediate | 128-tap FPGA FIR filtering through AXI DMA; Python peak/heart-rate analysis on recorded ECG |
 | [4](Experiment-4-Intermediate/) | Intermediate | Trained 4-to-4-to-3 Iris classifier; parallel/sequential RTL, 4/36-cycle inference, verified board results, original BIT/LTX, routed reports and native Vivado source archive |
@@ -36,11 +37,29 @@ Its final video link is intentionally blank. See
 The organizer's original checklist is in
 [`Submission_Guidelines/documents_req.pdf`](Submission_Guidelines/documents_req.pdf).
 It requests one repository containing all five experiments and a combined team
-report. The team-wide final report remains pending in `Final_Report/`.
+report. The [combined team report](Final_Report/Beyond_Boolean_Final_Report.pdf)
+now contains all five project reports and a current evidence/status overview.
+See [the whole-entry checklist](Final_Report/SUBMISSION_STATUS.md) for remaining items.
 
 The requested naming convention is `FPGA-Build-Challenge-TeamLeader name`.
 This upload uses the repository explicitly selected by the user, `buildx-demo`;
-its current name does not follow that convention. The remaining experiment packages and the final combined report still need completion.
+its current name does not follow that convention. All five technical packages
+are present; the linked checklist distinguishes file coverage from remaining
+video, evidence-quality and implementation issues.
+
+## Experiment 1
+
+[Project report](Experiment-1-Beginner/Documentation/Project1_AES_Report.pdf) | [Simulation report](Experiment-1-Beginner/Simulation/simulation_report.pdf) | [Submission checklist](Experiment-1-Beginner/Documentation/SUBMISSION_READINESS.md)
+
+The original AES/VIO RTL, XDC, testbench, passing single-vector transcript/WDB,
+source/IP project archive, matching BIT/LTX, routed checkpoint and original
+reports are included. Architecture and structural wiring diagrams were drawn
+from the preserved source. Genuine board and Hardware Manager captures are
+included. The original result-video poster is provisional and needs a readable
+completed-ciphertext replacement. The final video link is intentionally blank.
+The saved 125 MHz routed design has WNS -0.104 ns and four setup-failing endpoints;
+the passing 100 MHz behavioral test does not establish implementation timing
+closure. No new board or Vivado execution is claimed by this packaging update.
 
 ## Experiment 4
 

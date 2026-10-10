@@ -1,0 +1,14 @@
+Time resolution is 1 ps
+
+==================================================
+ AES-128 ENCRYPTION TEST 
+
+KEY : 2b7e151628aed2a6abf7158809cf4f3c
+PLAINTEXT : 6bc1bee22e409f96e93d7e117393172a
+CIPHERTEXT : 3ad77bb40d7a3660a89ecaf32466ef97
+EXPECTED : 3ad77bb40d7a3660a89ecaf32466ef97
+
+STATUS : >> TEST PASSED <<
+==================================================
+
+$finish called at time : 387 ns : File "C:/Users/student/Documents/25BEC0087/aes128_core/aes128_core.srcs/sim_1/new/tb_aes_core.v" Line 67
