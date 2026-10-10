@@ -2,6 +2,7 @@
 from pathlib import Path
 import csv
 import hashlib
+import json
 import itertools
 import re
 import zlib
@@ -9,13 +10,25 @@ import zipfile
 import posixpath
 
 ROOT = Path(__file__).resolve().parents[1]
+review_manifest = json.loads((ROOT / 'Evidence/FINAL_REVIEW_MANIFEST.json').read_text())
+for name, record in review_manifest['files'].items():
+    data = (ROOT / name).read_bytes()
+    if record['normalization'] == 'crlf_to_lf':
+        data = data.replace(b'\r\n', b'\n')
+    assert hashlib.sha256(data).hexdigest() == record['sha256'], name
 manifest = (ROOT / "Results/BUILD_SUCCESS.txt").read_text()
 sources = re.findall(r"^(\S+) bytes=(\d+) crc32=([0-9a-f]{8})$", manifest, re.M)
 assert len(sources) == 11, "Expected eleven build-manifest source entries"
+verified_sources = {}
+normalized_sources = []
 for name, length, checksum in sources:
     data = (ROOT / name).read_bytes()
+    if len(data) != int(length) or f"{zlib.crc32(data):08x}" != checksum:
+        data = data.replace(b"\r\n", b"\n")
+        normalized_sources.append(name)
     assert len(data) == int(length), name
     assert f"{zlib.crc32(data):08x}" == checksum, name
+    verified_sources[name] = data
 
 expected_hashes = {
     "Hardware/radar_top.bit": "88271fc169ca91f16e16ed15e0bd5f1ef874f0dc97cfdcda7fe1f413f6e44dc6",
@@ -45,7 +58,7 @@ with (ROOT / "Simulation/core_standard_results.csv").open(newline="") as f:
 assert len(standard) == 80
 assert [int(r["cut_index"]) for r in standard] == list(range(10, 90))
 assert [int(r["cut_index"]) for r in standard if int(r["detected"])] == [30, 60, 85]
-assert (ROOT / "Video_Link.txt").read_bytes() == b"", "Final demo link must remain blank"
+assert (ROOT / "Video_Link.txt").read_text().strip() == 'https://drive.google.com/file/d/1GVxgJAPUFZR8cL2akO7Jz29AENO5zwNO/view?usp=sharing', "Incorrect final video URL"
 
 with zipfile.ZipFile(ROOT / "FPGA_Project/Project2_Radar_Vivado_Source.zip") as archive:
     assert archive.testzip() is None
@@ -58,7 +71,7 @@ with zipfile.ZipFile(ROOT / "FPGA_Project/Project2_Radar_Vivado_Source.zip") as 
             "$PSRCDIR", posixpath.dirname(xpr) + "/project2_radar.srcs")
         assert posixpath.normpath(target) in archive.namelist(), reference
     for name, _, _ in sources:
-        assert archive.read("Project2_Radar_Final/" + name) == (ROOT/name).read_bytes(), name
+        assert archive.read("Project2_Radar_Final/" + name) == verified_sources[name], name
     assert not any("run_20261008_221922" in name or ".cache/" in name for name in archive.namelist())
 
 bus_skew = (ROOT / "Reports/bus_skew_routed.rpt").read_text()
@@ -70,8 +83,11 @@ assert "12.176" in (ROOT/"Reports/timing_summary.rpt").read_text()
 assert len(re.findall(r"#\d+ Warning", (ROOT/"Reports/drc.rpt").read_text())) == 5
 assert len(re.findall(r"#\d+ Warning", (ROOT/"Reports/methodology.rpt").read_text())) == 4
 print("EVIDENCE AUDIT PASS: 11 source CRCs, original BIT/LTX SHA-256, 39 physical CSV rows,")
-print("all 32 combinations, 80 simulated windows and three exact target indices; final link blank.")
+print("all 32 combinations, 80 simulated windows and three exact target indices; final URL recorded (video content not verified).")
 print("Native ZIP integrity, all 8 XPR dependencies and all 11 archived sources verified.")
 print("Original reports: 4 bus-skew constraints MET, no unconstrained internal endpoints;")
 print("5 DRC and 4 methodology Warning checks retained and disclosed.")
 print("This is an archive audit; no new physical-board run is claimed.")
+
+if normalized_sources:
+    print("Git checkout CRLF normalized to the original LF manifest for", len(normalized_sources), "sources.")

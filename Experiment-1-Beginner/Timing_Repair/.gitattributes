@@ -1,0 +1,4 @@
+# Keep supplied evidence, manifests and source bytes exactly as archived.
+* -text
+*.pdf binary
+*.vcd -diff

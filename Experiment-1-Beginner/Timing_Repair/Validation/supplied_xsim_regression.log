@@ -1,0 +1,6 @@
+Time resolution is 1 ps
+PASS: 104 independent AES vectors at 125 MHz simulation clock
+PASS: 21-cycle completion, one-cycle done, retained ciphertext
+PASS: input capture, mid-encryption reset, restart, held start
+PASS: cycle-by-cycle original/repaired equivalence throughout
+$finish called at time : 20146 ns : File "C:/Users/yamle/OneDrive/Desktop/Project1_AES_Timing_Repair/Project1_AES_Timing_Repair/Testbench/tb_aes_repair.sv" Line 70

@@ -1,0 +1,5 @@
+PASS: 104 independent AES vectors at 125 MHz simulation clock
+PASS: 21-cycle completion, one-cycle done, retained ciphertext
+PASS: input capture, mid-encryption reset, restart, held start
+PASS: cycle-by-cycle original/repaired equivalence throughout
+Testbench/tb_aes_repair.sv:70: $finish called at 20146000 (1ps)

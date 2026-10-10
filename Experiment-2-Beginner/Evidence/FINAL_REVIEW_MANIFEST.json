@@ -1,0 +1,330 @@
+{
+  "review_date": "2026-10-10",
+  "scheme": "SHA-256; explicit CRLF-to-LF normalization for text only; binary bytes exact",
+  "files": {
+    ".gitattributes": {
+      "normalization": "crlf_to_lf",
+      "sha256": "8fcc90c5f5abd98a012c1830e115f7f9daf649e9f76ccf833843d67bad11f7dd"
+    },
+    "Documentation/Archive/Project2_Radar_Report_before_final_review.pdf": {
+      "normalization": "none",
+      "sha256": "090de0bcaa2de7e93fff0ae772ab91c85a306f80cc71a044032033f8920a3097"
+    },
+    "Documentation/FINAL_VALIDATION.md": {
+      "normalization": "crlf_to_lf",
+      "sha256": "264ec8aa2ca74e88a5944bbb6108dce63c53b4dd430a62f50f153fce00a9025d"
+    },
+    "Documentation/Project2_Radar_Report.pdf": {
+      "normalization": "none",
+      "sha256": "0b3a4951b26e9db2ecaaf91a046693478c75150506fd6ea813265de876363612"
+    },
+    "Documentation/SUBMISSION_READINESS.md": {
+      "normalization": "crlf_to_lf",
+      "sha256": "e3742b77dfbfc802a0ac85bd84e522e61277af218c4ff10a6982ace58872f5c1"
+    },
+    "Documentation/Video_Script.md": {
+      "normalization": "crlf_to_lf",
+      "sha256": "600a3d72007ca6c69e954a44b30d966122d55149080a2ce79b0e86958ab87fed"
+    },
+    "Evidence/FILE_MANIFEST.json": {
+      "normalization": "crlf_to_lf",
+      "sha256": "5059d3f1aa7b5c3f394f5f69b65c4bd28b11bb47331f625b1f4976837c9adca7"
+    },
+    "Evidence/PROVENANCE.md": {
+      "normalization": "crlf_to_lf",
+      "sha256": "2807860d1fe0030e0425fda49e296e8fab7f9772c1796379ef13fa75ba3c7062"
+    },
+    "Evidence/RAW_VIDEO.md": {
+      "normalization": "crlf_to_lf",
+      "sha256": "56dae6fc167027964c575d4c54d8349241ab65a55e594b7066abf6b00af5677b"
+    },
+    "Evidence/vivado_build.log": {
+      "normalization": "crlf_to_lf",
+      "sha256": "5f0b9a65616e10b6f3fdd223642e4de4b2ed88a3c9dbbeaf602be4af9d1fd989"
+    },
+    "FPGA_Project/Project2_Radar_Vivado_Source.zip": {
+      "normalization": "none",
+      "sha256": "944ccf4203635eed95f8e876f38d020663379ec1f4fdc1f84a1e5ff6d3ab38af"
+    },
+    "FPGA_Project/README.md": {
+      "normalization": "crlf_to_lf",
+      "sha256": "554760c292dd7f076a6dfd5613804b2c2ca1a8594127d58c1554b16d7482a136"
+    },
+    "Hardware/radar_top.bit": {
+      "normalization": "none",
+      "sha256": "88271fc169ca91f16e16ed15e0bd5f1ef874f0dc97cfdcda7fe1f413f6e44dc6"
+    },
+    "Hardware/radar_top.ltx": {
+      "normalization": "none",
+      "sha256": "34adb974e793b880dfe469cd21c3c9b3cd039e650a4a76f72d9fe5dcfd575102"
+    },
+    "Images/block_diagram.png": {
+      "normalization": "none",
+      "sha256": "feddfcced68cc11f5f5a0fbd4616d8ba774254a2d5101c9b02aff1999ec493b5"
+    },
+    "Images/block_diagram.svg": {
+      "normalization": "crlf_to_lf",
+      "sha256": "cdcf9745672b0cecb790c009ae8f3ebf83c15cc966db7de22c5135066010c1bf"
+    },
+    "Images/board_setup.jpg": {
+      "normalization": "none",
+      "sha256": "42290ed851528a0f65a55a2b70d12e19902ecf13008816434d6ec5383befae67"
+    },
+    "Images/cfar_detection.png": {
+      "normalization": "none",
+      "sha256": "72bfd7e66618029d3af2bae20b8b463d087f84ba169808e121fb10d445ea9bd5"
+    },
+    "Images/hardware_output.jpg": {
+      "normalization": "none",
+      "sha256": "b2c598e04830bfcdbc0eee8ee80407d2fd2497c6c3c78564de96852559b00d69"
+    },
+    "Images/hardware_verification.png": {
+      "normalization": "none",
+      "sha256": "c9993945a9e2f7cf71c5d33fb28d39cd649fd7d63306822aded95de7c46a4d2a"
+    },
+    "Images/rtl_schematic.dot": {
+      "normalization": "crlf_to_lf",
+      "sha256": "2faf7dceb8e4224d422c5560580946983deb64869eff3b84799fac350256c169"
+    },
+    "Images/rtl_schematic.png": {
+      "normalization": "none",
+      "sha256": "1d20dbf590ef83d312b8b731c7877a19e6ff6331bdf032fbda25b6e4be9a6aba"
+    },
+    "Images/rtl_schematic.svg": {
+      "normalization": "crlf_to_lf",
+      "sha256": "ffe27eb7c8782de6e0bbf017c9715830e09edad0c75d65107c0d36041f628846"
+    },
+    "Images/simulation_waveform.png": {
+      "normalization": "none",
+      "sha256": "6bcba3d216e7f644c2b6c0a5e19a6c207411745761972c715e27cc502299ac4e"
+    },
+    "OPEN_PROJECT2.cmd": {
+      "normalization": "crlf_to_lf",
+      "sha256": "b3ce5b41110ad7ea0706af7aa37924401404fab11ee13a60030b7a7cd0f69cde"
+    },
+    "README.md": {
+      "normalization": "crlf_to_lf",
+      "sha256": "43e44635cbf2de32a02a7f79dc5269fa4cb118efb82c4afbdd561cb9b2e8a460"
+    },
+    "Reports/bus_skew_routed.rpt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "e5d760d939882968e7434e2ce15604b4f597b2daf59def818de2bdce848e4b21"
+    },
+    "Reports/check_timing.rpt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "a70ccb9dfd2f95a24746ff9c51dc754e54b22808fe8c808d97e6683386396d80"
+    },
+    "Reports/clock_utilization.rpt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "8a61d760e2c6e4faf6f76ac5d99a4b4d9eb8b977dacb0d11c8248b3a57217104"
+    },
+    "Reports/drc.rpt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "012a02d6fbe97a736d71263714e1cf7e6202c5fe6df1fe854267585dcf5bb7c3"
+    },
+    "Reports/methodology.rpt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "4d71ceb6ce9db98942cdeb2ac658243e13f2b8f96d8d6c5a16a5dd901a74cce8"
+    },
+    "Reports/pulse_width.rpt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "36d6381797406a28d4642627d603876bd241ad82b838c4f32cfc32eee518b562"
+    },
+    "Reports/README.md": {
+      "normalization": "crlf_to_lf",
+      "sha256": "cac3755730ec78185d80284059697af53f6f4523262bde2f2c6689f78bc1295b"
+    },
+    "Reports/routed_design.dcp": {
+      "normalization": "none",
+      "sha256": "03d6ca5790ebbf262ab5c0ce23eebbad6765bc005480acd72e1a59375691bbb0"
+    },
+    "Reports/timing_summary.rpt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "7bf695de76fd23a6aca338c80759652c1ff4c52743eaeeb15ce89052120d2878"
+    },
+    "Reports/utilization.rpt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "bce39ec71fd42246fcb669eb45739e885ec767c22bd5dede2a7cd99cd76fa8bf"
+    },
+    "Results/BUILD_SUCCESS.txt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "ada3d044d52fc8681e039fff032ae7f4375ce8ccc991860fc934442c38ea1732"
+    },
+    "Results/EVIDENCE_AUDIT.txt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "23871f56279fc1ad91076753a3755aa0ede79bd8b776733ea342381fcea65c35"
+    },
+    "Results/HARDWARE_PASS.txt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "72b211751675ecbac2fba3cdb792b662dd5c9de5400d13153fdf8fb85cebcd78"
+    },
+    "Results/hardware_results.csv": {
+      "normalization": "crlf_to_lf",
+      "sha256": "86c1894b1bbf72a0deeda5513421d00d33c863e5d79b94e3896783ee650e322d"
+    },
+    "RTL/cfar_core.v": {
+      "normalization": "crlf_to_lf",
+      "sha256": "98450dbc840674c50024a827897e5f8520f656363b9e5e5bf4c50ab2d9b8df6d"
+    },
+    "RTL/pynq_z2.xdc": {
+      "normalization": "crlf_to_lf",
+      "sha256": "31a0ab2a88ff96d8ecccea19254b65a953a61b3d5d49540a440e3281bf9b4959"
+    },
+    "RTL/radar_demo.v": {
+      "normalization": "crlf_to_lf",
+      "sha256": "06ca85f9d41628b6e178fe3eb01bb12d4741a99483f48fc473f8aeb63a98dead"
+    },
+    "RTL/radar_top.v": {
+      "normalization": "crlf_to_lf",
+      "sha256": "0901a8d9b95bd3279fd7ff5f98f9ffd9ab98a32abe89d6e58e1be9b382459598"
+    },
+    "RUN_PROJECT2.cmd": {
+      "normalization": "crlf_to_lf",
+      "sha256": "9510d0e82eb33e8eff5c9264833808c7d6fdf37065d8ce3b5723ec4549ac04cc"
+    },
+    "Simulation/Archive/simulation_report_before_final_review.pdf": {
+      "normalization": "none",
+      "sha256": "95390c2dc48894e19167d1ad4b49fe9c942f524b56f66630b464777ce649ad66"
+    },
+    "Simulation/cfar_core.vcd": {
+      "normalization": "crlf_to_lf",
+      "sha256": "c6cded422fc8f543c1171b96fe0c102d638d2d7838402ee198844e34370f65e9"
+    },
+    "Simulation/core_standard_results.csv": {
+      "normalization": "crlf_to_lf",
+      "sha256": "e341d93a7dd33f489ee766252dad49ef4053427131473950cb751ef6d4704ad6"
+    },
+    "Simulation/radar_demo.vcd": {
+      "normalization": "crlf_to_lf",
+      "sha256": "d50cef95746021547fdb97be145c2f9fce13e79f1f63601993eb945dd67cb435"
+    },
+    "Simulation/rtl_netlist.json": {
+      "normalization": "crlf_to_lf",
+      "sha256": "44189b2349ce1f24c5e9a6dc8a5b65331b7ecf30731e2f6a325513f628155d36"
+    },
+    "Simulation/schematic_transcript.txt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "38b7128fa0b70702f5f4470f3ff9807da7874ff5090b6c2654acd9f74958b0dc"
+    },
+    "Simulation/simulation_report.pdf": {
+      "normalization": "none",
+      "sha256": "eafe3eb414ba3f0a261ffdbdf480dbe7ac33f36d40911424130325fed9a1eefb"
+    },
+    "Simulation/tb_cfar_core.log": {
+      "normalization": "crlf_to_lf",
+      "sha256": "5208172b38d262d5bdc8bdeed365215493eba985bb147bf5f3f64e43531549bd"
+    },
+    "Simulation/tb_radar_demo.log": {
+      "normalization": "crlf_to_lf",
+      "sha256": "814397a8461287c18317988cb2cd29b264df4fcfb9c87c518bc562be0e4ebbad"
+    },
+    "Simulation/top_elaboration.log": {
+      "normalization": "crlf_to_lf",
+      "sha256": "21602852012ee14498e1ee489d8d6639b5d009526e5209c31e3dd08deda68bdc"
+    },
+    "Simulation/transcript.txt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "491467ab983d0107dc1e0d673ea887ccdf8ee895b571386fa8d89b35f87057a9"
+    },
+    "Simulation/vio_elaboration_stub.v": {
+      "normalization": "crlf_to_lf",
+      "sha256": "8bee13176ca061b0719f7eef92fff2601da7a46516e96e43d0458a405767189f"
+    },
+    "Simulation/waveform.png": {
+      "normalization": "none",
+      "sha256": "6bcba3d216e7f644c2b6c0a5e19a6c207411745761972c715e27cc502299ac4e"
+    },
+    "Simulation/yosys_structural.log": {
+      "normalization": "crlf_to_lf",
+      "sha256": "3817dd0dfbd2030d6ac3f163e93e731244094d07a6ac0dbe8885f639093e6493"
+    },
+    "START_HERE.md": {
+      "normalization": "crlf_to_lf",
+      "sha256": "300c85196d4ec7c83015975a0690e536527b1a87db9c589b5b7e6e13eb8d37cd"
+    },
+    "Testbench/tb_cfar_core.sv": {
+      "normalization": "crlf_to_lf",
+      "sha256": "c62e061f3e2dd308ac4a92c557535b9b12045516c28150ef015178bc52dd9c18"
+    },
+    "Testbench/tb_radar_demo.sv": {
+      "normalization": "crlf_to_lf",
+      "sha256": "a5685e9f7af9b2710b51a68da258fbfd73fd3bc0a3eb0b78be5ad3cecd0f9bf1"
+    },
+    "Tools/find_vivado.cmd": {
+      "normalization": "crlf_to_lf",
+      "sha256": "ec674cf14e7c7dbc4e1062cd9698cf9f47444809b7968e58fc21c045fa0c3549"
+    },
+    "Tools/generate_figures.py": {
+      "normalization": "crlf_to_lf",
+      "sha256": "be8412f0a92a3706d21204b1adb74186927c3173f880319314c9dddce17d3042"
+    },
+    "Tools/generate_reports.py": {
+      "normalization": "crlf_to_lf",
+      "sha256": "ba495b2d6fc63087f45622f4dc562cebd225b1aa157b66e3347761761286426e"
+    },
+    "Tools/SCHEMATIC_REPRODUCTION.md": {
+      "normalization": "crlf_to_lf",
+      "sha256": "f1ad6b23942d462d74973319dbfd9bef4966fb77ebd310dd670a1d6c9cb2e320"
+    },
+    "Tools/validate_evidence.py": {
+      "normalization": "crlf_to_lf",
+      "sha256": "e841d3b77a7f7b57b461b2f53db0b86431b13965b01fea7aba9831f88ca0c963"
+    },
+    "Validation_2026-10-10/Checkpoint_Recheck/bus_skew.rpt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "f144f5a0e7d7d49da96f9b49ed08eb4c102d419115c1da10eb9420edb56cfb51"
+    },
+    "Validation_2026-10-10/Checkpoint_Recheck/drc.rpt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "133607591ce5c3e09935766fd474b31fc61a733172b619ad7f741f513ae90008"
+    },
+    "Validation_2026-10-10/Checkpoint_Recheck/methodology.rpt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "9091a0dc9bb39a7557dd3e434e9c7a4b1e446b31ba53f2470cdb8a2601128b32"
+    },
+    "Validation_2026-10-10/Checkpoint_Recheck/route_status.rpt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "15a7bb68c364c7cd82c8c72561112cbcc7de27f6a8d2fdf8995172d25e493661"
+    },
+    "Validation_2026-10-10/Checkpoint_Recheck/timing.rpt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "af971766ef91a043a26a6d0df8efd93c2fdbb85141b117d9716d5adc94fdcbe6"
+    },
+    "Validation_2026-10-10/Checkpoint_Recheck/utilization.rpt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "1f3729032cb92b93fd053faafb4d853bc072470f8cb59b307f0a78cfca71b11b"
+    },
+    "Validation_2026-10-10/tb_cfar_core_2026-10-10.log": {
+      "normalization": "crlf_to_lf",
+      "sha256": "51cf4707f5357fc072f0dea6a1eca6f12dd624eb8c92ab463caba7164b73e05a"
+    },
+    "Validation_2026-10-10/tb_radar_demo_2026-10-10.log": {
+      "normalization": "crlf_to_lf",
+      "sha256": "edbca68477dbfddc98be39f18d1ec132a4cef457b3a0bbb74bb651c797e832e0"
+    },
+    "Video_Link.txt": {
+      "normalization": "crlf_to_lf",
+      "sha256": "62c618d7d1ef927961d12acb3c4248b84e074aeaafc94c01338ec96cf9258fe2"
+    },
+    "Vivado/build_project.tcl": {
+      "normalization": "crlf_to_lf",
+      "sha256": "5a95f14eaf9f3f425e5ef3db1ca933730ba219838fdc8d77fa12cb7c3ed87f4f"
+    },
+    "Vivado/debug_clock.tcl": {
+      "normalization": "crlf_to_lf",
+      "sha256": "f5df3300f12913fa1b6ea7aa8a2f07d699775fed5eb01d17d41a1975e03277db"
+    },
+    "Vivado/hardware_helpers.tcl": {
+      "normalization": "crlf_to_lf",
+      "sha256": "c7543caec1a0505d04dbfae2ce013ba00e82b9ccacdd3d4f7c95c88c9c976520"
+    },
+    "Vivado/hardware_test.tcl": {
+      "normalization": "crlf_to_lf",
+      "sha256": "80eac7cb076f2429a19976862d5554edecd1e6a6cddcc129d4eb63995a348cd2"
+    },
+    "Vivado/program_board.tcl": {
+      "normalization": "crlf_to_lf",
+      "sha256": "7e999284278fd8872caa825b972905f72dcb4d5215b9aad2cf67c3899173fb30"
+    }
+  }
+}

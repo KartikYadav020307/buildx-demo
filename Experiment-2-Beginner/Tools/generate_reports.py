@@ -96,7 +96,7 @@ def footer(canvas, doc):
     canvas.setFont(SANS, 7.2)
     canvas.setFillColor(GRAY)
     canvas.drawString(46, H-28, 'V-SPACE FPGA Build Challenge | Experiment 2 | PYNQ-Z2')
-    canvas.drawString(46, 29, 'Evidence: 8 October 2026 IST | Documentation: 9 October 2026')
+    canvas.drawString(46, 29, 'Evidence: 8 October 2026 IST | Documentation: 10 October 2026')
     canvas.drawRightString(W-46, 29, f'{doc.page}')
     canvas.restoreState()
 
@@ -128,7 +128,7 @@ page(report, '1. Objective',
            ['Standard frame', '80 full windows; targets at CUT indices 30, 60, 85'],
            ['Routed timing', 'WNS 12.176 ns; WHS 0.018 ns; WPWS 2.000 ns']], [WIDTH*.40,WIDTH*.60]),
     Spacer(1,10),
-    p('The original successful build and physical evidence are retained. This documentation update does not claim a new board execution. The original routed reports, checkpoint and native .xpr/IP source archive are now included. The final narrated video URL is intentionally blank.', 'Caption2'))
+    p('The original successful build and physical evidence are retained. This documentation update does not claim a new board execution. The original routed reports, checkpoint and native .xpr/IP source archive are now included. The supplied final video URL is recorded in Video_Link.txt. Playback, content and anonymous judge access have not been verified.', 'Caption2'))
 
 page(report, '2. Block diagram and detection method',
     pic('Images/block_diagram.png', 280),
@@ -163,7 +163,7 @@ page(report, '4. Simulation results',
            ['Controller robustness', 'Held-start and reset during active frame checks'],
            ['Standard synthetic sequence', 'Three detections at 30, 60, 85; 80 results for indices 10-89']], [WIDTH*.32,WIDTH*.68]),
     Spacer(1,9),
-    p('Local simulation traces/logs are preserved under their real origin. The original Vivado log is Evidence/vivado_build.log. No additional simulator run is claimed during publication.', 'Caption2'))
+    p('Local simulation traces/logs are preserved under their real origin. The original Vivado log is Evidence/vivado_build.log. A separate 10 October 2026 Vivado XSim review reran both suites and reached the same PASS totals. The original traces/logs remain preserved; new console logs are in Validation_2026-10-10/. No new physical-board run is claimed.', 'Caption2'))
 
 page(report, '5. Hardware implementation - routed build',
     p('The supplied laptop build completed on <b>8 October 2026 at 22:40:16 IST</b>. It created a fresh xc7z020clg400-1 project, generated VIO, passed both XSim suites, synthesized, routed, checked setup/hold/pulse-width timing and DRC, and wrote matching bitstream/probe files. The full successful log and original BUILD_SUCCESS marker are included.'),
@@ -212,7 +212,7 @@ page(report, '6. Applications',
     heading('7. Conclusion and future scope'),
     p('The original complete design passed the independent core simulation, all controller cases and the physical 32-combination sweep plus repeat. The standard frame produced three correct indices and 80 full windows. Routed setup/hold/pulse-width margins are positive at the 50 MHz processing clock; the original bitstream and matching probes are preserved.'),
     p('The original utilization, timing, methodology and bus-skew reports have been reviewed. Future work includes reviewing debug-IP warnings for deployment; integrating real acquisition and range/Doppler processing; calibrate alpha against representative clutter and false-alarm requirements; and validate performance on recorded or live radar measurements. A wider framing/index scheme would be needed for long streams beyond the demonstration\'s 100-sample frames.'),
-    p('<b>Submission status:</b> final narrated video URL intentionally blank. Team: Beyond Boolean. All required Project 2 technical-document categories are supplied, including original routed reports and the native project source archive. Completion of the final video and its accessible Drive link remains pending.'),
+    p('<b>Submission status:</b> the supplied <link href="https://drive.google.com/file/d/1GVxgJAPUFZR8cL2akO7Jz29AENO5zwNO/view?usp=sharing">final demonstration video</link> is recorded in Video_Link.txt. Team: Beyond Boolean. All required technical-document categories are supplied, including original routed reports and native project archive. The Drive preview was blank during review; playback, presentation content and anonymous judge access remain unverified.'),
     heading('Evidence and primary references'),
     p('Local evidence: Results/BUILD_SUCCESS.txt; Results/HARDWARE_PASS.txt; Results/hardware_results.csv; Evidence/vivado_build.log; Reports/*.rpt and routed_design.dcp; FPGA_Project/Project2_Radar_Vivado_Source.zip; Simulation/transcript.txt and VCD/CSV files. The readiness audit maps every organizer item to a file.', 'Caption2'),
     p('AMD/Xilinx PYNQ-Z2 XDC: github.com/Xilinx/xup_fpga_vivado_flow, source/pynq-z2/lab5/uart_led_pins_pynq.xdc. AMD 7-Series Libraries Guide UG953: MMCME2_BASE. AMD Vivado Tcl Command Reference UG835: commit_hw_vio and refresh_hw_vio. Original links are in README.md.', 'Caption2'))
@@ -253,7 +253,7 @@ page(simulation, 'Transcripts and reproduction',
     p('For the complete vendor flow, RUN_PROJECT2.cmd invokes Vivado/build_project.tcl, which runs both XSim suites and requires their PASS markers before synthesis/routing. This flow recreates VIO and the native project. The recovered original native source archive is also included in FPGA_Project/. A new build clears old markers and hardware outputs; preserve the original archive first.'),
     heading('Schematic and evidence audit'),
     p('The Yosys structural check generates the actual top schematic. Simulation/vio_elaboration_stub.v and vendor clock-library declarations serve as black boxes; this check does not verify their implementation, lock, routing or timing. Images contains the DOT/PNG/SVG; Simulation contains the used-module JSON and complete tool transcript. The generation recipe is Tools/SCHEMATIC_REPRODUCTION.md.'),
-    p('Run python Tools/validate_evidence.py for source/bitstream identity and saved CSV consistency. No simulation or new board run is claimed by the PDF generation process. Old September standalone core or AXI overlay results are not used as evidence for this complete October design.', 'Caption2'))
+    p('Run python Tools/validate_evidence.py for source/bitstream identity and saved CSV consistency. PDF generation itself does not execute hardware or simulation. A separate 10 October XSim rerun passed both suites; its logs are retained in Validation_2026-10-10/. No new board run was performed. Old September standalone core or AXI overlay results are not used as evidence for this complete October design.', 'Caption2'))
 
 build('Simulation/simulation_report.pdf', simulation, 'Project 2 - Simulation Report')
 print('Generated Documentation/Project2_Radar_Report.pdf and Simulation/simulation_report.pdf')

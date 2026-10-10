@@ -1,44 +1,34 @@
-# Organizer requirements - Experiment 1
+# Organizer checklist - Experiment 1
 
-Audit: 10 October 2026. Reference: repository-root `Submission_Guidelines/documents_req.pdf`.
+Audit: 10 October 2026 (Asia/Kolkata). Reference: `../../Submission_Guidelines/documents_req.pdf`, identical to the supplied six-page organizer PDF. Team: Beyond Boolean; Shanshank Pulipati 25BEC0573; Kartik Yadav 25BEC0087.
 
-The required technical file categories have been assembled. The evidence is qualified: the final hardware-output image is provisional, the final video link is intentionally blank, and the saved routed implementation fails setup timing.
+**Technical file categories are present. Final video/link and physical verification of the repaired revision remain incomplete.** Existing original hardware evidence is preserved and clearly distinguished from repaired simulation/timing evidence.
 
-| Organizer item | File / status |
+| Organizer requirement | Evidence / status |
 | --- | --- |
-| Objective | Project1_AES_Report.pdf section 1 |
-| Block diagram | Report section 2 and Images/block_diagram.png |
-| RTL design, code structure and module hierarchy | Report section 3; original RTL and VIO XCI |
-| Simulation waveforms and testbench outputs | Report section 4; original waveform photo, transcript and WDB |
-| Hardware implementation | Report section 5; genuine board/programming captures; original reports and BIT/LTX |
-| Applications | Report section 6 |
-| Conclusion and future scope | Report section 7 |
-| RTL and constraints | RTL/aes_top.v, aes_core.v, pynq.xdc, IP/vio_0/vio_0.xci |
-| Testbench | Testbench/tb_aes_core.v; original module name retained |
-| Simulation/waveform.png | Present; original photograph, tightly zoomed historical view |
-| Simulation/transcript.txt | Present; unchanged original XSim passing log, one vector |
-| Simulation/simulation_report.pdf | Present; configuration, vector, waveform, transcript and limits |
-| Images/block_diagram.png | Present; architecture drawn from original source |
-| Images/rtl_schematic.png | Present; exact source connectivity diagram, accurately labeled; not a Vivado GUI export |
-| Images/board_setup.jpg | Present; genuine board photo recovered from the supplied conversation |
-| Images/hardware_output.jpg | Provisional; low-resolution original video preview, replace with readable output evidence |
-| FPGA project files | Original native XPR/source/IP ZIP, BIT/LTX and routed checkpoint |
-| Optional utilization | Original reports; integrated design 3,222 LUTs / 3,912 registers |
-| Final video Drive link | Video_Link.txt is intentionally zero bytes by instruction |
+| Experiment-1-Beginner layout, Documentation/RTL/Testbench/Simulation/Images | Present; actual module filenames retained |
+| PDF objective | Project1_AES_Report.pdf section 1 |
+| PDF block diagram | Section 2; Images/block_diagram.png, conceptual source-based drawing |
+| PDF RTL code structure and hierarchy | Section 3; aes_top -> aes_core and vio_0; repair previous_key change documented |
+| PDF simulation waveforms and outputs | Section 4; original waveform/transcript/WDB plus repaired real XSim VCD, plotted trace and regression log |
+| PDF hardware screenshots | Section 5; genuine board/programming images and readable original-result recording frame |
+| PDF applications | Section 6; secure-system integration described as future work |
+| PDF conclusion/future scope | Section 7; separate verification states and pending work |
+| RTL with constraints | Original RTL/aes_top.v, aes_core.v, pynq.xdc and VIO XCI preserved; candidate files in Timing_Repair/RTL/ |
+| Testbench | Original Testbench/tb_aes_core.v preserved; extended equivalence testbench in Timing_Repair/Testbench/ |
+| Simulation/waveform.png | Original historical waveform photograph preserved; new actual repair trace supplied separately |
+| Simulation/transcript.txt | Original one-vector PASS preserved; new 104-vector regression log supplied separately |
+| Simulation/simulation_report.pdf | Original simulation PDF preserved; supplemental repair validation PDF in Timing_Repair/Validation/ |
+| Images/block_diagram.png | Present, conceptual architecture grounded in source |
+| Images/rtl_schematic.png | Present, source-derived connectivity; not a native Vivado GUI export |
+| Images/board_setup.jpg | Original genuine board photo preserved; additional recorded_board.png |
+| Images/hardware_output.jpg | Original preview preserved; readable recorded_hardware_output.png now supplied and used in report |
+| FPGA project files | Original native source ZIP/BIT/LTX/checkpoint preserved; repaired native source ZIP and separate repaired output sets supplied |
+| Optional utilization | Original 3222 LUT / 3912 FF; supplied repair 2860 LUT / 4043 FF, each whole top including VIO/debug |
+| Final Drive video link and presentation | Missing Project 1 final URL; Video_Link.txt stays empty |
 
-## Remaining inputs and work
+The final video must include introduction/problem, architecture and RTL in software, physical setup/connections and working demonstration, and conclusion (organizer page 6). Do not represent original footage as a repaired-board test. At 125 MHz the original archived build still fails setup (-0.104 ns); the separate supplied repaired checkpoint passes (+1.490 ns). Original metrics and evidence were not replaced.
 
-1. **Original hardware-result evidence.** Supply the AES recording or a readable screenshot/frame showing plaintext, key and completed ciphertext `3ad77bb40d7a3660a89ecaf32466ef97`. The uploaded Gemini PDF retains only a small poster, not the original video. The other supplied Hardware Manager screenshots show input setup or programming, and cannot replace the completed-result evidence.
-2. **Final demo presentation and URL.** The organizer requests introduction/problem, architecture/RTL, physical setup and working demonstration, and conclusion. Keep the link blank now; insert the accessible finished Drive URL when ready. No exact original video filename or laptop location was found in the supplied material.
-3. **Timing qualification.** The saved 125 MHz routed build has WNS -0.104 ns, TNS -0.276 ns and four setup-failing endpoints in AES key expansion. Preserve this qualification until a corrected build and corresponding routed report prove closure. Simply relaxing the constraint does not change the board's physical clock.
+Five DRC Warning checks and four methodology Warning checks remain disclosed for the repaired design, including missing PS7 initialization and debug-hub asynchronous-reset hazards. Passing static timing does not resolve those warnings or substitute for board testing.
 
-The hardware preview and final video are incomplete evidence, not missing archive source files. All required original source/project assets found in the supplied ZIP have been recovered. Additional vectors and a cleaner waveform/Vivado schematic capture would strengthen the presentation; they are not additional organizer file categories.
-
-## Locate the remaining original files
-
-- Search the laptop's Desktop, Downloads, Videos, Documents and synced Drive/OneDrive folders for `.mp4`, `.mov`, `.mkv`, `.webm`, `.ipynb`, `.bit` and `.ltx`, sorting by the actual lab-demo date. Search names containing `aes`, `128`, `pynq`, `vivado`, `demo` and `screen`.
-- Check the phone/gallery if the demo was filmed with a phone, and the cloud folder where that recording was uploaded. The supplied AES Drive folder contained the project ZIP; it did not supply a video URL.
-- If Jupyter was opened at the PYNQ board's IP address, inspect the board's Jupyter file browser and `/home/xilinx/jupyter_notebooks` on its microSD. If Jupyter used `localhost` or `127.0.0.1`, inspect the laptop folder from which Jupyter was started. These are search locations, not verified AES filenames.
-- The Windows student path and `/home/student/Documents/25BEC0087/aes128_core` shown in historical captures are lab-PC locations. The recovered source ZIP and BIT/LTX in this repository can be used without accessing that PC.
-
-No other project's notebook, recording or build output is used as AES evidence. No new hardware run was performed during recovery or documentation.
+Repository-wide recommendations: refresh only the Project 1-2 content in the combined team PDF and root status summaries after this review; those files are out of the authorized edit scope. The organizer PDF lists 23 September 2026 as its deadline and gives differing leader/team naming examples on pages 1-2; confirm current deadline and naming with organizers without renaming this repository automatically.

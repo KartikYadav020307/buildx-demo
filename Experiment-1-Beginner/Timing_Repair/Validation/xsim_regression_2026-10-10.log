@@ -1,0 +1,7 @@
+Time resolution is 1 ps
+INFO: HDL object /tb_aes_repair/vectors is an unpacked array. VCD does not support unpacked array type according to IEEE LRM 1800-2009, section21.7.5.
+PASS: 104 independent AES vectors at 125 MHz simulation clock
+PASS: 21-cycle completion, one-cycle done, retained ciphertext
+PASS: input capture, mid-encryption reset, restart, held start
+PASS: cycle-by-cycle original/repaired equivalence throughout
+$finish called at time : 20146 ns : File "C:/Users/yamle/Documents/Codex/2026-10-10/o-x20/work/repair/AESRepair/Testbench/tb_aes_repair.sv" Line 70
